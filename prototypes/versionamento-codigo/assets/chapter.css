@@ -1,0 +1,694 @@
+/* ============================================================================
+   Capítulo "Versionamento de Código" — Protótipo de páginas (SharePoint)
+   Identidade visual CAIXA (tokens espelhados de _biblioteca-caixa/tokens.css).
+   Este arquivo é autossuficiente: não depende de outros CSS do repositório.
+   ============================================================================ */
+
+:root {
+  /* ---- Paleta CAIXA ----------------------------------------------------- */
+  --c-primary-10:  #e5f2fc;
+  --c-primary-30:  #8fcbff;
+  --c-primary-50:  #33a0ff;
+  --c-primary-70:  #0078e0;
+  --c-primary-90:  #005ca9;   /* azul institucional */
+  --c-primary-110: #00437a;   /* azul escuro */
+
+  --c-accent:      #f39200;   /* laranja CAIXA */
+  --c-accent-70:   #e58500;
+  --c-accent-110:  #804800;
+
+  --c-teal-70:     #21caaf;   /* feature */
+  --c-teal-110:    #216e62;
+
+  --c-green-90:    #127527;
+  --c-green-50:    #50be67;
+  --c-green-10:    #e7f4ea;
+
+  --c-red-70:      #d93636;   /* hotfix / risco */
+  --c-red-90:      #b22c2c;
+  --c-red-10:      #fbebeb;
+
+  --c-yellow-70:   #fcbe05;
+  --c-yellow-bg:   #fff9e6;
+  --c-yellow-110:  #977203;
+
+  --c-info-90:     #038299;
+  --c-info-10:     #e5f5f8;
+
+  --c-white:       #ffffff;
+  --c-gray-10:     #f0f2f2;
+  --c-gray-30:     #e3ebeb;
+  --c-gray-50:     #d0e0e3;
+  --c-gray-70:     #9eb2b8;
+  --c-gray-90:     #525f66;
+  --c-ink:         #22292e;
+  --c-ink-2:       #404b52;
+
+  /* ---- Aliases semânticos ---------------------------------------------- */
+  --bg:            #f5f8fa;
+  --surface:       #ffffff;
+  --surface-2:     #f7fafa;
+  --surface-3:     #eef3f5;
+  --border:        #dbe5e8;
+  --border-strong: #c2d2d6;
+  --text:          var(--c-ink);
+  --text-2:        var(--c-ink-2);
+  --text-muted:    var(--c-gray-90);
+  --primary:       var(--c-primary-90);
+  --primary-dark:  var(--c-primary-110);
+  --link:          var(--c-primary-90);
+
+  --shadow-1: 0 1px 2px rgba(16, 38, 56, .06), 0 1px 3px rgba(16, 38, 56, .04);
+  --shadow-2: 0 8px 24px rgba(16, 38, 56, .10);
+  --shadow-3: 0 18px 48px rgba(16, 38, 56, .16);
+
+  --radius:    12px;
+  --radius-sm: 8px;
+  --radius-lg: 18px;
+
+  --font: "CAIXA Std", "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", "Cascadia Code", "JetBrains Mono", Consolas, "Liberation Mono", monospace;
+
+  --header-h: 64px;
+  --sidebar-w: 300px;
+  --content-max: 940px;
+}
+
+html.app-dark {
+  --bg:            #12171b;
+  --surface:       #1b2227;
+  --surface-2:     #1f272d;
+  --surface-3:     #242d34;
+  --border:        #2f3a42;
+  --border-strong: #415059;
+  --text:          #eef2f4;
+  --text-2:        #c4cfd6;
+  --text-muted:    #95a4b1;
+  --primary:       #33a0ff;
+  --primary-dark:  #0078e0;
+  --link:          #6bb8ff;
+  --c-primary-10:  #16314a;
+  --c-info-10:     #10333b;
+  --c-green-10:    #14301c;
+  --c-red-10:      #351a1a;
+  --c-yellow-bg:   #332b0d;
+  --shadow-1: 0 1px 2px rgba(0,0,0,.4);
+  --shadow-2: 0 8px 24px rgba(0,0,0,.5);
+  --shadow-3: 0 18px 48px rgba(0,0,0,.6);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ============================================================================
+   HEADER
+   ============================================================================ */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 20px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-1);
+}
+.app-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.app-header .brand-mark {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: grid; place-items: center;
+  flex: 0 0 auto;
+  box-shadow: var(--shadow-1);
+  overflow: hidden;
+}
+.app-header .brand-mark svg { width: 40px; height: 40px; display: block; }
+.app-header .brand-text { display: flex; flex-direction: column; line-height: 1.15; min-width: 0; }
+.app-header .brand-text .eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--c-accent);
+}
+.app-header .brand-text .title {
+  font-size: 15px; font-weight: 700; color: var(--text);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.app-header .spacer { flex: 1; }
+.app-header .actions { display: flex; align-items: center; gap: 8px; }
+
+.h-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  height: 38px; padding: 0 14px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text-2);
+  border-radius: 999px;
+  font-family: inherit; font-size: 13px; font-weight: 600;
+  cursor: pointer;
+  transition: all .15s ease;
+  white-space: nowrap;
+}
+.h-btn:hover { background: var(--surface-3); color: var(--text); border-color: var(--border-strong); }
+.h-btn svg { width: 16px; height: 16px; }
+.h-btn.is-on { background: var(--c-primary-10); border-color: var(--primary); color: var(--primary-dark); }
+.h-btn--icon { padding: 0; width: 38px; justify-content: center; }
+.h-btn .label-long { display: inline; }
+
+.hamburger { display: none; }
+
+/* ============================================================================
+   LAYOUT
+   ============================================================================ */
+.app-body { display: block; }
+
+/* ---- Navegação superior (estilo hub do SharePoint) ------------------- */
+.topnav {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 40;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-1);
+}
+.topnav-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex;
+  align-items: stretch;
+  gap: 2px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+.topnav-inner::-webkit-scrollbar { height: 6px; }
+.topnav-inner::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 999px; }
+.topnav a {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 14px;
+  white-space: nowrap;
+  font-size: 14px; font-weight: 600;
+  color: var(--text-2);
+  border-bottom: 3px solid transparent;
+  transition: color .12s ease, border-color .12s ease, background .12s ease;
+}
+.topnav a:hover { color: var(--text); text-decoration: none; background: var(--surface-2); }
+.topnav a .tnum {
+  flex: 0 0 auto;
+  display: grid; place-items: center;
+  width: 22px; height: 22px;
+  border-radius: 6px;
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  font-size: 12px; font-weight: 700; color: var(--text-2);
+}
+.topnav a.is-active { color: var(--primary-dark); border-bottom-color: var(--primary); }
+.topnav a.is-active .tnum { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+/* ---- Main / content column ------------------------------------------- */
+.main { min-width: 0; }
+.content {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 32px 28px 80px;
+}
+
+/* ============================================================================
+   BREADCRUMB
+   ============================================================================ */
+.breadcrumb {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--text-muted);
+  margin-bottom: 22px;
+}
+.breadcrumb a { color: var(--text-muted); font-weight: 600; }
+.breadcrumb a:hover { color: var(--primary); }
+.breadcrumb .sep { opacity: .5; }
+.breadcrumb .current { color: var(--text-2); font-weight: 700; }
+
+/* ============================================================================
+   HERO (SharePoint: Banner / Hero)
+   ============================================================================ */
+.hero {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  padding: 56px 48px;
+  background:
+    radial-gradient(1200px 400px at 88% -20%, rgba(243,146,0,.30), transparent 60%),
+    linear-gradient(125deg, var(--c-primary-110) 0%, var(--c-primary-90) 55%, #0070cc 100%);
+  color: #fff;
+  box-shadow: var(--shadow-2);
+}
+.hero::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(circle at 80% 0%, #000 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero .hero-inner { position: relative; z-index: 1; max-width: 660px; }
+.hero .hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: #ffd7a3;
+  margin-bottom: 16px;
+}
+.hero h1 {
+  margin: 0 0 14px;
+  font-size: 40px; line-height: 1.12; font-weight: 700; letter-spacing: -.01em;
+}
+.hero p { margin: 0; font-size: 18px; line-height: 1.55; color: rgba(255,255,255,.92); }
+.hero .hero-meta {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px;
+}
+.hero .chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 7px 14px;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 999px;
+  font-size: 13px; font-weight: 600;
+  backdrop-filter: blur(2px);
+}
+.hero .chip svg { width: 15px; height: 15px; }
+
+/* page hero (diretriz) – numbered banner */
+.page-hero {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  padding: 36px 40px;
+  background: linear-gradient(120deg, var(--c-primary-110), var(--c-primary-90));
+  color: #fff;
+  box-shadow: var(--shadow-2);
+  display: flex; align-items: center; gap: 26px;
+}
+.page-hero .ph-num {
+  flex: 0 0 auto;
+  width: 72px; height: 72px;
+  display: grid; place-items: center;
+  border-radius: 18px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.28);
+  font-size: 34px; font-weight: 700;
+}
+.page-hero .ph-text .ph-eyebrow {
+  font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: #ffd7a3; margin-bottom: 8px;
+}
+.page-hero h1 { margin: 0; font-size: 27px; line-height: 1.2; font-weight: 700; }
+
+/* ============================================================================
+   SECTIONS / TYPOGRAPHY
+   ============================================================================ */
+.section { margin-top: 40px; }
+.section > h2, .doc h2 {
+  font-size: 23px; font-weight: 700; color: var(--text);
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border);
+  letter-spacing: -.01em;
+}
+.doc h3 {
+  font-size: 18px; font-weight: 700; color: var(--text);
+  margin: 28px 0 10px;
+}
+.doc p { margin: 0 0 14px; color: var(--text-2); }
+.doc strong { color: var(--text); font-weight: 700; }
+.doc ul, .doc ol { margin: 0 0 16px; padding-left: 22px; color: var(--text-2); }
+.doc li { margin: 6px 0; }
+.doc li::marker { color: var(--primary); }
+
+.lead { font-size: 18px; line-height: 1.6; color: var(--text-2); }
+
+code, .code {
+  font-family: var(--mono);
+  font-size: .88em;
+  background: var(--surface-3);
+  color: var(--primary-dark);
+  padding: .12em .42em;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+}
+html.app-dark code { color: #8fcbff; }
+
+/* ============================================================================
+   DIRETRIZ CALLOUT (a regra impositiva)  — SharePoint: Aviso / Texto destacado
+   ============================================================================ */
+.diretriz {
+  position: relative;
+  display: flex; gap: 18px;
+  background: linear-gradient(180deg, var(--c-primary-10), var(--surface));
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  margin: 26px 0 8px;
+  box-shadow: var(--shadow-1);
+}
+.diretriz .d-badge {
+  flex: 0 0 auto;
+  width: 46px; height: 46px;
+  display: grid; place-items: center;
+  border-radius: 12px;
+  background: var(--primary);
+  color: #fff;
+  box-shadow: var(--shadow-1);
+}
+.diretriz .d-badge svg { width: 24px; height: 24px; }
+.diretriz .d-body .d-kicker {
+  font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--primary-dark); margin-bottom: 4px;
+}
+.diretriz .d-body p { margin: 0; font-size: 16.5px; font-weight: 600; color: var(--text); line-height: 1.5; }
+
+/* ============================================================================
+   CALLOUTS / AVISOS  — SharePoint: web part "Aviso"
+   ============================================================================ */
+.callout {
+  display: flex; gap: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin: 20px 0;
+  background: var(--surface);
+}
+.callout .ci { flex: 0 0 auto; width: 22px; height: 22px; margin-top: 2px; }
+.callout .ct { min-width: 0; }
+.callout .ct strong { display: block; margin-bottom: 2px; }
+.callout p { margin: 0; }
+.callout--rule    { background: var(--c-primary-10); border-color: var(--c-primary-30); }
+.callout--rule .ci    { color: var(--primary-dark); }
+.callout--info    { background: var(--c-info-10); border-color: #b6e4ec; }
+.callout--info .ci    { color: var(--c-info-90); }
+.callout--warning { background: var(--c-yellow-bg); border-color: #f3e2a8; }
+.callout--warning .ci { color: var(--c-yellow-110); }
+.callout--danger  { background: var(--c-red-10); border-color: #f0afaf; }
+.callout--danger .ci  { color: var(--c-red-90); }
+.callout--ok      { background: var(--c-green-10); border-color: #9bdaa9; }
+.callout--ok .ci      { color: var(--c-green-90); }
+html.app-dark .callout--info { border-color: #1d4a54; }
+html.app-dark .callout--warning { border-color: #564717; }
+html.app-dark .callout--danger { border-color: #5a2a2a; }
+html.app-dark .callout--ok { border-color: #265235; }
+
+/* ============================================================================
+   QUICK LINKS (cards de navegação)  — SharePoint: web part "Links Rápidos"
+   ============================================================================ */
+.quicklinks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+.ql-card {
+  display: flex; flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-1);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  color: var(--text);
+}
+.ql-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-2);
+  border-color: var(--c-primary-30);
+  text-decoration: none;
+}
+.ql-card.is-placeholder { border-style: dashed; opacity: .8; box-shadow: none; }
+.ql-card.is-placeholder:hover { transform: none; }
+.ql-card .ql-top { display: flex; align-items: center; gap: 12px; }
+.ql-card .ql-icon {
+  flex: 0 0 auto;
+  width: 42px; height: 42px;
+  display: grid; place-items: center;
+  border-radius: 11px;
+  background: var(--c-primary-10);
+  color: var(--primary-dark);
+}
+.ql-card .ql-icon svg { width: 22px; height: 22px; }
+.ql-card .ql-num {
+  font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--c-accent-70);
+}
+.ql-card h3 { margin: 0; font-size: 16px; font-weight: 700; line-height: 1.3; color: var(--text); }
+.ql-card p { margin: 0; font-size: 13.5px; color: var(--text-muted); line-height: 1.5; flex: 1; }
+.ql-card .ql-go {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 700; color: var(--primary);
+}
+.ql-card .ql-go svg { width: 15px; height: 15px; transition: transform .15s ease; }
+.ql-card:hover .ql-go svg { transform: translateX(3px); }
+
+/* ============================================================================
+   FIGURES / SVG ILLUSTRATIONS
+   ============================================================================ */
+.figure {
+  margin: 24px 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-1);
+  overflow: hidden;
+}
+.figure .fig-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+}
+.figure .fig-head .fig-tag {
+  font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: #fff; background: var(--primary); padding: 3px 9px; border-radius: 999px;
+}
+.figure .fig-head .fig-title { font-size: 14px; font-weight: 700; color: var(--text); }
+.figure .fig-canvas {
+  padding: 22px; overflow-x: auto;
+  /* canvas claro fixo nos dois temas — as ilustrações SVG têm cores próprias */
+  background-color: #f6f9fc;
+  background-image: radial-gradient(#d4e2ec .9px, transparent .9px);
+  background-size: 18px 18px;
+  background-position: -9px -9px;
+}
+html.app-dark .figure .fig-canvas { border-top: 1px solid var(--border); }
+.figure svg, .figure img { display: block; margin: 0 auto; max-width: 100%; height: auto; }
+.figure figcaption {
+  padding: 12px 18px;
+  font-size: 13px; color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  background: var(--surface-2);
+}
+.figure figcaption strong { color: var(--text-2); }
+
+/* legend for diagrams */
+.legend { display: flex; flex-wrap: wrap; gap: 16px; padding: 4px 2px 2px; }
+.legend .li { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--text-2); font-weight: 600; }
+.legend .sw { width: 22px; height: 6px; border-radius: 3px; }
+
+/* SVG text should inherit theme-aware fill via classes */
+.svg-ink   { fill: var(--text); }
+.svg-muted { fill: var(--text-muted); }
+.svg-lane  { stroke: var(--border-strong); }
+
+/* ============================================================================
+   TABLES
+   ============================================================================ */
+.tbl-wrap { overflow-x: auto; margin: 20px 0; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-1); }
+table.tbl { width: 100%; border-collapse: collapse; font-size: 14px; background: var(--surface); }
+table.tbl thead th {
+  background: var(--c-primary-110);
+  color: #fff;
+  text-align: left;
+  font-weight: 600;
+  padding: 12px 16px;
+  white-space: nowrap;
+}
+table.tbl tbody td { padding: 11px 16px; border-top: 1px solid var(--border); color: var(--text-2); vertical-align: top; }
+table.tbl tbody tr:nth-child(even) td { background: var(--surface-2); }
+table.tbl tbody tr:hover td { background: var(--c-primary-10); }
+table.tbl code { background: var(--surface); }
+html.app-dark table.tbl tbody tr:hover td { background: #16314a; }
+
+.pill {
+  display: inline-block; padding: 2px 10px; border-radius: 999px;
+  font-size: 12px; font-weight: 700; line-height: 1.6;
+}
+.pill--main    { background: #d9e6f2; color: var(--c-primary-110); }
+.pill--develop { background: #d7ecff; color: #00538f; }
+.pill--feature { background: #d4f5ee; color: var(--c-teal-110); }
+.pill--release { background: #ffe7c4; color: var(--c-accent-110); }
+.pill--hotfix  { background: #f7d9d9; color: var(--c-red-90); }
+html.app-dark .pill--main { background:#1d3a57; color:#bcd8f2;}
+html.app-dark .pill--develop{ background:#143b5c; color:#bfe2ff;}
+html.app-dark .pill--feature{ background:#13413a; color:#aeeedf;}
+html.app-dark .pill--release{ background:#43320f; color:#ffd9a3;}
+html.app-dark .pill--hotfix{ background:#451e1e; color:#f3b9b9;}
+
+/* ============================================================================
+   REFERENCES SLOT  — SharePoint: web part "Texto" / "Link"
+   ============================================================================ */
+.ref-box {
+  margin: 26px 0 8px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  background: var(--surface-2);
+}
+.ref-box .rb-title {
+  display: flex; align-items: center; gap: 9px;
+  font-size: 14px; font-weight: 700; color: var(--text);
+  margin-bottom: 8px;
+}
+.ref-box .rb-title svg { width: 18px; height: 18px; color: var(--primary); }
+.ref-box p { margin: 0; font-size: 13.5px; color: var(--text-muted); }
+.ref-box .placeholder { font-style: italic; }
+
+/* ============================================================================
+   STEPS / NUMBERED FLOW
+   ============================================================================ */
+.steps { list-style: none; counter-reset: s; margin: 18px 0; padding: 0; }
+.steps li {
+  position: relative;
+  counter-increment: s;
+  padding: 4px 0 18px 46px;
+  border-left: 2px solid var(--border);
+  margin-left: 16px;
+}
+.steps li:last-child { border-left-color: transparent; padding-bottom: 0; }
+.steps li::before {
+  content: counter(s);
+  position: absolute; left: -16px; top: 0;
+  width: 32px; height: 32px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: var(--primary); color: #fff;
+  font-size: 14px; font-weight: 700;
+  box-shadow: 0 0 0 4px var(--bg);
+}
+.steps li strong { color: var(--text); }
+
+/* ============================================================================
+   FOOTER NAV (prev / next)
+   ============================================================================ */
+.page-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+.page-nav a {
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.page-nav a:hover { border-color: var(--c-primary-30); box-shadow: var(--shadow-1); text-decoration: none; }
+.page-nav a.next { text-align: right; }
+.page-nav .pn-dir { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); }
+.page-nav .pn-title { font-size: 15px; font-weight: 700; color: var(--text); line-height: 1.3; }
+.page-nav a.empty { visibility: hidden; }
+
+/* ============================================================================
+   SHAREPOINT MAPPING CHIPS — toggled via header button
+   ============================================================================ */
+[data-sp] { position: relative; }
+.sp-chip { display: none; }
+body.show-sp [data-sp] {
+  outline: 1.5px dashed var(--c-accent);
+  outline-offset: 6px;
+  border-radius: 6px;
+}
+body.show-sp [data-sp] > .sp-chip,
+body.show-sp [data-sp] > .fig-head > .sp-chip {
+  display: inline-flex;
+}
+body.show-sp [data-sp]::before {
+  content: "SharePoint · " attr(data-sp);
+  position: absolute;
+  top: -11px; left: 12px;
+  z-index: 5;
+  padding: 2px 10px;
+  background: var(--c-accent);
+  color: #fff;
+  font-size: 10.5px; font-weight: 700; letter-spacing: .04em;
+  border-radius: 999px;
+  box-shadow: var(--shadow-1);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.sp-hint {
+  display: none;
+  margin: 0 0 22px;
+}
+body.show-sp .sp-hint { display: block; }
+
+/* ============================================================================
+   MISC
+   ============================================================================ */
+.note-missing {
+  display: flex; gap: 12px; align-items: flex-start;
+  background: repeating-linear-gradient(45deg, var(--surface-2), var(--surface-2) 10px, var(--surface-3) 10px, var(--surface-3) 20px);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  color: var(--text-2);
+  font-size: 14px;
+}
+.backdrop { display: none; }
+
+/* ============================================================================
+   RESPONSIVE
+   ============================================================================ */
+@media (max-width: 1024px) {
+  .h-btn .label-long { display: none; }
+  .topnav-inner { padding: 0 16px; }
+}
+
+@media (max-width: 680px) {
+  .content { padding: 22px 16px 64px; }
+  .hero { padding: 38px 24px; }
+  .hero h1 { font-size: 30px; }
+  .page-hero { padding: 26px 22px; flex-direction: row; gap: 18px; }
+  .page-hero .ph-num { width: 54px; height: 54px; font-size: 26px; }
+  .page-hero h1 { font-size: 21px; }
+  .page-nav { grid-template-columns: 1fr; }
+  .section > h2, .doc h2 { font-size: 20px; }
+}
+
+/* print */
+@media print {
+  .app-header, .topnav, .page-nav { display: none !important; }
+  .content { max-width: none; }
+  .figure, .quicklinks, .diretriz { break-inside: avoid; }
+}

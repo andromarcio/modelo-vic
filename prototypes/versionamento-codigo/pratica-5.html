@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prática 5 · Sincronização (merge back)</title>
+  <link rel="stylesheet" href="assets/chapter.css">
+</head>
+<body>
+<article id="doc" data-page-id="pratica-5">
+
+  <header class="page-hero" data-sp="Banner / Hero">
+    <span class="sp-chip"></span>
+    <div class="ph-num">5</div>
+    <div class="ph-text">
+      <div class="ph-eyebrow">Prática</div>
+      <h1>A sincronização entre branches principais deve ser garantida ao final de cada ciclo</h1>
+    </div>
+  </header>
+
+  <div class="diretriz" data-sp="Texto destacado">
+    <span class="sp-chip"></span>
+    <div class="d-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="d-body">
+      <div class="d-kicker">Regra</div>
+      <p>A sincronização das branches <code>main</code> e <code>develop</code> ao término de cada
+         ciclo é <strong>obrigatória</strong>. Esse processo, conhecido como <strong>merge back</strong>,
+         assegura que ambas as linhas permanentes reflitam o estado mais atualizado do código.</p>
+    </div>
+  </div>
+
+  <section class="section" data-sp="Texto">
+    <span class="sp-chip"></span>
+    <h2>O que é um ciclo</h2>
+    <p>Um ciclo corresponde ao período completo de desenvolvimento que culmina em uma entrega
+       planejada — o fechamento de uma release, a conclusão de um sprint ou a implementação de um
+       conjunto de funcionalidades. Ao final de cada ciclo, a sincronização das linhas permanentes
+       <strong>deve</strong> ocorrer antes do início do próximo.</p>
+  </section>
+
+  <section class="section" data-sp="Imagem">
+    <span class="sp-chip"></span>
+    <h2>O merge back na prática</h2>
+    <figure class="figure">
+      <div class="fig-head">
+        <span class="sp-chip"></span>
+        <span class="fig-tag">Figura</span>
+        <span class="fig-title">Release e hotfix retornam para a develop</span>
+      </div>
+      <div class="fig-canvas"><img src="assets/img/merge-back.svg" alt="Release integrada à main e retornando à develop; hotfix integrado à main e retornando à develop, com tags SemVer"></div>
+      <figcaption><strong>Merge back:</strong> toda release e todo hotfix integrados à <code>main</code>
+        retornam obrigatoriamente para a <code>develop</code>, prevenindo commits órfãos.</figcaption>
+    </figure>
+
+    <h3>Regras obrigatórias do merge back</h3>
+    <ol class="steps">
+      <li><strong>Release concluída:</strong> sempre que uma release é integrada à <code>main</code>, o merge de volta na <code>develop</code> <strong>deve</strong> ser realizado.</li>
+      <li><strong>Hotfix finalizado:</strong> após a finalização de um hotfix, a correção <strong>deve</strong> ser propagada para a <code>develop</code>, mantendo a base estável para novas features.</li>
+      <li><strong>Fechamento do ciclo:</strong> cada ciclo <strong>deve</strong> terminar com a integração completa das linhas principais antes do início do próximo.</li>
+      <li><strong>Novas branches:</strong> features e hotfixes <strong>devem</strong> ser sempre criados a partir de uma versão correta e atualizada das linhas principais.</li>
+    </ol>
+  </section>
+
+  <section class="section" data-sp="Aviso">
+    <span class="sp-chip"></span>
+    <div class="callout callout--danger">
+      <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+      <div class="ct">
+        <strong>Ausência de sincronização</strong>
+        <p>A falta do merge back gera regressões, conflitos e perda de rastreabilidade. A
+           sincronização das linhas principais é regra institucional e <strong>não</strong> pode ser
+           omitida ao final de um ciclo.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="ref-box" data-sp="Texto / Link">
+    <span class="sp-chip"></span>
+    <div class="rb-title">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      Referências metodológicas
+    </div>
+    <p class="placeholder">As referências metodológicas sobre este assunto devem ser incluídas aqui. <em>(espaço reservado para os links institucionais.)</em></p>
+  </div>
+
+</article>
+<script src="assets/chapter.js"></script>
+</body>
+</html>

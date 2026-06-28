@@ -1,0 +1,195 @@
+/* ============================================================================
+   CAIXA Design System — Design Tokens
+   Extraídos diretamente do Figma (página "🎨 | Tokens") via Dev Mode MCP.
+   Namespace canônico: --dsc-*  (Design System CAIXA)
+   Fonte: CAIXA Std. NÃO editar à mão — espelha as variáveis do Figma.
+   ============================================================================ */
+
+:root {
+  /* ---- Paletas de cor (escalas 10→130) ----------------------------------- */
+  --dsc-color-primary-10: #e5f2fc;
+  --dsc-color-primary-30: #8fcbff;
+  --dsc-color-primary-50: #33a0ff;
+  --dsc-color-primary-70: #0078e0;
+  --dsc-color-primary-90: #005ca9;
+  --dsc-color-primary-110: #00437a;
+
+  --dsc-color-secondary-10: #ffefd6;
+  --dsc-color-secondary-30: #ffd7a3;
+  --dsc-color-secondary-50: #ffbd66;
+  --dsc-color-secondary-70: #e58500;
+  --dsc-color-secondary-90: #d87b00;
+  --dsc-color-secondary-110: #804800;
+
+  --dsc-color-tertiary-10: #ffffff;
+  --dsc-color-tertiary-50: #61e5d1;
+  --dsc-color-tertiary-70: #21caaf;
+  --dsc-color-tertiary-110: #216e62;
+  --dsc-color-tertiary-130: #03453b;
+
+  --dsc-color-positive-10: #e7f4ea;
+  --dsc-color-positive-30: #9bdaa9;
+  --dsc-color-positive-50: #50be67;
+  --dsc-color-positive-90: #127527;
+  --dsc-color-positive-110: #0d581d;
+  --dsc-color-positive-130: #083512;
+
+  --dsc-color-attention-10: #ffffff;
+  --dsc-color-attention-50: #fdd150;
+  --dsc-color-attention-70: #fcbe05;
+  --dsc-color-attention-110: #977203;
+  --dsc-color-attention-130: #654c02;
+
+  --dsc-color-negative-10: #fbebeb;
+  --dsc-color-negative-30: #f0afaf;
+  --dsc-color-negative-50: #e47272;
+  --dsc-color-negative-70: #d93636;
+  --dsc-color-negative-90: #b22c2c;
+  --dsc-color-negative-110: #8c2424;
+
+  --dsc-color-informative-10: #e5f5f8;
+  --dsc-color-informative-30: #b6e4ec;
+  --dsc-color-informative-50: #6acbdc;
+  --dsc-color-informative-90: #038299;
+  --dsc-color-informative-110: #026273;
+
+  --dsc-color-grayscale-white: #ffffff;
+  --dsc-color-grayscale-10: #f0f2f2;
+  --dsc-color-grayscale-30: #e3ebeb;
+  --dsc-color-grayscale-50: #d0e0e3;
+  --dsc-color-grayscale-70: #9eb2b8;
+  --dsc-color-grayscale-90: #525f66;
+  --dsc-color-grayscale-130: #22292e;
+  --dsc-color-grayscale-black: #000000;
+
+  /* ---- Cores semânticas (alias para as paletas) -------------------------- */
+  --dsc-color-content-highlight-1: #005ca9;   /* texto destaque/link */
+  --dsc-color-content-information-3: #026173;
+  --dsc-color-content-neutral-4: #404b52;     /* texto secundário */
+  --dsc-color-content-neutral-5: #22292e;     /* texto principal */
+
+  --dsc-color-bg-neutral-1: #ffffff;          /* superfície base */
+  --dsc-color-bg-neutral-2: #f7fafa;          /* superfície sutil */
+  --dsc-color-bg-neutral-3: #ebf1f2;          /* superfície hover/zebra */
+  --dsc-color-bg-neutral-6: #404b52;
+  --dsc-color-bg-highlight-1: #e5f2fc;        /* fundo destaque */
+  --dsc-color-bg-information-1: #e5f5f8;
+  --dsc-color-bg-accent-4: #f39200;
+
+  --dsc-color-border-neutral-3: #d0e0e3;      /* borda padrão */
+  --dsc-color-border-neutral-4: #9eb2b8;      /* borda forte/hover */
+  --dsc-color-border-information-1: #038299;
+
+  --dsc-color-ceu-110: #006480;
+
+  /* ---- Espaçamento ------------------------------------------------------- */
+  --dsc-spacing-none: 0px;
+  --dsc-spacing-quark: 4px;
+  --dsc-spacing-nano: 8px;
+  --dsc-spacing-micro: 12px;
+  --dsc-spacing-tiny: 16px;
+  --dsc-spacing-smaller: 24px;
+  --dsc-spacing-small: 32px;
+  --dsc-spacing-medium: 40px;
+  --dsc-spacing-large: 48px;
+  --dsc-spacing-larger: 56px;
+  --dsc-spacing-big: 64px;
+  --dsc-spacing-bigger: 72px;
+  --dsc-spacing-huge: 80px;
+
+  /* ---- Raio de borda ----------------------------------------------------- */
+  --dsc-border-radius-none: 0px;
+  --dsc-border-radius-medium: 12px;
+  --dsc-border-radius-large: 16px;
+  --dsc-border-radius-pill: 1000px;
+  /* raios intermediários derivados (uso em componentes menores) */
+  --dsc-border-radius-small: 8px;
+
+  /* ---- Largura de borda -------------------------------------------------- */
+  --dsc-border-width-none: 0px;
+  --dsc-border-width-hairline: 1px;
+  --dsc-border-width-thin: 2px;
+
+  /* ---- Tipografia -------------------------------------------------------- */
+  --dsc-font-family-1: "CAIXA Std", "Segoe UI", Roboto, system-ui, -apple-system, sans-serif;
+
+  --dsc-font-weight-400: 400;
+  --dsc-font-weight-600: 600;
+  --dsc-font-weight-700: 700;
+
+  /* escala de tamanho (px) — merge de --dsc-font-size-* + font/size/* */
+  --dsc-font-size-quark: 12px;
+  --dsc-font-size-nano: 14px;
+  --dsc-font-size-micro: 16px;
+  --dsc-font-size-tiny: 18px;
+  --dsc-font-size-smaller: 20px;
+  --dsc-font-size-small: 24px;
+  --dsc-font-size-medium: 28px;
+  --dsc-font-size-large: 32px;
+  --dsc-font-size-larger: 36px;
+  --dsc-font-size-big: 40px;
+  --dsc-font-size-giant: 60px;
+
+  /* line-heights de referência (px) */
+  --dsc-line-height-16: 16px;
+  --dsc-line-height-20: 20px;
+  --dsc-line-height-24: 24px;
+  --dsc-line-height-28: 28px;
+  --dsc-line-height-32: 32px;
+  --dsc-line-height-36: 36px;
+  --dsc-line-height-40: 40px;
+  --dsc-line-height-44: 44px;
+
+  /* ---- Elevações (sombras) ----------------------------------------------- */
+  --dsc-elevation-1: 0px 1px 2px 0px rgba(0, 0, 0, 0.04);
+  --dsc-elevation-2: 0px 14px 28px 0px rgba(0, 0, 0, 0.04);
+
+  /* ============================================================================
+     Aliases de uso geral (semantic surface) — facilitam o CSS de componentes
+     e o eventual modo escuro. Mapeiam para os tokens --dsc-* acima.
+     ============================================================================ */
+  --surface-ground: var(--dsc-color-bg-neutral-2);
+  --surface-card: var(--dsc-color-bg-neutral-1);
+  --surface-hover: var(--dsc-color-bg-neutral-3);
+  --surface-border: var(--dsc-color-border-neutral-3);
+  --surface-border-strong: var(--dsc-color-border-neutral-4);
+
+  --text-color: var(--dsc-color-content-neutral-5);
+  --text-secondary: var(--dsc-color-content-neutral-4);
+  --text-muted: var(--dsc-color-grayscale-90);
+  --text-on-primary: var(--dsc-color-grayscale-white);
+
+  --primary-color: var(--dsc-color-primary-90);
+  --primary-hover: var(--dsc-color-primary-110);
+  --primary-active: var(--dsc-color-primary-110);
+  --focus-ring: 0 0 0 3px rgba(0, 92, 169, 0.35);
+}
+
+/* ============================================================================
+   Modo escuro — .app-dark na raiz.
+   Reaproveita as escalas grayscale 🌑 do Figma.
+   ============================================================================ */
+.app-dark {
+  --dsc-color-bg-neutral-1: #1e2429;
+  --dsc-color-bg-neutral-2: #22292e;
+  --dsc-color-bg-neutral-3: #282f34;
+  --dsc-color-content-neutral-5: #f9fafb;
+  --dsc-color-content-neutral-4: #cad2d8;
+  --dsc-color-border-neutral-3: #3d4851;
+  --dsc-color-border-neutral-4: #607280;
+
+  --surface-ground: #181d21;
+  --surface-card: #1e2429;
+  --surface-hover: #282f34;
+  --surface-border: #3d4851;
+  --surface-border-strong: #607280;
+
+  --text-color: #f9fafb;
+  --text-secondary: #cad2d8;
+  --text-muted: #95a4b1;
+
+  --primary-color: var(--dsc-color-primary-50);
+  --primary-hover: var(--dsc-color-primary-30);
+  --primary-active: var(--dsc-color-primary-30);
+  --focus-ring: 0 0 0 3px rgba(51, 160, 255, 0.4);
+}

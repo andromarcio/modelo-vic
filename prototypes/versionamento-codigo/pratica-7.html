@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prática 7 · VIC</title>
+  <link rel="stylesheet" href="assets/chapter.css">
+</head>
+<body>
+<article id="doc" data-page-id="pratica-7">
+
+  <header class="page-hero" data-sp="Banner / Hero">
+    <span class="sp-chip"></span>
+    <div class="ph-num">7</div>
+    <div class="ph-text">
+      <div class="ph-eyebrow">Prática Desejada</div>
+      <h1>As branches permanentes devem ser protegidas</h1>
+    </div>
+  </header>
+
+  <div class="diretriz" data-sp="Texto destacado">
+    <span class="sp-chip"></span>
+    <div class="d-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="d-body">
+      <div class="d-kicker">Regra</div>
+      <p>As branches permanentes (<code>develop</code> e <code>main</code>) <strong>devem</strong>
+         apresentar políticas de segurança e controle aplicadas, de modo que alterações ocorram
+         somente por processos definidos e controlados — preservando a integridade do código.</p>
+    </div>
+  </div>
+
+  <section class="section" data-sp="Texto">
+    <span class="sp-chip"></span>
+    <h2>O que a prática exige</h2>
+    <ul>
+      <li><strong>Bloqueio de push manual</strong> direto nas branches permanentes.</li>
+      <li>Exigência de <strong>pull request</strong> revisado, aprovado por pares e <strong>concluído por integradores</strong>.</li>
+      <li>Integração a <strong>pipelines automatizadas</strong> que executem testes, verificações de qualidade e validações de conformidade.</li>
+      <li>Governança contínua pelos integradores: histórico de merges, rastreabilidade de tags e verificação do cumprimento das políticas.</li>
+    </ul>
+  </section>
+
+  <section class="section" data-sp="Imagem">
+    <span class="sp-chip"></span>
+    <h2>Como a proteção atua</h2>
+    <figure class="figure">
+      <div class="fig-head"><span class="sp-chip"></span><span class="fig-tag">Figura</span><span class="fig-title">Push direto bloqueado · integração via PR</span></div>
+      <div class="fig-canvas"><img src="assets/img/branch-protection.svg" alt="Branches main e develop com cadeado; push direto bloqueado; integração apenas por pull request aprovado e concluído pelo integrador"></div>
+      <figcaption>Alterações nas branches permanentes ocorrem <strong>somente</strong> por pull request
+        revisado, aprovado e concluído pelo Integrador — nunca por push direto.</figcaption>
+    </figure>
+  </section>
+
+  <div class="ref-box" data-sp="Texto / Link">
+    <span class="sp-chip"></span>
+    <div class="rb-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Referências metodológicas</div>
+    <p class="placeholder">Espaço reservado para os links institucionais sobre este assunto.</p>
+  </div>
+
+</article>
+<script src="assets/chapter.js"></script>
+</body>
+</html>

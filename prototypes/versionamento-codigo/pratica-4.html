@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prática 4 · Divergência entre branches</title>
+  <link rel="stylesheet" href="assets/chapter.css">
+</head>
+<body>
+<article id="doc" data-page-id="pratica-4">
+
+  <header class="page-hero" data-sp="Banner / Hero">
+    <span class="sp-chip"></span>
+    <div class="ph-num">4</div>
+    <div class="ph-text">
+      <div class="ph-eyebrow">Prática</div>
+      <h1>As branches protegidas devem apresentar baixo índice de divergência em relação às temporárias</h1>
+    </div>
+  </header>
+
+  <div class="diretriz" data-sp="Texto destacado">
+    <span class="sp-chip"></span>
+    <div class="d-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="d-body">
+      <div class="d-kicker">Regra</div>
+      <p>A diferença de commits <strong>ahead/behind</strong> entre branches permanentes
+         (<code>develop</code> e/ou <code>main</code>) e branches temporárias <strong>deve</strong>
+         ser monitorada continuamente e mantida dentro dos limites definidos, evitando o acúmulo
+         de mudanças não integradas.</p>
+    </div>
+  </div>
+
+  <section class="section" data-sp="Texto">
+    <span class="sp-chip"></span>
+    <h2>Por que controlar a divergência</h2>
+    <p>Quando a diferença de commits cresce, aumentam o risco de conflitos e o retrabalho. Por isso,
+       as branches temporárias <strong>devem</strong> ser alinhadas regularmente com a linha principal,
+       garantindo integração contínua e histórico consistente.</p>
+
+    <figure class="figure">
+      <div class="fig-head">
+        <span class="sp-chip"></span>
+        <span class="fig-tag">Figura</span>
+        <span class="fig-title">Divergência ahead / behind</span>
+      </div>
+      <div class="fig-canvas"><img src="assets/img/divergence.svg" alt="Branch com commits ahead e behind em relação à develop e medidores de alinhamento dentro do limite e em divergência excessiva"></div>
+      <figcaption><strong>ahead</strong> = commits na branch temporária ainda não integrados;
+        <strong>behind</strong> = commits da linha principal ainda não incorporados à branch.
+        Ambos devem permanecer dentro do limite definido.</figcaption>
+    </figure>
+  </section>
+
+  <section class="section" data-sp="Texto">
+    <span class="sp-chip"></span>
+    <h2>Regras de alinhamento por tipo de branch</h2>
+    <div class="tbl-wrap" data-sp="Tabela">
+      <span class="sp-chip"></span>
+      <table class="tbl">
+        <thead><tr><th>Branch</th><th>Regra de alinhamento (obrigatória)</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="pill pill--feature">feature/*</span></td>
+            <td>Deve ser sincronizada com frequência com a <code>develop</code>, sem longos períodos de isolamento.</td>
+          </tr>
+          <tr>
+            <td><span class="pill pill--release">release/*</span></td>
+            <td>Deve refletir o estado mais atualizado da <code>develop</code> e, após a conclusão, deve ser integrada na <code>main</code> e na <code>develop</code>, prevenindo commits órfãos.</td>
+          </tr>
+          <tr>
+            <td><span class="pill pill--hotfix">hotfix/*</span></td>
+            <td>Deve ser utilizada exclusivamente em incidentes. Após a correção, deve ser integrada na <code>main</code> e na <code>develop</code>.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section" data-sp="Aviso">
+    <span class="sp-chip"></span>
+    <div class="callout callout--warning">
+      <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <div class="ct">
+        <strong>Limite de divergência</strong>
+        <p>Diferenças excessivas de commits entre branches caracterizam baixa maturidade. As branches
+           <strong>devem</strong> ser mantidas dentro do limite definido pela governança técnica:
+           <code>[definir limite institucional — ex.: X commits ou Y dias sem sincronização]</code>.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="ref-box" data-sp="Texto / Link">
+    <span class="sp-chip"></span>
+    <div class="rb-title">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      Referências metodológicas
+    </div>
+    <p class="placeholder">As referências metodológicas sobre este assunto devem ser incluídas aqui. <em>(espaço reservado para os links institucionais.)</em></p>
+  </div>
+
+</article>
+<script src="assets/chapter.js"></script>
+</body>
+</html>

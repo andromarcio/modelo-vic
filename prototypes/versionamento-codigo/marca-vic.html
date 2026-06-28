@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marca VIC — Versionamento e Integração de Código</title>
+<style>
+  :root{
+    --navy:#00437a; --blue:#005ca9; --blue2:#0a78d6; --orange:#f39200; --teal:#21caaf;
+    --ink:#22292e; --muted:#64748b; --line:#dbe5e8; --bg:#f5f8fa; --card:#fff;
+    --font:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.6}
+  .wrap{max-width:1000px;margin:0 auto;padding:40px 24px 80px}
+  header.top{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+  header.top img{height:46px}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+  h1{font-size:26px;margin:6px 0 2px}
+  h2{font-size:19px;margin:44px 0 14px;padding-bottom:9px;border-bottom:2px solid var(--line)}
+  p{color:#41505b}
+  .lead{font-size:17px}
+  .hero{margin:26px 0;background:linear-gradient(125deg,#eaf2fb,#fff);border:1px solid var(--line);border-radius:18px;padding:42px;display:flex;justify-content:center;box-shadow:0 8px 24px rgba(16,38,56,.06)}
+  .hero img{max-width:520px;width:100%}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 1px 2px rgba(16,38,56,.05)}
+  .card .frame{min-height:130px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+  .card.dark .frame{background:#0f1a26;border-radius:10px;padding:14px}
+  .card h3{margin:0;font-size:14px}
+  .card small{color:var(--muted)}
+  .icons{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap}
+  .concept{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+  .concept .c{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:12px;padding:16px 18px}
+  .concept .c b{color:var(--navy)}
+  .pal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+  .sw{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+  .sw .chip{height:64px}
+  .sw .meta{padding:10px 12px;font-size:12.5px}
+  .sw .meta b{display:block;font-size:13px}
+  .sw .meta code{color:var(--muted)}
+  .clear{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+  .clear .box{background:#fff;border:1px dashed #9fb6c0;border-radius:12px;padding:18px}
+  .foot{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+  code{background:#eef3f5;border:1px solid var(--line);border-radius:5px;padding:.05em .4em;font-family:Consolas,monospace;font-size:.9em}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <img src="assets/brand/vic-icon.svg" alt="VIC">
+    <div>
+      <div class="eyebrow">Identidade Visual</div>
+      <h1>Marca VIC</h1>
+    </div>
+  </header>
+  <p class="lead"><b>VIC</b> — Versionamento e Integração de Código. A marca traduz controle de
+     versão: o <b>“V” é um merge</b> de dois branches e o ícone é um <b>grafo git</b> que termina
+     em uma <b>tag de versão</b>.</p>
+
+  <div class="hero">
+    <img src="assets/brand/vic-logo-horizontal.svg" alt="Logo VIC — Versionamento e Integração de Código">
+  </div>
+
+  <h2>Conceito</h2>
+  <div class="concept">
+    <div class="c"><b>V = merge</b><br>O “V” é formado por dois branches (commits laranja e turquesa) que se integram em um nó de merge.</div>
+    <div class="c"><b>Ícone = grafo git</b><br>Dois branches convergem para um commit de integração e geram uma <b>tag de versão</b>.</div>
+    <div class="c"><b>Linha de commits</b><br>A base sob a sigla representa o histórico versionado — a linha do tempo do repositório.</div>
+    <div class="c"><b>Cores institucionais</b><br>Azul CAIXA como base; laranja e turquesa marcam os pontos de commit/integração.</div>
+  </div>
+
+  <h2>Versões da marca</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="frame"><img src="assets/brand/vic-logo-horizontal.svg" alt="Lockup horizontal" style="max-width:100%"></div>
+      <h3>Lockup horizontal</h3><small>Aplicação principal</small>
+    </div>
+    <div class="card">
+      <div class="frame"><img src="assets/brand/vic-logo-stacked.svg" alt="Lockup empilhado" style="max-height:180px"></div>
+      <h3>Lockup empilhado</h3><small>Espaços verticais / quadrados</small>
+    </div>
+    <div class="card dark">
+      <div class="frame"><img src="assets/brand/vic-logo-negative.svg" alt="Negativo" style="max-width:100%"></div>
+      <h3>Negativo</h3><small>Sobre fundos escuros</small>
+    </div>
+    <div class="card">
+      <div class="frame icons">
+        <img src="assets/brand/vic-icon.svg" alt="Ícone 96" style="width:96px">
+        <img src="assets/brand/vic-icon.svg" alt="Ícone 56" style="width:56px">
+        <img src="assets/brand/vic-icon.svg" alt="Ícone 32" style="width:32px">
+      </div>
+      <h3>Ícone (app / favicon)</h3><small>96 · 56 · 32 px</small>
+    </div>
+    <div class="card">
+      <div class="frame"><img src="assets/brand/vic-wordmark-mono.svg" alt="Monocromático" style="max-width:100%"></div>
+      <h3>Monocromático</h3><small>Uma cor (carimbo, gravação)</small>
+    </div>
+  </div>
+
+  <h2>Paleta</h2>
+  <div class="pal">
+    <div class="sw"><div class="chip" style="background:#00437a"></div><div class="meta"><b>Azul escuro</b><code>#00437A</code></div></div>
+    <div class="sw"><div class="chip" style="background:#005ca9"></div><div class="meta"><b>Azul CAIXA</b><code>#005CA9</code></div></div>
+    <div class="sw"><div class="chip" style="background:#0a78d6"></div><div class="meta"><b>Azul claro</b><code>#0A78D6</code></div></div>
+    <div class="sw"><div class="chip" style="background:#f39200"></div><div class="meta"><b>Laranja</b><code>#F39200</code></div></div>
+    <div class="sw"><div class="chip" style="background:#21caaf"></div><div class="meta"><b>Turquesa</b><code>#21CAAF</code></div></div>
+    <div class="sw"><div class="chip" style="background:#475569"></div><div class="meta"><b>Cinza texto</b><code>#475569</code></div></div>
+  </div>
+
+  <h2>Espaço de proteção e tamanho mínimo</h2>
+  <div class="clear">
+    <div class="box"><img src="assets/brand/vic-logo-horizontal.svg" alt="Espaço de proteção" style="width:300px"></div>
+    <p style="max-width:380px">Mantenha ao redor da marca uma margem livre equivalente à <b>altura do ícone</b>.
+      Tamanho mínimo recomendado: <b>120&nbsp;px</b> de largura (lockup horizontal) e <b>24&nbsp;px</b> (ícone).
+      Não distorça, não recolora fora da paleta e não altere a proporção entre ícone e sigla.</p>
+  </div>
+
+  <div class="foot">
+    Arquivos: <code>assets/brand/vic-logo-horizontal.svg</code> ·
+    <code>vic-logo-stacked.svg</code> · <code>vic-logo-negative.svg</code> ·
+    <code>vic-icon.svg</code> · <code>vic-wordmark-mono.svg</code>.
+    A sigla VIC é vetorial (independente de fonte); a tagline é texto em Segoe UI (pode ser convertida em curvas sob demanda).
+  </div>
+</div>
+</body>
+</html>

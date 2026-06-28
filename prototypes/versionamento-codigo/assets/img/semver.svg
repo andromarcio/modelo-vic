@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 250" role="img" aria-label="Versionamento semântico MAJOR.MINOR.PATCH">
+  <style>
+    text { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+    .num { font-size: 64px; font-weight: 800; fill: #fff; }
+    .dot { font-size: 64px; font-weight: 800; fill: #9eb2b8; }
+    .lab { font-size: 15px; font-weight: 800; letter-spacing: .04em; }
+    .desc{ font-size: 13px; fill: #525f66; }
+  </style>
+
+  <!-- chips dos componentes -->
+  <g>
+    <rect x="250" y="40" width="92" height="92" rx="18" fill="#00437a"/><text class="num" x="296" y="105" text-anchor="middle">2</text>
+    <text class="dot" x="372" y="105" text-anchor="middle">.</text>
+    <rect x="404" y="40" width="92" height="92" rx="18" fill="#005ca9"/><text class="num" x="450" y="105" text-anchor="middle">4</text>
+    <text class="dot" x="526" y="105" text-anchor="middle">.</text>
+    <rect x="558" y="40" width="92" height="92" rx="18" fill="#21caaf"/><text class="num" x="604" y="105" text-anchor="middle">1</text>
+  </g>
+
+  <!-- colunas de explicação -->
+  <g>
+    <line x1="296" y1="140" x2="296" y2="158" stroke="#00437a" stroke-width="2"/>
+    <text class="lab" x="296" y="182" text-anchor="middle" fill="#00437a">MAJOR</text>
+    <text class="desc" x="296" y="206" text-anchor="middle">Mudanças incompatíveis</text>
+    <text class="desc" x="296" y="224" text-anchor="middle">com versões anteriores.</text>
+
+    <line x1="450" y1="140" x2="450" y2="158" stroke="#005ca9" stroke-width="2"/>
+    <text class="lab" x="450" y="182" text-anchor="middle" fill="#005ca9">MINOR</text>
+    <text class="desc" x="450" y="206" text-anchor="middle">Novas funcionalidades</text>
+    <text class="desc" x="450" y="224" text-anchor="middle">compatíveis.</text>
+
+    <line x1="604" y1="140" x2="604" y2="158" stroke="#21caaf" stroke-width="2"/>
+    <text class="lab" x="604" y="182" text-anchor="middle" fill="#216e62">PATCH</text>
+    <text class="desc" x="604" y="206" text-anchor="middle">Correções compatíveis</text>
+    <text class="desc" x="604" y="224" text-anchor="middle">(bugfix).</text>
+  </g>
+
+  <!-- aplica-se a -->
+  <g transform="translate(700,52)">
+    <text x="0" y="14" font-size="12" font-weight="700" fill="#404b52">Aplica-se a</text>
+    <text x="0" y="38" class="desc">• commits e tags</text>
+    <text x="0" y="58" class="desc">• artefatos e bibliotecas</text>
+    <text x="0" y="78" class="desc">• workflows e dependências</text>
+  </g>
+</svg>

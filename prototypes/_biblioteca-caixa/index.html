@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca de Componentes — CAIXA DS</title>
+  <link rel="stylesheet" href="./caixa-ds.css">
+  <style>
+    /* estilos só do catálogo (não fazem parte da biblioteca) */
+    .cat { max-width: 1080px; margin: 0 auto; padding: var(--dsc-spacing-smaller); }
+    .cat h2 { font-size: var(--dsc-font-size-tiny); font-weight: 700; margin: var(--dsc-spacing-large) 0 var(--dsc-spacing-tiny); padding-bottom: var(--dsc-spacing-nano); border-bottom: 2px solid var(--surface-border); scroll-margin-top: 80px; }
+    .cat h3 { font-size: var(--dsc-font-size-nano); font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: .4px; margin: var(--dsc-spacing-tiny) 0 var(--dsc-spacing-nano); }
+    .row { display: flex; flex-wrap: wrap; gap: var(--dsc-spacing-micro); align-items: center; }
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, 86px); gap: var(--dsc-spacing-micro); }
+    .sw b { display: block; height: 48px; border-radius: var(--dsc-border-radius-small); border: 1px solid var(--surface-border); }
+    .sw small { display: block; margin-top: 4px; font-size: 11px; color: var(--text-muted); }
+    .sw code { font-size: 10px; color: var(--text-secondary); }
+    .toc { position: sticky; top: 0; background: var(--surface-card); border-bottom: 1px solid var(--surface-border); padding: var(--dsc-spacing-micro) var(--dsc-spacing-smaller); display: flex; gap: var(--dsc-spacing-tiny); flex-wrap: wrap; z-index: 30; font-size: var(--dsc-font-size-nano); }
+    .toc a { color: var(--text-secondary); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="dsc-proto-badge">📚 Biblioteca CAIXA DS</div>
+
+  <nav class="toc">
+    <strong style="color:var(--primary-color)">CAIXA DS</strong>
+    <a href="#cores">Cores</a><a href="#tipografia">Tipografia</a><a href="#botoes">Botões</a>
+    <a href="#form">Formulário</a><a href="#indicadores">Indicadores</a><a href="#feedback">Feedback</a>
+    <a href="#nav">Navegação</a><a href="#dados">Tabela/Listas</a>
+    <a href="#campos">Campos+</a><a href="#upload">Upload</a><a href="#calendario">Calendário</a>
+    <a href="#cards">Cards</a><a href="#tiles">Tiles/Ícones</a><a href="#overlays">Drawer/Toolbar</a><a href="#diversos">Diversos</a><a href="#grid">Grid 12col</a>
+    <a href="#" onclick="document.documentElement.classList.toggle('app-dark');return false">🌓 Tema</a>
+  </nav>
+
+  <main class="cat">
+    <h1 class="dsc-display" style="font-size:var(--dsc-font-size-large)">Biblioteca de Componentes</h1>
+    <p class="dsc-text-secondary dsc-mt-1">Componentes HTML/CSS fiéis ao <strong>CAIXA Design System</strong> do Figma (tokens <code>--dsc-*</code> · fonte CAIXA Std). Use as classes <code>.dsc-*</code> nos protótipos. Clique em <strong>🌓 Tema</strong> para o modo escuro.</p>
+
+    <!-- CORES -->
+    <h2 id="cores">Cores</h2>
+    <div class="dsc-card">
+      <h3>Primary</h3>
+      <div class="swatches">
+        <div class="sw"><b style="background:var(--dsc-color-primary-10)"></b><small>primary-10</small></div>
+        <div class="sw"><b style="background:var(--dsc-color-primary-30)"></b><small>primary-30</small></div>
+        <div class="sw"><b style="background:var(--dsc-color-primary-50)"></b><small>primary-50</small></div>
+        <div class="sw"><b style="background:var(--dsc-color-primary-70)"></b><small>primary-70</small></div>
+        <div class="sw"><b style="background:var(--dsc-color-primary-90)"></b><small>primary-90 ●</small></div>
+        <div class="sw"><b style="background:var(--dsc-color-primary-110)"></b><small>primary-110</small></div>
+      </div>
+      <h3>Secondary</h3>
+      <div class="swatches">
+        <div class="sw"><b style="background:var(--dsc-color-secondary-10)"></b><small>secondary-10</small></div>
+        <div class="sw"><b style="background:var(--dsc-color-secondary-50)"></b><small>secondary-50</small></div>
+        <div class="sw"><b style="background:var(--dsc-color-secondary-70)"></b><small>secondary-70</small></div>
+        <div class="sw"><b style="background:var(--dsc-color-secondary-90)"></b><small>secondary-90</small></div>
+        <div class="sw"><b style="background:var(--dsc-color-secondary-110)"></b><small>secondary-110</small></div>
+      </div>
+      <h3>Semânticas (status)</h3>
+      <div class="swatches">
+        <div class="sw"><b style="background:var(--dsc-color-positive-90)"></b><small>positive</small></div>
+        <div class="sw"><b style="background:var(--dsc-color-attention-70)"></b><small>attention</small></div>
+        <div class="sw"><b style="background:var(--dsc-color-negative-90)"></b><small>negative</small></div>
+        <div class="sw"><b style="background:var(--dsc-color-informative-90)"></b><small>informative</small></div>
+        <div class="sw"><b style="background:var(--dsc-color-tertiary-70)"></b><small>tertiary</small></div>
+      </div>
+      <h3>Grayscale</h3>
+      <div class="swatches">
+        <div class="sw"><b style="background:var(--dsc-color-grayscale-white)"></b><small>white</small></div>
+        <div class="sw"><b style="background:var(--dsc-color-grayscale-10)"></b><small>gray-10</small></div>
+        <div class="sw"><b style="background:var(--dsc-color-grayscale-30)"></b><small>gray-30</small></div>
+        <div class="sw"><b style="background:var(--dsc-color-grayscale-50)"></b><small>gray-50</small></div>
+        <div class="sw"><b style="background:var(--dsc-color-grayscale-70)"></b><small>gray-70</small></div>
+        <div class="sw"><b style="background:var(--dsc-color-grayscale-90)"></b><small>gray-90</small></div>
+        <div class="sw"><b style="background:var(--dsc-color-grayscale-130)"></b><small>gray-130</small></div>
+      </div>
+    </div>
+
+    <!-- TIPOGRAFIA -->
+    <h2 id="tipografia">Tipografia</h2>
+    <div class="dsc-card">
+      <p class="dsc-display">Display — 36/44</p>
+      <p class="dsc-title-lg">Title Large — 28/36 semibold</p>
+      <p class="dsc-title">Title — 24/32 semibold</p>
+      <p class="dsc-title-sm">Title Small — 20/28 semibold</p>
+      <p class="dsc-body">Body — 16/24 regular. O rato roeu a roupa do rei de Roma.</p>
+      <p class="dsc-body-sm">Body Small — 14/20 regular.</p>
+      <p class="dsc-label">Label — 16/24 medium</p>
+      <p class="dsc-caption">Caption — 12/16 medium</p>
+    </div>
+
+    <!-- BOTÕES -->
+    <h2 id="botoes">Botões</h2>
+    <div class="dsc-card">
+      <p class="dsc-text-muted dsc-body-sm" style="margin:-4px 0 12px">Variantes do Figma: <strong>highlight</strong> (padrão) · <strong>danger</strong> · <strong>on&nbsp;media&nbsp;bg</strong>. Tipos: <strong>plain</strong> · <strong>outline</strong> · <strong>chromeless</strong>.</p>
+      <h3>Plain</h3>
+      <div class="row">
+        <button class="dsc-btn">Highlight</button>
+        <button class="dsc-btn dsc-btn--danger">Danger</button>
+        <button class="dsc-btn" disabled>Desabilitado</button>
+        <button class="dsc-btn is-loading">Carregando</button>
+      </div>
+      <h3>Outline</h3>
+      <div class="row">
+        <button class="dsc-btn dsc-btn--outline">Highlight</button>
+        <button class="dsc-btn dsc-btn--outline dsc-btn--danger">Danger</button>
+      </div>
+      <h3>Chromeless (texto)</h3>
+      <div class="row">
+        <button class="dsc-btn dsc-btn--chromeless">Highlight</button>
+        <button class="dsc-btn dsc-btn--chromeless dsc-btn--danger">Danger</button>
+      </div>
+      <h3>On media bg (sobre fundo colorido)</h3>
+      <div class="row" style="background:var(--dsc-color-primary-90);padding:var(--dsc-spacing-tiny);border-radius:var(--dsc-border-radius-medium)">
+        <button class="dsc-btn dsc-btn--on-media">Plain</button>
+        <button class="dsc-btn dsc-btn--on-media dsc-btn--outline">Outline</button>
+        <button class="dsc-btn dsc-btn--on-media dsc-btn--chromeless">Chromeless</button>
+      </div>
+      <h3>Tamanhos (small 32 · standard 44 · large 48)</h3>
+      <div class="row">
+        <button class="dsc-btn dsc-btn--sm">Small</button>
+        <button class="dsc-btn">Standard</button>
+        <button class="dsc-btn dsc-btn--lg">Large</button>
+        <button class="dsc-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Com ícone</button>
+      </div>
+      <h3>Icon Button (tiny 24 · small 32 · standard 44 · large 48)</h3>
+      <div class="row">
+        <button class="dsc-btn dsc-btn--icon dsc-btn--tiny" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        <button class="dsc-btn dsc-btn--outline dsc-btn--icon dsc-btn--sm" aria-label="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></button>
+        <button class="dsc-btn dsc-btn--icon" aria-label="Buscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></button>
+        <button class="dsc-btn dsc-btn--icon dsc-btn--lg" aria-label="Adicionar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+      </div>
+      <h3>Segmented Button</h3>
+      <div class="row">
+        <div class="dsc-segmented">
+          <button class="is-active">Lista</button>
+          <button>Grade</button>
+          <button>Mapa</button>
+        </div>
+        <div class="dsc-segmented">
+          <button class="is-active">Dia</button>
+          <button>Semana</button>
+          <button>Mês</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORMULÁRIO -->
+    <h2 id="form">Formulário</h2>
+    <div class="dsc-card">
+      <div class="dsc-form-row">
+        <div class="dsc-field">
+          <label class="dsc-field-label">Nome completo <span class="dsc-req">*</span></label>
+          <input class="dsc-input" placeholder="Digite o nome">
+          <span class="dsc-field-hint">Como aparece no documento.</span>
+        </div>
+        <div class="dsc-field is-invalid">
+          <label class="dsc-field-label">CPF</label>
+          <input class="dsc-input" value="000.000.000-00">
+          <span class="dsc-field-error"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>CPF inválido.</span>
+        </div>
+      </div>
+      <div class="dsc-form-row">
+        <div class="dsc-field">
+          <label class="dsc-field-label">Tipo de conta</label>
+          <select class="dsc-select"><option>Corrente</option><option>Poupança</option></select>
+        </div>
+        <div class="dsc-field">
+          <label class="dsc-field-label">Buscar</label>
+          <div class="dsc-input-icon dsc-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+            <input class="dsc-input" placeholder="Pesquisar...">
+          </div>
+        </div>
+      </div>
+      <div class="dsc-field">
+        <label class="dsc-field-label">Observações</label>
+        <textarea class="dsc-textarea" placeholder="Escreva aqui..."></textarea>
+      </div>
+      <h3>Seleção</h3>
+      <div class="row" style="gap:var(--dsc-spacing-large)">
+        <label class="dsc-check"><input type="checkbox" checked><span class="dsc-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Aceito os termos</label>
+        <label class="dsc-radio"><input type="radio" name="r" checked><span class="dsc-box"></span>Opção A</label>
+        <label class="dsc-radio"><input type="radio" name="r"><span class="dsc-box"></span>Opção B</label>
+        <label class="dsc-switch"><input type="checkbox" checked><span class="dsc-track"></span>Notificações</label>
+      </div>
+      <h3>Slider · Stepper</h3>
+      <div class="row" style="gap:var(--dsc-spacing-large)">
+        <input class="dsc-slider" type="range" value="60" style="max-width:220px">
+        <div class="dsc-stepper"><button>−</button><input value="2"><button>+</button></div>
+      </div>
+    </div>
+
+    <!-- INDICADORES -->
+    <h2 id="indicadores">Indicadores</h2>
+    <div class="dsc-card">
+      <h3>Badge Text (tags de status) — highlight · neutral · success · warning · danger</h3>
+      <div class="row">
+        <span class="dsc-tag dsc-tag--highlight">Novo</span>
+        <span class="dsc-tag dsc-tag--neutral">Rascunho</span>
+        <span class="dsc-tag dsc-tag--success">Aprovado</span>
+        <span class="dsc-tag dsc-tag--warning">Pendente</span>
+        <span class="dsc-tag dsc-tag--danger">Recusado</span>
+      </div>
+      <h3>Tamanhos (standard · small · large)</h3>
+      <div class="row">
+        <span class="dsc-tag dsc-tag--success dsc-tag--sm">Small</span>
+        <span class="dsc-tag dsc-tag--success">Standard</span>
+        <span class="dsc-tag dsc-tag--success dsc-tag--lg">Large</span>
+      </div>
+      <h3>Com ícone (slots opcionais esquerda/direita)</h3>
+      <div class="row">
+        <span class="dsc-tag dsc-tag--success"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Concluído</span>
+        <span class="dsc-tag dsc-tag--warning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Aguardando</span>
+        <span class="dsc-tag dsc-tag--danger">Erro<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+      </div>
+      <h3>Badge · Chip · Avatar</h3>
+      <div class="row">
+        <span style="position:relative;display:inline-flex">
+          <button class="dsc-btn dsc-btn--outline dsc-btn--icon" aria-label="Notificações"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></button>
+          <span class="dsc-badge" style="position:absolute;top:-4px;right:-4px">3</span>
+        </span>
+        <span class="dsc-chip">Filtro: SP <span class="dsc-chip-close">✕</span></span>
+        <span class="dsc-chip dsc-chip--selected">Selecionado</span>
+      </div>
+      <h3>Avatar — escala completa (tiny 20 → bigger 128)</h3>
+      <div class="row" style="align-items:flex-end">
+        <span class="dsc-avatar dsc-avatar--tiny">A</span>
+        <span class="dsc-avatar dsc-avatar--smaller">A</span>
+        <span class="dsc-avatar dsc-avatar--sm">AM</span>
+        <span class="dsc-avatar">AM</span>
+        <span class="dsc-avatar dsc-avatar--lg">AM</span>
+        <span class="dsc-avatar dsc-avatar--larger">AM</span>
+        <span class="dsc-avatar dsc-avatar--big">AM</span>
+        <span class="dsc-avatar dsc-avatar--bigger">AM</span>
+      </div>
+    </div>
+
+    <!-- FEEDBACK -->
+    <h2 id="feedback">Feedback</h2>
+    <div class="dsc-card">
+      <h3>Card Alert (mensagens inline) — info · success · warning · danger · smart&nbsp;tips</h3>
+      <div class="dsc-flex dsc-col dsc-gap-2">
+        <div class="dsc-alert dsc-alert--info"><svg class="dsc-alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><div class="dsc-alert-body"><div class="dsc-alert-title">Importante</div><div class="dsc-alert-text">A operação leva até 2 dias úteis para ser processada.</div></div></div>
+        <div class="dsc-alert dsc-alert--success"><svg class="dsc-alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><div class="dsc-alert-body"><div class="dsc-alert-title">Importante</div><div class="dsc-alert-text">Os dados foram salvos com sucesso.</div></div></div>
+        <div class="dsc-alert dsc-alert--warning"><svg class="dsc-alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg><div class="dsc-alert-body"><div class="dsc-alert-title">Importante</div><div class="dsc-alert-text">Revise os campos destacados antes de continuar.</div></div></div>
+        <div class="dsc-alert dsc-alert--danger"><svg class="dsc-alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86"/><path d="M12 8v4M12 16h.01"/></svg><div class="dsc-alert-body"><div class="dsc-alert-title">Importante</div><div class="dsc-alert-text">Não foi possível processar a solicitação.</div></div></div>
+        <div class="dsc-alert dsc-alert--smart-tips"><svg class="dsc-alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6z"/><path d="M19 14l.7 1.8L21.5 16.5l-1.8.7L19 19l-.7-1.8L16.5 16.5l1.8-.7z"/></svg><div class="dsc-alert-body"><div class="dsc-alert-title">Importante</div><div class="dsc-alert-text">Dica inteligente para otimizar seu fluxo.</div></div></div>
+      </div>
+      <h3>Card Alert com ação (action = true)</h3>
+      <div class="dsc-alert dsc-alert--info" style="max-width:520px">
+        <svg class="dsc-alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <div class="dsc-alert-body">
+          <div class="dsc-alert-title">Importante</div>
+          <div class="dsc-alert-text">Atualize seus dados cadastrais para continuar usando todos os serviços.</div>
+          <div class="dsc-alert-cta"><button type="button">Atualizar <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button></div>
+        </div>
+      </div>
+      <h3>Toast · Progress · Spinner · Skeleton</h3>
+      <div class="dsc-flex dsc-col dsc-gap-2" style="max-width:440px">
+        <div class="dsc-toast dsc-toast--positive"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><path d="M22 4 12 14.01l-3-3"/></svg> Transferência realizada. <span class="dsc-toast-close">✕</span></div>
+        <div class="dsc-progress"><span style="width:65%"></span></div>
+        <div class="row" style="align-items:center"><div class="dsc-spinner dsc-spinner--sm"></div><div class="dsc-spinner"></div><div class="dsc-spinner dsc-spinner--lg"></div></div>
+        <div class="dsc-flex dsc-col dsc-gap-1">
+          <div class="dsc-skeleton" style="width:40%"></div>
+          <div class="dsc-skeleton" style="width:90%"></div>
+          <div class="dsc-skeleton" style="width:75%"></div>
+        </div>
+      </div>
+      <h3>Empty state</h3>
+      <div class="dsc-state">
+        <div class="dsc-state-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h18"/></svg></div>
+        <div class="dsc-state-title">Nenhum registro encontrado</div>
+        <p class="dsc-state-text">Ajuste os filtros ou cadastre o primeiro item.</p>
+        <button class="dsc-btn">Novo cadastro</button>
+      </div>
+      <h3>Modal (estático)</h3>
+      <div style="position:relative;background:var(--surface-hover);border-radius:var(--dsc-border-radius-medium);padding:var(--dsc-spacing-smaller);display:grid;place-items:center">
+        <div class="dsc-modal" style="box-shadow:var(--dsc-elevation-1)">
+          <div class="dsc-modal-header"><div class="dsc-modal-title">Confirmar exclusão</div><span class="dsc-modal-close">✕</span></div>
+          <div class="dsc-modal-body">Esta ação não pode ser desfeita. Deseja realmente excluir o registro?</div>
+          <div class="dsc-modal-footer"><button class="dsc-btn dsc-btn--chromeless">Cancelar</button><button class="dsc-btn dsc-btn--danger">Excluir</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVEGAÇÃO -->
+    <h2 id="nav">Navegação</h2>
+    <div class="dsc-card">
+      <h3>Breadcrumb</h3>
+      <nav class="dsc-breadcrumb"><a href="#">Início</a><span class="dsc-sep">/</span><a href="#">Clientes</a><span class="dsc-sep">/</span><span class="is-current">Cadastro</span></nav>
+      <h3>Tabs</h3>
+      <div class="dsc-tabs"><button class="dsc-tab is-active">Dados</button><button class="dsc-tab">Documentos</button><button class="dsc-tab">Histórico</button></div>
+      <h3>Stepper</h3>
+      <div class="dsc-steps" style="margin-top:var(--dsc-spacing-tiny)">
+        <div class="dsc-step is-done"><div class="dsc-step-dot">✓</div><span class="dsc-step-label">Insumos</span></div>
+        <div class="dsc-step is-active"><div class="dsc-step-dot">2</div><span class="dsc-step-label">Dados</span></div>
+        <div class="dsc-step"><div class="dsc-step-dot">3</div><span class="dsc-step-label">Revisão</span></div>
+      </div>
+      <h3>Paginator</h3>
+      <div class="dsc-paginator" style="justify-content:flex-start">
+        <button disabled>‹</button><button class="is-active">1</button><button>2</button><button>3</button><button>4</button><button>›</button>
+      </div>
+    </div>
+
+    <!-- TABELA / LISTAS -->
+    <h2 id="dados">Tabela & Listas</h2>
+    <h3>Tabela simples (status + ações)</h3>
+    <div class="dsc-table-wrap">
+      <table class="dsc-table">
+        <thead><tr><th>Cliente</th><th>Conta</th><th>Status</th><th style="width:90px"></th></tr></thead>
+        <tbody>
+          <tr><td>Maria Silva</td><td>0001-2</td><td><span class="dsc-tag dsc-tag--success">Ativo</span></td><td><div class="dsc-col-actions"><button class="dsc-icon-action" aria-label="Editar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></button><button class="dsc-icon-action" aria-label="Excluir"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg></button></div></td></tr>
+          <tr><td>João Souza</td><td>0044-9</td><td><span class="dsc-tag dsc-tag--warning">Pendente</span></td><td><div class="dsc-col-actions"><button class="dsc-icon-action" aria-label="Editar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></button><button class="dsc-icon-action" aria-label="Excluir"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg></button></div></td></tr>
+          <tr><td>Ana Costa</td><td>0102-7</td><td><span class="dsc-tag dsc-tag--danger">Bloqueado</span></td><td><div class="dsc-col-actions"><button class="dsc-icon-action" aria-label="Editar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></button><button class="dsc-icon-action" aria-label="Excluir"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg></button></div></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Tabela completa — toolbar · seleção · ordenação · paginação</h3>
+    <div class="dsc-table-wrap">
+      <div class="dsc-table-toolbar">
+        <div class="dsc-input-icon dsc-search" style="max-width:280px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg><input class="dsc-input" placeholder="Buscar cliente..."></div>
+        <span class="dsc-tt-spacer"></span>
+        <button class="dsc-btn dsc-btn--sm dsc-btn--outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 3H2l8 9.46V19l4 2v-8.54z"/></svg>Filtrar</button>
+        <button class="dsc-btn dsc-btn--sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Novo</button>
+      </div>
+      <table class="dsc-table">
+        <thead>
+          <tr>
+            <th class="dsc-col-check"><label class="dsc-check"><input type="checkbox"><span class="dsc-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span></label></th>
+            <th class="dsc-sortable is-sorted">Cliente <svg class="dsc-sort-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg></th>
+            <th class="dsc-sortable">Conta <svg class="dsc-sort-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg></th>
+            <th class="dsc-num dsc-sortable">Saldo <svg class="dsc-sort-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg></th>
+            <th>Status</th><th style="width:60px"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="is-selected"><td class="dsc-col-check"><label class="dsc-check"><input type="checkbox" checked><span class="dsc-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span></label></td><td>Maria Silva</td><td>0001-2</td><td class="dsc-num">12.430,00</td><td><span class="dsc-tag dsc-tag--success">Ativo</span></td><td><button class="dsc-icon-action" aria-label="Mais"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></td></tr>
+          <tr><td class="dsc-col-check"><label class="dsc-check"><input type="checkbox"><span class="dsc-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span></label></td><td>João Souza</td><td>0044-9</td><td class="dsc-num">3.180,50</td><td><span class="dsc-tag dsc-tag--warning">Pendente</span></td><td><button class="dsc-icon-action" aria-label="Mais"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></td></tr>
+          <tr><td class="dsc-col-check"><label class="dsc-check"><input type="checkbox"><span class="dsc-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span></label></td><td>Ana Costa</td><td>0102-7</td><td class="dsc-num">540,00</td><td><span class="dsc-tag dsc-tag--danger">Bloqueado</span></td><td><button class="dsc-icon-action" aria-label="Mais"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></td></tr>
+        </tbody>
+      </table>
+      <div class="dsc-table-footer">
+        <span class="dsc-tf-perpage">Itens por página <select class="dsc-select"><option>10</option><option>25</option><option>50</option></select></span>
+        <span>1 – 3 de 40</span>
+        <span class="dsc-tf-nav">
+          <button class="dsc-icon-action" disabled aria-label="Anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+          Página 1 de 8
+          <button class="dsc-icon-action" aria-label="Próxima"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+        </span>
+      </div>
+    </div>
+
+    <h3>Tabela compacta com totais (tfoot)</h3>
+    <div class="dsc-table-wrap">
+      <table class="dsc-table dsc-table--dense">
+        <thead><tr><th>Descrição</th><th>Categoria</th><th class="dsc-num">Qtd</th><th class="dsc-num">Valor</th></tr></thead>
+        <tbody>
+          <tr><td>Transferência Pix</td><td>Entrada</td><td class="dsc-num">12</td><td class="dsc-num">8.420,00</td></tr>
+          <tr><td>Pagamento boleto</td><td>Saída</td><td class="dsc-num">7</td><td class="dsc-num">2.180,50</td></tr>
+          <tr><td>Tarifa de serviço</td><td>Saída</td><td class="dsc-num">3</td><td class="dsc-num">90,00</td></tr>
+        </tbody>
+        <tfoot><tr><td colspan="2">Total</td><td class="dsc-num">22</td><td class="dsc-num">10.690,50</td></tr></tfoot>
+      </table>
+    </div>
+
+    <h3>Tabela com células editáveis</h3>
+    <div class="dsc-table-wrap">
+      <table class="dsc-table">
+        <thead><tr><th>Produto</th><th class="dsc-num">Preço (R$)</th><th class="dsc-num">Estoque</th></tr></thead>
+        <tbody>
+          <tr><td>Cartão adicional</td><td class="dsc-num"><span class="dsc-cell-editable"><input value="29,90" inputmode="decimal"></span></td><td class="dsc-num"><span class="dsc-cell-editable"><input value="120" inputmode="numeric"></span></td></tr>
+          <tr><td>Seguro residencial</td><td class="dsc-num"><span class="dsc-cell-editable"><input value="49,90" inputmode="decimal"></span></td><td class="dsc-num"><span class="dsc-cell-editable"><input value="80" inputmode="numeric"></span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Tabela vazia (empty state)</h3>
+    <div class="dsc-table-wrap">
+      <table class="dsc-table">
+        <thead><tr><th>Cliente</th><th>Conta</th><th>Status</th></tr></thead>
+        <tbody><tr><td colspan="3">
+          <div class="dsc-table-empty">
+            <div class="dsc-te-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h18"/></svg></div>
+            <div class="dsc-te-title">Nenhum dado encontrado</div>
+            <p class="dsc-te-text">Ainda não existem registros cadastrados nesta seção.</p>
+            <button class="dsc-btn dsc-btn--chromeless">Cadastrar primeiro registro</button>
+          </div>
+        </td></tr></tbody>
+      </table>
+    </div>
+    <h3>Lista · Label-Value · Tooltip</h3>
+    <div class="dsc-card">
+      <ul class="dsc-list">
+        <li class="dsc-list-item"><span class="dsc-avatar">MS</span><div class="dsc-list-body"><div class="dsc-list-title">Maria Silva</div><div class="dsc-list-sub">maria@exemplo.com</div></div><span class="dsc-tag dsc-tag--success">Ativo</span></li>
+        <li class="dsc-list-item"><span class="dsc-avatar">JS</span><div class="dsc-list-body"><div class="dsc-list-title">João Souza</div><div class="dsc-list-sub">joao@exemplo.com</div></div><span class="dsc-tag dsc-tag--warning">Pendente</span></li>
+      </ul>
+      <hr class="dsc-divider">
+      <div class="dsc-grid-3">
+        <div class="dsc-lv"><span class="dsc-lv-label">Saldo</span><span class="dsc-lv-value">R$ 12.430,00</span></div>
+        <div class="dsc-lv"><span class="dsc-lv-label">Agência</span><span class="dsc-lv-value">0001</span></div>
+        <div class="dsc-lv"><span class="dsc-lv-label">Abertura</span><span class="dsc-lv-value">12/03/2021</span></div>
+      </div>
+      <hr class="dsc-divider">
+      <span class="dsc-tooltip" data-tooltip="Texto de ajuda no topo">
+        <button class="dsc-btn dsc-btn--chromeless">Passe o mouse aqui</button>
+      </span>
+    </div>
+
+    <!-- CAMPOS ESPECIALIZADOS -->
+    <h2 id="campos">Campos especializados</h2>
+    <div class="dsc-card">
+      <div class="dsc-form-row">
+        <div class="dsc-field">
+          <label class="dsc-field-label">Senha</label>
+          <div class="dsc-input-icon dsc-input-icon--trailing">
+            <input class="dsc-input" id="pwd" type="password" value="senhaSecreta">
+            <button class="dsc-field-action" type="button" aria-label="Mostrar senha" onclick="togglePwd()">
+              <svg id="eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <span class="dsc-field-hint">Mínimo de 8 caracteres.</span>
+        </div>
+        <div class="dsc-field">
+          <label class="dsc-field-label">Data de nascimento</label>
+          <div class="dsc-input-icon dsc-input-icon--trailing">
+            <input class="dsc-input" placeholder="dd/mm/aaaa" value="12/03/1990">
+            <button class="dsc-field-action" type="button" aria-label="Abrir calendário">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="dsc-form-row">
+        <div class="dsc-field">
+          <label class="dsc-field-label">Valor</label>
+          <div class="dsc-money">
+            <span class="dsc-money-prefix">R$</span>
+            <input class="dsc-input" value="1.250,00" inputmode="decimal">
+          </div>
+        </div>
+        <div class="dsc-field">
+          <label class="dsc-field-label">Conta de origem</label>
+          <button class="dsc-account-select" type="button">
+            <span class="dsc-avatar dsc-avatar--sm">CC</span>
+            <span class="dsc-acc-body"><span class="dsc-acc-title">Conta Corrente · 0001-2</span><span class="dsc-acc-sub">Saldo R$ 12.430,00</span></span>
+            <svg class="dsc-acc-caret" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+      </div>
+      <h3>Input PIN / código</h3>
+      <div class="dsc-pin" onkeyup="pinAdvance(event)">
+        <input maxlength="1" inputmode="numeric" value="1" class="is-filled">
+        <input maxlength="1" inputmode="numeric" value="2" class="is-filled">
+        <input maxlength="1" inputmode="numeric" value="3" class="is-filled">
+        <input maxlength="1" inputmode="numeric">
+        <input maxlength="1" inputmode="numeric">
+        <input maxlength="1" inputmode="numeric">
+      </div>
+      <h3>Input com chips</h3>
+      <div class="dsc-field" style="max-width:480px">
+        <label class="dsc-field-label">Destinatários</label>
+        <div class="dsc-input-chips">
+          <span class="dsc-chip">ana@exemplo.com <span class="dsc-chip-close">✕</span></span>
+          <span class="dsc-chip">joao@exemplo.com <span class="dsc-chip-close">✕</span></span>
+          <input placeholder="Adicionar e-mail...">
+        </div>
+      </div>
+    </div>
+
+    <!-- UPLOAD -->
+    <h2 id="upload">Upload de arquivo</h2>
+    <div class="dsc-card">
+      <div class="dsc-dropzone">
+        <div class="dsc-dropzone-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5M12 3v12"/></svg></div>
+        <div class="dsc-dropzone-title">Arraste arquivos ou clique para enviar</div>
+        <div class="dsc-dropzone-hint">PDF, PNG ou JPG até 10 MB</div>
+      </div>
+      <div class="dsc-flex dsc-col dsc-gap-1 dsc-mt-2">
+        <div class="dsc-file">
+          <span class="dsc-file-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+          <div class="dsc-file-body"><div class="dsc-file-name">comprovante-residencia.pdf</div><div class="dsc-file-meta">240 KB · enviado</div></div>
+          <span class="dsc-file-remove"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+        </div>
+        <div class="dsc-file">
+          <span class="dsc-file-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+          <div class="dsc-file-body"><div class="dsc-file-name">rg-frente.jpg</div><div class="dsc-file-meta">enviando… 60%</div><div class="dsc-progress dsc-mt-1"><span style="width:60%"></span></div></div>
+          <span class="dsc-file-remove"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CALENDÁRIO -->
+    <h2 id="calendario">Date Picker (calendário)</h2>
+    <div class="dsc-card"><div class="dsc-calendar">
+      <div class="dsc-calendar-head">
+        <button aria-label="Mês anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <span class="dsc-calendar-title">Março 2026</span>
+        <button aria-label="Próximo mês"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+      </div>
+      <div class="dsc-calendar-grid">
+        <span class="dsc-dow">D</span><span class="dsc-dow">S</span><span class="dsc-dow">T</span><span class="dsc-dow">Q</span><span class="dsc-dow">Q</span><span class="dsc-dow">S</span><span class="dsc-dow">S</span>
+        <button class="dsc-day is-muted">23</button><button class="dsc-day is-muted">24</button><button class="dsc-day is-muted">25</button><button class="dsc-day is-muted">26</button><button class="dsc-day is-muted">27</button><button class="dsc-day is-muted">28</button><button class="dsc-day">1</button>
+        <button class="dsc-day">2</button><button class="dsc-day">3</button><button class="dsc-day">4</button><button class="dsc-day">5</button><button class="dsc-day">6</button><button class="dsc-day">7</button><button class="dsc-day">8</button>
+        <button class="dsc-day">9</button><button class="dsc-day">10</button><button class="dsc-day">11</button><button class="dsc-day is-today">12</button><button class="dsc-day">13</button><button class="dsc-day">14</button><button class="dsc-day">15</button>
+        <button class="dsc-day">16</button><button class="dsc-day">17</button><button class="dsc-day is-selected">18</button><button class="dsc-day">19</button><button class="dsc-day">20</button><button class="dsc-day">21</button><button class="dsc-day">22</button>
+      </div>
+    </div></div>
+
+    <!-- CARDS -->
+    <h2 id="cards">Cards</h2>
+    <h3>Widget · Vertical · Horizontal · Notification</h3>
+    <div class="dsc-grid-2">
+      <div class="dsc-card-widget">
+        <div class="dsc-widget-head"><span class="dsc-widget-label">Saldo disponível</span><span class="dsc-icon-container dsc-icon-container--sm"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span></div>
+        <div class="dsc-widget-value">R$ 12.430,00</div>
+        <div class="dsc-widget-trend is-up">▲ 4,2% no mês</div>
+      </div>
+      <div class="dsc-card-widget">
+        <div class="dsc-widget-head"><span class="dsc-widget-label">Despesas</span><span class="dsc-icon-container dsc-icon-container--sm dsc-icon-container--negative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 18l-9.5-9.5-5 5L1 6"/></svg></span></div>
+        <div class="dsc-widget-value">R$ 3.180,00</div>
+        <div class="dsc-widget-trend is-down">▼ 1,1% no mês</div>
+      </div>
+      <div class="dsc-card-vertical">
+        <div class="dsc-card-media"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+        <div class="dsc-card-content"><h4>Cartão de Crédito</h4><p class="dsc-text-secondary dsc-body-sm">Fatura fecha em 5 dias. Disponível R$ 4.200,00.</p><button class="dsc-btn dsc-btn--sm dsc-mt-2">Ver fatura</button></div>
+      </div>
+      <div class="dsc-card-horizontal">
+        <div class="dsc-card-media"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 12 0v1"/></svg></div>
+        <div class="dsc-card-content"><h4>Maria Silva</h4><p class="dsc-text-secondary dsc-body-sm">Pix recebido</p><span class="dsc-tag dsc-tag--success dsc-mt-1">+ R$ 320,00</span></div>
+      </div>
+    </div>
+    <h3>Notification</h3>
+    <div class="dsc-flex dsc-col dsc-gap-1">
+      <div class="dsc-card-notification is-unread">
+        <span class="dsc-noti-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></span>
+        <div class="dsc-noti-body"><div class="dsc-noti-title">Transferência aprovada</div><div class="dsc-noti-text">Sua transferência de R$ 500,00 foi concluída.</div><div class="dsc-noti-time">há 2 minutos</div></div>
+      </div>
+      <div class="dsc-card-notification">
+        <span class="dsc-noti-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></span>
+        <div class="dsc-noti-body"><div class="dsc-noti-title">Atualização de cadastro</div><div class="dsc-noti-text">Confirme seus dados até 30/06.</div><div class="dsc-noti-time">ontem</div></div>
+      </div>
+    </div>
+
+    <!-- TILES & ÍCONES -->
+    <h2 id="tiles">Tiles · Ícones · Atalhos</h2>
+    <div class="dsc-card">
+      <h3>Tile buttons</h3>
+      <div class="dsc-grid-4">
+        <button class="dsc-tile is-selected"><span class="dsc-tile-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><span class="dsc-tile-label">Pix</span></button>
+        <button class="dsc-tile"><span class="dsc-tile-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span><span class="dsc-tile-label">Cartões</span></button>
+        <button class="dsc-tile"><span class="dsc-tile-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><span class="dsc-tile-label">Pagar</span></button>
+        <button class="dsc-tile"><span class="dsc-tile-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><span class="dsc-tile-label">Extrato</span></button>
+      </div>
+      <h3>Icon containers (severidades)</h3>
+      <div class="row">
+        <span class="dsc-icon-container"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5z"/></svg></span>
+        <span class="dsc-icon-container dsc-icon-container--positive"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <span class="dsc-icon-container dsc-icon-container--attention"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span>
+        <span class="dsc-icon-container dsc-icon-container--negative"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg></span>
+        <span class="dsc-icon-container dsc-icon-container--neutral"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
+      </div>
+      <h3>Icon button + texto (atalhos)</h3>
+      <div class="row">
+        <button class="dsc-icon-btn-text"><span class="dsc-ibt-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span><span class="dsc-ibt-label">Adicionar</span></button>
+        <button class="dsc-icon-btn-text"><span class="dsc-ibt-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M16 6l-4-4-4 4M12 2v13"/></svg></span><span class="dsc-ibt-label">Enviar</span></button>
+        <button class="dsc-icon-btn-text"><span class="dsc-ibt-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><span class="dsc-ibt-label">Agendar</span></button>
+      </div>
+      <h3>Image media</h3>
+      <div class="dsc-image-media" style="max-width:320px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+    </div>
+
+    <!-- DRAWER & TOOLBAR -->
+    <h2 id="overlays">Drawer · Toolbar</h2>
+    <h3>Toolbar</h3>
+    <div class="dsc-toolbar">
+      <button class="dsc-btn dsc-btn--sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Novo</button>
+      <button class="dsc-btn dsc-btn--sm dsc-btn--outline">Importar</button>
+      <span class="dsc-divider--vert dsc-divider"></span>
+      <button class="dsc-icon-action" aria-label="Filtrar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 3H2l8 9.46V19l4 2v-8.54z"/></svg></button>
+      <span class="dsc-toolbar-spacer"></span>
+      <div class="dsc-input-icon dsc-search" style="width:240px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg><input class="dsc-input dsc-btn--sm" style="height:36px" placeholder="Pesquisar..."></div>
+    </div>
+    <h3>Drawer panel (estático)</h3>
+    <div style="position:relative;height:420px;background:var(--surface-hover);border-radius:var(--dsc-border-radius-medium);overflow:hidden">
+      <div style="position:absolute;inset:0;background:rgba(0,0,0,.4);display:flex;justify-content:flex-end">
+        <div class="dsc-drawer" style="width:320px;box-shadow:var(--dsc-elevation-1)">
+          <div class="dsc-drawer-header"><span class="dsc-drawer-title">Filtros</span><span class="dsc-modal-close">✕</span></div>
+          <div class="dsc-drawer-body">
+            <div class="dsc-field"><label class="dsc-field-label">Período</label><select class="dsc-select"><option>Últimos 30 dias</option></select></div>
+            <div class="dsc-field"><label class="dsc-field-label">Status</label>
+              <label class="dsc-check dsc-mt-1"><input type="checkbox" checked><span class="dsc-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Ativos</label>
+            </div>
+          </div>
+          <div class="dsc-drawer-footer"><button class="dsc-btn dsc-btn--chromeless">Limpar</button><button class="dsc-btn">Aplicar</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIVERSOS -->
+    <h2 id="diversos">Diversos</h2>
+    <div class="dsc-card">
+      <h3>Value section (saldo/valores)</h3>
+      <div class="dsc-value-section">
+        <span class="dsc-vs-label">Saldo em conta</span>
+        <div class="dsc-vs-row"><span class="dsc-vs-currency">R$</span><span class="dsc-vs-value">12.430,00</span></div>
+      </div>
+      <hr class="dsc-divider">
+      <h3>List heading</h3>
+      <div class="dsc-list-heading"><span class="dsc-lh-title">Transações recentes</span><span class="dsc-lh-action">Ver tudo</span></div>
+      <ul class="dsc-list">
+        <li class="dsc-list-item"><span class="dsc-icon-container dsc-icon-container--sm dsc-icon-container--positive"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></span><div class="dsc-list-body"><div class="dsc-list-title">Pix recebido</div><div class="dsc-list-sub">Maria Silva · hoje</div></div><strong class="dsc-text-positive">+ R$ 320,00</strong></li>
+        <li class="dsc-list-item"><span class="dsc-icon-container dsc-icon-container--sm dsc-icon-container--negative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></span><div class="dsc-list-body"><div class="dsc-list-title">Pagamento boleto</div><div class="dsc-list-sub">Energia · ontem</div></div><strong class="dsc-text-negative">- R$ 184,50</strong></li>
+      </ul>
+      <hr class="dsc-divider">
+      <h3>Page controller (carrossel)</h3>
+      <div class="dsc-page-controller"><span class="dsc-pc-dot is-active"></span><span class="dsc-pc-dot"></span><span class="dsc-pc-dot"></span><span class="dsc-pc-dot"></span></div>
+      <hr class="dsc-divider">
+      <h3>Search results</h3>
+      <div class="dsc-popover" style="max-width:360px">
+        <div class="dsc-search-result"><span class="dsc-avatar dsc-avatar--sm">MS</span><div class="dsc-sr-body"><div><mark>Mari</mark>a Silva</div><div class="dsc-sr-sub">Cliente · 0001-2</div></div></div>
+        <div class="dsc-search-result"><span class="dsc-avatar dsc-avatar--sm">MR</span><div class="dsc-sr-body"><div><mark>Mari</mark>ana Rocha</div><div class="dsc-sr-sub">Cliente · 0188-0</div></div></div>
+      </div>
+      <hr class="dsc-divider">
+      <h3>Input / Chat</h3>
+      <div style="max-width:420px">
+        <div class="dsc-chat-input">
+          <input placeholder="Escreva uma mensagem...">
+          <button class="dsc-btn dsc-btn--icon dsc-btn--sm" aria-label="Enviar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRID 12 COLUNAS -->
+    <h2 id="grid">Grid de 12 colunas</h2>
+    <p class="dsc-text-secondary" style="margin:-4px 0 12px">Figma "Basic Layout": <strong>≥768px</strong> = 12 colunas, gutter 24px · <strong>&lt;768px</strong> = 4 colunas, gutter 16px (empilham). Use <code>.dsc-row</code> + <code>.dsc-col-N</code>.</p>
+    <div class="dsc-card">
+      <style>
+        #grid + p + .dsc-card .gridcell { background: var(--dsc-color-bg-highlight-1); color: var(--dsc-color-primary-110); border-radius: var(--dsc-border-radius-small); padding: 12px; text-align: center; font-size: var(--dsc-font-size-nano); font-weight: 600; }
+      </style>
+      <div class="dsc-row">
+        <div class="dsc-col-12"><div class="gridcell">12</div></div>
+      </div>
+      <div class="dsc-row dsc-mt-2">
+        <div class="dsc-col-6"><div class="gridcell">6</div></div>
+        <div class="dsc-col-6"><div class="gridcell">6</div></div>
+      </div>
+      <div class="dsc-row dsc-mt-2">
+        <div class="dsc-col-4"><div class="gridcell">4</div></div>
+        <div class="dsc-col-4"><div class="gridcell">4</div></div>
+        <div class="dsc-col-4"><div class="gridcell">4</div></div>
+      </div>
+      <div class="dsc-row dsc-mt-2">
+        <div class="dsc-col-3"><div class="gridcell">3</div></div>
+        <div class="dsc-col-3"><div class="gridcell">3</div></div>
+        <div class="dsc-col-3"><div class="gridcell">3</div></div>
+        <div class="dsc-col-3"><div class="gridcell">3</div></div>
+      </div>
+      <div class="dsc-row dsc-mt-2">
+        <div class="dsc-col-8"><div class="gridcell">8</div></div>
+        <div class="dsc-col-4"><div class="gridcell">4</div></div>
+      </div>
+    </div>
+
+    <p class="dsc-text-muted dsc-mt-3" style="font-size:var(--dsc-font-size-quark)">Gerado a partir do Figma CAIXA DS via Dev Mode MCP · tokens <code>--dsc-*</code>.</p>
+  </main>
+  <script>
+    function togglePwd(){const i=document.getElementById('pwd');const e=document.getElementById('eye');const show=i.type==='password';i.type=show?'text':'password';e.innerHTML=show?'<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19M1 1l22 22"/>':'<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';}
+    function pinAdvance(ev){const t=ev.target;if(!t.matches('.dsc-pin input'))return;if(t.value){t.classList.add('is-filled');const n=t.nextElementSibling;if(n&&ev.key!=='Backspace')n.focus();}else{t.classList.remove('is-filled');}}
+  </script>
+</body>
+</html>

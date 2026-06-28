@@ -1,0 +1,43 @@
+{
+  "name": "VIC CAIXA",
+  "isInverted": false,
+  "palette": {
+    "themePrimary": "#005ca9",
+    "themeLighterAlt": "#f3f8fd",
+    "themeLighter": "#e5f2fc",
+    "themeLight": "#c0def5",
+    "themeTertiary": "#6cb0e4",
+    "themeSecondary": "#1a74bd",
+    "themeDarkAlt": "#00538f",
+    "themeDark": "#00437a",
+    "themeDarker": "#003259",
+    "neutralLighterAlt": "#f7fafa",
+    "neutralLighter": "#f0f2f2",
+    "neutralLight": "#e3ebeb",
+    "neutralQuaternaryAlt": "#d8e3e6",
+    "neutralQuaternary": "#d0e0e3",
+    "neutralTertiaryAlt": "#c2d2d6",
+    "neutralTertiary": "#9eb2b8",
+    "neutralSecondary": "#525f66",
+    "neutralPrimaryAlt": "#2f3940",
+    "neutralPrimary": "#22292e",
+    "neutralDark": "#161b1f",
+    "black": "#000000",
+    "white": "#ffffff",
+    "bodyBackground": "#ffffff",
+    "bodyText": "#22292e",
+    "primaryBackground": "#ffffff",
+    "primaryText": "#22292e"
+  },
+  "_notas": {
+    "uso": "Importe no Fluent UI Theme Designer (https://aka.ms/themedesigner) ou use o vic-caixa-theme.ps1 (Add-SPOTheme).",
+    "destaque": "Laranja CAIXA #F39200 não é slot de tema — aplicar manualmente em botões/CTA e nas ilustrações.",
+    "cores_complementares": {
+      "laranja": "#f39200",
+      "turquesa": "#21caaf",
+      "verde_sucesso": "#127527",
+      "vermelho_alerta": "#d93636",
+      "amarelo_atencao": "#fcbe05"
+    }
+  }
+}

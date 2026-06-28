@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 300" role="img" aria-label="Divergência ahead/behind entre branch permanente e branch temporária">
+  <style>
+    text { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+    .cap  { font-size: 12.5px; fill: #404b52; }
+    .t    { font-size: 13px; font-weight: 700; fill: #22292e; }
+    .badge{ font-size: 12px; font-weight: 700; }
+  </style>
+  <defs>
+    <marker id="d-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#21caaf"/></marker>
+  </defs>
+
+  <!-- ===== Left: divergence graph ===== -->
+  <text class="t" x="40" y="34">Diferença de commits entre branches</text>
+
+  <line x1="60" y1="100" x2="540" y2="100" stroke="#005ca9" stroke-width="3"/>
+  <text x="60" y="90" font-size="11" font-weight="700" fill="#005ca9">develop</text>
+  <line x1="180" y1="200" x2="470" y2="200" stroke="#21caaf" stroke-width="3"/>
+  <text x="180" y="224" font-size="11" font-weight="700" fill="#21caaf">feature/*</text>
+
+  <path d="M150 100 C166 100,166 200,182 200" fill="none" stroke="#21caaf" stroke-width="2.4" marker-end="url(#d-teal)"/>
+  <circle cx="150" cy="100" r="7" fill="#525f66"/>
+  <text x="150" y="74" font-size="11" fill="#525f66" text-anchor="middle">ponto comum</text>
+
+  <!-- develop ahead commits (behind, do ponto de vista da feature) -->
+  <g fill="#005ca9"><circle cx="110" cy="100" r="6.5"/><circle cx="250" cy="100" r="6.5"/><circle cx="330" cy="100" r="6.5"/><circle cx="410" cy="100" r="6.5"/><circle cx="490" cy="100" r="6.5"/></g>
+  <!-- behind brace -->
+  <path d="M232 64 v-8 h266 v8" fill="none" stroke="#9eb2b8" stroke-width="1.5"/>
+  <rect x="318" y="40" width="96" height="22" rx="11" fill="#fff" stroke="#9eb2b8"/>
+  <text class="badge" x="366" y="55" fill="#525f66" text-anchor="middle">behind: 4</text>
+
+  <!-- feature commits (ahead) -->
+  <g fill="#21caaf"><circle cx="240" cy="200" r="6"/><circle cx="330" cy="200" r="6"/><circle cx="420" cy="200" r="6"/></g>
+  <!-- ahead brace -->
+  <path d="M232 236 v8 h196 v-8" fill="none" stroke="#9eb2b8" stroke-width="1.5"/>
+  <rect x="282" y="244" width="96" height="22" rx="11" fill="#fff" stroke="#9eb2b8"/>
+  <text class="badge" x="330" y="259" fill="#216e62" text-anchor="middle">ahead: 3</text>
+
+  <!-- divider -->
+  <line x1="575" y1="30" x2="575" y2="270" stroke="#dbe5e8" stroke-width="1.5"/>
+
+  <!-- ===== Right: maturity meters ===== -->
+  <text class="t" x="600" y="34">Índice de alinhamento</text>
+
+  <!-- meter A -->
+  <text class="cap" x="600" y="86" font-weight="700" fill="#0d581d">Dentro do limite definido</text>
+  <rect x="600" y="96" width="280" height="20" rx="10" fill="#eef3f5"/>
+  <rect x="600" y="96" width="120" height="20" rx="10" fill="#50be67"/>
+  <line x1="788" y1="90" x2="788" y2="122" stroke="#404b52" stroke-width="2" stroke-dasharray="3 3"/>
+  <text x="788" y="138" font-size="10.5" fill="#404b52" text-anchor="middle">limite</text>
+  <text class="cap" x="600" y="156">Branch alinhada à linha principal · baixo risco.</text>
+
+  <!-- meter B -->
+  <text class="cap" x="600" y="206" font-weight="700" fill="#b22c2c">Divergência excessiva</text>
+  <rect x="600" y="216" width="280" height="20" rx="10" fill="#eef3f5"/>
+  <rect x="600" y="216" width="258" height="20" rx="10" fill="#e47272"/>
+  <line x1="788" y1="210" x2="788" y2="242" stroke="#404b52" stroke-width="2" stroke-dasharray="3 3"/>
+  <text class="cap" x="600" y="266">Acúmulo não integrado · conflito e retrabalho.</text>
+</svg>

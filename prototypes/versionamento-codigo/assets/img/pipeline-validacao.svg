@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 220" role="img" aria-label="Pipeline de validação com guard-rails até a produção">
+  <style>
+    text { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+    .bx  { font-size: 13px; font-weight: 700; fill: #22292e; }
+    .cap { font-size: 12px; fill: #525f66; }
+  </style>
+  <defs>
+    <marker id="pa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#9eb2b8"/></marker>
+    <marker id="pg" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#127527"/></marker>
+  </defs>
+
+  <!-- bracket pipeline -->
+  <path d="M96 52 v-10 h508 v10" fill="none" stroke="#9eb2b8" stroke-width="1.5"/>
+  <text class="cap" x="350" y="32" text-anchor="middle" font-weight="700">Pipeline automatizada · guard-rails obrigatórios</text>
+
+  <!-- commit candidato -->
+  <circle cx="46" cy="92" r="9" fill="#00437a"/>
+  <text class="cap" x="46" y="120" text-anchor="middle">Versão</text>
+  <text class="cap" x="46" y="136" text-anchor="middle">candidata</text>
+
+  <!-- CI boxes -->
+  <g>
+    <rect x="96"  y="68" width="150" height="48" rx="10" fill="#fff" stroke="#005ca9" stroke-width="1.6"/><text class="bx" x="171" y="97" text-anchor="middle">Análise estática</text>
+    <rect x="276" y="68" width="132" height="48" rx="10" fill="#fff" stroke="#005ca9" stroke-width="1.6"/><text class="bx" x="342" y="97" text-anchor="middle">Testes unitários</text>
+    <rect x="438" y="68" width="166" height="48" rx="10" fill="#fff" stroke="#005ca9" stroke-width="1.6"/><text class="bx" x="521" y="91" text-anchor="middle">Validações de</text><text class="bx" x="521" y="107" text-anchor="middle">segurança</text>
+  </g>
+
+  <!-- arrows -->
+  <line x1="56" y1="92" x2="94" y2="92" stroke="#9eb2b8" stroke-width="2.2" marker-end="url(#pa)"/>
+  <line x1="246" y1="92" x2="274" y2="92" stroke="#9eb2b8" stroke-width="2.2" marker-end="url(#pa)"/>
+  <line x1="408" y1="92" x2="436" y2="92" stroke="#9eb2b8" stroke-width="2.2" marker-end="url(#pa)"/>
+  <line x1="604" y1="92" x2="690" y2="92" stroke="#127527" stroke-width="2.4" marker-end="url(#pg)"/>
+
+  <!-- gate / tag VEC -->
+  <line x1="650" y1="46" x2="650" y2="148" stroke="#00437a" stroke-width="2" stroke-dasharray="5 4"/>
+  <g transform="translate(650,46)">
+    <rect x="-34" y="0" width="68" height="22" rx="6" fill="#f39200"/><text x="0" y="15" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">tag VEC</text>
+  </g>
+  <circle cx="628" cy="92" r="11" fill="#e7f4ea" stroke="#127527" stroke-width="1.6"/><path d="M623 92 l4 4 7 -8" fill="none" stroke="#127527" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- produção -->
+  <rect x="692" y="68" width="170" height="48" rx="10" fill="#127527"/><text class="bx" x="777" y="97" text-anchor="middle" fill="#fff">Produção</text>
+
+  <text class="cap" x="460" y="188" text-anchor="middle">Nenhuma entrega avança para ambientes produtivos sem cumprir os critérios da governança técnica.</text>
+</svg>

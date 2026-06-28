@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Checklist de Montagem — Modelo VIC no SharePoint</title>
+<style>
+  :root{ --blue:#005ca9; --navy:#00437a; --ink:#22292e; --muted:#5b676e; --line:#d0d7db; }
+  *{ box-sizing:border-box; }
+  body{ font-family:"Segoe UI",system-ui,Arial,sans-serif; color:var(--ink); margin:0; background:#eef2f4; line-height:1.5; }
+  .sheet{ max-width:820px; margin:24px auto; background:#fff; padding:40px 44px; box-shadow:0 6px 24px rgba(0,0,0,.08); }
+  h1{ font-size:22px; margin:0 0 2px; color:var(--navy); }
+  .sub{ color:var(--muted); font-size:13px; margin-bottom:18px; }
+  h2{ font-size:15px; text-transform:uppercase; letter-spacing:.06em; color:#fff; background:var(--blue);
+      padding:7px 12px; border-radius:6px; margin:26px 0 12px; }
+  h3{ font-size:14px; color:var(--navy); margin:16px 0 6px; }
+  ul{ list-style:none; margin:0; padding:0; }
+  li{ position:relative; padding:4px 0 4px 26px; font-size:13.5px; }
+  .box{ position:absolute; left:0; top:6px; width:15px; height:15px; border:1.6px solid var(--blue); border-radius:3px; }
+  code{ background:#eef3f5; border:1px solid var(--line); border-radius:4px; padding:.03em .35em; font-family:Consolas,monospace; font-size:.92em; }
+  .tag{ display:inline-block; background:#fff0d6; color:#a85f00; border:1px solid #ffd7a3; border-radius:999px;
+        font-size:11px; font-weight:700; padding:1px 8px; }
+  .grid{ display:grid; grid-template-columns:repeat(7,1fr); gap:6px; margin:6px 0 4px; }
+  .grid .cell{ border:1.4px solid var(--line); border-radius:6px; padding:6px 4px; text-align:center; font-size:12px; }
+  .grid .cell b{ display:block; color:var(--navy); }
+  .grid .cb{ width:13px; height:13px; border:1.5px solid var(--blue); border-radius:3px; margin:5px auto 0; }
+  .note{ font-size:12px; color:var(--muted); border-left:3px solid var(--blue); background:#f5f9fc; padding:8px 12px; margin:10px 0; border-radius:0 6px 6px 0; }
+  .pbtn{ position:fixed; top:16px; right:16px; background:var(--blue); color:#fff; border:0; border-radius:8px;
+         padding:10px 16px; font:600 13px "Segoe UI"; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,.2); }
+  .foot{ margin-top:22px; padding-top:12px; border-top:1px solid var(--line); font-size:11.5px; color:var(--muted); }
+  @media print{
+    body{ background:#fff; } .sheet{ box-shadow:none; margin:0; max-width:none; padding:0 8px; }
+    .pbtn{ display:none; } h2{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    section{ break-inside:avoid; } @page{ margin:14mm; }
+  }
+</style>
+</head>
+<body>
+<button class="pbtn" onclick="window.print()">🖨 Imprimir / PDF</button>
+<div class="sheet">
+
+  <h1>Checklist de Montagem — Modelo VIC no SharePoint</h1>
+  <div class="sub">Caminho sem código (web parts nativas + Tema CAIXA). Marque cada etapa concluída.</div>
+
+  <section>
+    <h2>A · Preparação (uma vez)</h2>
+    <ul>
+      <li><span class="box"></span> Criar o <b>Site de Comunicação</b> “VIC — Versionamento e Integração de Código”.</li>
+      <li><span class="box"></span> Definir o <b>logo</b> do site com <code>vic-icon</code> (SVG ou PNG).</li>
+      <li><span class="box"></span> Aplicar o <b>Tema CAIXA</b>: registrar com <code>vic-caixa-theme.ps1</code> e selecionar em <b>⚙ Alterar a aparência → Tema</b>.</li>
+      <li><span class="box"></span> Subir as <b>ilustrações</b> (pasta <code>ilustracoes-png/</code>) na Biblioteca de Ativos do Site.</li>
+      <li><span class="box"></span> Configurar a <b>navegação superior</b>: Visão Geral · Práticas Desejadas · Tríade Técnica · Análise e Acompanhamento.</li>
+      <li><span class="box"></span> Criar as <b>páginas vazias</b>: Visão Geral, Práticas Desejadas, Prática 1–13.</li>
+    </ul>
+    <div class="note">Dica: abra o protótipo com <code>?sp=1</code> (botão “Mapa SharePoint”) ao lado deste checklist — as etiquetas dizem a web part de cada bloco.</div>
+  </section>
+
+  <section>
+    <h2>B · Página “Visão Geral” (inicial)</h2>
+    <ul>
+      <li><span class="box"></span> Seção largura total + <b>Herói</b>: título “Versionamento e Integração de Código” + subtítulo.</li>
+      <li><span class="box"></span> <b>Texto</b>: “Qual a finalidade deste modelo?”.</li>
+      <li><span class="box"></span> <b>Texto (realce)</b> ou <b>Chamada para ação</b>: aviso “Modelo determinístico”.</li>
+      <li><span class="box"></span> <b>Links Rápidos</b>: tecnologias de referência (Git · Azure DevOps/GitHub · GitFlow/GitHub Flow · SemVer).</li>
+      <li><span class="box"></span> <b>Texto</b>: “Missão do modelo” (lista de 6).</li>
+      <li><span class="box"></span> <b>Links Rápidos</b>: “Benefícios” (7 itens).</li>
+      <li><span class="box"></span> <b>Botão</b>/<b>Chamada para ação</b>: “Acessar as Práticas Desejadas”.</li>
+      <li><span class="box"></span> Definir como <b>página inicial</b> do site.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>C · Página “Práticas Desejadas” (hub)</h2>
+    <ul>
+      <li><span class="box"></span> <b>Herói</b> ou seção “Destaque forte” + <b>Texto</b>: título “Práticas Desejadas”.</li>
+      <li><span class="box"></span> <b>Texto</b>: introdução (jornada de maturidade).</li>
+      <li><span class="box"></span> <b>Links Rápidos</b> com <b>13 itens</b>, cada um linkando para a página da prática.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>D · Modelo de página de Prática <span class="tag">repetir 13×</span></h2>
+    <h3>Blocos (na ordem)</h3>
+    <ul>
+      <li><span class="box"></span> Seção “Destaque forte” + <b>Imagem/Herói</b>: capa com <b>nº + título</b> da prática.</li>
+      <li><span class="box"></span> <b>Texto (realce)</b> ou <b>Chamada para ação</b>: a caixa <b>“Regra”</b>.</li>
+      <li><span class="box"></span> <b>Texto</b>: “O que a prática exige” (lista).</li>
+      <li><span class="box"></span> <b>Imagem</b>: ilustração da prática (quando houver).</li>
+      <li><span class="box"></span> <b>Texto (tabela)</b>: tabelas (Práticas 11 e 12).</li>
+      <li><span class="box"></span> <b>Texto/Link</b>: “Referências metodológicas”.</li>
+    </ul>
+    <div class="note">Monte <b>uma</b> página perfeita e <b>duplique</b> (Configurações da página → Copiar) para as demais, trocando número, título, regra e imagem.</div>
+    <h3>Controle das 13 páginas (marque ao concluir)</h3>
+    <div class="grid">
+      <div class="cell"><b>P1</b><div class="cb"></div></div>
+      <div class="cell"><b>P2</b><div class="cb"></div></div>
+      <div class="cell"><b>P3</b><div class="cb"></div></div>
+      <div class="cell"><b>P4</b><div class="cb"></div></div>
+      <div class="cell"><b>P5</b><div class="cb"></div></div>
+      <div class="cell"><b>P6</b><div class="cb"></div></div>
+      <div class="cell"><b>P7</b><div class="cb"></div></div>
+      <div class="cell"><b>P8</b><div class="cb"></div></div>
+      <div class="cell"><b>P9</b><div class="cb"></div></div>
+      <div class="cell"><b>P10</b><div class="cb"></div></div>
+      <div class="cell"><b>P11</b><div class="cb"></div></div>
+      <div class="cell"><b>P12</b><div class="cb"></div></div>
+      <div class="cell"><b>P13</b><div class="cb"></div></div>
+      <div class="cell" style="border-style:dashed">—</div>
+    </div>
+    <div style="font-size:12px;color:var(--muted)">P1 Testes · P2 Flow · P3 Integração · P4 Divergência · P5 Merge back · P6 Integrador · P7 Branches protegidas · P8 Pull Request · P9 SemVer · P10 Tag VEC · P11 Nomenclatura · P12 Push · P13 Changelog</div>
+  </section>
+
+  <section>
+    <h2>E · Conferência final</h2>
+    <ul>
+      <li><span class="box"></span> Tema CAIXA aplicado em todas as páginas (azul institucional).</li>
+      <li><span class="box"></span> Navegação superior funcionando (4 seções).</li>
+      <li><span class="box"></span> Todas as ilustrações carregando (imagens, não links quebrados).</li>
+      <li><span class="box"></span> Links dos cards do hub apontando para as práticas certas.</li>
+      <li><span class="box"></span> Revisão de texto: tom impositivo mantido (“deve”, “é obrigatório”).</li>
+      <li><span class="box"></span> Páginas <b>publicadas</b> (não em rascunho).</li>
+    </ul>
+  </section>
+
+  <div class="foot">Modelo VIC · Checklist sem código · Use junto ao GUIA-MONTAGEM-SHAREPOINT.md e ao protótipo (<code>?sp=1</code>).</div>
+</div>
+</body>
+</html>

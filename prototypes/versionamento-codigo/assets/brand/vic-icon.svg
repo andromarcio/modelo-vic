@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Ícone VIC — grafo git com tag de versão">
+  <defs>
+    <linearGradient id="vicg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00437a"/><stop offset="1" stop-color="#0a78d6"/></linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect x="6" y="6" width="108" height="108" rx="27" fill="url(#vicg)"/>
+  <rect x="6" y="6" width="108" height="108" rx="27" fill="url(#sheen)"/>
+  <g fill="none" stroke="#fff" stroke-width="6.5" stroke-linecap="round">
+    <path d="M39 36 C39 56, 60 52, 60 66"/>
+    <path d="M81 36 C81 56, 60 52, 60 66"/>
+    <path d="M60 66 V76"/>
+  </g>
+  <circle cx="39" cy="36" r="8.5" fill="#f39200"/>
+  <circle cx="81" cy="36" r="8.5" fill="#36e0c4"/>
+  <circle cx="60" cy="66" r="7.5" fill="#00437a" stroke="#fff" stroke-width="3"/>
+  <path d="M60 76 L45 84 V100 a5 5 0 0 0 5 5 H70 a5 5 0 0 0 5 -5 V84 Z" fill="#f39200"/>
+  <circle cx="60" cy="91" r="3.4" fill="#fff"/>
+</svg>

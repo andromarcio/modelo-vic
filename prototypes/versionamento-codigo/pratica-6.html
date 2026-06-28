@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prática 6 · O Integrador</title>
+  <link rel="stylesheet" href="assets/chapter.css">
+</head>
+<body>
+<article id="doc" data-page-id="pratica-6">
+
+  <header class="page-hero" data-sp="Banner / Hero">
+    <span class="sp-chip"></span>
+    <div class="ph-num">6</div>
+    <div class="ph-text">
+      <div class="ph-eyebrow">Prática</div>
+      <h1>O papel de Integrador deve ser exercido de forma efetiva</h1>
+    </div>
+  </header>
+
+  <div class="diretriz" data-sp="Texto destacado">
+    <span class="sp-chip"></span>
+    <div class="d-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="d-body">
+      <div class="d-kicker">Regra</div>
+      <p>O Integrador é um papel estratégico do ciclo de desenvolvimento, atuando como referência
+         técnica para garantir a aplicação rigorosa das práticas institucionais de versionamento e
+         integração. Cada repositório <strong>deve</strong> possuir integradores
+         <strong>permissionados por time</strong>.</p>
+    </div>
+  </div>
+
+  <section class="section" data-sp="Texto">
+    <span class="sp-chip"></span>
+    <h2>O papel</h2>
+    <p>O Integrador exerce função de <strong>governança técnica</strong>. Embora possa desempenhar
+       atividades comuns de desenvolvimento, sua responsabilidade principal é zelar pela qualidade e
+       conformidade dos processos de controle de versões, assegurando o uso padronizado e eficiente
+       dos repositórios de código e artefatos. O Integrador <strong>deve</strong> garantir que
+       nenhuma versão em desenvolvimento seja promovida para o ambiente produtivo sem passar pelos
+       <strong>guard-rails</strong> definidos.</p>
+
+    <figure class="figure">
+      <div class="fig-head">
+        <span class="sp-chip"></span>
+        <span class="fig-tag">Figura</span>
+        <span class="fig-title">O Integrador como guardião dos guard-rails</span>
+      </div>
+      <div class="fig-canvas"><img src="assets/img/integrador.svg" alt="Pipeline de feature a produção com o Integrador no ponto de controle de promoção e suas quatro áreas de responsabilidade"></div>
+      <figcaption><strong>Guard-rails:</strong> a promoção para produção sem passar pelo controle do
+        Integrador é bloqueada. Abaixo, as quatro áreas de responsabilidade do papel.</figcaption>
+    </figure>
+  </section>
+
+  <section class="section" data-sp="Texto">
+    <span class="sp-chip"></span>
+    <h2>Responsabilidades</h2>
+    <ul>
+      <li><strong>Governança técnica</strong> — monitorar indicadores como divergência entre branches, rastreabilidade de tags e conformidade com as políticas de integração contínua.</li>
+      <li><strong>Guard-rails de promoção</strong> — garantir que nenhuma versão seja promovida para produção sem passar pelos guard-rails definidos.</li>
+      <li><strong>Resolução de conflitos</strong> — atuar como ponto focal na resolução de conflitos complexos, orientando os desenvolvedores sobre práticas de merge, rebase, proteção e políticas de branches, aprovações e conclusões de pull requests.</li>
+      <li><strong>Disseminação de conhecimento</strong> — revisar pull requests e orientar sobre nomenclatura de branches, aplicação de SemVer e uso adequado das ferramentas de DevOps com foco em versionamento e integração de código.</li>
+    </ul>
+  </section>
+
+  <section class="section" data-sp="Aviso">
+    <span class="sp-chip"></span>
+    <div class="callout callout--rule">
+      <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <div class="ct">
+        <strong>Guardião da integração contínua</strong>
+        <p>O papel do Integrador não se limita à execução técnica: envolve a fiscalização dos
+           processos, a comunicação clara das diretrizes e a antecipação de problemas que possam
+           comprometer a estabilidade do código. A atuação efetiva do Integrador é requisito de
+           conformidade do capítulo.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="ref-box" data-sp="Texto / Link">
+    <span class="sp-chip"></span>
+    <div class="rb-title">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      Referências metodológicas
+    </div>
+    <p class="placeholder">As referências metodológicas sobre este assunto devem ser incluídas aqui. <em>(espaço reservado para os links institucionais.)</em></p>
+  </div>
+
+</article>
+<script src="assets/chapter.js"></script>
+</body>
+</html>

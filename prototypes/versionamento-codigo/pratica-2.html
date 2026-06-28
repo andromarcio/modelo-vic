@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prática 2 · Modelo de flow</title>
+  <link rel="stylesheet" href="assets/chapter.css">
+</head>
+<body>
+<article id="doc" data-page-id="pratica-2">
+
+  <header class="page-hero" data-sp="Banner / Hero">
+    <span class="sp-chip"></span>
+    <div class="ph-num">2</div>
+    <div class="ph-text">
+      <div class="ph-eyebrow">Prática</div>
+      <h1>O modelo de flow adotado deve ser aderente ao GitFlow ou GitHub Flow</h1>
+    </div>
+  </header>
+
+  <div class="diretriz" data-sp="Texto destacado">
+    <span class="sp-chip"></span>
+    <div class="d-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="d-body">
+      <div class="d-kicker">Regra</div>
+      <p>O modelo de fluxo de trabalho adotado pela equipe de desenvolvimento <strong>deve</strong>
+         ser aderente aos modelos de mercado <strong>GitFlow</strong> ou <strong>GitHub Flow</strong>.
+         Os repositórios <strong>devem</strong> manter as branches <code>develop</code> e/ou
+         <code>main</code> presentes, protegidas e atualizadas.</p>
+    </div>
+  </div>
+
+  <section class="section" data-sp="Texto">
+    <span class="sp-chip"></span>
+    <h2>O que a diretriz exige</h2>
+    <p>O fluxo de trabalho deve estar alinhado a um padrão consolidado de mercado. Independentemente
+       de adaptações, os requisitos a seguir são de cumprimento obrigatório:</p>
+    <ul>
+      <li>O repositório <strong>deve</strong> adotar GitFlow <strong>ou</strong> GitHub Flow como modelo de fluxo.</li>
+      <li>As branches <code>develop</code> e/ou <code>main</code> <strong>devem</strong> estar presentes e <strong>protegidas</strong>.</li>
+      <li>As branches principais <strong>devem</strong> ser mantidas atualizadas, com integração contínua de código.</li>
+      <li>O modelo adotado <strong>deve</strong> estar em conformidade com a governança técnica institucional.</li>
+    </ul>
+  </section>
+
+  <section class="section" data-sp="Imagem">
+    <span class="sp-chip"></span>
+    <h2>GitFlow × GitHub Flow</h2>
+    <p>Os dois modelos são aderentes ao padrão de mercado. A diferença central está no número de
+       branches permanentes e na forma de versionar entregas.</p>
+
+    <figure class="figure">
+      <div class="fig-head">
+        <span class="sp-chip"></span>
+        <span class="fig-tag">Figura</span>
+        <span class="fig-title">Comparativo entre os modelos</span>
+      </div>
+      <div class="fig-canvas"><img src="assets/img/gitflow-vs-githubflow.svg" alt="Comparativo: GitFlow com main e develop e branches de suporte; GitHub Flow com apenas main e feature branches curtas"></div>
+      <figcaption><strong>GitFlow:</strong> duas branches permanentes (<code>main</code> + <code>develop</code>)
+        e branches de suporte. <strong>GitHub Flow:</strong> apenas <code>main</code> permanente, com
+        feature branches curtas e deploy contínuo.</figcaption>
+    </figure>
+
+    <div class="tbl-wrap" data-sp="Tabela">
+      <span class="sp-chip"></span>
+      <table class="tbl">
+        <thead><tr><th>Aspecto</th><th>GitFlow</th><th>GitHub Flow</th></tr></thead>
+        <tbody>
+          <tr><td>Branches permanentes</td><td><code>main</code> e <code>develop</code></td><td>apenas <code>main</code></td></tr>
+          <tr><td>Branches de suporte</td><td><code>feature/*</code>, <code>release/*</code>, <code>hotfix/*</code></td><td><code>feature/*</code> (curtas)</td></tr>
+          <tr><td>Versionamento</td><td>release versionada (tag SemVer) + merge back</td><td>deploy contínuo a partir da <code>main</code></td></tr>
+          <tr><td>Indicado para</td><td>ciclos com release planejada</td><td>entrega contínua</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section" data-sp="Aviso">
+    <span class="sp-chip"></span>
+    <div class="callout callout--info">
+      <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      <div class="ct">
+        <strong>Modelo de referência do capítulo</strong>
+        <p>As diretrizes 3, 4 e 5 detalham mecânicas do <strong>GitFlow</strong> (branches de
+           <code>release</code>/<code>hotfix</code> e merge back). Em repositórios que adotam
+           GitHub Flow, aplica-se a equivalência sobre a única branch permanente (<code>main</code>).</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="ref-box" data-sp="Texto / Link">
+    <span class="sp-chip"></span>
+    <div class="rb-title">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      Referências metodológicas
+    </div>
+    <p class="placeholder">As referências metodológicas sobre este assunto devem ser incluídas aqui. <em>(espaço reservado para os links institucionais.)</em></p>
+  </div>
+
+</article>
+<script src="assets/chapter.js"></script>
+</body>
+</html>

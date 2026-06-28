@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prática 8 · VIC</title>
+  <link rel="stylesheet" href="assets/chapter.css">
+</head>
+<body>
+<article id="doc" data-page-id="pratica-8">
+
+  <header class="page-hero" data-sp="Banner / Hero">
+    <span class="sp-chip"></span>
+    <div class="ph-num">8</div>
+    <div class="ph-text">
+      <div class="ph-eyebrow">Prática Desejada</div>
+      <h1>Pull Request deve ser o instrumento central de integração, revisão colaborativa e validação técnica</h1>
+    </div>
+  </header>
+
+  <div class="diretriz" data-sp="Texto destacado">
+    <span class="sp-chip"></span>
+    <div class="d-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="d-body">
+      <div class="d-kicker">Regra</div>
+      <p>Todas as versões candidatas <strong>devem</strong> ser submetidas por <strong>Pull Request</strong>,
+         permitindo revisão por pares, registro de decisões técnicas, rastreabilidade das mudanças e
+         aplicação das políticas institucionais de qualidade e segurança.</p>
+    </div>
+  </div>
+
+  <section class="section" data-sp="Imagem">
+    <span class="sp-chip"></span>
+    <h2>Os dois momentos do Pull Request</h2>
+    <p>O processo <strong>deve</strong> contemplar dois momentos distintos: a <strong>aprovação</strong>
+       e a <strong>completude</strong>.</p>
+    <figure class="figure">
+      <div class="fig-head"><span class="sp-chip"></span><span class="fig-tag">Figura</span><span class="fig-title">Aprovação → Completude</span></div>
+      <div class="fig-canvas"><img src="assets/img/pr-flow.svg" alt="Fluxo de pull request: aprovação por revisores do time e completude (merge) pelo integrador na branch permanente"></div>
+      <figcaption><strong>Aprovação:</strong> validação técnica e funcional por revisores do time.
+        <strong>Completude:</strong> efetiva o merge na branch de destino — restrita a integradores,
+        especialmente nas branches permanentes.</figcaption>
+    </figure>
+  </section>
+
+  <section class="section" data-sp="Texto">
+    <span class="sp-chip"></span>
+    <h2>Governança e rastreabilidade</h2>
+    <ul>
+      <li>O uso consistente do Pull Request <strong>deve</strong> evitar versões não rastreáveis.</li>
+      <li>A <strong>aprovação</strong> ratifica que os critérios de qualidade e conformidade foram atendidos.</li>
+      <li>A <strong>completude</strong> é restrita a perfis autorizados (integradores).</li>
+      <li>O histórico de Pull Requests <strong>deve</strong> ser mantido como evidência de governança e suporte a auditorias.</li>
+    </ul>
+  </section>
+
+  <div class="ref-box" data-sp="Texto / Link">
+    <span class="sp-chip"></span>
+    <div class="rb-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Referências metodológicas</div>
+    <p class="placeholder">As referências metodológicas sobre este assunto devem ser incluídas aqui.</p>
+  </div>
+
+</article>
+<script src="assets/chapter.js"></script>
+</body>
+</html>

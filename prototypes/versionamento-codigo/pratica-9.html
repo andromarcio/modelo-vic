@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prática 9 · VIC</title>
+  <link rel="stylesheet" href="assets/chapter.css">
+</head>
+<body>
+<article id="doc" data-page-id="pratica-9">
+
+  <header class="page-hero" data-sp="Banner / Hero">
+    <span class="sp-chip"></span>
+    <div class="ph-num">9</div>
+    <div class="ph-text">
+      <div class="ph-eyebrow">Prática Desejada</div>
+      <h1>O versionamento semântico deve ser adotado para todos os elementos que compõem a versão</h1>
+    </div>
+  </header>
+
+  <div class="diretriz" data-sp="Texto destacado">
+    <span class="sp-chip"></span>
+    <div class="d-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="d-body">
+      <div class="d-kicker">Regra</div>
+      <p>Commits, artefatos, bibliotecas, execuções de workflows e demais componentes
+         <strong>devem</strong> adotar o padrão <strong>SemVer</strong>, garantindo clareza na
+         evolução das versões e eliminando ambiguidades na identificação de cada entrega.</p>
+    </div>
+  </div>
+
+  <section class="section" data-sp="Imagem">
+    <span class="sp-chip"></span>
+    <h2>A estrutura do SemVer</h2>
+    <figure class="figure">
+      <div class="fig-head"><span class="sp-chip"></span><span class="fig-tag">Figura</span><span class="fig-title">MAJOR . MINOR . PATCH</span></div>
+      <div class="fig-canvas"><img src="assets/img/semver.svg" alt="Versionamento semântico: MAJOR (mudanças incompatíveis), MINOR (novas funcionalidades), PATCH (correções)"></div>
+      <figcaption>Cada componente comunica o impacto da mudança, permitindo que pessoas e sistemas
+        interpretem corretamente a evolução das versões.</figcaption>
+    </figure>
+  </section>
+
+  <section class="section" data-sp="Texto">
+    <span class="sp-chip"></span>
+    <h2>Por que adotar</h2>
+    <ul>
+      <li>Assegura <strong>previsibilidade</strong> e facilita a automação dos pipelines.</li>
+      <li>Permite que sistemas interpretem corretamente o <strong>impacto das mudanças</strong>.</li>
+      <li>Reforça a <strong>rastreabilidade</strong>: cada versão é associada de forma inequívoca aos seus componentes (tags, artefatos, dependências).</li>
+      <li>Consolida a interoperabilidade entre equipes e ferramentas.</li>
+    </ul>
+  </section>
+
+  <div class="ref-box" data-sp="Texto / Link">
+    <span class="sp-chip"></span>
+    <div class="rb-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Referências metodológicas</div>
+    <p class="placeholder">As referências metodológicas sobre este assunto devem ser incluídas aqui.</p>
+  </div>
+
+</article>
+<script src="assets/chapter.js"></script>
+</body>
+</html>

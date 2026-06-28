@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 320" role="img" aria-label="Comparativo entre os modelos GitFlow e GitHub Flow">
+  <style>
+    text { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+    .h    { font-size: 15px; font-weight: 700; fill: #fff; }
+    .cap  { font-size: 12.5px; fill: #404b52; }
+    .small{ font-size: 11px; font-weight: 700; fill: #fff; }
+  </style>
+  <defs>
+    <marker id="b-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#005ca9"/></marker>
+    <marker id="b-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#21caaf"/></marker>
+    <marker id="b-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#f39200"/></marker>
+  </defs>
+
+  <!-- ===================== PANEL A · GitFlow ===================== -->
+  <rect x="14" y="14" width="430" height="292" rx="16" fill="#ffffff" stroke="#dbe5e8"/>
+  <rect x="32" y="30" width="120" height="28" rx="14" fill="#00437a"/><text class="h" x="92" y="49" text-anchor="middle">GitFlow</text>
+
+  <!-- lanes -->
+  <line x1="40" y1="110" x2="420" y2="110" stroke="#00437a" stroke-width="3"/>
+  <line x1="40" y1="170" x2="420" y2="170" stroke="#005ca9" stroke-width="3"/>
+  <line x1="150" y1="225" x2="250" y2="225" stroke="#21caaf" stroke-width="3"/>
+  <text x="48" y="104" font-size="11" font-weight="700" fill="#00437a">main</text>
+  <text x="48" y="164" font-size="11" font-weight="700" fill="#005ca9">develop</text>
+
+  <path d="M150 170 C168 170,168 225,186 225" fill="none" stroke="#21caaf" stroke-width="2.2" marker-end="url(#b-teal)"/>
+  <path d="M216 225 C234 225,234 170,252 170" fill="none" stroke="#21caaf" stroke-width="2.2" marker-end="url(#b-teal)"/>
+  <path d="M300 170 C318 170,318 110,336 110" fill="none" stroke="#f39200" stroke-width="2.2" marker-end="url(#b-orange)"/>
+  <path d="M300 170 C318 170,318 110,336 110" fill="none" stroke="none"/>
+  <!-- release merge-back -->
+  <path d="M336 122 C352 130,352 160,366 170" fill="none" stroke="#f39200" stroke-width="2.2" stroke-dasharray="4 3" marker-end="url(#b-orange)"/>
+
+  <g fill="#00437a"><circle cx="80" cy="110" r="6"/><circle cx="336" cy="110" r="6"/></g>
+  <g fill="#005ca9"><circle cx="110" cy="170" r="6"/><circle cx="150" cy="170" r="6"/><circle cx="252" cy="170" r="6"/><circle cx="300" cy="170" r="6"/><circle cx="380" cy="170" r="6"/></g>
+  <g fill="#21caaf"><circle cx="186" cy="225" r="5.5"/><circle cx="216" cy="225" r="5.5"/></g>
+  <rect x="312" y="84" width="48" height="18" rx="5" fill="#fff" stroke="#00437a"/><text x="336" y="97" font-size="10.5" font-weight="700" fill="#00437a" text-anchor="middle">v1.1.0</text>
+
+  <text class="cap" x="32" y="262">• 2 permanentes: <tspan font-weight="700">main</tspan> + <tspan font-weight="700">develop</tspan></text>
+  <text class="cap" x="32" y="280">• Suporte: feature/*, release/*, hotfix/*</text>
+  <text class="cap" x="32" y="298">• Release versionada + merge back obrigatório</text>
+
+  <!-- ===================== PANEL B · GitHub Flow ===================== -->
+  <rect x="476" y="14" width="430" height="292" rx="16" fill="#ffffff" stroke="#dbe5e8"/>
+  <rect x="494" y="30" width="150" height="28" rx="14" fill="#00437a"/><text class="h" x="569" y="49" text-anchor="middle">GitHub Flow</text>
+
+  <line x1="500" y1="170" x2="884" y2="170" stroke="#00437a" stroke-width="3"/>
+  <text x="508" y="164" font-size="11" font-weight="700" fill="#00437a">main</text>
+
+  <!-- feature up -->
+  <line x1="600" y1="120" x2="690" y2="120" stroke="#21caaf" stroke-width="3"/>
+  <path d="M570 170 C586 170,586 120,602 120" fill="none" stroke="#21caaf" stroke-width="2.2" marker-end="url(#b-teal)"/>
+  <path d="M688 120 C704 120,704 170,720 170" fill="none" stroke="#21caaf" stroke-width="2.2" marker-end="url(#b-teal)"/>
+  <g fill="#21caaf"><circle cx="625" cy="120" r="5.5"/><circle cx="660" cy="120" r="5.5"/></g>
+  <!-- feature down -->
+  <line x1="760" y1="220" x2="830" y2="220" stroke="#21caaf" stroke-width="3"/>
+  <path d="M745 170 C758 170,758 220,772 220" fill="none" stroke="#21caaf" stroke-width="2.2" marker-end="url(#b-teal)"/>
+  <path d="M828 220 C842 220,842 170,856 170" fill="none" stroke="#21caaf" stroke-width="2.2" marker-end="url(#b-teal)"/>
+  <g fill="#21caaf"><circle cx="795" cy="220" r="5.5"/></g>
+
+  <g fill="#00437a"><circle cx="540" cy="170" r="6"/><circle cx="720" cy="170" r="6"/><circle cx="856" cy="170" r="6"/></g>
+
+  <!-- deploy markers -->
+  <g>
+    <path d="M720 150 l5 9 -10 0 z" fill="#127527"/><text x="720" y="146" font-size="10" font-weight="700" fill="#127527" text-anchor="middle">deploy</text>
+    <path d="M856 150 l5 9 -10 0 z" fill="#127527"/><text x="856" y="146" font-size="10" font-weight="700" fill="#127527" text-anchor="middle">deploy</text>
+  </g>
+
+  <text class="cap" x="494" y="262">• 1 permanente: <tspan font-weight="700">main</tspan></text>
+  <text class="cap" x="494" y="280">• Feature branches curtas + Pull Request</text>
+  <text class="cap" x="494" y="298">• Deploy contínuo a partir da main</text>
+</svg>

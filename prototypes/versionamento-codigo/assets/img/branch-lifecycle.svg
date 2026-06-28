@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 340" role="img" aria-label="Ciclo de vida de uma branch temporária e sanitização do repositório">
+  <style>
+    text { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+    .cap  { font-size: 12.5px; fill: #404b52; }
+    .stp  { font-size: 12.5px; font-weight: 600; fill: #22292e; }
+    .t    { font-size: 13px; font-weight: 700; }
+  </style>
+  <defs>
+    <marker id="c-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#005ca9"/></marker>
+    <marker id="c-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#21caaf"/></marker>
+  </defs>
+
+  <!-- ===== Lifecycle ===== -->
+  <line x1="60" y1="110" x2="690" y2="110" stroke="#005ca9" stroke-width="3"/>
+  <text x="60" y="100" font-size="11" font-weight="700" fill="#005ca9">develop</text>
+  <line x1="180" y1="60" x2="430" y2="60" stroke="#21caaf" stroke-width="3"/>
+  <text x="180" y="50" font-size="11" font-weight="700" fill="#21caaf">feature/nova-funcionalidade</text>
+
+  <path d="M150 110 C166 110,166 60,182 60" fill="none" stroke="#21caaf" stroke-width="2.4" marker-end="url(#c-teal)"/>
+  <path d="M428 60 C446 60,446 110,464 110" fill="none" stroke="#21caaf" stroke-width="2.4" marker-end="url(#c-blue)"/>
+
+  <g fill="#005ca9"><circle cx="110" cy="110" r="6.5"/><circle cx="150" cy="110" r="6.5"/><circle cx="464" cy="110" r="6.5"/><circle cx="560" cy="110" r="6.5"/><circle cx="650" cy="110" r="6.5"/></g>
+  <g fill="#21caaf"><circle cx="230" cy="60" r="6"/><circle cx="300" cy="60" r="6"/><circle cx="370" cy="60" r="6"/></g>
+
+  <!-- delete marker -->
+  <g>
+    <circle cx="500" cy="60" r="13" fill="#fbebeb" stroke="#d93636" stroke-width="2"/>
+    <path d="M495 55 l10 10 M505 55 l-10 10" stroke="#d93636" stroke-width="2.2" stroke-linecap="round"/>
+    <text x="500" y="36" font-size="11" font-weight="700" fill="#d93636" text-anchor="middle">branch deletada</text>
+  </g>
+
+  <!-- stepper -->
+  <g transform="translate(0,165)">
+    <g><circle cx="40" cy="0" r="13" fill="#005ca9"/><text x="40" y="4" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">1</text><text class="stp" x="62" y="4">Criar a branch a partir da develop</text></g>
+    <g transform="translate(0,34)"><circle cx="40" cy="0" r="13" fill="#21caaf"/><text x="40" y="4" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">2</text><text class="stp" x="62" y="4">Desenvolver e commitar no isolamento da branch</text></g>
+    <g transform="translate(460,0)"><circle cx="40" cy="0" r="13" fill="#005ca9"/><text x="40" y="4" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">3</text><text class="stp" x="62" y="4">Integrar (merge) na develop</text></g>
+    <g transform="translate(460,34)"><circle cx="40" cy="0" r="13" fill="#d93636"/><text x="40" y="4" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">4</text><text class="stp" x="62" y="4">Deletar a branch temporária a cada ciclo</text></g>
+  </g>
+
+  <!-- ===== Repo comparison ===== -->
+  <g transform="translate(0,250)">
+    <rect x="14" y="0" width="430" height="78" rx="12" fill="#fbebeb" stroke="#f0afaf"/>
+    <text class="t" x="32" y="26" fill="#b22c2c">Sem sanitização</text>
+    <text class="cap" x="32" y="48">Branches obsoletas acumuladas,</text>
+    <text class="cap" x="32" y="66">histórico desnecessário e maior risco de conflito.</text>
+    <g stroke="#9eb2b8" stroke-width="2.5">
+      <line x1="300" y1="20" x2="420" y2="20"/><line x1="300" y1="34" x2="408" y2="34"/>
+      <line x1="300" y1="48" x2="420" y2="48"/><line x1="300" y1="62" x2="400" y2="62"/>
+    </g>
+    <g fill="#9eb2b8"><circle cx="420" cy="20" r="4"/><circle cx="408" cy="34" r="4"/><circle cx="420" cy="48" r="4"/><circle cx="400" cy="62" r="4"/></g>
+
+    <rect x="476" y="0" width="430" height="78" rx="12" fill="#e7f4ea" stroke="#9bdaa9"/>
+    <text class="t" x="494" y="26" fill="#0d581d">Com sanitização contínua</text>
+    <text class="cap" x="494" y="48">Apenas branches ativas; principais</text>
+    <text class="cap" x="494" y="66">sempre integradas e histórico limpo.</text>
+    <line x1="760" y1="41" x2="880" y2="41" stroke="#005ca9" stroke-width="3"/>
+    <g fill="#005ca9"><circle cx="780" cy="41" r="4.5"/><circle cx="820" cy="41" r="4.5"/><circle cx="860" cy="41" r="4.5"/></g>
+  </g>
+</svg>

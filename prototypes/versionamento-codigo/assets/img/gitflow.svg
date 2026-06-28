@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-label="Diagrama do modelo GitFlow com as branches main, develop, feature, release e hotfix">
+  <style>
+    text { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+    .lbl { font-size: 13px; font-weight: 700; fill: #ffffff; }
+    .tag { font-size: 11px; font-weight: 700; fill: #00437a; }
+    .cap { font-size: 12px; fill: #525f66; }
+    .ttl { font-size: 12px; font-weight: 700; }
+  </style>
+  <defs>
+    <marker id="a-navy" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#00437a"/></marker>
+    <marker id="a-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#005ca9"/></marker>
+    <marker id="a-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#21caaf"/></marker>
+    <marker id="a-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#f39200"/></marker>
+    <marker id="a-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#d93636"/></marker>
+  </defs>
+
+  <!-- Lane labels -->
+  <g>
+    <rect x="14" y="58"  width="108" height="24" rx="12" fill="#00437a"/><text class="lbl" x="68" y="75" text-anchor="middle">main</text>
+    <rect x="14" y="128" width="108" height="24" rx="12" fill="#d93636"/><text class="lbl" x="68" y="145" text-anchor="middle">hotfix/*</text>
+    <rect x="14" y="203" width="108" height="24" rx="12" fill="#f39200"/><text class="lbl" x="68" y="220" text-anchor="middle">release/*</text>
+    <rect x="14" y="283" width="108" height="24" rx="12" fill="#005ca9"/><text class="lbl" x="68" y="300" text-anchor="middle">develop</text>
+    <rect x="14" y="353" width="108" height="24" rx="12" fill="#21caaf"/><text class="lbl" x="68" y="370" text-anchor="middle">feature/*</text>
+  </g>
+
+  <!-- Permanent lanes -->
+  <line x1="140" y1="70"  x2="885" y2="70"  stroke="#00437a" stroke-width="3"/>
+  <line x1="140" y1="295" x2="885" y2="295" stroke="#005ca9" stroke-width="3"/>
+  <!-- Temporary segments -->
+  <line x1="290" y1="365" x2="390" y2="365" stroke="#21caaf" stroke-width="3"/>
+  <line x1="500" y1="215" x2="610" y2="215" stroke="#f39200" stroke-width="3"/>
+  <line x1="720" y1="140" x2="810" y2="140" stroke="#d93636" stroke-width="3"/>
+
+  <!-- Connectors -->
+  <path d="M180 70 C195 70,195 295,210 295"   fill="none" stroke="#005ca9" stroke-width="2.4" stroke-dasharray="5 4" marker-end="url(#a-blue)"/>
+  <path d="M250 295 C270 295,270 365,290 365" fill="none" stroke="#21caaf" stroke-width="2.4" marker-end="url(#a-teal)"/>
+  <path d="M390 365 C410 365,410 295,430 295" fill="none" stroke="#21caaf" stroke-width="2.4" marker-end="url(#a-teal)"/>
+  <path d="M470 295 C485 295,485 215,500 215" fill="none" stroke="#f39200" stroke-width="2.4" marker-end="url(#a-orange)"/>
+  <path d="M610 215 C620 215,620 70,630 70"   fill="none" stroke="#f39200" stroke-width="2.4" marker-end="url(#a-orange)"/>
+  <path d="M610 215 C620 215,620 295,630 295" fill="none" stroke="#f39200" stroke-width="2.4" marker-end="url(#a-orange)"/>
+  <path d="M690 70 C705 70,705 140,720 140"   fill="none" stroke="#d93636" stroke-width="2.4" marker-end="url(#a-red)"/>
+  <path d="M810 140 C820 140,820 70,830 70"   fill="none" stroke="#d93636" stroke-width="2.4" marker-end="url(#a-red)"/>
+  <path d="M810 140 C820 140,820 295,830 295" fill="none" stroke="#d93636" stroke-width="2.4" marker-end="url(#a-red)"/>
+
+  <!-- Commits: main -->
+  <g fill="#00437a">
+    <circle cx="180" cy="70" r="7"/><circle cx="630" cy="70" r="7"/><circle cx="830" cy="70" r="7"/>
+  </g>
+  <!-- Commits: develop -->
+  <g fill="#005ca9">
+    <circle cx="210" cy="295" r="7"/><circle cx="250" cy="295" r="7"/><circle cx="430" cy="295" r="7"/>
+    <circle cx="470" cy="295" r="7"/><circle cx="630" cy="295" r="7"/><circle cx="830" cy="295" r="7"/><circle cx="872" cy="295" r="7"/>
+  </g>
+  <!-- Commits: feature / release / hotfix -->
+  <g fill="#21caaf"><circle cx="320" cy="365" r="6.5"/><circle cx="362" cy="365" r="6.5"/></g>
+  <g fill="#f39200"><circle cx="530" cy="215" r="6.5"/><circle cx="578" cy="215" r="6.5"/></g>
+  <g fill="#d93636"><circle cx="765" cy="140" r="6.5"/></g>
+
+  <!-- Tags on main (SemVer) -->
+  <g>
+    <rect x="150" y="34" width="60" height="20" rx="5" fill="#fff" stroke="#00437a"/><text class="tag" x="180" y="48" text-anchor="middle">v1.0.0</text>
+    <line x1="180" y1="54" x2="180" y2="63" stroke="#00437a" stroke-width="1.5"/>
+    <rect x="600" y="34" width="60" height="20" rx="5" fill="#fff" stroke="#00437a"/><text class="tag" x="630" y="48" text-anchor="middle">v1.1.0</text>
+    <line x1="630" y1="54" x2="630" y2="63" stroke="#00437a" stroke-width="1.5"/>
+    <rect x="800" y="34" width="60" height="20" rx="5" fill="#fff" stroke="#00437a"/><text class="tag" x="830" y="48" text-anchor="middle">v1.1.1</text>
+    <line x1="830" y1="54" x2="830" y2="63" stroke="#00437a" stroke-width="1.5"/>
+  </g>
+
+  <!-- Phase captions -->
+  <text class="cap" x="340" y="400" text-anchor="middle">feature → develop</text>
+  <text class="cap" x="565" y="400" text-anchor="middle">release → main + develop</text>
+  <text class="cap" x="775" y="400" text-anchor="middle">hotfix → main + develop</text>
+
+  <!-- Time axis -->
+  <line x1="140" y1="418" x2="880" y2="418" stroke="#9eb2b8" stroke-width="1.5" marker-end="url(#a-navy)" opacity="0"/>
+  <text class="cap" x="880" y="414" text-anchor="end" font-style="italic">linha do tempo →</text>
+</svg>

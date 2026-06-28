@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shell responsivo — menu recolhível (CAIXA DS)</title>
+  <link rel="stylesheet" href="./caixa-ds.css">
+</head>
+<body>
+
+<div class="dsc-proto-badge">🧩 Basic Layout — sidebar oculta</div>
+
+<!-- Sidebar escondida por padrão (layout extra large): abre como drawer
+     sobreposto pelo ☰ no header, em qualquer tamanho. -->
+<div class="dsc-app" id="app">
+
+  <!-- Sidebar (drawer) -->
+  <aside class="dsc-sidebar">
+    <div class="dsc-sidebar-brand"><span class="dsc-brand-mark">C</span> Sistema</div>
+    <ul class="dsc-menu">
+      <li class="dsc-menu-section">Clientes</li>
+      <li><a class="dsc-menu-item is-active" href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Pesquisar Clientes</a></li>
+      <li><a class="dsc-menu-item" href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Cadastrar Cliente</a></li>
+      <li class="dsc-menu-section">Contratos</li>
+      <li><a class="dsc-menu-item" href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Listar Contratos</a></li>
+    </ul>
+  </aside>
+
+  <div class="dsc-shell-main">
+    <header class="dsc-header">
+      <!-- Botão de toggle do menu (☰) -->
+      <button class="dsc-menu-toggle" aria-label="Recolher/expandir menu" onclick="dscToggleMenu()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <strong>Sistema</strong>
+      <div class="dsc-header-actions">
+        <span class="dsc-text-muted" style="font-size:14px">Ana Costa</span>
+        <span class="dsc-avatar">AC</span>
+      </div>
+    </header>
+
+    <main class="dsc-main is-narrow">
+      <div class="dsc-page-header">
+        <h1 class="dsc-page-title">Shell — menu oculto</h1>
+        <p class="dsc-page-subtitle">Sidebar escondida por padrão (layout extra large). Clique no ☰ para abrir o menu; ao selecionar uma opção, ele recolhe.</p>
+      </div>
+      <div class="dsc-card">
+        <div class="dsc-card-title">Comportamento do menu</div>
+        <ul class="dsc-list">
+          <li class="dsc-list-item"><div class="dsc-list-body"><div class="dsc-list-title">Oculto por padrão</div><div class="dsc-list-sub">A sidebar não aparece no carregamento — o conteúdo ocupa a largura total.</div></div></li>
+          <li class="dsc-list-item"><div class="dsc-list-body"><div class="dsc-list-title">Acessado pelo ☰</div><div class="dsc-list-sub">Abre como drawer sobreposto, com backdrop, em qualquer tamanho.</div></div></li>
+          <li class="dsc-list-item"><div class="dsc-list-body"><div class="dsc-list-title">Recolhe ao acionar opção</div><div class="dsc-list-sub">Clicar em um item do menu (ou fora / ESC) fecha o drawer.</div></div></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <!-- Backdrop: fecha o menu ao clicar fora -->
+  <div class="dsc-sidebar-backdrop" onclick="document.getElementById('app').classList.remove('is-menu-open')"></div>
+</div>
+
+<script>
+  // ☰: abre/fecha o drawer do menu (sidebar oculta por padrão)
+  function dscToggleMenu() {
+    document.querySelector('.dsc-app').classList.toggle('is-menu-open');
+  }
+  // Recolher o drawer ao acionar uma opção (telas < lg)
+  document.querySelectorAll('.dsc-menu-item').forEach(function (a) {
+    a.addEventListener('click', function () { document.querySelector('.dsc-app').classList.remove('is-menu-open'); });
+  });
+  // Fechar com ESC
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') document.querySelector('.dsc-app').classList.remove('is-menu-open');
+  });
+</script>
+
+</body>
+</html>

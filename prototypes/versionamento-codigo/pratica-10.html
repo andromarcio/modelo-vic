@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prática 10 · VIC</title>
+  <link rel="stylesheet" href="assets/chapter.css">
+</head>
+<body>
+<article id="doc" data-page-id="pratica-10">
+
+  <header class="page-hero" data-sp="Banner / Hero">
+    <span class="sp-chip"></span>
+    <div class="ph-num">10</div>
+    <div class="ph-text">
+      <div class="ph-eyebrow">Prática Desejada</div>
+      <h1>O tagueamento deve ser formalizado para commits de produção</h1>
+    </div>
+  </header>
+
+  <div class="diretriz" data-sp="Texto destacado">
+    <span class="sp-chip"></span>
+    <div class="d-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="d-body">
+      <div class="d-kicker">Regra</div>
+      <p>As tags institucionais <strong>devem</strong> adotar o formato derivado do SemVer:
+         <strong>MAJOR.MINOR.PATCH.BUILD</strong> (Padrão <strong>VEC</strong>), assegurando
+         rastreabilidade, clareza e conformidade das versões promovidas para produção.</p>
+    </div>
+  </div>
+
+  <section class="section" data-sp="Imagem">
+    <span class="sp-chip"></span>
+    <h2>O Padrão VEC</h2>
+    <figure class="figure">
+      <div class="fig-head"><span class="sp-chip"></span><span class="fig-tag">Figura</span><span class="fig-title">MAJOR . MINOR . PATCH . BUILD</span></div>
+      <div class="fig-canvas"><img src="assets/img/vec-tag.svg" alt="Padrão VEC: SemVer acrescido do identificador de BUILD; somente versões com tag VEC são elegíveis para produção"></div>
+      <figcaption>O <strong>VEC</strong> amplia o SemVer com o identificador de <strong>BUILD</strong>,
+        essencial para ambientes com múltiplas integrações contínuas.</figcaption>
+    </figure>
+  </section>
+
+  <section class="section" data-sp="Texto">
+    <span class="sp-chip"></span>
+    <h2>Por que o BUILD importa</h2>
+    <ul>
+      <li>O incremento do <strong>BUILD</strong> dá granularidade, diferenciando compilações sucessivas de uma mesma versão lógica sem comprometer o histórico.</li>
+      <li>Garante <strong>reprodutibilidade</strong>, permitindo reinstalações seguras e <strong>rollback</strong> imediato em incidentes.</li>
+      <li>Correlaciona código-fonte, artefatos gerados e pipelines de implantação.</li>
+    </ul>
+
+    <div class="callout callout--ok" data-sp="Aviso">
+      <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      <div class="ct">
+        <strong>Elegibilidade para produção</strong>
+        <p>Somente versões que possuam a tag institucional no formato VEC <strong>devem</strong> ser
+           consideradas aptas para implantação em ambientes produtivos. Commits intermediários ou
+           não homologados <strong>não</strong> podem ser liberados.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="ref-box" data-sp="Texto / Link">
+    <span class="sp-chip"></span>
+    <div class="rb-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Referências metodológicas</div>
+    <p class="placeholder">Espaço reservado para os links institucionais sobre este assunto.</p>
+  </div>
+
+</article>
+<script src="assets/chapter.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prática 3 · Integração contínua</title>
+  <link rel="stylesheet" href="assets/chapter.css">
+</head>
+<body>
+<article id="doc" data-page-id="pratica-3">
+
+  <header class="page-hero" data-sp="Banner / Hero">
+    <span class="sp-chip"></span>
+    <div class="ph-num">3</div>
+    <div class="ph-text">
+      <div class="ph-eyebrow">Prática</div>
+      <h1>A integração do código deve ser contínua para garantir organização e sanitização dos repositórios</h1>
+    </div>
+  </header>
+
+  <div class="diretriz" data-sp="Texto destacado">
+    <span class="sp-chip"></span>
+    <div class="d-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="d-body">
+      <div class="d-kicker">Regra</div>
+      <p>Todos os commits de versões candidatas e/ou finais <strong>devem</strong> ser incorporados
+         às branches principais (<code>develop</code> ou <code>main</code>). As branches temporárias
+         <strong>devem</strong> ser deletadas a cada novo ciclo, promovendo a sanitização contínua
+         dos repositórios — sem acúmulo de branches obsoletas e histórico desnecessário.</p>
+    </div>
+  </div>
+
+  <section class="section" data-sp="Texto">
+    <span class="sp-chip"></span>
+    <h2>O que a diretriz exige</h2>
+    <ul>
+      <li>Commits de versões candidatas e finais <strong>devem</strong> ser incorporados às branches principais (<code>develop</code> ou <code>main</code>).</li>
+      <li>As branches temporárias <strong>devem</strong> ser deletadas ao término de cada ciclo.</li>
+      <li>O repositório <strong>não deve</strong> acumular branches obsoletas nem histórico desnecessário.</li>
+      <li>A integração <strong>deve</strong> ser contínua, mantendo a organização e a rastreabilidade do repositório.</li>
+    </ul>
+  </section>
+
+  <section class="section" data-sp="Imagem">
+    <span class="sp-chip"></span>
+    <h2>Ciclo de vida de uma branch temporária</h2>
+    <p>Toda branch temporária tem vida curta: é criada a partir da linha principal, recebe os
+       commits do trabalho isolado, é integrada de volta e, então, <strong>é deletada</strong>.</p>
+
+    <figure class="figure">
+      <div class="fig-head">
+        <span class="sp-chip"></span>
+        <span class="fig-tag">Figura</span>
+        <span class="fig-title">Criar → integrar → deletar</span>
+      </div>
+      <div class="fig-canvas"><img src="assets/img/branch-lifecycle.svg" alt="Ciclo de vida da branch: criada da develop, commits, merge na develop e deleção; comparação entre repositório poluído e saneado"></div>
+      <figcaption><strong>Sanitização contínua:</strong> a deleção da branch a cada ciclo evita o
+        acúmulo de branches obsoletas e mantém o histórico limpo e auditável.</figcaption>
+    </figure>
+  </section>
+
+  <section class="section" data-sp="Aviso">
+    <span class="sp-chip"></span>
+    <div class="callout callout--ok">
+      <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      <div class="ct">
+        <strong>Resultado esperado</strong>
+        <p>Repositórios saneados, com apenas branches ativas, integração contínua nas linhas
+           principais e histórico consistente — base obrigatória para os indicadores de divergência
+           da <a href="pratica-4.html">Prática 4</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="ref-box" data-sp="Texto / Link">
+    <span class="sp-chip"></span>
+    <div class="rb-title">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      Referências metodológicas
+    </div>
+    <p class="placeholder">As referências metodológicas sobre este assunto devem ser incluídas aqui. <em>(espaço reservado para os links institucionais.)</em></p>
+  </div>
+
+</article>
+<script src="assets/chapter.js"></script>
+</body>
+</html>
