@@ -21,7 +21,7 @@
   </g>
 
   <!-- Wordmark VIC (V = merge de dois branches) -->
-  <g transform="translate(160,12)">
+  <g transform="translate(160,26.5)">
     <g fill="none" stroke="#00437a" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
       <path d="M24 16 L60 92 L96 16"/>
       <path d="M132 16 L132 92"/>
@@ -36,5 +36,10 @@
     <circle cx="236" cy="108" r="4.5" fill="#005ca9"/>
   </g>
 
-  <text x="162" y="160" font-family="'Segoe UI', system-ui, sans-serif" font-size="15.5" font-weight="600" letter-spacing="1.4" fill="#475569">Versionamento e Integração de Código</text>
+  <!-- Tagline: 3 linhas alinhadas à direita da sigla -->
+  <g font-family="'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="600" letter-spacing="0.2" fill="#475569">
+    <text x="428" y="70">Versionamento</text>
+    <text x="428" y="91">e Integração</text>
+    <text x="428" y="112">de Código</text>
+  </g>
 </svg>
