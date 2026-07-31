@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Redução de Riscos Operacionais">
+  <rect x="0" y="0" width="120" height="120" rx="31.43" fill="#e5f2fc"/>
+  <g transform="translate(28.57,28.57) scale(2.62)"
+     fill="none" stroke="#00437a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+    <line x1="12" y1="9.5" x2="12" y2="15"/>
+    <polyline points="9.6 12.6 12 15 14.4 12.6"/>
+  </g>
+</svg>
