@@ -19,19 +19,44 @@ nativas** + **Tema CAIXA**. Não exige código nem SPFx.
 
 ---
 
-## 1. Aplicar o Tema CAIXA
+## 1. Identidade visual (com ou sem tema custom)
 
-**Opção A — registrar o tema (admin):**
+O tema do SharePoint controla **apenas** a cor de destaque: links, botões, faixas
+de seção com ênfase “Forte” e realces da navegação. Ele **não** é pré-requisito
+para nada neste guia — todo o resto são web parts nativas em um Site de
+Comunicação padrão. Não há modelo de site personalizado envolvido.
+
+**Opção A — registrar o tema (exige admin):**
 1. Rode `sharepoint/vic-caixa-theme.ps1` no SharePoint Online Management Shell.
 2. No site: **Engrenagem ⚙ → Alterar a aparência → Tema → “VIC CAIXA” → Aplicar**.
 
-**Opção B — sem admin:** em **Alterar a aparência → Tema**, escolha um tema azul
-próximo e ajuste a cor principal para **`#005CA9`**. Para fidelidade total, peça à
-TI para registrar o tema (Opção A) ou importe o `vic-caixa-theme.json` no
-[Fluent UI Theme Designer](https://aka.ms/themedesigner).
+**Opção B — governança não permite registrar tema:** aceite o tema **Azul**
+padrão e traga a marca pelas **imagens**, que você sobe sem depender de ninguém.
+Tudo abaixo é nível **proprietário do site**:
 
-> O **laranja `#F39200`** não é cor de tema — use-o apenas em **botões/CTA** e nas
-> ilustrações (que já vêm com ele).
+| Onde | Caminho | Arquivo |
+|---|---|---|
+| Cabeçalho do site | **Alterar a aparência → Cabeçalho** → layout **Estendido** → imagem de fundo | `sharepoint/vic-caixa-header-bg-1803x228.png` |
+| Logo do site | **Engrenagem ⚙ → Informações do site → Logotipo do site** | `assets/brand/vic-icon.png` |
+| Capa de cada prática | web part **Imagem** no topo da página | `sharepoint/capas-praticas/` |
+| Ícones de tópico | **Links Rápidos** → imagem por item | `assets/icons/` |
+| Rodapé | **Alterar a aparência → Rodapé** → logo + links | `assets/brand/vic-icon.png` |
+
+> ⚠️ **Não** tente acertar o `#005CA9` em *Alterar a aparência → Tema →
+> Personalizar*: o seletor padrão só oferece variações pré-definidas, **não aceita
+> hex livre**. Sem admin, o azul institucional exato só entra por imagem.
+
+> 💡 A imagem de fundo do cabeçalho depende do layout **Estendido** estar
+> disponível no seu tenant. Se não estiver, o cabeçalho fica no azul padrão e a
+> marca passa a depender só das capas e do logo — vale confirmar antes de montar.
+
+O **laranja `#F39200`** não é cor de tema em nenhum dos dois casos: ele vive nas
+ilustrações e nas capas, que já vêm com ele.
+
+**O que se perde sem o tema:** a cor exata em links, botões e faixas “Forte”
+(ficam no azul padrão do SharePoint). Estrutura, conteúdo, ilustrações e capas
+ficam idênticos. A tipografia também não muda — o protótipo já usa **Segoe UI**,
+que é a fonte padrão do SharePoint.
 
 ---
 
@@ -50,13 +75,23 @@ TI para registrar o tema (Opção A) ou importe o `vic-caixa-theme.json` no
 
 ---
 
-## 3. Subir as ilustrações
+## 3. Subir as imagens
 
 1. **Engrenagem → Conteúdo do site → Ativos do Site** (ou crie uma biblioteca “Imagens”).
-2. ✅ **Use a pasta `sharepoint/ilustracoes-png/`** — todas as ilustrações já estão
-   exportadas em **PNG** (fundo branco, 1200 px), prontas para a web part **Imagem**.
+2. Suba as três pastas — todas já em **PNG**, prontas para as web parts:
+
+   | Pasta | O que é | Onde entra |
+   |---|---|---|
+   | `sharepoint/ilustracoes-png/` | diagramas das práticas (1200 px) | web part **Imagem** |
+   | `sharepoint/capas-praticas/` | as 13 capas azuis (1600 × 232) | web part **Imagem**, topo da página |
+   | `assets/icons/` | ícones de tópico (240 × 240) | **Links Rápidos**, imagem por item |
+
 3. ⚠️ Alguns tenants **bloqueiam SVG** na web part Imagem — por isso os PNG já vêm
    prontos. Se preferir SVG (nitidez infinita), use `assets/img/` e peça a liberação ao admin.
+4. ♿ **Sempre preencha o texto alternativo** de cada imagem. Nas capas isso é
+   obrigatório: o título da prática está desenhado na imagem, então o alt é o que
+   entrega esse texto para leitor de tela e para a busca. Use o título da prática,
+   idêntico ao nome da página.
 
 ---
 
@@ -89,12 +124,17 @@ dentro delas, as **web parts**. Nomes em português do SharePoint moderno.
 
 | Ordem | Seção | Web part | Mapa do protótipo |
 |---|---|---|---|
-| 1 | destaque “Forte” | **Imagem** com texto sobreposto ou **Herói** | Capa azul com nº + título (`.page-hero`) |
-| 2 | 1 coluna | **Texto** (realce) ou **Chamada para ação** | Caixa **“Regra”** (`.diretriz`) |
-| 3 | 1 coluna | **Texto** | “O que a prática exige” (lista) |
-| 4 | 1 coluna | **Imagem** | Ilustração da prática (`assets/img/…`) |
-| 5 | 1 coluna | **Texto** (com tabela) | Tabelas, quando houver |
-| 6 | 1 coluna | **Texto** / **Link** | “Referências metodológicas” |
+| 1 | 1 coluna | **Imagem** → `capas-praticas/pratica-NN-….png` | Capa azul com nº + título (`.page-hero`) |
+| 2 | 1 coluna | **Texto** | Enunciado completo da prática (o `<h1>` da página do protótipo) |
+| 3 | 1 coluna | **Texto** (realce) ou **Chamada para ação** | Caixa **“Regra”** (`.diretriz`) |
+| 4 | 1 coluna | **Texto** | “O que a prática exige” (lista) |
+| 5 | 1 coluna | **Imagem** | Ilustração da prática (`ilustracoes-png/…`) |
+| 6 | 1 coluna | **Texto** (com tabela) | Tabelas, quando houver |
+| 7 | 1 coluna | **Texto** / **Link** | “Referências metodológicas” |
+
+> A capa traz o **título curto**; o **enunciado normativo completo** entra logo
+> abaixo como **texto nativo** (ordem 2). É o que mantém o texto que realmente
+> importa pesquisável e selecionável, em vez de preso dentro da imagem.
 
 > Navegação “anterior/próxima” entre práticas: use a **navegação do hub** ou um
 > bloco **Links Rápidos** no rodapé com as práticas vizinhas.
@@ -135,6 +175,13 @@ dentro delas, as **web parts**. Nomes em português do SharePoint moderno.
 
 - O **cabeçalho e o menu** são os nativos do SharePoint — não o header custom do protótipo.
 - Gradientes e micro-ajustes de espaçamento **não** são reproduzíveis pixel a pixel.
+- As caixas **“Regra”** com borda colorida não existem como web part: o mais próximo
+  é **Texto** com citação/realce ou **Chamada para ação**.
+- **Sem tema custom** (Opção B da seção 1), links, botões e faixas “Forte” ficam no
+  azul padrão do SharePoint. O azul institucional aparece só onde há imagem.
+- Texto desenhado dentro de imagem (as capas) não é pesquisável nem selecionável.
+  Por isso o guia restringe isso ao **título curto** e exige **texto alternativo**
+  na imagem, com o enunciado completo como texto nativo logo abaixo.
 - O resultado fica com **a mesma identidade institucional**, que é o objetivo aqui.
 - Para fidelidade total (reusar o CSS), seria o caminho **SPFx** (exige App Catalog/dev)
   ou **Embed via iframe** (exige liberação de domínio) — fora do escopo “sem código”.
