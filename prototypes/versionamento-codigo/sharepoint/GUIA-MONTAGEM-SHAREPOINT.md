@@ -38,7 +38,7 @@ Tudo abaixo é nível **proprietário do site**:
 |---|---|---|
 | Cabeçalho do site | **Alterar a aparência → Cabeçalho** → layout **Estendido** → imagem de fundo | `sharepoint/vic-caixa-header-bg-1803x228.png` |
 | Logo do site | **Engrenagem ⚙ → Informações do site → Logotipo do site** | `assets/brand/vic-icon.png` |
-| Capa de cada prática | web part **Imagem** no topo da página | `sharepoint/capas-praticas/` |
+| Capa de cada diretriz | web part **Imagem** no topo da página | `sharepoint/capas-diretrizes/` |
 | Ícones de tópico | **Links Rápidos** → imagem por item | `assets/icons/` |
 | Rodapé | **Alterar a aparência → Rodapé** → logo + links | `assets/brand/vic-icon.png` |
 
@@ -66,11 +66,11 @@ que é a fonte padrão do SharePoint.
 2. Defina o **logo** do site com `assets/brand/vic-icon.svg` (ou o PNG).
 3. Crie as páginas (Nova → Página → em branco):
    - **Visão Geral** (defina como página **inicial**)
-   - **Práticas Desejadas**
-   - **Prática 1 … Prática 13** (uma página cada)
+   - **Diretrizes**
+   - **Diretriz 1 … Diretriz 13** (uma página cada)
    - **Tríade Técnica** e **Análise e Acompanhamento** (quando houver conteúdo)
 4. **Navegação superior:** em *Editar* o menu do topo, adicione os links:
-   `Visão Geral · Práticas Desejadas · Tríade Técnica · Análise e Acompanhamento`.
+   `Visão Geral · Diretrizes · Tríade Técnica · Análise e Acompanhamento`.
    (Reproduz a barra `.topnav` do protótipo.)
 
 ---
@@ -82,15 +82,15 @@ que é a fonte padrão do SharePoint.
 
    | Pasta | O que é | Onde entra |
    |---|---|---|
-   | `sharepoint/ilustracoes-png/` | diagramas das práticas (1200 px) | web part **Imagem** |
-   | `sharepoint/capas-praticas/` | as 13 capas azuis (1600 × 232) | web part **Imagem**, topo da página |
+   | `sharepoint/ilustracoes-png/` | diagramas das diretrizes (1200 px) | web part **Imagem** |
+   | `sharepoint/capas-diretrizes/` | as 13 capas azuis (1600 × 232) | web part **Imagem**, topo da página |
    | `assets/icons/` | ícones de tópico (240 × 240) | **Links Rápidos**, imagem por item |
 
 3. ⚠️ Alguns tenants **bloqueiam SVG** na web part Imagem — por isso os PNG já vêm
    prontos. Se preferir SVG (nitidez infinita), use `assets/img/` e peça a liberação ao admin.
 4. ♿ **Sempre preencha o texto alternativo** de cada imagem. Nas capas isso é
-   obrigatório: o título da prática está desenhado na imagem, então o alt é o que
-   entrega esse texto para leitor de tela e para a busca. Use o título da prática,
+   obrigatório: o título da diretriz está desenhado na imagem, então o alt é o que
+   entrega esse texto para leitor de tela e para a busca. Use o título da diretriz,
    idêntico ao nome da página.
 
 ---
@@ -110,25 +110,25 @@ dentro delas, as **web parts**. Nomes em português do SharePoint moderno.
 | 4 | 1 coluna | **Links Rápidos** | Tecnologias de referência (Git, Azure DevOps/GitHub, GitFlow/GitHub Flow, SemVer) |
 | 5 | 1 coluna | **Texto** | “Missão do modelo” (lista) |
 | 6 | 1 coluna | **Links Rápidos** | “Benefícios” (7 itens) |
-| 7 | 1 coluna | **Botão** ou **Chamada para ação** | “Acessar as Práticas Desejadas” |
+| 7 | 1 coluna | **Botão** ou **Chamada para ação** | “Acessar as Diretrizes” |
 
-### 4.2 Página “Práticas Desejadas” (hub)
+### 4.2 Página “Diretrizes” (hub)
 
 | Ordem | Web part | Conteúdo |
 |---|---|---|
-| 1 | **Herói** ou seção com cor de destaque + **Texto** | Título “Práticas Desejadas” |
+| 1 | **Herói** ou seção com cor de destaque + **Texto** | Título “Diretrizes” |
 | 2 | **Texto** | Intro (jornada de maturidade) |
-| 3 | **Links Rápidos** (13 itens) | Cada item linka para a página da prática correspondente |
+| 3 | **Links Rápidos** (13 itens) | Cada item linka para a página da diretriz correspondente |
 
-### 4.3 Página de cada “Prática” (modelo único, repetir 13x)
+### 4.3 Página de cada “Diretriz” (modelo único, repetir 13x)
 
 | Ordem | Seção | Web part | Mapa do protótipo |
 |---|---|---|---|
-| 1 | 1 coluna | **Imagem** → `capas-praticas/pratica-NN-….png` | Capa azul com nº + título (`.page-hero`) |
-| 2 | 1 coluna | **Texto** | Enunciado completo da prática (o `<h1>` da página do protótipo) |
-| 3 | 1 coluna | **Texto** (realce) ou **Chamada para ação** | Caixa **“Regra”** (`.diretriz`) |
-| 4 | 1 coluna | **Texto** | “O que a prática exige” (lista) |
-| 5 | 1 coluna | **Imagem** | Ilustração da prática (`ilustracoes-png/…`) |
+| 1 | 1 coluna | **Imagem** → `capas-diretrizes/diretriz-NN-….png` | Capa azul com nº + título (`.page-hero`) |
+| 2 | 1 coluna | **Texto** | Enunciado completo da diretriz (o `<h1>` da página do protótipo) |
+| 3 | 1 coluna | **Texto** (realce) ou **Chamada para ação** | Caixa **“Regra”** (`.regra`) |
+| 4 | 1 coluna | **Texto** | “O que a diretriz exige” (lista) |
+| 5 | 1 coluna | **Imagem** | Ilustração da diretriz (`ilustracoes-png/…`) |
 | 6 | 1 coluna | **Texto** (com tabela) | Tabelas, quando houver |
 | 7 | 1 coluna | **Texto** / **Link** | “Referências metodológicas” |
 
@@ -136,8 +136,8 @@ dentro delas, as **web parts**. Nomes em português do SharePoint moderno.
 > abaixo como **texto nativo** (ordem 2). É o que mantém o texto que realmente
 > importa pesquisável e selecionável, em vez de preso dentro da imagem.
 
-> Navegação “anterior/próxima” entre práticas: use a **navegação do hub** ou um
-> bloco **Links Rápidos** no rodapé com as práticas vizinhas.
+> Navegação “anterior/próxima” entre diretrizes: use a **navegação do hub** ou um
+> bloco **Links Rápidos** no rodapé com as diretrizes vizinhas.
 
 ---
 
@@ -146,14 +146,14 @@ dentro delas, as **web parts**. Nomes em português do SharePoint moderno.
 | Bloco (classe no protótipo) | Web part do SharePoint (PT-BR) |
 |---|---|
 | `.hero` / `.page-hero` (capa azul) | **Herói** · ou **Imagem** com texto · ou seção “Destaque forte” + **Texto** |
-| `.diretriz` / `.callout` (caixa colorida) | **Texto** com realce · ou **Chamada para ação** |
+| `.regra` / `.callout` (caixa colorida) | **Texto** com realce · ou **Chamada para ação** |
 | `.quicklinks` (cards) | **Links Rápidos** |
 | `.section` / listas / parágrafos | **Texto** |
 | `.figure` (ilustração) | **Imagem** |
 | `.tbl` (tabela) | **Texto** (tabela nativa) |
 | CTA / botão | **Botão** · ou **Chamada para ação** |
 | `.topnav` (navegação) | **Navegação do hub / do site** |
-| Bloco de changelog (Prática 13) | **Texto** (com formatação de código) |
+| Bloco de changelog (Diretriz 13) | **Texto** (com formatação de código) |
 
 ---
 
@@ -166,7 +166,7 @@ dentro delas, as **web parts**. Nomes em português do SharePoint moderno.
   mais fortes.
 - **Imagens:** mantenha **proporção** e largura **total** ou **1/1**; não estique.
 - **Laranja CAIXA** (`#F39200`): só em **botões/CTA** e nos diagramas.
-- **Consistência:** monte **uma** página de prática perfeita, depois **duplique**
+- **Consistência:** monte **uma** página de diretriz perfeita, depois **duplique**
   (Configurações da página → Copiar) e troque número, título, regra e imagem.
 
 ---

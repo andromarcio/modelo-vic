@@ -15,24 +15,24 @@
     title: "Versionamento e Integração de Código",
     nav: [
       { id: "index",    href: "index.html",                 label: "Visão Geral" },
-      { id: "praticas", href: "praticas.html",              label: "Práticas Desejadas" },
+      { id: "diretrizes", href: "diretrizes.html",              label: "Diretrizes" },
       { id: "triade",   href: "triade-tecnica.html",        label: "Tríade Técnica" },
       { id: "analise",  href: "analise-acompanhamento.html",label: "Análise e Acompanhamento" }
     ],
-    praticas: [
-      { num: "1",  id: "pratica-1",  href: "pratica-1.html",  nav: "Versões testadas e validadas para produção" },
-      { num: "2",  id: "pratica-2",  href: "pratica-2.html",  nav: "Modelo de flow (GitFlow / GitHub Flow)" },
-      { num: "3",  id: "pratica-3",  href: "pratica-3.html",  nav: "Integração contínua e sanitização" },
-      { num: "4",  id: "pratica-4",  href: "pratica-4.html",  nav: "Baixa divergência entre branches" },
-      { num: "5",  id: "pratica-5",  href: "pratica-5.html",  nav: "Sincronização ao final do ciclo" },
-      { num: "6",  id: "pratica-6",  href: "pratica-6.html",  nav: "Atuação efetiva do Integrador" },
-      { num: "7",  id: "pratica-7",  href: "pratica-7.html",  nav: "Branches permanentes protegidas" },
-      { num: "8",  id: "pratica-8",  href: "pratica-8.html",  nav: "Pull Request como instrumento central" },
-      { num: "9",  id: "pratica-9",  href: "pratica-9.html",  nav: "Versionamento semântico (SemVer)" },
-      { num: "10", id: "pratica-10", href: "pratica-10.html", nav: "Tagueamento de produção (VEC)" },
-      { num: "11", id: "pratica-11", href: "pratica-11.html", nav: "Padrões de nomenclatura" },
-      { num: "12", id: "pratica-12", href: "pratica-12.html", nav: "Políticas de push" },
-      { num: "13", id: "pratica-13", href: "pratica-13.html", nav: "Nota de versão (changelog)" }
+    diretrizes: [
+      { num: "1",  id: "diretriz-1",  href: "diretriz-1.html",  nav: "Versões testadas e validadas para produção" },
+      { num: "2",  id: "diretriz-2",  href: "diretriz-2.html",  nav: "Modelo de flow (GitFlow / GitHub Flow)" },
+      { num: "3",  id: "diretriz-3",  href: "diretriz-3.html",  nav: "Integração contínua e sanitização" },
+      { num: "4",  id: "diretriz-4",  href: "diretriz-4.html",  nav: "Baixa divergência entre branches" },
+      { num: "5",  id: "diretriz-5",  href: "diretriz-5.html",  nav: "Sincronização ao final do ciclo" },
+      { num: "6",  id: "diretriz-6",  href: "diretriz-6.html",  nav: "Atuação efetiva do Integrador" },
+      { num: "7",  id: "diretriz-7",  href: "diretriz-7.html",  nav: "Branches permanentes protegidas" },
+      { num: "8",  id: "diretriz-8",  href: "diretriz-8.html",  nav: "Pull Request como instrumento central" },
+      { num: "9",  id: "diretriz-9",  href: "diretriz-9.html",  nav: "Versionamento semântico (SemVer)" },
+      { num: "10", id: "diretriz-10", href: "diretriz-10.html", nav: "Tagueamento de produção (VEC)" },
+      { num: "11", id: "diretriz-11", href: "diretriz-11.html", nav: "Padrões de nomenclatura" },
+      { num: "12", id: "diretriz-12", href: "diretriz-12.html", nav: "Políticas de push" },
+      { num: "13", id: "diretriz-13", href: "diretriz-13.html", nav: "Nota de versão (changelog)" }
     ]
   };
 
@@ -69,7 +69,7 @@
   function findPage(id) {
     var i;
     for (i = 0; i < CHAPTER.nav.length; i++) if (CHAPTER.nav[i].id === id) return { kind: "nav", i: i, page: CHAPTER.nav[i] };
-    for (i = 0; i < CHAPTER.praticas.length; i++) if (CHAPTER.praticas[i].id === id) return { kind: "pratica", i: i, page: CHAPTER.praticas[i] };
+    for (i = 0; i < CHAPTER.diretrizes.length; i++) if (CHAPTER.diretrizes[i].id === id) return { kind: "diretriz", i: i, page: CHAPTER.diretrizes[i] };
     return { kind: "nav", i: 0, page: CHAPTER.nav[0] };
   }
 
@@ -82,7 +82,7 @@
     document.head.appendChild(fav);
 
     var cur = findPage(doc.getAttribute("data-page-id"));
-    var activeNav = cur.kind === "pratica" ? "praticas" : cur.page.id;
+    var activeNav = cur.kind === "diretriz" ? "diretrizes" : cur.page.id;
 
     /* ---------- HEADER ---------- */
     var header = el(
@@ -116,9 +116,9 @@
 
     /* breadcrumb */
     var crumbHtml = '<a href="index.html">VIC</a>';
-    if (cur.kind === "pratica") {
-      crumbHtml += '<span class="sep">/</span><a href="praticas.html">Práticas Desejadas</a>' +
-                   '<span class="sep">/</span><span class="current">Prática ' + cur.page.num + '</span>';
+    if (cur.kind === "diretriz") {
+      crumbHtml += '<span class="sep">/</span><a href="diretrizes.html">Diretrizes</a>' +
+                   '<span class="sep">/</span><span class="current">Diretriz ' + cur.page.num + '</span>';
     } else if (cur.page.id !== "index") {
       crumbHtml += '<span class="sep">/</span><span class="current">' + cur.page.label + '</span>';
     } else {
@@ -130,19 +130,19 @@
     content.appendChild(crumb);
     content.appendChild(doc);
 
-    /* rodapé prev/próxima — apenas entre práticas */
-    if (cur.kind === "pratica") {
-      var prev = CHAPTER.praticas[cur.i - 1];
-      var next = CHAPTER.praticas[cur.i + 1];
-      var pnav = el('<nav class="page-nav" aria-label="Navegação entre práticas"></nav>');
+    /* rodapé prev/próxima — apenas entre diretrizes */
+    if (cur.kind === "diretriz") {
+      var prev = CHAPTER.diretrizes[cur.i - 1];
+      var next = CHAPTER.diretrizes[cur.i + 1];
+      var pnav = el('<nav class="page-nav" aria-label="Navegação entre diretrizes"></nav>');
       pnav.appendChild(el(prev
         ? '<a class="prev" href="' + prev.href + '"><span class="pn-dir">‹ Anterior</span>' +
-          '<span class="pn-title">Prática ' + prev.num + ' · ' + prev.nav + '</span></a>'
-        : '<a class="prev" href="praticas.html"><span class="pn-dir">‹ Voltar</span>' +
-          '<span class="pn-title">Práticas Desejadas</span></a>'));
+          '<span class="pn-title">Diretriz ' + prev.num + ' · ' + prev.nav + '</span></a>'
+        : '<a class="prev" href="diretrizes.html"><span class="pn-dir">‹ Voltar</span>' +
+          '<span class="pn-title">Diretrizes</span></a>'));
       pnav.appendChild(el(next
         ? '<a class="next" href="' + next.href + '"><span class="pn-dir">Próxima ›</span>' +
-          '<span class="pn-title">Prática ' + next.num + ' · ' + next.nav + '</span></a>'
+          '<span class="pn-title">Diretriz ' + next.num + ' · ' + next.nav + '</span></a>'
         : '<a class="next empty" href="#"></a>'));
       content.appendChild(pnav);
     }
@@ -181,7 +181,7 @@
     var at = topnav.querySelector("a.is-active");
     if (at && at.scrollIntoView) { try { at.scrollIntoView({ inline: "center", block: "nearest" }); } catch (e) {} }
 
-    var t = cur.kind === "pratica" ? "Prática " + cur.page.num + " · " + cur.page.nav : cur.page.label;
+    var t = cur.kind === "diretriz" ? "Diretriz " + cur.page.num + " · " + cur.page.nav : cur.page.label;
     document.title = t + " · VIC";
   });
 })();

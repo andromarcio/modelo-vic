@@ -305,7 +305,7 @@ a:hover { text-decoration: underline; }
 }
 .hero .chip svg { width: 15px; height: 15px; }
 
-/* page hero (diretriz) – numbered banner */
+/* page hero — numbered banner */
 .page-hero {
   position: relative;
   border-radius: var(--radius-lg);
@@ -366,9 +366,9 @@ code, .code {
 html.app-dark code { color: #8fcbff; }
 
 /* ============================================================================
-   DIRETRIZ CALLOUT (a regra impositiva)  — SharePoint: Aviso / Texto destacado
+   REGRA CALLOUT (a regra impositiva)  — SharePoint: Aviso / Texto destacado
    ============================================================================ */
-.diretriz {
+.regra {
   position: relative;
   display: flex; gap: 18px;
   background: linear-gradient(180deg, var(--c-primary-10), var(--surface));
@@ -379,7 +379,7 @@ html.app-dark code { color: #8fcbff; }
   margin: 26px 0 8px;
   box-shadow: var(--shadow-1);
 }
-.diretriz .d-badge {
+.regra .r-badge {
   flex: 0 0 auto;
   width: 46px; height: 46px;
   display: grid; place-items: center;
@@ -388,12 +388,12 @@ html.app-dark code { color: #8fcbff; }
   color: #fff;
   box-shadow: var(--shadow-1);
 }
-.diretriz .d-badge svg { width: 24px; height: 24px; }
-.diretriz .d-body .d-kicker {
+.regra .r-badge svg { width: 24px; height: 24px; }
+.regra .r-body .r-kicker {
   font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
   color: var(--primary-dark); margin-bottom: 4px;
 }
-.diretriz .d-body p { margin: 0; font-size: 16.5px; font-weight: 600; color: var(--text); line-height: 1.5; }
+.regra .r-body p { margin: 0; font-size: 16.5px; font-weight: 600; color: var(--text); line-height: 1.5; }
 
 /* ============================================================================
    CALLOUTS / AVISOS  — SharePoint: web part "Aviso"
@@ -698,7 +698,7 @@ body.show-sp .sp-hint { display: block; }
 @media print {
   .app-header, .topnav, .page-nav { display: none !important; }
   .content { max-width: none; }
-  .figure, .quicklinks, .diretriz { break-inside: avoid; }
+  .figure, .quicklinks, .regra { break-inside: avoid; }
 }
 
 
@@ -724,7 +724,7 @@ body.show-sp .sp-hint { display: block; }
 <nav class="topnav" aria-label="Navegação do modelo">
   <div class="topnav-inner">
         <a href="#index" data-page="index">Visão Geral</a>
-        <a href="#praticas" data-page="praticas">Práticas Desejadas</a>
+        <a href="#diretrizes" data-page="diretrizes">Diretrizes</a>
         <a href="#triade" data-page="triade">Tríade Técnica</a>
         <a href="#analise" data-page="analise">Análise e Acompanhamento</a>
   </div>
@@ -744,7 +744,7 @@ body.show-sp .sp-hint { display: block; }
          código. Regras de aplicação <strong>obrigatória</strong>, com base em <strong>Git</strong>,
          <strong>GitFlow</strong>, <strong>GitHub Flow</strong> e <strong>SemVer</strong>.</p>
       <div class="hero-meta">
-        <span class="chip">13 práticas desejadas</span>
+        <span class="chip">13 diretrizes</span>
         <span class="chip">Modelo determinístico</span>
         <span class="chip">Governança técnica</span>
       </div>
@@ -768,7 +768,7 @@ body.show-sp .sp-hint { display: block; }
       <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       <div class="ct">
         <strong>Modelo determinístico</strong>
-        <p>As práticas têm caráter <strong>impositivo</strong>: definem o que <strong>deve</strong>
+        <p>As diretrizes têm caráter <strong>impositivo</strong>: definem o que <strong>deve</strong>
            ser cumprido pelos times de desenvolvimento. A adoção de modelos particulares ou
            improvisados não é permitida, pois compromete a integridade do código e a rastreabilidade.</p>
       </div>
@@ -806,7 +806,7 @@ body.show-sp .sp-hint { display: block; }
     <span class="sp-chip"></span>
     <h2>Missão do modelo</h2>
     <ul>
-      <li><strong>Unificar</strong> as práticas de versionamento e integração em todos os times, promovendo linguagem comum entre comunidades, boxes, squads, capítulos e tribos.</li>
+      <li><strong>Unificar</strong> as diretrizes de versionamento e integração em todos os times, promovendo linguagem comum entre comunidades, boxes, squads, capítulos e tribos.</li>
       <li><strong>Institucionalizar</strong> o uso de Git, GitFlow e GitHub Flow como frameworks de governança de código.</li>
       <li><strong>Estabelecer</strong> políticas de branches e tagueamento que garantam integridade, rastreabilidade e conformidade com os ciclos de release.</li>
       <li><strong>Promover</strong> o uso de SemVer como mecanismo de comunicação entre versões e gestão de dependências.</li>
@@ -836,28 +836,28 @@ body.show-sp .sp-hint { display: block; }
     <div class="callout callout--info">
       <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
       <div class="ct">
-        <strong>Práticas Desejadas</strong>
-        <p>O núcleo do modelo são as <strong>13 práticas desejadas</strong> que cada time deve
-           observar. <a href="#praticas">Acessar as Práticas Desejadas →</a></p>
+        <strong>Diretrizes</strong>
+        <p>O núcleo do modelo são as <strong>13 diretrizes</strong> que cada time deve
+           observar. <a href="#diretrizes">Acessar as Diretrizes →</a></p>
       </div>
     </div>
   </section>
 
 </article>
-<article class="vc-page" data-page-id="praticas">
+<article class="vc-page" data-page-id="diretrizes">
 
   <header class="page-hero" data-sp="Banner / Hero">
     <span class="sp-chip"></span>
     <div class="ph-num" style="font-size:22px;line-height:1.1">13</div>
     <div class="ph-text">
       <div class="ph-eyebrow">Modelo VIC</div>
-      <h1>Práticas Desejadas</h1>
+      <h1>Diretrizes</h1>
     </div>
   </header>
 
   <section class="section" data-sp="Texto">
     <span class="sp-chip"></span>
-    <p class="lead">As práticas desejadas são os critérios que <strong>devem</strong> ser observados
+    <p class="lead">As diretrizes são os critérios que <strong>devem</strong> ser observados
        pelos times de desenvolvimento. Servem como referência de autoavaliação, orientação e
        evolução contínua do nível de maturidade técnica.</p>
     <p>A maturidade em versionamento e integração é uma jornada evolutiva: cada time pode apresentar
@@ -867,55 +867,55 @@ body.show-sp .sp-hint { display: block; }
 
   <section class="section" data-sp="Links Rápidos">
     <span class="sp-chip"></span>
-    <h2>As 13 práticas</h2>
+    <h2>As 13 diretrizes</h2>
     <div class="quicklinks">
 
-      <a class="ql-card" href="#pratica-1"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span><span class="ql-num">Prática 1</span></div><h3>Versões testadas e validadas para produção</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+      <a class="ql-card" href="#diretriz-1"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span><span class="ql-num">Diretriz 1</span></div><h3>Versões testadas e validadas para produção</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
 
-      <a class="ql-card" href="#pratica-2"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></span><span class="ql-num">Prática 2</span></div><h3>Modelo de flow aderente ao GitFlow ou GitHub Flow</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+      <a class="ql-card" href="#diretriz-2"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></span><span class="ql-num">Diretriz 2</span></div><h3>Modelo de flow aderente ao GitFlow ou GitHub Flow</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
 
-      <a class="ql-card" href="#pratica-3"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span><span class="ql-num">Prática 3</span></div><h3>Integração contínua e sanitização dos repositórios</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+      <a class="ql-card" href="#diretriz-3"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span><span class="ql-num">Diretriz 3</span></div><h3>Integração contínua e sanitização dos repositórios</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
 
-      <a class="ql-card" href="#pratica-4"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></span><span class="ql-num">Prática 4</span></div><h3>Baixo índice de divergência entre branches</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+      <a class="ql-card" href="#diretriz-4"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></span><span class="ql-num">Diretriz 4</span></div><h3>Baixo índice de divergência entre branches</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
 
-      <a class="ql-card" href="#pratica-5"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 9v6a3 3 0 0 0 3 3h6"/><path d="M15 6h3a3 3 0 0 1 3 3"/></svg></span><span class="ql-num">Prática 5</span></div><h3>Sincronização entre branches principais (merge back)</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+      <a class="ql-card" href="#diretriz-5"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 9v6a3 3 0 0 0 3 3h6"/><path d="M15 6h3a3 3 0 0 1 3 3"/></svg></span><span class="ql-num">Diretriz 5</span></div><h3>Sincronização entre branches principais (merge back)</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
 
-      <a class="ql-card" href="#pratica-6"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span class="ql-num">Prática 6</span></div><h3>Atuação efetiva do Integrador</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+      <a class="ql-card" href="#diretriz-6"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span class="ql-num">Diretriz 6</span></div><h3>Atuação efetiva do Integrador</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
 
-      <a class="ql-card" href="#pratica-7"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span><span class="ql-num">Prática 7</span></div><h3>Branches permanentes protegidas</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+      <a class="ql-card" href="#diretriz-7"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span><span class="ql-num">Diretriz 7</span></div><h3>Branches permanentes protegidas</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
 
-      <a class="ql-card" href="#pratica-8"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg></span><span class="ql-num">Prática 8</span></div><h3>Pull Request como instrumento central</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+      <a class="ql-card" href="#diretriz-8"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg></span><span class="ql-num">Diretriz 8</span></div><h3>Pull Request como instrumento central</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
 
-      <a class="ql-card" href="#pratica-9"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg></span><span class="ql-num">Prática 9</span></div><h3>Versionamento semântico (SemVer)</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+      <a class="ql-card" href="#diretriz-9"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg></span><span class="ql-num">Diretriz 9</span></div><h3>Versionamento semântico (SemVer)</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
 
-      <a class="ql-card" href="#pratica-10"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></span><span class="ql-num">Prática 10</span></div><h3>Tagueamento de produção (Padrão VEC)</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+      <a class="ql-card" href="#diretriz-10"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></span><span class="ql-num">Diretriz 10</span></div><h3>Tagueamento de produção (Padrão VEC)</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
 
-      <a class="ql-card" href="#pratica-11"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><polyline points="10 3 8 21"/><polyline points="16 3 14 21"/></svg></span><span class="ql-num">Prática 11</span></div><h3>Padrões de nomenclatura</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+      <a class="ql-card" href="#diretriz-11"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><polyline points="10 3 8 21"/><polyline points="16 3 14 21"/></svg></span><span class="ql-num">Diretriz 11</span></div><h3>Padrões de nomenclatura</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
 
-      <a class="ql-card" href="#pratica-12"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><span class="ql-num">Prática 12</span></div><h3>Políticas de push (formato, tamanho, autoria)</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+      <a class="ql-card" href="#diretriz-12"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><span class="ql-num">Diretriz 12</span></div><h3>Políticas de push (formato, tamanho, autoria)</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
 
-      <a class="ql-card" href="#pratica-13"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span><span class="ql-num">Prática 13</span></div><h3>Nota de versão (changelog)</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+      <a class="ql-card" href="#diretriz-13"><div class="ql-top"><span class="ql-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span><span class="ql-num">Diretriz 13</span></div><h3>Nota de versão (changelog)</h3><span class="ql-go">Abrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
 
     </div>
   </section>
 
 </article>
-<article class="vc-page" data-page-id="pratica-1">
+<article class="vc-page" data-page-id="diretriz-1">
 
   <header class="page-hero" data-sp="Banner / Hero">
     <span class="sp-chip"></span>
     <div class="ph-num">1</div>
     <div class="ph-text">
-      <div class="ph-eyebrow">Prática Desejada</div>
+      <div class="ph-eyebrow">Diretriz</div>
       <h1>Versões promovidas para produção devem ser efetivamente testadas e validadas</h1>
     </div>
   </header>
 
-  <div class="diretriz" data-sp="Texto destacado">
+  <div class="regra" data-sp="Texto destacado">
     <span class="sp-chip"></span>
-    <div class="d-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-    <div class="d-body">
-      <div class="d-kicker">Regra</div>
+    <div class="r-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="r-body">
+      <div class="r-kicker">Regra</div>
       <p>Somente versões que passaram por validações técnicas, testes de qualidade e segurança
          <strong>devem</strong> ser liberadas para ambientes produtivos. Cada versão <strong>deve</strong>
          ser identificável, condicionada e rastreável em todo o seu ciclo de desenvolvimento.</p>
@@ -924,7 +924,7 @@ body.show-sp .sp-hint { display: block; }
 
   <section class="section" data-sp="Texto">
     <span class="sp-chip"></span>
-    <h2>O que a prática exige</h2>
+    <h2>O que a diretriz exige</h2>
     <ul>
       <li>O time <strong>deve</strong> usar o versionamento de forma padronizada — tags institucionais, nomenclaturas consistentes e <strong>SemVer</strong> — vinculando cada versão ao seu contexto de desenvolvimento, testes e aprovação.</li>
       <li>A integração contínua <strong>deve</strong> ser acompanhada por <strong>pipelines automatizadas</strong> com verificações obrigatórias: análise estática de código, testes unitários e validações de segurança.</li>
@@ -952,22 +952,22 @@ body.show-sp .sp-hint { display: block; }
   </div>
 
 </article>
-<article class="vc-page" data-page-id="pratica-2">
+<article class="vc-page" data-page-id="diretriz-2">
 
   <header class="page-hero" data-sp="Banner / Hero">
     <span class="sp-chip"></span>
     <div class="ph-num">2</div>
     <div class="ph-text">
-      <div class="ph-eyebrow">Prática</div>
+      <div class="ph-eyebrow">Diretriz</div>
       <h1>O modelo de flow adotado deve ser aderente ao GitFlow ou GitHub Flow</h1>
     </div>
   </header>
 
-  <div class="diretriz" data-sp="Texto destacado">
+  <div class="regra" data-sp="Texto destacado">
     <span class="sp-chip"></span>
-    <div class="d-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-    <div class="d-body">
-      <div class="d-kicker">Regra</div>
+    <div class="r-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="r-body">
+      <div class="r-kicker">Regra</div>
       <p>O modelo de fluxo de trabalho adotado pela equipe de desenvolvimento <strong>deve</strong>
          ser aderente aos modelos de mercado <strong>GitFlow</strong> ou <strong>GitHub Flow</strong>.
          Os repositórios <strong>devem</strong> manter as branches <code>develop</code> e/ou
@@ -1043,22 +1043,22 @@ body.show-sp .sp-hint { display: block; }
   </div>
 
 </article>
-<article class="vc-page" data-page-id="pratica-3">
+<article class="vc-page" data-page-id="diretriz-3">
 
   <header class="page-hero" data-sp="Banner / Hero">
     <span class="sp-chip"></span>
     <div class="ph-num">3</div>
     <div class="ph-text">
-      <div class="ph-eyebrow">Prática</div>
+      <div class="ph-eyebrow">Diretriz</div>
       <h1>A integração do código deve ser contínua para garantir organização e sanitização dos repositórios</h1>
     </div>
   </header>
 
-  <div class="diretriz" data-sp="Texto destacado">
+  <div class="regra" data-sp="Texto destacado">
     <span class="sp-chip"></span>
-    <div class="d-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-    <div class="d-body">
-      <div class="d-kicker">Regra</div>
+    <div class="r-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="r-body">
+      <div class="r-kicker">Regra</div>
       <p>Todos os commits de versões candidatas e/ou finais <strong>devem</strong> ser incorporados
          às branches principais (<code>develop</code> ou <code>main</code>). As branches temporárias
          <strong>devem</strong> ser deletadas a cada novo ciclo, promovendo a sanitização contínua
@@ -1103,7 +1103,7 @@ body.show-sp .sp-hint { display: block; }
         <strong>Resultado esperado</strong>
         <p>Repositórios saneados, com apenas branches ativas, integração contínua nas linhas
            principais e histórico consistente — base obrigatória para os indicadores de divergência
-           da <a href="#pratica-4">Prática 4</a>.</p>
+           da <a href="#diretriz-4">Diretriz 4</a>.</p>
       </div>
     </div>
   </section>
@@ -1118,22 +1118,22 @@ body.show-sp .sp-hint { display: block; }
   </div>
 
 </article>
-<article class="vc-page" data-page-id="pratica-4">
+<article class="vc-page" data-page-id="diretriz-4">
 
   <header class="page-hero" data-sp="Banner / Hero">
     <span class="sp-chip"></span>
     <div class="ph-num">4</div>
     <div class="ph-text">
-      <div class="ph-eyebrow">Prática</div>
+      <div class="ph-eyebrow">Diretriz</div>
       <h1>As branches protegidas devem apresentar baixo índice de divergência em relação às temporárias</h1>
     </div>
   </header>
 
-  <div class="diretriz" data-sp="Texto destacado">
+  <div class="regra" data-sp="Texto destacado">
     <span class="sp-chip"></span>
-    <div class="d-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-    <div class="d-body">
-      <div class="d-kicker">Regra</div>
+    <div class="r-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="r-body">
+      <div class="r-kicker">Regra</div>
       <p>A diferença de commits <strong>ahead/behind</strong> entre branches permanentes
          (<code>develop</code> e/ou <code>main</code>) e branches temporárias <strong>deve</strong>
          ser monitorada continuamente e mantida dentro dos limites definidos, evitando o acúmulo
@@ -1209,22 +1209,22 @@ body.show-sp .sp-hint { display: block; }
   </div>
 
 </article>
-<article class="vc-page" data-page-id="pratica-5">
+<article class="vc-page" data-page-id="diretriz-5">
 
   <header class="page-hero" data-sp="Banner / Hero">
     <span class="sp-chip"></span>
     <div class="ph-num">5</div>
     <div class="ph-text">
-      <div class="ph-eyebrow">Prática</div>
+      <div class="ph-eyebrow">Diretriz</div>
       <h1>A sincronização entre branches principais deve ser garantida ao final de cada ciclo</h1>
     </div>
   </header>
 
-  <div class="diretriz" data-sp="Texto destacado">
+  <div class="regra" data-sp="Texto destacado">
     <span class="sp-chip"></span>
-    <div class="d-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-    <div class="d-body">
-      <div class="d-kicker">Regra</div>
+    <div class="r-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="r-body">
+      <div class="r-kicker">Regra</div>
       <p>A sincronização das branches <code>main</code> e <code>develop</code> ao término de cada
          ciclo é <strong>obrigatória</strong>. Esse processo, conhecido como <strong>merge back</strong>,
          assegura que ambas as linhas permanentes reflitam o estado mais atualizado do código.</p>
@@ -1242,7 +1242,7 @@ body.show-sp .sp-hint { display: block; }
 
   <section class="section" data-sp="Imagem">
     <span class="sp-chip"></span>
-    <h2>O merge back na prática</h2>
+    <h2>O merge back na diretriz</h2>
     <figure class="figure">
       <div class="fig-head">
         <span class="sp-chip"></span>
@@ -1286,24 +1286,24 @@ body.show-sp .sp-hint { display: block; }
   </div>
 
 </article>
-<article class="vc-page" data-page-id="pratica-6">
+<article class="vc-page" data-page-id="diretriz-6">
 
   <header class="page-hero" data-sp="Banner / Hero">
     <span class="sp-chip"></span>
     <div class="ph-num">6</div>
     <div class="ph-text">
-      <div class="ph-eyebrow">Prática</div>
+      <div class="ph-eyebrow">Diretriz</div>
       <h1>O papel de Integrador deve ser exercido de forma efetiva</h1>
     </div>
   </header>
 
-  <div class="diretriz" data-sp="Texto destacado">
+  <div class="regra" data-sp="Texto destacado">
     <span class="sp-chip"></span>
-    <div class="d-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-    <div class="d-body">
-      <div class="d-kicker">Regra</div>
+    <div class="r-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="r-body">
+      <div class="r-kicker">Regra</div>
       <p>O Integrador é um papel estratégico do ciclo de desenvolvimento, atuando como referência
-         técnica para garantir a aplicação rigorosa das práticas institucionais de versionamento e
+         técnica para garantir a aplicação rigorosa das diretrizes institucionais de versionamento e
          integração. Cada repositório <strong>deve</strong> possuir integradores
          <strong>permissionados por time</strong>.</p>
     </div>
@@ -1366,22 +1366,22 @@ body.show-sp .sp-hint { display: block; }
   </div>
 
 </article>
-<article class="vc-page" data-page-id="pratica-7">
+<article class="vc-page" data-page-id="diretriz-7">
 
   <header class="page-hero" data-sp="Banner / Hero">
     <span class="sp-chip"></span>
     <div class="ph-num">7</div>
     <div class="ph-text">
-      <div class="ph-eyebrow">Prática Desejada</div>
+      <div class="ph-eyebrow">Diretriz</div>
       <h1>As branches permanentes devem ser protegidas</h1>
     </div>
   </header>
 
-  <div class="diretriz" data-sp="Texto destacado">
+  <div class="regra" data-sp="Texto destacado">
     <span class="sp-chip"></span>
-    <div class="d-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-    <div class="d-body">
-      <div class="d-kicker">Regra</div>
+    <div class="r-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="r-body">
+      <div class="r-kicker">Regra</div>
       <p>As branches permanentes (<code>develop</code> e <code>main</code>) <strong>devem</strong>
          apresentar políticas de segurança e controle aplicadas, de modo que alterações ocorram
          somente por processos definidos e controlados — preservando a integridade do código.</p>
@@ -1390,7 +1390,7 @@ body.show-sp .sp-hint { display: block; }
 
   <section class="section" data-sp="Texto">
     <span class="sp-chip"></span>
-    <h2>O que a prática exige</h2>
+    <h2>O que a diretriz exige</h2>
     <ul>
       <li><strong>Bloqueio de push manual</strong> direto nas branches permanentes.</li>
       <li>Exigência de <strong>pull request</strong> revisado, aprovado por pares e <strong>concluído por integradores</strong>.</li>
@@ -1417,22 +1417,22 @@ body.show-sp .sp-hint { display: block; }
   </div>
 
 </article>
-<article class="vc-page" data-page-id="pratica-8">
+<article class="vc-page" data-page-id="diretriz-8">
 
   <header class="page-hero" data-sp="Banner / Hero">
     <span class="sp-chip"></span>
     <div class="ph-num">8</div>
     <div class="ph-text">
-      <div class="ph-eyebrow">Prática Desejada</div>
+      <div class="ph-eyebrow">Diretriz</div>
       <h1>Pull Request deve ser o instrumento central de integração, revisão colaborativa e validação técnica</h1>
     </div>
   </header>
 
-  <div class="diretriz" data-sp="Texto destacado">
+  <div class="regra" data-sp="Texto destacado">
     <span class="sp-chip"></span>
-    <div class="d-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-    <div class="d-body">
-      <div class="d-kicker">Regra</div>
+    <div class="r-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="r-body">
+      <div class="r-kicker">Regra</div>
       <p>Todas as versões candidatas <strong>devem</strong> ser submetidas por <strong>Pull Request</strong>,
          permitindo revisão por pares, registro de decisões técnicas, rastreabilidade das mudanças e
          aplicação das políticas institucionais de qualidade e segurança.</p>
@@ -1471,22 +1471,22 @@ body.show-sp .sp-hint { display: block; }
   </div>
 
 </article>
-<article class="vc-page" data-page-id="pratica-9">
+<article class="vc-page" data-page-id="diretriz-9">
 
   <header class="page-hero" data-sp="Banner / Hero">
     <span class="sp-chip"></span>
     <div class="ph-num">9</div>
     <div class="ph-text">
-      <div class="ph-eyebrow">Prática Desejada</div>
+      <div class="ph-eyebrow">Diretriz</div>
       <h1>O versionamento semântico deve ser adotado para todos os elementos que compõem a versão</h1>
     </div>
   </header>
 
-  <div class="diretriz" data-sp="Texto destacado">
+  <div class="regra" data-sp="Texto destacado">
     <span class="sp-chip"></span>
-    <div class="d-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-    <div class="d-body">
-      <div class="d-kicker">Regra</div>
+    <div class="r-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="r-body">
+      <div class="r-kicker">Regra</div>
       <p>Commits, artefatos, bibliotecas, execuções de workflows e demais componentes
          <strong>devem</strong> adotar o padrão <strong>SemVer</strong>, garantindo clareza na
          evolução das versões e eliminando ambiguidades na identificação de cada entrega.</p>
@@ -1522,22 +1522,22 @@ body.show-sp .sp-hint { display: block; }
   </div>
 
 </article>
-<article class="vc-page" data-page-id="pratica-10">
+<article class="vc-page" data-page-id="diretriz-10">
 
   <header class="page-hero" data-sp="Banner / Hero">
     <span class="sp-chip"></span>
     <div class="ph-num">10</div>
     <div class="ph-text">
-      <div class="ph-eyebrow">Prática Desejada</div>
+      <div class="ph-eyebrow">Diretriz</div>
       <h1>O tagueamento deve ser formalizado para commits de produção</h1>
     </div>
   </header>
 
-  <div class="diretriz" data-sp="Texto destacado">
+  <div class="regra" data-sp="Texto destacado">
     <span class="sp-chip"></span>
-    <div class="d-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-    <div class="d-body">
-      <div class="d-kicker">Regra</div>
+    <div class="r-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="r-body">
+      <div class="r-kicker">Regra</div>
       <p>As tags institucionais <strong>devem</strong> adotar o formato derivado do SemVer:
          <strong>MAJOR.MINOR.PATCH.BUILD</strong> (Padrão <strong>VEC</strong>), assegurando
          rastreabilidade, clareza e conformidade das versões promovidas para produção.</p>
@@ -1582,22 +1582,22 @@ body.show-sp .sp-hint { display: block; }
   </div>
 
 </article>
-<article class="vc-page" data-page-id="pratica-11">
+<article class="vc-page" data-page-id="diretriz-11">
 
   <header class="page-hero" data-sp="Banner / Hero">
     <span class="sp-chip"></span>
     <div class="ph-num">11</div>
     <div class="ph-text">
-      <div class="ph-eyebrow">Prática Desejada</div>
+      <div class="ph-eyebrow">Diretriz</div>
       <h1>Repositórios, branches e versões devem apresentar padrões de nomenclatura</h1>
     </div>
   </header>
 
-  <div class="diretriz" data-sp="Texto destacado">
+  <div class="regra" data-sp="Texto destacado">
     <span class="sp-chip"></span>
-    <div class="d-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-    <div class="d-body">
-      <div class="d-kicker">Regra</div>
+    <div class="r-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="r-body">
+      <div class="r-kicker">Regra</div>
       <p>A nomenclatura dos principais elementos do versionamento <strong>deve</strong> ser
          padronizada, facilitando identificação, controle de acesso e geração de indicadores.
          Cada elemento <strong>deve</strong> estar aderente ao padrão esperado.</p>
@@ -1614,7 +1614,7 @@ body.show-sp .sp-hint { display: block; }
         <tbody>
           <tr><td><strong>Repositórios</strong></td><td><code>SISTEMA-modulo</code></td><td>Aderente ao cadastro de item de portfólio</td></tr>
           <tr><td><strong>Branches</strong></td><td><code>feature/*</code>, <code>release/*</code>, <code>hotfix/*</code> …</td><td>Aderente ao GitFlow ou GitHub Flow</td></tr>
-          <tr><td><strong>Versões</strong></td><td><code>MAJOR.MINOR.PATCH</code></td><td>Aderente ao SemVer (ver <a href="#pratica-9">Prática 9</a>)</td></tr>
+          <tr><td><strong>Versões</strong></td><td><code>MAJOR.MINOR.PATCH</code></td><td>Aderente ao SemVer (ver <a href="#diretriz-9">Diretriz 9</a>)</td></tr>
         </tbody>
       </table>
     </div>
@@ -1629,22 +1629,22 @@ body.show-sp .sp-hint { display: block; }
   </div>
 
 </article>
-<article class="vc-page" data-page-id="pratica-12">
+<article class="vc-page" data-page-id="diretriz-12">
 
   <header class="page-hero" data-sp="Banner / Hero">
     <span class="sp-chip"></span>
     <div class="ph-num">12</div>
     <div class="ph-text">
-      <div class="ph-eyebrow">Prática Desejada</div>
+      <div class="ph-eyebrow">Diretriz</div>
       <h1>Formato, tamanho de arquivos e identificação dos autores de commits devem estar aderentes às políticas de pushes</h1>
     </div>
   </header>
 
-  <div class="diretriz" data-sp="Texto destacado">
+  <div class="regra" data-sp="Texto destacado">
     <span class="sp-chip"></span>
-    <div class="d-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-    <div class="d-body">
-      <div class="d-kicker">Regra</div>
+    <div class="r-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="r-body">
+      <div class="r-kicker">Regra</div>
       <p>Os arquivos versionados <strong>devem</strong> respeitar o formato e o tamanho definidos
          institucionalmente, e o autor de cada commit <strong>deve</strong> ser identificável e
          rastreável a cada push.</p>
@@ -1683,22 +1683,22 @@ body.show-sp .sp-hint { display: block; }
   </div>
 
 </article>
-<article class="vc-page" data-page-id="pratica-13">
+<article class="vc-page" data-page-id="diretriz-13">
 
   <header class="page-hero" data-sp="Banner / Hero">
     <span class="sp-chip"></span>
     <div class="ph-num">13</div>
     <div class="ph-text">
-      <div class="ph-eyebrow">Prática Desejada</div>
+      <div class="ph-eyebrow">Diretriz</div>
       <h1>Cada mudança do produto deve ter publicada uma nota de versão (changelog)</h1>
     </div>
   </header>
 
-  <div class="diretriz" data-sp="Texto destacado">
+  <div class="regra" data-sp="Texto destacado">
     <span class="sp-chip"></span>
-    <div class="d-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-    <div class="d-body">
-      <div class="d-kicker">Regra</div>
+    <div class="r-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="r-body">
+      <div class="r-kicker">Regra</div>
       <p>A versão consolidada do produto <strong>deve</strong> ser mantida e comunicada por meio de
          uma <strong>nota de versão (changelog)</strong> a cada mudança publicada — independentemente
          das versões individuais dos seus módulos.</p>
@@ -1749,7 +1749,7 @@ body.show-sp .sp-hint { display: block; }
   <section class="section" data-sp="Texto">
     <span class="sp-chip"></span>
     <p class="lead">A Tríade Técnica organiza o modelo em três frentes complementares de sustentação
-       das Práticas Desejadas.</p>
+       das Diretrizes.</p>
   </section>
 
   <section class="section" data-sp="Links Rápidos">
@@ -1793,11 +1793,11 @@ body.show-sp .sp-hint { display: block; }
 
   <section class="section" data-sp="Texto">
     <span class="sp-chip"></span>
-    <p class="lead">Frente do modelo responsável por mensurar a aderência às Práticas Desejadas e
+    <p class="lead">Frente do modelo responsável por mensurar a aderência às Diretrizes e
        acompanhar a evolução da maturidade dos times.</p>
     <p>O acompanhamento se apoia em indicadores objetivos — como divergência de commits
        (<em>ahead/behind</em>), rastreabilidade de tags, conformidade de nomenclatura e uso de
-       pull requests — que dialogam diretamente com as práticas deste modelo.</p>
+       pull requests — que dialogam diretamente com as diretrizes deste modelo.</p>
 
     <div class="note-missing">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#525f66" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="13"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
@@ -1814,7 +1814,7 @@ body.show-sp .sp-hint { display: block; }
 
 (function(){
   "use strict";
-  var NAV=[{id:"index",label:"Visão Geral"},{id:"praticas",label:"Práticas Desejadas"},{id:"triade",label:"Tríade Técnica"},{id:"analise",label:"Análise e Acompanhamento"}], PRAT=[{num:"1",id:"pratica-1",nav:"Versões testadas e validadas para produção"},{num:"2",id:"pratica-2",nav:"Modelo de flow (GitFlow / GitHub Flow)"},{num:"3",id:"pratica-3",nav:"Integração contínua e sanitização"},{num:"4",id:"pratica-4",nav:"Baixa divergência entre branches"},{num:"5",id:"pratica-5",nav:"Sincronização ao final do ciclo"},{num:"6",id:"pratica-6",nav:"Atuação efetiva do Integrador"},{num:"7",id:"pratica-7",nav:"Branches permanentes protegidas"},{num:"8",id:"pratica-8",nav:"Pull Request como instrumento central"},{num:"9",id:"pratica-9",nav:"Versionamento semântico (SemVer)"},{num:"10",id:"pratica-10",nav:"Tagueamento de produção (VEC)"},{num:"11",id:"pratica-11",nav:"Padrões de nomenclatura"},{num:"12",id:"pratica-12",nav:"Políticas de push"},{num:"13",id:"pratica-13",nav:"Nota de versão (changelog)"}];
+  var NAV=[{id:"index",label:"Visão Geral"},{id:"diretrizes",label:"Diretrizes"},{id:"triade",label:"Tríade Técnica"},{id:"analise",label:"Análise e Acompanhamento"}], DIRZ=[{num:"1",id:"diretriz-1",nav:"Versões testadas e validadas para produção"},{num:"2",id:"diretriz-2",nav:"Modelo de flow (GitFlow / GitHub Flow)"},{num:"3",id:"diretriz-3",nav:"Integração contínua e sanitização"},{num:"4",id:"diretriz-4",nav:"Baixa divergência entre branches"},{num:"5",id:"diretriz-5",nav:"Sincronização ao final do ciclo"},{num:"6",id:"diretriz-6",nav:"Atuação efetiva do Integrador"},{num:"7",id:"diretriz-7",nav:"Branches permanentes protegidas"},{num:"8",id:"diretriz-8",nav:"Pull Request como instrumento central"},{num:"9",id:"diretriz-9",nav:"Versionamento semântico (SemVer)"},{num:"10",id:"diretriz-10",nav:"Tagueamento de produção (VEC)"},{num:"11",id:"diretriz-11",nav:"Padrões de nomenclatura"},{num:"12",id:"diretriz-12",nav:"Políticas de push"},{num:"13",id:"diretriz-13",nav:"Nota de versão (changelog)"}];
   var root=document.documentElement, body=document.body;
   var arts=[].slice.call(document.querySelectorAll('.vc-page'));
   var tabs=[].slice.call(document.querySelectorAll('.topnav a'));
@@ -1824,7 +1824,7 @@ body.show-sp .sp-hint { display: block; }
   function meta(id){
     var i;
     for(i=0;i<NAV.length;i++) if(NAV[i].id===id) return {kind:'nav', label:NAV[i].label, id:id};
-    for(i=0;i<PRAT.length;i++) if(PRAT[i].id===id) return {kind:'pratica', i:i, p:PRAT[i]};
+    for(i=0;i<DIRZ.length;i++) if(DIRZ[i].id===id) return {kind:'diretriz', i:i, p:DIRZ[i]};
     return {kind:'nav', label:NAV[0].label, id:'index'};
   }
   function idxFromHash(){
@@ -1835,11 +1835,11 @@ body.show-sp .sp-hint { display: block; }
   function show(id){
     var m=meta(id);
     arts.forEach(function(a){ a.classList.toggle('is-active', a.getAttribute('data-page-id')===id); });
-    var activeNav = m.kind==='pratica' ? 'praticas' : id;
+    var activeNav = m.kind==='diretriz' ? 'diretrizes' : id;
     tabs.forEach(function(t){ t.classList.toggle('is-active', t.getAttribute('data-page')===activeNav); });
 
-    if(m.kind==='pratica'){
-      crumb.innerHTML='<a href="#index">VIC</a><span class="sep">/</span><a href="#praticas">Práticas Desejadas</a><span class="sep">/</span><span class="current">Prática '+m.p.num+'</span>';
+    if(m.kind==='diretriz'){
+      crumb.innerHTML='<a href="#index">VIC</a><span class="sep">/</span><a href="#diretrizes">Diretrizes</a><span class="sep">/</span><span class="current">Diretriz '+m.p.num+'</span>';
     } else if(id==='index'){
       crumb.innerHTML='<span class="current">Visão Geral</span>';
     } else {
@@ -1847,15 +1847,15 @@ body.show-sp .sp-hint { display: block; }
     }
 
     pnav.innerHTML='';
-    if(m.kind==='pratica'){
-      var prev=PRAT[m.i-1], next=PRAT[m.i+1];
+    if(m.kind==='diretriz'){
+      var prev=DIRZ[m.i-1], next=DIRZ[m.i+1];
       pnav.innerHTML =
-        (prev?'<a class="prev" href="#'+prev.id+'"><span class="pn-dir">‹ Anterior</span><span class="pn-title">Prática '+prev.num+' · '+prev.nav+'</span></a>'
-             :'<a class="prev" href="#praticas"><span class="pn-dir">‹ Voltar</span><span class="pn-title">Práticas Desejadas</span></a>')+
-        (next?'<a class="next" href="#'+next.id+'"><span class="pn-dir">Próxima ›</span><span class="pn-title">Prática '+next.num+' · '+next.nav+'</span></a>'
+        (prev?'<a class="prev" href="#'+prev.id+'"><span class="pn-dir">‹ Anterior</span><span class="pn-title">Diretriz '+prev.num+' · '+prev.nav+'</span></a>'
+             :'<a class="prev" href="#diretrizes"><span class="pn-dir">‹ Voltar</span><span class="pn-title">Diretrizes</span></a>')+
+        (next?'<a class="next" href="#'+next.id+'"><span class="pn-dir">Próxima ›</span><span class="pn-title">Diretriz '+next.num+' · '+next.nav+'</span></a>'
              :'<a class="next empty" href="#"></a>');
     }
-    var t = m.kind==='pratica' ? 'Prática '+m.p.num+' · '+m.p.nav : m.label;
+    var t = m.kind==='diretriz' ? 'Diretriz '+m.p.num+' · '+m.p.nav : m.label;
     document.title=t+' · VIC';
     var at=tabs.filter(function(x){return x.getAttribute('data-page')===activeNav;})[0];
     if(at&&at.scrollIntoView){ try{at.scrollIntoView({inline:'center',block:'nearest'});}catch(e){} }

@@ -1,18 +1,18 @@
 /**
- * Gera as 13 capas de prática para o web part "Imagem" do SharePoint.
+ * Gera as 13 capas de diretriz para o web part "Imagem" do SharePoint.
  *
  * Reproduz o bloco .page-hero do assets/chapter.css em PNG, para trazer o azul
  * institucional exato (#00437A -> #005CA9) mesmo em tenant sem tema custom.
- * Os títulos são lidos de praticas.html, então não há texto duplicado aqui.
+ * Os títulos são lidos de diretrizes.html, então não há texto duplicado aqui.
  *
- *   PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers node sharepoint/gerar-capas-praticas.js
+ *   PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers node sharepoint/gerar-capas-diretrizes.js
  */
 const fs = require('fs');
 const path = require('path');
 const { chromium } = require('/opt/node22/lib/node_modules/playwright');
 
 const ROOT = path.resolve(__dirname, '..');
-const OUT = path.join(__dirname, 'capas-praticas');
+const OUT = path.join(__dirname, 'capas-diretrizes');
 
 // .page-hero é desenhado sobre uma coluna de ~1000px; 1.6x deixa a arte nítida
 // na largura típica de uma seção do SharePoint sem virar um arquivo pesado.
@@ -27,9 +27,9 @@ function slug(s) {
     .replace(/^-|-$/g, '');
 }
 
-function praticas() {
-  const html = fs.readFileSync(path.join(ROOT, 'praticas.html'), 'utf8');
-  const re = /<span class="ql-num">Prática (\d+)<\/span><\/div><h3>([^<]+)<\/h3>/g;
+function diretrizes() {
+  const html = fs.readFileSync(path.join(ROOT, 'diretrizes.html'), 'utf8');
+  const re = /<span class="ql-num">Diretriz (\d+)<\/span><\/div><h3>([^<]+)<\/h3>/g;
   const out = [];
   let m;
   while ((m = re.exec(html))) out.push({ n: m[1], titulo: m[2] });
@@ -71,7 +71,7 @@ const page = (n, titulo) => `<!DOCTYPE html><html><head><meta charset="utf-8"><s
   <div class="hero">
     <div class="num">${n}</div>
     <div class="txt">
-      <div class="eyebrow">Prática Desejada</div>
+      <div class="eyebrow">Diretriz</div>
       <h1>${titulo}</h1>
     </div>
   </div>
@@ -79,8 +79,8 @@ const page = (n, titulo) => `<!DOCTYPE html><html><head><meta charset="utf-8"><s
 
 (async () => {
   fs.mkdirSync(OUT, { recursive: true });
-  const lista = praticas();
-  if (lista.length !== 13) throw new Error(`esperava 13 práticas, achei ${lista.length}`);
+  const lista = diretrizes();
+  if (lista.length !== 13) throw new Error(`esperava 13 diretrizes, achei ${lista.length}`);
 
   const browser = await chromium.launch();
   const ctx = await browser.newContext({ viewport: { width: W, height: H } });
@@ -96,7 +96,7 @@ const page = (n, titulo) => `<!DOCTYPE html><html><head><meta charset="utf-8"><s
     }, 40 * K);
     if (over > 0) throw new Error(`"${titulo}" estoura ${Math.ceil(over)}px`);
 
-    const file = path.join(OUT, `pratica-${String(n).padStart(2, '0')}-${slug(titulo)}.png`);
+    const file = path.join(OUT, `diretriz-${String(n).padStart(2, '0')}-${slug(titulo)}.png`);
     await p.locator('.hero').screenshot({ path: file, omitBackground: true });
     console.log(`${file}  ${titulo}`);
   }

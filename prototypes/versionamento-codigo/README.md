@@ -24,7 +24,7 @@ A navegação (header, navegação superior, breadcrumb e prev/próxima) é mont
 
 Use **`versionamento-codigo-standalone.html`**: um único arquivo com tudo embutido
 (CSS, JS e ilustrações). Abra direto — sem descompactar. As páginas trocam por
-âncora (`#index`, `#praticas`, `#pratica-1` …). Regenerar após editar:
+âncora (`#index`, `#diretrizes`, `#diretriz-1` …). Regenerar após editar:
 `python3 assets/build-standalone.py`.
 
 ---
@@ -33,15 +33,15 @@ Use **`versionamento-codigo-standalone.html`**: um único arquivo com tudo embut
 
 ```
 Visão Geral (index)            ← finalidade, missão, benefícios, stack
-Práticas Desejadas (praticas)  ← hub com as 13 práticas
-   ├── Prática 1 … Prática 13   ← uma página por prática
+Diretrizes (diretrizes)  ← hub com as 13 diretrizes
+   ├── Diretriz 1 … Diretriz 13   ← uma página por diretriz
 Tríade Técnica                  ← Aspectos Técnicos / Metodológicos (a fornecer)
 Análise e Acompanhamento        ← indicadores e maturidade (a fornecer)
 ```
 
-### As 13 Práticas Desejadas
+### As 13 Diretrizes
 
-| # | Prática | Ilustração |
+| # | Diretriz | Ilustração |
 |---|---|---|
 | 1 | Versões testadas e validadas para produção | pipeline de validação |
 | 2 | Modelo de flow aderente ao GitFlow ou GitHub Flow | GitFlow × GitHub Flow |
@@ -64,8 +64,8 @@ Análise e Acompanhamento        ← indicadores e maturidade (a fornecer)
 ```
 versionamento-codigo/
 ├── index.html                  ← Visão Geral
-├── praticas.html               ← hub das Práticas Desejadas
-├── pratica-1.html … pratica-13.html
+├── diretrizes.html               ← hub das Diretrizes
+├── diretriz-1.html … diretriz-13.html
 ├── triade-tecnica.html         ← placeholder
 ├── analise-acompanhamento.html ← placeholder
 ├── marca-vic.html              ← folha da marca VIC
@@ -74,7 +74,7 @@ versionamento-codigo/
     ├── chapter.css             ← identidade visual CAIXA
     ├── chapter.js              ← chrome compartilhado (nav, tema, mapa SharePoint)
     ├── build-standalone.py     ← gera o arquivo único
-    ├── img/                    ← ilustrações SVG das práticas
+    ├── img/                    ← ilustrações SVG das diretrizes
     └── brand/                  ← logomarca VIC (lockups, ícone, PNGs)
 ```
 
@@ -85,7 +85,7 @@ versionamento-codigo/
 | Bloco no protótipo | Web part do SharePoint |
 |---|---|
 | Capa azul com título (`.hero` / `.page-hero`) | **Banner / Hero** |
-| Caixa “Regra” (`.diretriz`) | **Texto** com realce / **Aviso** |
+| Caixa “Regra” (`.regra`) | **Texto** com realce / **Aviso** |
 | Índice de cards (`.quicklinks`) | **Links Rápidos** |
 | Texto corrido e listas | **Texto** |
 | Caixas coloridas (`.callout`) | **Aviso** |
@@ -95,14 +95,14 @@ versionamento-codigo/
 | Navegação superior (`.topnav`) | **Navegação do site / hub** |
 
 Layout em **coluna única**, equivalente a uma página de **Site de Comunicação**.
-Montagem sugerida: um **hub** para o modelo, uma **página por prática** e a
+Montagem sugerida: um **hub** para o modelo, uma **página por diretriz** e a
 navegação do hub para reproduzir a barra superior.
 
 ---
 
 ## Validação e adequação (determinismo + GitFlow)
 
-Todo o conteúdo das 13 práticas foi revisado para tom **impositivo** e validado
+Todo o conteúdo das 13 diretrizes foi revisado para tom **impositivo** e validado
 contra o GitFlow. Principais ajustes:
 
 - Hedge removido: “recomenda-se”, “boas práticas indicam”, “o ideal é que”,
@@ -118,5 +118,5 @@ contra o GitFlow. Principais ajustes:
 
 - **Tríade Técnica** — Aspectos Técnicos e Aspectos Metodológicos.
 - **Modelo de Análise e Acompanhamento** — indicadores e faixas de maturidade.
-- **Limite de divergência** (Prática 4) — definir o valor institucional.
-- **Referências metodológicas** — preencher os blocos reservados nas práticas.
+- **Limite de divergência** (Diretriz 4) — definir o valor institucional.
+- **Referências metodológicas** — preencher os blocos reservados nas diretrizes.

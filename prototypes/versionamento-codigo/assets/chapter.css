@@ -297,7 +297,7 @@ a:hover { text-decoration: underline; }
 }
 .hero .chip svg { width: 15px; height: 15px; }
 
-/* page hero (diretriz) – numbered banner */
+/* page hero — numbered banner */
 .page-hero {
   position: relative;
   border-radius: var(--radius-lg);
@@ -358,9 +358,9 @@ code, .code {
 html.app-dark code { color: #8fcbff; }
 
 /* ============================================================================
-   DIRETRIZ CALLOUT (a regra impositiva)  — SharePoint: Aviso / Texto destacado
+   REGRA CALLOUT (a regra impositiva)  — SharePoint: Aviso / Texto destacado
    ============================================================================ */
-.diretriz {
+.regra {
   position: relative;
   display: flex; gap: 18px;
   background: linear-gradient(180deg, var(--c-primary-10), var(--surface));
@@ -371,7 +371,7 @@ html.app-dark code { color: #8fcbff; }
   margin: 26px 0 8px;
   box-shadow: var(--shadow-1);
 }
-.diretriz .d-badge {
+.regra .r-badge {
   flex: 0 0 auto;
   width: 46px; height: 46px;
   display: grid; place-items: center;
@@ -380,12 +380,12 @@ html.app-dark code { color: #8fcbff; }
   color: #fff;
   box-shadow: var(--shadow-1);
 }
-.diretriz .d-badge svg { width: 24px; height: 24px; }
-.diretriz .d-body .d-kicker {
+.regra .r-badge svg { width: 24px; height: 24px; }
+.regra .r-body .r-kicker {
   font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
   color: var(--primary-dark); margin-bottom: 4px;
 }
-.diretriz .d-body p { margin: 0; font-size: 16.5px; font-weight: 600; color: var(--text); line-height: 1.5; }
+.regra .r-body p { margin: 0; font-size: 16.5px; font-weight: 600; color: var(--text); line-height: 1.5; }
 
 /* ============================================================================
    CALLOUTS / AVISOS  — SharePoint: web part "Aviso"
@@ -690,5 +690,5 @@ body.show-sp .sp-hint { display: block; }
 @media print {
   .app-header, .topnav, .page-nav { display: none !important; }
   .content { max-width: none; }
-  .figure, .quicklinks, .diretriz { break-inside: avoid; }
+  .figure, .quicklinks, .regra { break-inside: avoid; }
 }

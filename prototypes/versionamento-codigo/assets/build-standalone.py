@@ -1,6 +1,6 @@
 # Gera "versionamento-codigo-standalone.html": um único arquivo HTML
 # autossuficiente (CSS, JS e ilustracoes SVG embutidos em base64) com todas as
-# paginas do Modelo VIC navegaveis por ancora (#index, #praticas, #pratica-1 ...).
+# paginas do Modelo VIC navegaveis por ancora (#index, #diretrizes, #diretriz-1 ...).
 # Ideal para abrir no celular/offline sem descompactar.
 # Uso (a partir desta pasta):  python3 assets/build-standalone.py
 import re, base64, os
@@ -10,29 +10,29 @@ CSS = open(os.path.join(BASE, "assets/chapter.css"), encoding="utf-8").read()
 
 NAV = [
     ("index",    "index.html",                  "Visão Geral"),
-    ("praticas", "praticas.html",               "Práticas Desejadas"),
+    ("diretrizes", "diretrizes.html",               "Diretrizes"),
     ("triade",   "triade-tecnica.html",         "Tríade Técnica"),
     ("analise",  "analise-acompanhamento.html", "Análise e Acompanhamento"),
 ]
-PRATICAS = [
-    ("1",  "pratica-1",  "pratica-1.html",  "Versões testadas e validadas para produção"),
-    ("2",  "pratica-2",  "pratica-2.html",  "Modelo de flow (GitFlow / GitHub Flow)"),
-    ("3",  "pratica-3",  "pratica-3.html",  "Integração contínua e sanitização"),
-    ("4",  "pratica-4",  "pratica-4.html",  "Baixa divergência entre branches"),
-    ("5",  "pratica-5",  "pratica-5.html",  "Sincronização ao final do ciclo"),
-    ("6",  "pratica-6",  "pratica-6.html",  "Atuação efetiva do Integrador"),
-    ("7",  "pratica-7",  "pratica-7.html",  "Branches permanentes protegidas"),
-    ("8",  "pratica-8",  "pratica-8.html",  "Pull Request como instrumento central"),
-    ("9",  "pratica-9",  "pratica-9.html",  "Versionamento semântico (SemVer)"),
-    ("10", "pratica-10", "pratica-10.html", "Tagueamento de produção (VEC)"),
-    ("11", "pratica-11", "pratica-11.html", "Padrões de nomenclatura"),
-    ("12", "pratica-12", "pratica-12.html", "Políticas de push"),
-    ("13", "pratica-13", "pratica-13.html", "Nota de versão (changelog)"),
+DIRETRIZES = [
+    ("1",  "diretriz-1",  "diretriz-1.html",  "Versões testadas e validadas para produção"),
+    ("2",  "diretriz-2",  "diretriz-2.html",  "Modelo de flow (GitFlow / GitHub Flow)"),
+    ("3",  "diretriz-3",  "diretriz-3.html",  "Integração contínua e sanitização"),
+    ("4",  "diretriz-4",  "diretriz-4.html",  "Baixa divergência entre branches"),
+    ("5",  "diretriz-5",  "diretriz-5.html",  "Sincronização ao final do ciclo"),
+    ("6",  "diretriz-6",  "diretriz-6.html",  "Atuação efetiva do Integrador"),
+    ("7",  "diretriz-7",  "diretriz-7.html",  "Branches permanentes protegidas"),
+    ("8",  "diretriz-8",  "diretriz-8.html",  "Pull Request como instrumento central"),
+    ("9",  "diretriz-9",  "diretriz-9.html",  "Versionamento semântico (SemVer)"),
+    ("10", "diretriz-10", "diretriz-10.html", "Tagueamento de produção (VEC)"),
+    ("11", "diretriz-11", "diretriz-11.html", "Padrões de nomenclatura"),
+    ("12", "diretriz-12", "diretriz-12.html", "Políticas de push"),
+    ("13", "diretriz-13", "diretriz-13.html", "Nota de versão (changelog)"),
 ]
 
-ORDER = ["index.html", "praticas.html"] + [p[2] for p in PRATICAS] + ["triade-tecnica.html", "analise-acompanhamento.html"]
-HREF2ID = {"index.html": "index", "praticas.html": "praticas", "triade-tecnica.html": "triade", "analise-acompanhamento.html": "analise"}
-for num, pid, pfile, plabel in PRATICAS:
+ORDER = ["index.html", "diretrizes.html"] + [p[2] for p in DIRETRIZES] + ["triade-tecnica.html", "analise-acompanhamento.html"]
+HREF2ID = {"index.html": "index", "diretrizes.html": "diretrizes", "triade-tecnica.html": "triade", "analise-acompanhamento.html": "analise"}
+for num, pid, pfile, plabel in DIRETRIZES:
     HREF2ID[pfile] = pid
 
 def inline_svgs(html):
@@ -55,7 +55,7 @@ for fname in ORDER:
 
 tabs_html = "\n        ".join('<a href="#%s" data-page="%s">%s</a>' % (nid, nid, label) for nid, _, label in NAV)
 NAV_JS  = ",".join('{id:"%s",label:"%s"}' % (nid, label) for nid, _, label in NAV)
-PRAT_JS = ",".join('{num:"%s",id:"%s",nav:"%s"}' % (num, pid, plabel) for num, pid, _, plabel in PRATICAS)
+DIRZ_JS = ",".join('{num:"%s",id:"%s",nav:"%s"}' % (num, pid, plabel) for num, pid, _, plabel in DIRETRIZES)
 
 ICON_BRAND = ('<svg viewBox="6 6 108 108" width="40" height="40" aria-hidden="true">'
   '<defs><linearGradient id="hvg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00437a"/><stop offset="1" stop-color="#0a78d6"/></linearGradient>'
@@ -77,7 +77,7 @@ EXTRA_CSS = """
 SCRIPT = """
 (function(){
   "use strict";
-  var NAV=[%s], PRAT=[%s];
+  var NAV=[%s], DIRZ=[%s];
   var root=document.documentElement, body=document.body;
   var arts=[].slice.call(document.querySelectorAll('.vc-page'));
   var tabs=[].slice.call(document.querySelectorAll('.topnav a'));
@@ -87,7 +87,7 @@ SCRIPT = """
   function meta(id){
     var i;
     for(i=0;i<NAV.length;i++) if(NAV[i].id===id) return {kind:'nav', label:NAV[i].label, id:id};
-    for(i=0;i<PRAT.length;i++) if(PRAT[i].id===id) return {kind:'pratica', i:i, p:PRAT[i]};
+    for(i=0;i<DIRZ.length;i++) if(DIRZ[i].id===id) return {kind:'diretriz', i:i, p:DIRZ[i]};
     return {kind:'nav', label:NAV[0].label, id:'index'};
   }
   function idxFromHash(){
@@ -98,11 +98,11 @@ SCRIPT = """
   function show(id){
     var m=meta(id);
     arts.forEach(function(a){ a.classList.toggle('is-active', a.getAttribute('data-page-id')===id); });
-    var activeNav = m.kind==='pratica' ? 'praticas' : id;
+    var activeNav = m.kind==='diretriz' ? 'diretrizes' : id;
     tabs.forEach(function(t){ t.classList.toggle('is-active', t.getAttribute('data-page')===activeNav); });
 
-    if(m.kind==='pratica'){
-      crumb.innerHTML='<a href="#index">VIC</a><span class="sep">/</span><a href="#praticas">Práticas Desejadas</a><span class="sep">/</span><span class="current">Prática '+m.p.num+'</span>';
+    if(m.kind==='diretriz'){
+      crumb.innerHTML='<a href="#index">VIC</a><span class="sep">/</span><a href="#diretrizes">Diretrizes</a><span class="sep">/</span><span class="current">Diretriz '+m.p.num+'</span>';
     } else if(id==='index'){
       crumb.innerHTML='<span class="current">Visão Geral</span>';
     } else {
@@ -110,15 +110,15 @@ SCRIPT = """
     }
 
     pnav.innerHTML='';
-    if(m.kind==='pratica'){
-      var prev=PRAT[m.i-1], next=PRAT[m.i+1];
+    if(m.kind==='diretriz'){
+      var prev=DIRZ[m.i-1], next=DIRZ[m.i+1];
       pnav.innerHTML =
-        (prev?'<a class="prev" href="#'+prev.id+'"><span class="pn-dir">‹ Anterior</span><span class="pn-title">Prática '+prev.num+' · '+prev.nav+'</span></a>'
-             :'<a class="prev" href="#praticas"><span class="pn-dir">‹ Voltar</span><span class="pn-title">Práticas Desejadas</span></a>')+
-        (next?'<a class="next" href="#'+next.id+'"><span class="pn-dir">Próxima ›</span><span class="pn-title">Prática '+next.num+' · '+next.nav+'</span></a>'
+        (prev?'<a class="prev" href="#'+prev.id+'"><span class="pn-dir">‹ Anterior</span><span class="pn-title">Diretriz '+prev.num+' · '+prev.nav+'</span></a>'
+             :'<a class="prev" href="#diretrizes"><span class="pn-dir">‹ Voltar</span><span class="pn-title">Diretrizes</span></a>')+
+        (next?'<a class="next" href="#'+next.id+'"><span class="pn-dir">Próxima ›</span><span class="pn-title">Diretriz '+next.num+' · '+next.nav+'</span></a>'
              :'<a class="next empty" href="#"></a>');
     }
-    var t = m.kind==='pratica' ? 'Prática '+m.p.num+' · '+m.p.nav : m.label;
+    var t = m.kind==='diretriz' ? 'Diretriz '+m.p.num+' · '+m.p.nav : m.label;
     document.title=t+' · VIC';
     var at=tabs.filter(function(x){return x.getAttribute('data-page')===activeNav;})[0];
     if(at&&at.scrollIntoView){ try{at.scrollIntoView({inline:'center',block:'nearest'});}catch(e){} }
@@ -148,7 +148,7 @@ SCRIPT = """
 
   show(idxFromHash());
 })();
-""" % (NAV_JS, PRAT_JS)
+""" % (NAV_JS, DIRZ_JS)
 
 HTML = """<!DOCTYPE html>
 <html lang="pt-BR">
