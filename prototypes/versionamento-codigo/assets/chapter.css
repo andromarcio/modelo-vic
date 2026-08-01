@@ -400,7 +400,8 @@ html.app-dark code { color: #8fcbff; }
 }
 .callout .ci { flex: 0 0 auto; width: 22px; height: 22px; margin-top: 2px; }
 .callout .ct { min-width: 0; }
-.callout .ct strong { display: block; margin-bottom: 2px; }
+/* filho direto = título do callout; strong dentro de <p> permanece inline */
+.callout .ct > strong { display: block; margin-bottom: 2px; }
 .callout p { margin: 0; }
 .callout--rule    { background: var(--c-primary-10); border-color: var(--c-primary-30); }
 .callout--rule .ci    { color: var(--primary-dark); }

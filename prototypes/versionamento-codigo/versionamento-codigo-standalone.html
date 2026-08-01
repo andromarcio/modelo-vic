@@ -408,7 +408,8 @@ html.app-dark code { color: #8fcbff; }
 }
 .callout .ci { flex: 0 0 auto; width: 22px; height: 22px; margin-top: 2px; }
 .callout .ct { min-width: 0; }
-.callout .ct strong { display: block; margin-bottom: 2px; }
+/* filho direto = título do callout; strong dentro de <p> permanece inline */
+.callout .ct > strong { display: block; margin-bottom: 2px; }
 .callout p { margin: 0; }
 .callout--rule    { background: var(--c-primary-10); border-color: var(--c-primary-30); }
 .callout--rule .ci    { color: var(--primary-dark); }
@@ -1157,7 +1158,7 @@ body.show-sp .sp-hint { display: block; }
       <div class="fig-canvas"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MjAgMzAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkRpdmVyZ8OqbmNpYSBhaGVhZC9iZWhpbmQgZW50cmUgYnJhbmNoIHBlcm1hbmVudGUgZSBicmFuY2ggdGVtcG9yw6FyaWEiPgogIDxzdHlsZT4KICAgIHRleHQgeyBmb250LWZhbWlseTogJ1NlZ29lIFVJJywgc3lzdGVtLXVpLCAtYXBwbGUtc3lzdGVtLCBzYW5zLXNlcmlmOyB9CiAgICAuY2FwICB7IGZvbnQtc2l6ZTogMTIuNXB4OyBmaWxsOiAjNDA0YjUyOyB9CiAgICAudCAgICB7IGZvbnQtc2l6ZTogMTNweDsgZm9udC13ZWlnaHQ6IDcwMDsgZmlsbDogIzIyMjkyZTsgfQogICAgLmJhZGdleyBmb250LXNpemU6IDEycHg7IGZvbnQtd2VpZ2h0OiA3MDA7IH0KICA8L3N0eWxlPgogIDxkZWZzPgogICAgPG1hcmtlciBpZD0iZC10ZWFsIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjgiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0byI+PHBhdGggZD0iTTAgMCBMMTAgNSBMMCAxMCB6IiBmaWxsPSIjMjFjYWFmIi8+PC9tYXJrZXI+CiAgPC9kZWZzPgoKICA8IS0tID09PT09IExlZnQ6IGRpdmVyZ2VuY2UgZ3JhcGggPT09PT0gLS0+CiAgPHRleHQgY2xhc3M9InQiIHg9IjQwIiB5PSIzNCI+RGlmZXJlbsOnYSBkZSBjb21taXRzIGVudHJlIGJyYW5jaGVzPC90ZXh0PgoKICA8bGluZSB4MT0iNjAiIHkxPSIxMDAiIHgyPSI1NDAiIHkyPSIxMDAiIHN0cm9rZT0iIzAwNWNhOSIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPHRleHQgeD0iNjAiIHk9IjkwIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMDA1Y2E5Ij5kZXZlbG9wPC90ZXh0PgogIDxsaW5lIHgxPSIxODAiIHkxPSIyMDAiIHgyPSI0NzAiIHkyPSIyMDAiIHN0cm9rZT0iIzIxY2FhZiIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPHRleHQgeD0iMTgwIiB5PSIyMjQiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMyMWNhYWYiPmZlYXR1cmUvKjwvdGV4dD4KCiAgPHBhdGggZD0iTTE1MCAxMDAgQzE2NiAxMDAsMTY2IDIwMCwxODIgMjAwIiBmaWxsPSJub25lIiBzdHJva2U9IiMyMWNhYWYiIHN0cm9rZS13aWR0aD0iMi40IiBtYXJrZXItZW5kPSJ1cmwoI2QtdGVhbCkiLz4KICA8Y2lyY2xlIGN4PSIxNTAiIGN5PSIxMDAiIHI9IjciIGZpbGw9IiM1MjVmNjYiLz4KICA8dGV4dCB4PSIxNTAiIHk9Ijc0IiBmb250LXNpemU9IjExIiBmaWxsPSIjNTI1ZjY2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5wb250byBjb211bTwvdGV4dD4KCiAgPCEtLSBkZXZlbG9wIGFoZWFkIGNvbW1pdHMgKGJlaGluZCwgZG8gcG9udG8gZGUgdmlzdGEgZGEgZmVhdHVyZSkgLS0+CiAgPGcgZmlsbD0iIzAwNWNhOSI+PGNpcmNsZSBjeD0iMTEwIiBjeT0iMTAwIiByPSI2LjUiLz48Y2lyY2xlIGN4PSIyNTAiIGN5PSIxMDAiIHI9IjYuNSIvPjxjaXJjbGUgY3g9IjMzMCIgY3k9IjEwMCIgcj0iNi41Ii8+PGNpcmNsZSBjeD0iNDEwIiBjeT0iMTAwIiByPSI2LjUiLz48Y2lyY2xlIGN4PSI0OTAiIGN5PSIxMDAiIHI9IjYuNSIvPjwvZz4KICA8IS0tIGJlaGluZCBicmFjZSAtLT4KICA8cGF0aCBkPSJNMjMyIDY0IHYtOCBoMjY2IHY4IiBmaWxsPSJub25lIiBzdHJva2U9IiM5ZWIyYjgiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPHJlY3QgeD0iMzE4IiB5PSI0MCIgd2lkdGg9Ijk2IiBoZWlnaHQ9IjIyIiByeD0iMTEiIGZpbGw9IiNmZmYiIHN0cm9rZT0iIzllYjJiOCIvPgogIDx0ZXh0IGNsYXNzPSJiYWRnZSIgeD0iMzY2IiB5PSI1NSIgZmlsbD0iIzUyNWY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+YmVoaW5kOiA0PC90ZXh0PgoKICA8IS0tIGZlYXR1cmUgY29tbWl0cyAoYWhlYWQpIC0tPgogIDxnIGZpbGw9IiMyMWNhYWYiPjxjaXJjbGUgY3g9IjI0MCIgY3k9IjIwMCIgcj0iNiIvPjxjaXJjbGUgY3g9IjMzMCIgY3k9IjIwMCIgcj0iNiIvPjxjaXJjbGUgY3g9IjQyMCIgY3k9IjIwMCIgcj0iNiIvPjwvZz4KICA8IS0tIGFoZWFkIGJyYWNlIC0tPgogIDxwYXRoIGQ9Ik0yMzIgMjM2IHY4IGgxOTYgdi04IiBmaWxsPSJub25lIiBzdHJva2U9IiM5ZWIyYjgiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPHJlY3QgeD0iMjgyIiB5PSIyNDQiIHdpZHRoPSI5NiIgaGVpZ2h0PSIyMiIgcng9IjExIiBmaWxsPSIjZmZmIiBzdHJva2U9IiM5ZWIyYjgiLz4KICA8dGV4dCBjbGFzcz0iYmFkZ2UiIHg9IjMzMCIgeT0iMjU5IiBmaWxsPSIjMjE2ZTYyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5haGVhZDogMzwvdGV4dD4KCiAgPCEtLSBkaXZpZGVyIC0tPgogIDxsaW5lIHgxPSI1NzUiIHkxPSIzMCIgeDI9IjU3NSIgeTI9IjI3MCIgc3Ryb2tlPSIjZGJlNWU4IiBzdHJva2Utd2lkdGg9IjEuNSIvPgoKICA8IS0tID09PT09IFJpZ2h0OiBtYXR1cml0eSBtZXRlcnMgPT09PT0gLS0+CiAgPHRleHQgY2xhc3M9InQiIHg9IjYwMCIgeT0iMzQiPsONbmRpY2UgZGUgYWxpbmhhbWVudG88L3RleHQ+CgogIDwhLS0gbWV0ZXIgQSAtLT4KICA8dGV4dCBjbGFzcz0iY2FwIiB4PSI2MDAiIHk9Ijg2IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMGQ1ODFkIj5EZW50cm8gZG8gbGltaXRlIGRlZmluaWRvPC90ZXh0PgogIDxyZWN0IHg9IjYwMCIgeT0iOTYiIHdpZHRoPSIyODAiIGhlaWdodD0iMjAiIHJ4PSIxMCIgZmlsbD0iI2VlZjNmNSIvPgogIDxyZWN0IHg9IjYwMCIgeT0iOTYiIHdpZHRoPSIxMjAiIGhlaWdodD0iMjAiIHJ4PSIxMCIgZmlsbD0iIzUwYmU2NyIvPgogIDxsaW5lIHgxPSI3ODgiIHkxPSI5MCIgeDI9Ijc4OCIgeTI9IjEyMiIgc3Ryb2tlPSIjNDA0YjUyIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjMgMyIvPgogIDx0ZXh0IHg9Ijc4OCIgeT0iMTM4IiBmb250LXNpemU9IjEwLjUiIGZpbGw9IiM0MDRiNTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiPmxpbWl0ZTwvdGV4dD4KICA8dGV4dCBjbGFzcz0iY2FwIiB4PSI2MDAiIHk9IjE1NiI+QnJhbmNoIGFsaW5oYWRhIMOgIGxpbmhhIHByaW5jaXBhbCDCtyBiYWl4byByaXNjby48L3RleHQ+CgogIDwhLS0gbWV0ZXIgQiAtLT4KICA8dGV4dCBjbGFzcz0iY2FwIiB4PSI2MDAiIHk9IjIwNiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2IyMmMyYyI+RGl2ZXJnw6puY2lhIGV4Y2Vzc2l2YTwvdGV4dD4KICA8cmVjdCB4PSI2MDAiIHk9IjIxNiIgd2lkdGg9IjI4MCIgaGVpZ2h0PSIyMCIgcng9IjEwIiBmaWxsPSIjZWVmM2Y1Ii8+CiAgPHJlY3QgeD0iNjAwIiB5PSIyMTYiIHdpZHRoPSIyNTgiIGhlaWdodD0iMjAiIHJ4PSIxMCIgZmlsbD0iI2U0NzI3MiIvPgogIDxsaW5lIHgxPSI3ODgiIHkxPSIyMTAiIHgyPSI3ODgiIHkyPSIyNDIiIHN0cm9rZT0iIzQwNGI1MiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtZGFzaGFycmF5PSIzIDMiLz4KICA8dGV4dCBjbGFzcz0iY2FwIiB4PSI2MDAiIHk9IjI2NiI+QWPDum11bG8gbsOjbyBpbnRlZ3JhZG8gwrcgY29uZmxpdG8gZSByZXRyYWJhbGhvLjwvdGV4dD4KPC9zdmc+Cg==" alt="Branch com commits ahead e behind em relação à develop e medidores de alinhamento dentro do limite e em divergência excessiva"></div>
       <figcaption><strong>ahead</strong> = commits na branch temporária ainda não integrados;
         <strong>behind</strong> = commits da linha principal ainda não incorporados à branch.
-        Ambos devem permanecer dentro do limite definido.</figcaption>
+        Cada um mede um risco distinto e possui limite próprio, definido adiante nesta diretriz.</figcaption>
     </figure>
   </section>
 
@@ -1186,15 +1187,110 @@ body.show-sp .sp-hint { display: block; }
     </div>
   </section>
 
+  <section class="section" data-sp="Texto">
+    <span class="sp-chip"></span>
+    <h2>Como medir a divergência</h2>
+    <p><code>ahead</code> e <code>behind</code> medem riscos distintos e <strong>devem</strong> ter
+       limites próprios — um valor único para os dois não é suficiente:</p>
+    <ul>
+      <li><strong><code>behind</code></strong> — mede o quanto a linha principal avançou sem que a
+        branch acompanhasse. Indica <strong>risco de conflito</strong> e é corrigido
+        <strong>sincronizando</strong> a branch.</li>
+      <li><strong><code>ahead</code></strong> — mede o volume de trabalho represado fora da linha
+        principal. Indica <strong>tamanho do lote</strong> e é corrigido <strong>integrando antes</strong>
+        ou fracionando a entrega.</li>
+    </ul>
+    <p>Uma branch pode apresentar <code>behind</code> igual a zero e <code>ahead</code> elevado: sincroniza
+       todos os dias, mas nunca integra. Um limite único não detecta esse caso.</p>
+
+    <h3>Base de cálculo obrigatória</h3>
+    <p>A antiguidade da divergência <strong>deve</strong> ser calculada pela data do
+       <strong>merge-base</strong> — o ponto em que a branch incorporou a linha principal pela última
+       vez. A contagem de commits <strong>não</strong> pode ser usada isoladamente: um <code>squash</code>
+       reduz o número sem reduzir a divergência real.</p>
+    <p>A data de criação da <em>ref</em> <strong>não</strong> deve ser usada como idade da branch:
+       <code>rebase</code> e recriação de branch zeram essa data e mascaram o indicador.</p>
+
+    <div class="figure" data-sp="Texto" style="box-shadow:none">
+      <div class="fig-head">
+        <span class="sp-chip"></span>
+        <span class="fig-tag">Coleta</span>
+        <span class="fig-title">As três dimensões em uma requisição</span>
+      </div>
+      <div class="fig-canvas" style="background:#0f1a26;background-image:none;color:#e8eef4;font-family:var(--mono);font-size:13.5px;line-height:1.7;padding:22px">
+        gh api "repos/$ORG/$REPO/compare/develop...feature/x" \<br>
+        &nbsp;&nbsp;--jq '{ahead:.ahead_by, behind:.behind_by,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ultimo_sync:.merge_base_commit.commit.committer.date}'
+      </div>
+      <figcaption>O endpoint <code>compare</code> retorna volume represado, volume não incorporado e a
+        data do último alinhamento — base dos três limites desta diretriz.</figcaption>
+    </div>
+  </section>
+
+  <section class="section" data-sp="Texto">
+    <span class="sp-chip"></span>
+    <h2>Limites por tipo de branch</h2>
+
+    <h3>Branches <span class="pill pill--feature">feature/*</span></h3>
+    <p>São as branches em que o <code>behind</code> é determinante. Os limites são organizados em faixas
+       de maturidade; a governança técnica define qual faixa está <strong>vigente</strong>.</p>
+    <div class="tbl-wrap" data-sp="Tabela">
+      <span class="sp-chip"></span>
+      <table class="tbl">
+        <thead><tr><th>Faixa de maturidade</th><th>Dias desde o último sync</th><th>Commits <code>ahead</code></th><th>Vida total</th></tr></thead>
+        <tbody>
+          <tr><td>1 · Inicial</td><td>≤ 20</td><td>≤ 100</td><td>≤ 45</td></tr>
+          <tr><td>2 · Gerenciado</td><td>≤ 10</td><td>≤ 50</td><td>≤ 30</td></tr>
+          <tr><td><strong>3 · Definido</strong> — meta institucional</td><td><strong>≤ 5</strong></td><td><strong>≤ 25</strong></td><td><strong>≤ 15</strong></td></tr>
+          <tr><td>4 · Otimizado</td><td>≤ 2</td><td>≤ 10</td><td>≤ 5</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>A faixa 3 corresponde a uma branch que não ultrapassa uma sprint e sincroniza ao menos uma vez
+       por semana.</p>
+
+    <h3>Branches <span class="pill pill--release">release/*</span> e <span class="pill pill--hotfix">hotfix/*</span></h3>
+    <p>Nestas branches o <code>behind</code> <strong>não</strong> se aplica como indicador. Uma
+       <code>release/*</code> diverge da <code>develop</code> por desenho — recebe apenas correções
+       enquanto a <code>develop</code> segue recebendo novas features — e medir sua defasagem produziria
+       alarme falso. O que <strong>deve</strong> ser medido é a duração e a completude da integração:</p>
+    <div class="tbl-wrap" data-sp="Tabela">
+      <span class="sp-chip"></span>
+      <table class="tbl">
+        <thead><tr><th>Branch</th><th>Limite obrigatório</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="pill pill--release">release/*</span></td>
+            <td>Vida total <strong>≤ 10 dias</strong>. No encerramento, <code>ahead</code> contra
+              <code>main</code> e contra <code>develop</code> <strong>deve</strong> ser zero
+              (merge back completo — ver <a href="#diretriz-5">Diretriz 5</a>).</td>
+          </tr>
+          <tr>
+            <td><span class="pill pill--hotfix">hotfix/*</span></td>
+            <td>Vida total <strong>≤ 3 dias</strong>, por ser de uso exclusivo em incidentes. No
+              encerramento, <strong>deve</strong> estar integrada na <code>main</code> e na
+              <code>develop</code>.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
   <section class="section" data-sp="Aviso">
     <span class="sp-chip"></span>
     <div class="callout callout--warning">
       <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
       <div class="ct">
-        <strong>Limite de divergência</strong>
-        <p>Diferenças excessivas de commits entre branches caracterizam baixa maturidade. As branches
-           <strong>devem</strong> ser mantidas dentro do limite definido pela governança técnica:
-           <code>[definir limite institucional — ex.: X commits ou Y dias sem sincronização]</code>.</p>
+        <strong>Definição e revisão do limite vigente</strong>
+        <p>A faixa vigente <strong>não</strong> deve ser arbitrada. Ela <strong>deve</strong> ser
+          definida a partir da distribuição efetivamente observada nos repositórios: o indicador
+          <strong>deve</strong> ser coletado por <strong>60 dias sem limiar</strong>, e o limite inicial
+          <strong>deve</strong> ser fixado próximo ao <strong>percentil 75</strong> medido. A faixa
+          <strong>deve</strong> ser revisada <strong>a cada trimestre</strong>, avançando uma posição
+          por vez até a meta institucional (faixa 3).</p>
+        <p>Publicar uma meta acima da capacidade atual coloca a maioria dos repositórios em não
+          conformidade desde o primeiro dia e retira a autoridade do indicador — efeito mais nocivo do
+          que iniciar por um limite folgado.</p>
       </div>
     </div>
   </section>

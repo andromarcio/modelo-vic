@@ -46,7 +46,7 @@
       <div class="fig-canvas"><img src="assets/img/divergence.svg" alt="Branch com commits ahead e behind em relação à develop e medidores de alinhamento dentro do limite e em divergência excessiva"></div>
       <figcaption><strong>ahead</strong> = commits na branch temporária ainda não integrados;
         <strong>behind</strong> = commits da linha principal ainda não incorporados à branch.
-        Ambos devem permanecer dentro do limite definido.</figcaption>
+        Cada um mede um risco distinto e possui limite próprio, definido adiante nesta diretriz.</figcaption>
     </figure>
   </section>
 
@@ -75,15 +75,110 @@
     </div>
   </section>
 
+  <section class="section" data-sp="Texto">
+    <span class="sp-chip"></span>
+    <h2>Como medir a divergência</h2>
+    <p><code>ahead</code> e <code>behind</code> medem riscos distintos e <strong>devem</strong> ter
+       limites próprios — um valor único para os dois não é suficiente:</p>
+    <ul>
+      <li><strong><code>behind</code></strong> — mede o quanto a linha principal avançou sem que a
+        branch acompanhasse. Indica <strong>risco de conflito</strong> e é corrigido
+        <strong>sincronizando</strong> a branch.</li>
+      <li><strong><code>ahead</code></strong> — mede o volume de trabalho represado fora da linha
+        principal. Indica <strong>tamanho do lote</strong> e é corrigido <strong>integrando antes</strong>
+        ou fracionando a entrega.</li>
+    </ul>
+    <p>Uma branch pode apresentar <code>behind</code> igual a zero e <code>ahead</code> elevado: sincroniza
+       todos os dias, mas nunca integra. Um limite único não detecta esse caso.</p>
+
+    <h3>Base de cálculo obrigatória</h3>
+    <p>A antiguidade da divergência <strong>deve</strong> ser calculada pela data do
+       <strong>merge-base</strong> — o ponto em que a branch incorporou a linha principal pela última
+       vez. A contagem de commits <strong>não</strong> pode ser usada isoladamente: um <code>squash</code>
+       reduz o número sem reduzir a divergência real.</p>
+    <p>A data de criação da <em>ref</em> <strong>não</strong> deve ser usada como idade da branch:
+       <code>rebase</code> e recriação de branch zeram essa data e mascaram o indicador.</p>
+
+    <div class="figure" data-sp="Texto" style="box-shadow:none">
+      <div class="fig-head">
+        <span class="sp-chip"></span>
+        <span class="fig-tag">Coleta</span>
+        <span class="fig-title">As três dimensões em uma requisição</span>
+      </div>
+      <div class="fig-canvas" style="background:#0f1a26;background-image:none;color:#e8eef4;font-family:var(--mono);font-size:13.5px;line-height:1.7;padding:22px">
+        gh api "repos/$ORG/$REPO/compare/develop...feature/x" \<br>
+        &nbsp;&nbsp;--jq '{ahead:.ahead_by, behind:.behind_by,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ultimo_sync:.merge_base_commit.commit.committer.date}'
+      </div>
+      <figcaption>O endpoint <code>compare</code> retorna volume represado, volume não incorporado e a
+        data do último alinhamento — base dos três limites desta diretriz.</figcaption>
+    </div>
+  </section>
+
+  <section class="section" data-sp="Texto">
+    <span class="sp-chip"></span>
+    <h2>Limites por tipo de branch</h2>
+
+    <h3>Branches <span class="pill pill--feature">feature/*</span></h3>
+    <p>São as branches em que o <code>behind</code> é determinante. Os limites são organizados em faixas
+       de maturidade; a governança técnica define qual faixa está <strong>vigente</strong>.</p>
+    <div class="tbl-wrap" data-sp="Tabela">
+      <span class="sp-chip"></span>
+      <table class="tbl">
+        <thead><tr><th>Faixa de maturidade</th><th>Dias desde o último sync</th><th>Commits <code>ahead</code></th><th>Vida total</th></tr></thead>
+        <tbody>
+          <tr><td>1 · Inicial</td><td>≤ 20</td><td>≤ 100</td><td>≤ 45</td></tr>
+          <tr><td>2 · Gerenciado</td><td>≤ 10</td><td>≤ 50</td><td>≤ 30</td></tr>
+          <tr><td><strong>3 · Definido</strong> — meta institucional</td><td><strong>≤ 5</strong></td><td><strong>≤ 25</strong></td><td><strong>≤ 15</strong></td></tr>
+          <tr><td>4 · Otimizado</td><td>≤ 2</td><td>≤ 10</td><td>≤ 5</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>A faixa 3 corresponde a uma branch que não ultrapassa uma sprint e sincroniza ao menos uma vez
+       por semana.</p>
+
+    <h3>Branches <span class="pill pill--release">release/*</span> e <span class="pill pill--hotfix">hotfix/*</span></h3>
+    <p>Nestas branches o <code>behind</code> <strong>não</strong> se aplica como indicador. Uma
+       <code>release/*</code> diverge da <code>develop</code> por desenho — recebe apenas correções
+       enquanto a <code>develop</code> segue recebendo novas features — e medir sua defasagem produziria
+       alarme falso. O que <strong>deve</strong> ser medido é a duração e a completude da integração:</p>
+    <div class="tbl-wrap" data-sp="Tabela">
+      <span class="sp-chip"></span>
+      <table class="tbl">
+        <thead><tr><th>Branch</th><th>Limite obrigatório</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="pill pill--release">release/*</span></td>
+            <td>Vida total <strong>≤ 10 dias</strong>. No encerramento, <code>ahead</code> contra
+              <code>main</code> e contra <code>develop</code> <strong>deve</strong> ser zero
+              (merge back completo — ver <a href="diretriz-5.html">Diretriz 5</a>).</td>
+          </tr>
+          <tr>
+            <td><span class="pill pill--hotfix">hotfix/*</span></td>
+            <td>Vida total <strong>≤ 3 dias</strong>, por ser de uso exclusivo em incidentes. No
+              encerramento, <strong>deve</strong> estar integrada na <code>main</code> e na
+              <code>develop</code>.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
   <section class="section" data-sp="Aviso">
     <span class="sp-chip"></span>
     <div class="callout callout--warning">
       <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
       <div class="ct">
-        <strong>Limite de divergência</strong>
-        <p>Diferenças excessivas de commits entre branches caracterizam baixa maturidade. As branches
-           <strong>devem</strong> ser mantidas dentro do limite definido pela governança técnica:
-           <code>[definir limite institucional — ex.: X commits ou Y dias sem sincronização]</code>.</p>
+        <strong>Definição e revisão do limite vigente</strong>
+        <p>A faixa vigente <strong>não</strong> deve ser arbitrada. Ela <strong>deve</strong> ser
+          definida a partir da distribuição efetivamente observada nos repositórios: o indicador
+          <strong>deve</strong> ser coletado por <strong>60 dias sem limiar</strong>, e o limite inicial
+          <strong>deve</strong> ser fixado próximo ao <strong>percentil 75</strong> medido. A faixa
+          <strong>deve</strong> ser revisada <strong>a cada trimestre</strong>, avançando uma posição
+          por vez até a meta institucional (faixa 3).</p>
+        <p>Publicar uma meta acima da capacidade atual coloca a maioria dos repositórios em não
+          conformidade desde o primeiro dia e retira a autoridade do indicador — efeito mais nocivo do
+          que iniciar por um limite folgado.</p>
       </div>
     </div>
   </section>
