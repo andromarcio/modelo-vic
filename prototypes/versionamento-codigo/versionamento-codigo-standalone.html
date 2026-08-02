@@ -1709,13 +1709,90 @@ body.show-sp .sp-hint { display: block; }
         <thead><tr><th>Elemento</th><th>Padrão obrigatório</th><th>Referência</th></tr></thead>
         <tbody>
           <tr><td><strong>Repositórios</strong></td><td><code>SISTEMA-modulo</code></td><td>Aderente ao cadastro de item de portfólio</td></tr>
-          <tr><td><strong>Branches</strong></td><td><code>feature/*</code>, <code>release/*</code>, <code>hotfix/*</code> …</td><td>Aderente ao GitFlow ou GitHub Flow</td></tr>
-          <tr><td><strong>Versões</strong></td><td><code>MAJOR.MINOR.PATCH</code></td><td>Aderente ao SemVer (ver <a href="#diretriz-9">Diretriz 9</a>)</td></tr>
+          <tr>
+            <td><strong>Branches</strong></td>
+            <td>Permanentes: <code>main</code>, <code>develop</code><br>
+              Temporárias: <code>feature/*</code>, <code>release/*</code>, <code>hotfix/*</code></td>
+            <td>Aderente ao GitFlow ou GitHub Flow (ver <a href="#diretriz-2">Diretriz 2</a>)</td>
+          </tr>
+          <tr>
+            <td><strong>Versões</strong></td>
+            <td><code>MAJOR.MINOR.PATCH</code><br>
+              <code>MAJOR.MINOR.PATCH.BUILD</code> — obrigatório em produção</td>
+            <td>Aderente ao SemVer (ver <a href="#diretriz-9">Diretriz 9</a>) e ao Padrão VEC
+              (ver <a href="#diretriz-10">Diretriz 10</a>)</td>
+          </tr>
         </tbody>
       </table>
     </div>
     <p>A verificação de aderência desses padrões <strong>deve</strong> ser contínua, pois sustenta
        o controle de acesso e a geração de indicadores de governança.</p>
+  </section>
+
+  <section class="section" data-sp="Texto">
+    <span class="sp-chip"></span>
+    <h2>Como verificar a aderência</h2>
+    <p>A verificação é de <strong>formato</strong>. A existência da sigla <strong>não</strong> precisa
+       ser validada pela coleta: repositórios são criados exclusivamente para siglas já cadastradas,
+       de modo que a origem da sigla é garantida no ato da criação.</p>
+
+    <div class="tbl-wrap" data-sp="Tabela">
+      <span class="sp-chip"></span>
+      <table class="tbl">
+        <thead><tr><th>Elemento</th><th>Expressão regular de conformidade</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Repositórios</strong></td>
+            <td><code>^[A-Z][A-Z0-9]{1,9}-[a-z0-9]+(-[a-z0-9]+)*$</code></td>
+          </tr>
+          <tr>
+            <td><strong>Branches</strong></td>
+            <td><code>^(main|develop|(feature|release|hotfix)/[a-z0-9][a-z0-9._-]*)$</code></td>
+          </tr>
+          <tr>
+            <td><strong>Versões</strong></td>
+            <td><code>^v?[0-9]+\.[0-9]+\.[0-9]+(\.[0-9]+)?$</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="figure" data-sp="Texto" style="box-shadow:none">
+      <div class="fig-head">
+        <span class="sp-chip"></span>
+        <span class="fig-tag">Coleta</span>
+        <span class="fig-title">Apuração das não conformidades</span>
+      </div>
+      <div class="fig-canvas" style="background:#0f1a26;background-image:none;color:#e8eef4;font-family:var(--mono);font-size:13px;line-height:1.7;padding:22px">
+        # Repositórios fora do padrão<br>
+        gh api "orgs/$ORG/repos" --paginate --jq '.[]<br>
+        &nbsp;&nbsp;| select(.name | test("^[A-Z][A-Z0-9]{1,9}-[a-z0-9]+(-[a-z0-9]+)*$") | not)<br>
+        &nbsp;&nbsp;| .name'<br><br>
+        # Branches fora do padrão<br>
+        gh api "repos/$ORG/$REPO/branches" --paginate --jq '.[]<br>
+        &nbsp;&nbsp;| select(.name | test("^(main|develop|(feature|release|hotfix)/[a-z0-9][a-z0-9._-]*)$") | not)<br>
+        &nbsp;&nbsp;| .name'<br><br>
+        # Tags fora do padrão<br>
+        gh api "repos/$ORG/$REPO/tags" --paginate --jq '.[]<br>
+        &nbsp;&nbsp;| select(.name | test("^v?[0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?$") | not)<br>
+        &nbsp;&nbsp;| .name'
+      </div>
+      <figcaption>Cada comando retorna <strong>as não conformidades</strong>, e não o total — formato que
+        serve tanto ao indicador quanto à correção pelo time.</figcaption>
+    </div>
+
+    <h3>Condições de contorno da apuração</h3>
+    <ul>
+      <li>Em repositórios que adotam <strong>GitHub Flow</strong>, a ausência de <code>develop</code>
+        <strong>não</strong> é não conformidade — a <a href="#diretriz-2">Diretriz 2</a> admite os
+        dois modelos. A apuração <strong>deve</strong> considerar o modelo adotado pelo repositório
+        antes de exigir a branch.</li>
+      <li>A expressão de repositório rejeita <code>_</code> e <code>.</code>, que o GitHub aceita em
+        nomes. A rejeição é intencional: o padrão institucional prevê apenas o hífen como separador.</li>
+      <li>A expressão de versões admite o prefixo <code>v</code> por ser convenção corrente no Git e
+        constar do exemplo da <a href="#diretriz-13">Diretriz 13</a>. A obrigatoriedade ou a vedação
+        do prefixo <strong>deve</strong> ser definida pela governança técnica e refletida na expressão.</li>
+    </ul>
   </section>
 
   <div class="ref-box" data-sp="Texto / Link">
