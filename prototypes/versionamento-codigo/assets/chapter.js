@@ -17,7 +17,8 @@
       { id: "index",    href: "index.html",                 label: "Visão Geral" },
       { id: "diretrizes", href: "diretrizes.html",              label: "Diretrizes" },
       { id: "triade",   href: "triade-tecnica.html",        label: "Tríade Técnica" },
-      { id: "analise",  href: "analise-acompanhamento.html",label: "Análise e Acompanhamento" }
+      { id: "analise",  href: "analise-acompanhamento.html",label: "Análise e Acompanhamento" },
+      { id: "implantacao", href: "implantacao.html",         label: "Implantação" }
     ],
     diretrizes: [
       { num: "1",  id: "diretriz-1",  href: "diretriz-1.html",  nav: "Versões testadas e validadas para produção" },

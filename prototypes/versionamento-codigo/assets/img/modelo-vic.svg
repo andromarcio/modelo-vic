@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 800" role="img" aria-label="Visão geral do Modelo VIC: a Tríade Técnica sustenta as 13 diretrizes, que são medidas por indicadores em faixas de maturidade, sob governança do Capítulo VIC, que retroalimenta a evolução das diretrizes">
+  <style>
+    text { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+    .ttl   { font-size: 27px; font-weight: 700; fill: #fff; letter-spacing: .5px; }
+    .sub   { font-size: 14px; fill: #fff; fill-opacity: .9; }
+    .chip  { font-size: 10.5px; font-weight: 700; fill: #fff; letter-spacing: 1.1px; }
+    .band  { font-size: 11.5px; font-weight: 700; fill: #6d8ba5; letter-spacing: 2.2px; }
+    .ct    { font-size: 15.5px; font-weight: 700; fill: #00437a; }
+    .cd    { font-size: 11.5px; fill: #64748b; }
+    .num   { font-size: 11.5px; font-weight: 700; fill: #005ca9; letter-spacing: .6px; }
+    .kick  { font-size: 9.5px; font-weight: 700; fill: #e58500; letter-spacing: 1.3px; }
+    .ind   { font-size: 13px; font-weight: 600; fill: #00437a; }
+    .faixa { font-size: 11px; font-weight: 700; fill: #005ca9; }
+    .papel { font-size: 12.5px; font-weight: 700; fill: #fff; }
+    .paped { font-size: 10.5px; fill: #fff; fill-opacity: .78; }
+    .loop  { font-size: 10.5px; font-weight: 700; fill: #e58500; letter-spacing: .5px; }
+  </style>
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00437a"/><stop offset=".55" stop-color="#005ca9"/><stop offset="1" stop-color="#0070cc"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".9" cy="0" r=".85">
+      <stop offset="0" stop-color="#f39200" stop-opacity=".34"/><stop offset="1" stop-color="#f39200" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#9eb2b8"/>
+    </marker>
+    <marker id="arO" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#e58500"/>
+    </marker>
+  </defs>
+
+  <!-- ═══ MODELO VIC ═══ -->
+  <rect x="70" y="16" width="946" height="108" rx="18" fill="url(#g1)"/>
+  <rect x="70" y="16" width="946" height="108" rx="18" fill="url(#glow)"/>
+  <rect x="98" y="42" width="56" height="56" rx="14" fill="#fff"/>
+  <g transform="translate(100.8,42.175) scale(0.42)">
+    <g fill="none" stroke="#00437a" stroke-width="6.5" stroke-linecap="round">
+      <path d="M39 36 C39 56, 60 52, 60 66"/><path d="M81 36 C81 56, 60 52, 60 66"/><path d="M60 66 V76"/>
+    </g>
+    <circle cx="39" cy="36" r="8.5" fill="#f39200"/>
+    <circle cx="81" cy="36" r="8.5" fill="#21caaf"/>
+    <circle cx="60" cy="66" r="7.5" fill="#00437a"/>
+    <path d="M60 76 L45 84 V100 a5 5 0 0 0 5 5 H70 a5 5 0 0 0 5 -5 V84 Z" fill="#f39200"/>
+    <circle cx="60" cy="91" r="3.4" fill="#fff"/>
+  </g>
+  <text class="ttl" x="172" y="62">MODELO VIC</text>
+  <text class="sub" x="172" y="86">Versionamento e Integração de Código</text>
+  <text class="sub" x="172" y="106" font-size="11.5" fill-opacity=".68">Referencial institucional de versionamento de código, binários, artefatos e documentação</text>
+  <rect x="762" y="52" width="228" height="36" rx="18" fill="#fff" fill-opacity=".16" stroke="#fff" stroke-opacity=".34"/>
+  <text class="chip" x="876" y="74" text-anchor="middle">CARÁTER IMPOSITIVO</text>
+
+  <path d="M543 124 V150" fill="none" stroke="#9eb2b8" stroke-width="2.2" marker-end="url(#ar)"/>
+
+  <!-- ═══ TRÍADE TÉCNICA ═══ -->
+  <text class="band" x="70" y="172">TRÍADE TÉCNICA · TRÊS FRENTES DE SUSTENTAÇÃO</text>
+  <g>
+    <rect x="70" y="184" width="302" height="112" rx="14" fill="#fff" stroke="#cfe3f5" stroke-width="1.5"/>
+    <text class="kick" x="94" y="211">FRENTE 1</text>
+    <text class="ct" x="94" y="236">Aspectos Técnicos</text>
+    <text class="cd" x="94" y="259">Tecnologias, ferramentas e</text>
+    <text class="cd" x="94" y="276">mecanismos de versionamento.</text>
+  </g>
+  <g>
+    <rect x="392" y="184" width="302" height="112" rx="14" fill="#fff" stroke="#cfe3f5" stroke-width="1.5"/>
+    <text class="kick" x="416" y="211">FRENTE 2</text>
+    <text class="ct" x="416" y="236">Aspectos Metodológicos</text>
+    <text class="cd" x="416" y="259">Modelos de fluxo, papéis, ritos</text>
+    <text class="cd" x="416" y="276">e processos de governança.</text>
+  </g>
+  <g>
+    <rect x="714" y="184" width="302" height="112" rx="14" fill="#fff" stroke="#cfe3f5" stroke-width="1.5"/>
+    <text class="kick" x="738" y="211">FRENTE 3</text>
+    <text class="ct" x="738" y="236">Análise e Acompanhamento</text>
+    <text class="cd" x="738" y="259">Indicadores e diagnóstico</text>
+    <text class="cd" x="738" y="276">de maturidade.</text>
+  </g>
+
+  <path d="M543 296 V322" fill="none" stroke="#9eb2b8" stroke-width="2.2" marker-end="url(#ar)"/>
+
+  <!-- ═══ 13 DIRETRIZES ═══ -->
+  <text class="band" x="70" y="344">NÚCLEO NORMATIVO · AS 13 DIRETRIZES</text>
+  <g>
+    <rect x="70" y="356" width="227" height="128" rx="14" fill="#e5f2fc" stroke="#8fcbff" stroke-width="1.5"/>
+    <text class="ct" x="92" y="386" font-size="14.5">Fluxo e proteção</text>
+    <text class="cd" x="92" y="408">Modelo de flow, integração</text>
+    <text class="cd" x="92" y="425">contínua e branches protegidas.</text>
+    <text class="num" x="92" y="459">DIRETRIZES 2 · 3 · 7</text>
+  </g>
+  <g>
+    <rect x="309" y="356" width="227" height="128" rx="14" fill="#e5f2fc" stroke="#8fcbff" stroke-width="1.5"/>
+    <text class="ct" x="331" y="386" font-size="14.5">Integração e revisão</text>
+    <text class="cd" x="331" y="408">Divergência, merge back,</text>
+    <text class="cd" x="331" y="425">Integrador e Pull Request.</text>
+    <text class="num" x="331" y="459">DIRETRIZES 4 · 5 · 6 · 8</text>
+  </g>
+  <g>
+    <rect x="548" y="356" width="227" height="128" rx="14" fill="#e5f2fc" stroke="#8fcbff" stroke-width="1.5"/>
+    <text class="ct" x="570" y="386" font-size="14.5">Rastreabilidade</text>
+    <text class="cd" x="570" y="408">Validação, SemVer, tag VEC</text>
+    <text class="cd" x="570" y="425">e nota de versão.</text>
+    <text class="num" x="570" y="459">DIRETRIZES 1 · 9 · 10 · 13</text>
+  </g>
+  <g>
+    <rect x="787" y="356" width="227" height="128" rx="14" fill="#e5f2fc" stroke="#8fcbff" stroke-width="1.5"/>
+    <text class="ct" x="809" y="386" font-size="14.5">Conformidade</text>
+    <text class="cd" x="809" y="408">Nomenclatura e políticas</text>
+    <text class="cd" x="809" y="425">de push.</text>
+    <text class="num" x="809" y="459">DIRETRIZES 11 · 12</text>
+  </g>
+
+  <path d="M543 484 V510" fill="none" stroke="#9eb2b8" stroke-width="2.2" marker-end="url(#ar)"/>
+
+  <!-- ═══ INDICADORES ═══ -->
+  <rect x="70" y="510" width="946" height="104" rx="16" fill="#f0f7fd" stroke="#c3ddf3" stroke-width="1.5"/>
+  <text class="band" x="94" y="538">MEDIÇÃO · UM INDICADOR POR DIRETRIZ</text>
+  <text class="ind" x="94" y="566">Aderência apurada de forma contínua e classificada em faixas de maturidade:</text>
+  <g>
+    <rect x="94" y="578" width="196" height="26" rx="13" fill="#fff" stroke="#cfe3f5"/>
+    <text class="faixa" x="192" y="596" text-anchor="middle">1 · Inicial</text>
+    <rect x="302" y="578" width="196" height="26" rx="13" fill="#fff" stroke="#cfe3f5"/>
+    <text class="faixa" x="400" y="596" text-anchor="middle">2 · Gerenciado</text>
+    <rect x="510" y="578" width="196" height="26" rx="13" fill="#fff" stroke="#8fcbff" stroke-width="2"/>
+    <text class="faixa" x="608" y="596" text-anchor="middle">3 · Definido — meta</text>
+    <rect x="718" y="578" width="196" height="26" rx="13" fill="#fff" stroke="#cfe3f5"/>
+    <text class="faixa" x="816" y="596" text-anchor="middle">4 · Otimizado</text>
+  </g>
+
+  <path d="M543 614 V640" fill="none" stroke="#9eb2b8" stroke-width="2.2" marker-end="url(#ar)"/>
+
+  <!-- ═══ CAPÍTULO VIC ═══ -->
+  <rect x="70" y="640" width="946" height="112" rx="16" fill="#00437a"/>
+  <text class="band" x="94" y="668" fill="#7fb3e0">GOVERNANÇA · CAPÍTULO VIC</text>
+  <g>
+    <rect x="94" y="682" width="290" height="52" rx="12" fill="#fff" fill-opacity=".12" stroke="#fff" stroke-opacity=".26"/>
+    <text class="papel" x="114" y="704">Integrador Lead</text>
+    <text class="paped" x="114" y="722">Responde por um conjunto de Integradores</text>
+
+    <rect x="398" y="682" width="290" height="52" rx="12" fill="#fff" fill-opacity=".12" stroke="#fff" stroke-opacity=".26"/>
+    <text class="papel" x="418" y="704">Integradores</text>
+    <text class="paped" x="418" y="722">Alocados nas Comunidades</text>
+
+    <rect x="702" y="682" width="290" height="52" rx="12" fill="#fff" fill-opacity=".12" stroke="#fff" stroke-opacity=".26"/>
+    <text class="papel" x="722" y="704">Membros do Capítulo</text>
+    <text class="paped" x="722" y="722">Processos, diretrizes e normas</text>
+  </g>
+
+  <!-- ═══ retroalimentação: o que se mede evolui a norma ═══ -->
+  <path d="M70 696 H40 V420 H66" fill="none" stroke="#e58500" stroke-width="2.2"
+        stroke-dasharray="6 5" marker-end="url(#arO)"/>
+  <text class="loop" transform="rotate(-90 22 558)" x="22" y="558" text-anchor="middle">EVOLUÇÃO DAS DIRETRIZES</text>
+</svg>
