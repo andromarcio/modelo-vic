@@ -13,6 +13,7 @@ NAV = [
     ("diretrizes", "diretrizes.html",               "Diretrizes"),
     ("triade",   "triade-tecnica.html",         "Tríade Técnica"),
     ("analise",  "analise-acompanhamento.html", "Análise e Acompanhamento"),
+    ("implantacao", "implantacao.html",         "Implantação"),
 ]
 DIRETRIZES = [
     ("1",  "diretriz-1",  "diretriz-1.html",  "Versões testadas e validadas para produção"),
@@ -30,8 +31,8 @@ DIRETRIZES = [
     ("13", "diretriz-13", "diretriz-13.html", "Nota de versão (changelog)"),
 ]
 
-ORDER = ["index.html", "diretrizes.html"] + [p[2] for p in DIRETRIZES] + ["triade-tecnica.html", "analise-acompanhamento.html"]
-HREF2ID = {"index.html": "index", "diretrizes.html": "diretrizes", "triade-tecnica.html": "triade", "analise-acompanhamento.html": "analise"}
+ORDER = ["index.html", "diretrizes.html"] + [p[2] for p in DIRETRIZES] + ["triade-tecnica.html", "analise-acompanhamento.html", "implantacao.html"]
+HREF2ID = {"index.html": "index", "diretrizes.html": "diretrizes", "triade-tecnica.html": "triade", "analise-acompanhamento.html": "analise", "implantacao.html": "implantacao"}
 for num, pid, pfile, plabel in DIRETRIZES:
     HREF2ID[pfile] = pid
 
