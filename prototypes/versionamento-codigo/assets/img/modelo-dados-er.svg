@@ -1,0 +1,632 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 1128" role="img" aria-label="Modelo de dados dos indicadores VIC: 35 tabelas e 58 relacionamentos, agrupadas em identidade e organização, estrutura do repositório, execução da coleta, fatos imutáveis, snapshots datados, carga normativa e resultado apurado">
+  <style>
+    text { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+    .ttl  { font-size: 24px; font-weight: 700; fill: #fff; letter-spacing: .4px; }
+    .sub  { font-size: 13px; fill: #fff; fill-opacity: .88; }
+    .kpi  { font-size: 19px; font-weight: 700; fill: #fff; }
+    .kpil { font-size: 10px; font-weight: 700; fill: #fff; fill-opacity: .7; letter-spacing: 1.1px; }
+    .lg   { font-size: 12px; fill: #475569; }
+  </style>
+  <defs>
+    <linearGradient id="hb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00437a"/><stop offset=".55" stop-color="#005ca9"/><stop offset="1" stop-color="#0070cc"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="24" y="16" width="1112" height="110" rx="18" fill="url(#hb)"/>
+  <text class="ttl" x="52" y="58">Modelo de dados dos indicadores</text>
+  <text class="sub" x="52" y="82">Esquema <tspan font-family="Consolas,monospace">vic</tspan> — armazena o que é extraído do GitHub Enterprise para apurar as 13 diretrizes</text>
+  <text class="sub" x="52" y="103" font-size="11.5" fill-opacity=".62">A cor identifica a natureza do dado: fato imutável, foto datada, norma ou resultado apurado</text>
+  <g text-anchor="middle">
+    <text class="kpi" x="900" y="66">35</text><text class="kpil" x="900" y="84">TABELAS</text>
+    <text class="kpi" x="1000" y="66">58</text><text class="kpil" x="1000" y="84">RELAÇÕES</text>
+    <text class="kpi" x="1092" y="66">7</text><text class="kpil" x="1092" y="84">DOMÍNIOS</text>
+  </g>
+
+  <g transform="translate(22.9,152)">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(21.6 878.6)">
+<title>ER</title>
+<g id="clust1" class="cluster">
+<title>cluster_0</title>
+<path fill="#fbfdff" stroke="#005ca9" stroke-width="1.4" d="M11.69,-277.66C11.69,-277.66 302.69,-277.66 302.69,-277.66 308.69,-277.66 314.69,-283.66 314.69,-289.66 314.69,-289.66 314.69,-511.66 314.69,-511.66 314.69,-517.66 308.69,-523.66 302.69,-523.66 302.69,-523.66 11.69,-523.66 11.69,-523.66 5.69,-523.66 -0.31,-517.66 -0.31,-511.66 -0.31,-511.66 -0.31,-289.66 -0.31,-289.66 -0.31,-283.66 5.69,-277.66 11.69,-277.66"/>
+<text text-anchor="middle" x="157.19" y="-510.86" font-family="Segoe UI" font-size="11.00" fill="#00437a">IDENTIDADE E ORGANIZAÇÃO</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_1</title>
+<path fill="#fbfdff" stroke="#21caaf" stroke-width="1.4" d="M483.5,-303.57C483.5,-303.57 665.5,-303.57 665.5,-303.57 671.5,-303.57 677.5,-309.57 677.5,-315.57 677.5,-315.57 677.5,-377.57 677.5,-377.57 677.5,-383.57 671.5,-389.57 665.5,-389.57 665.5,-389.57 483.5,-389.57 483.5,-389.57 477.5,-389.57 471.5,-383.57 471.5,-377.57 471.5,-377.57 471.5,-315.57 471.5,-315.57 471.5,-309.57 477.5,-303.57 483.5,-303.57"/>
+<text text-anchor="middle" x="574.5" y="-376.77" font-family="Segoe UI" font-size="11.00" fill="#12695c">ESTRUTURA DO REPOSITÓRIO</text>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_2</title>
+<path fill="#fbfdff" stroke="#f39200" stroke-width="1.4" d="M478.29,-39.26C478.29,-39.26 620.29,-39.26 620.29,-39.26 626.29,-39.26 632.29,-45.26 632.29,-51.26 632.29,-51.26 632.29,-143.26 632.29,-143.26 632.29,-149.26 626.29,-155.26 620.29,-155.26 620.29,-155.26 478.29,-155.26 478.29,-155.26 472.29,-155.26 466.29,-149.26 466.29,-143.26 466.29,-143.26 466.29,-51.26 466.29,-51.26 466.29,-45.26 472.29,-39.26 478.29,-39.26"/>
+<text text-anchor="middle" x="549.29" y="-142.46" font-family="Segoe UI" font-size="11.00" fill="#8a5200">EXECUÇÃO DA COLETA</text>
+</g>
+<g id="clust4" class="cluster">
+<title>cluster_3</title>
+<path fill="#fbfdff" stroke="#8fcbff" stroke-width="1.4" d="M85.39,-564.66C85.39,-564.66 497.39,-564.66 497.39,-564.66 503.39,-564.66 509.39,-570.66 509.39,-576.66 509.39,-576.66 509.39,-844.66 509.39,-844.66 509.39,-850.66 503.39,-856.66 497.39,-856.66 497.39,-856.66 85.39,-856.66 85.39,-856.66 79.39,-856.66 73.39,-850.66 73.39,-844.66 73.39,-844.66 73.39,-576.66 73.39,-576.66 73.39,-570.66 79.39,-564.66 85.39,-564.66"/>
+<text text-anchor="middle" x="291.39" y="-843.86" font-family="Segoe UI" font-size="11.00" fill="#00437a">FATOS IMUTÁVEIS</text>
+</g>
+<g id="clust5" class="cluster">
+<title>cluster_4</title>
+<path fill="#fbfdff" stroke="#6d8ba5" stroke-width="1.4" d="M715.54,0.02C715.54,0.02 1058.54,0.02 1058.54,0.02 1064.54,0.02 1070.54,-5.98 1070.54,-11.98 1070.54,-11.98 1070.54,-298.98 1070.54,-298.98 1070.54,-304.98 1064.54,-310.98 1058.54,-310.98 1058.54,-310.98 715.54,-310.98 715.54,-310.98 709.54,-310.98 703.54,-304.98 703.54,-298.98 703.54,-298.98 703.54,-11.98 703.54,-11.98 703.54,-5.98 709.54,0.02 715.54,0.02"/>
+<text text-anchor="middle" x="887.04" y="-298.18" font-family="Segoe UI" font-size="11.00" fill="#3d556b">SNAPSHOTS DATADOS</text>
+</g>
+<g id="clust6" class="cluster">
+<title>cluster_5</title>
+<path fill="#fbfdff" stroke="#00437a" stroke-width="1.4" d="M529.43,-559.64C529.43,-559.64 796.43,-559.64 796.43,-559.64 802.43,-559.64 808.43,-565.64 808.43,-571.64 808.43,-571.64 808.43,-751.64 808.43,-751.64 808.43,-757.64 802.43,-763.64 796.43,-763.64 796.43,-763.64 529.43,-763.64 529.43,-763.64 523.43,-763.64 517.43,-757.64 517.43,-751.64 517.43,-751.64 517.43,-571.64 517.43,-571.64 517.43,-565.64 523.43,-559.64 529.43,-559.64"/>
+<text text-anchor="middle" x="662.93" y="-750.84" font-family="Segoe UI" font-size="11.00" fill="#00325c">CARGA NORMATIVA</text>
+</g>
+<g id="clust7" class="cluster">
+<title>cluster_6</title>
+<path fill="#fbfdff" stroke="#127527" stroke-width="1.4" d="M74.05,-65.52C74.05,-65.52 333.05,-65.52 333.05,-65.52 339.05,-65.52 345.05,-71.52 345.05,-77.52 345.05,-77.52 345.05,-177.52 345.05,-177.52 345.05,-183.52 339.05,-189.52 333.05,-189.52 333.05,-189.52 74.05,-189.52 74.05,-189.52 68.05,-189.52 62.05,-183.52 62.05,-177.52 62.05,-177.52 62.05,-77.52 62.05,-77.52 62.05,-71.52 68.05,-65.52 74.05,-65.52"/>
+<text text-anchor="middle" x="203.55" y="-176.72" font-family="Segoe UI" font-size="11.00" fill="#0d581d">RESULTADO APURADO</text>
+</g>
+<!-- organizacao -->
+<g id="node1" class="node">
+<title>organizacao</title>
+<path fill="#00437a" stroke="#005ca9" stroke-width="2.6" d="M211.94,-321.19C211.94,-321.19 140.94,-321.19 140.94,-321.19 136.94,-321.19 132.94,-317.19 132.94,-313.19 132.94,-313.19 132.94,-305.19 132.94,-305.19 132.94,-301.19 136.94,-297.19 140.94,-297.19 140.94,-297.19 211.94,-297.19 211.94,-297.19 215.94,-297.19 219.94,-301.19 219.94,-305.19 219.94,-305.19 219.94,-313.19 219.94,-313.19 219.94,-317.19 215.94,-321.19 211.94,-321.19"/>
+<text text-anchor="middle" x="176.44" y="-306.39" font-family="Segoe UI" font-size="11.00" fill="#ffffff">organizacao</text>
+</g>
+<!-- pessoa -->
+<g id="node2" class="node">
+<title>pessoa</title>
+<path fill="#e5f2fc" stroke="#005ca9" stroke-width="1.4" d="M222.43,-483.64C222.43,-483.64 178.43,-483.64 178.43,-483.64 174.43,-483.64 170.43,-479.64 170.43,-475.64 170.43,-475.64 170.43,-467.64 170.43,-467.64 170.43,-463.64 174.43,-459.64 178.43,-459.64 178.43,-459.64 222.43,-459.64 222.43,-459.64 226.43,-459.64 230.43,-463.64 230.43,-467.64 230.43,-467.64 230.43,-475.64 230.43,-475.64 230.43,-479.64 226.43,-483.64 222.43,-483.64"/>
+<text text-anchor="middle" x="200.43" y="-468.84" font-family="Segoe UI" font-size="11.00">pessoa</text>
+</g>
+<!-- usuario_github -->
+<g id="node3" class="node">
+<title>usuario_github</title>
+<path fill="#00437a" stroke="#005ca9" stroke-width="2.6" d="M154.42,-462.22C154.42,-462.22 69.42,-462.22 69.42,-462.22 65.42,-462.22 61.42,-458.22 61.42,-454.22 61.42,-454.22 61.42,-446.22 61.42,-446.22 61.42,-442.22 65.42,-438.22 69.42,-438.22 69.42,-438.22 154.42,-438.22 154.42,-438.22 158.42,-438.22 162.42,-442.22 162.42,-446.22 162.42,-446.22 162.42,-454.22 162.42,-454.22 162.42,-458.22 158.42,-462.22 154.42,-462.22"/>
+<text text-anchor="middle" x="111.92" y="-447.42" font-family="Segoe UI" font-size="11.00" fill="#ffffff">usuario_github</text>
+</g>
+<!-- usuario_github&#45;&gt;pessoa -->
+<g id="edge56" class="edge">
+<title>usuario_github&#45;&gt;pessoa</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M161.6,-462.25C162.22,-462.4 162.84,-462.55 163.46,-462.69"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="163.12,-464.95 169.98,-464.27 164.2,-460.53 163.12,-464.95"/>
+</g>
+<!-- identidade_git -->
+<g id="node4" class="node">
+<title>identidade_git</title>
+<path fill="#e5f2fc" stroke="#005ca9" stroke-width="1.4" d="M286.81,-369.58C286.81,-369.58 204.81,-369.58 204.81,-369.58 200.81,-369.58 196.81,-365.58 196.81,-361.58 196.81,-361.58 196.81,-353.58 196.81,-353.58 196.81,-349.58 200.81,-345.58 204.81,-345.58 204.81,-345.58 286.81,-345.58 286.81,-345.58 290.81,-345.58 294.81,-349.58 294.81,-353.58 294.81,-353.58 294.81,-361.58 294.81,-361.58 294.81,-365.58 290.81,-369.58 286.81,-369.58"/>
+<text text-anchor="middle" x="245.81" y="-354.78" font-family="Segoe UI" font-size="11.00">identidade_git</text>
+</g>
+<!-- identidade_git&#45;&gt;pessoa -->
+<g id="edge24" class="edge">
+<title>identidade_git&#45;&gt;pessoa</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M203.68,-369.7C189.4,-376.04 174.99,-385.43 166.73,-399.1 155.76,-417.25 169.87,-439.57 183.04,-454.62"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="181.37,-456.16 187.44,-459.42 184.73,-453.09 181.37,-456.16"/>
+</g>
+<!-- identidade_git&#45;&gt;usuario_github -->
+<g id="edge25" class="edge">
+<title>identidade_git&#45;&gt;usuario_github</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M216.88,-369.7C201.21,-376.99 182,-387.17 166.73,-399.1 152.46,-410.24 152.97,-417.27 139.63,-429.5 138.03,-430.96 136.34,-432.42 134.61,-433.85"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="133.03,-432.21 129.35,-438.03 135.85,-435.77 133.03,-432.21"/>
+</g>
+<!-- equipe -->
+<g id="node5" class="node">
+<title>equipe</title>
+<path fill="#e5f2fc" stroke="#005ca9" stroke-width="1.4" d="M128.43,-426.3C128.43,-426.3 87.43,-426.3 87.43,-426.3 83.43,-426.3 79.43,-422.3 79.43,-418.3 79.43,-418.3 79.43,-410.3 79.43,-410.3 79.43,-406.3 83.43,-402.3 87.43,-402.3 87.43,-402.3 128.43,-402.3 128.43,-402.3 132.43,-402.3 136.43,-406.3 136.43,-410.3 136.43,-410.3 136.43,-418.3 136.43,-418.3 136.43,-422.3 132.43,-426.3 128.43,-426.3"/>
+<text text-anchor="middle" x="107.93" y="-411.5" font-family="Segoe UI" font-size="11.00">equipe</text>
+</g>
+<!-- equipe&#45;&gt;organizacao -->
+<g id="edge18" class="edge">
+<title>equipe&#45;&gt;organizacao</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M115.79,-402.25C127.8,-383.81 150.81,-348.51 164.78,-327.08"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="166.82,-328.12 168.46,-321.44 163.01,-325.64 166.82,-328.12"/>
+</g>
+<!-- equipe_membro -->
+<g id="node6" class="node">
+<title>equipe_membro</title>
+<path fill="#e5f2fc" stroke="#005ca9" stroke-width="1.4" d="M269.93,-426.3C269.93,-426.3 177.93,-426.3 177.93,-426.3 173.93,-426.3 169.93,-422.3 169.93,-418.3 169.93,-418.3 169.93,-410.3 169.93,-410.3 169.93,-406.3 173.93,-402.3 177.93,-402.3 177.93,-402.3 269.93,-402.3 269.93,-402.3 273.93,-402.3 277.93,-406.3 277.93,-410.3 277.93,-410.3 277.93,-418.3 277.93,-418.3 277.93,-422.3 273.93,-426.3 269.93,-426.3"/>
+<text text-anchor="middle" x="223.93" y="-411.5" font-family="Segoe UI" font-size="11.00">equipe_membro</text>
+</g>
+<!-- equipe_membro&#45;&gt;usuario_github -->
+<g id="edge20" class="edge">
+<title>equipe_membro&#45;&gt;usuario_github</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M186.32,-426.36C176.53,-429.5 165.9,-432.91 155.81,-436.14"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="155.11,-433.98 149.62,-438.13 156.5,-438.31 155.11,-433.98"/>
+</g>
+<!-- equipe_membro&#45;&gt;equipe -->
+<g id="edge19" class="edge">
+<title>equipe_membro&#45;&gt;equipe</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M169.66,-414.3C160.73,-414.3 151.67,-414.3 143.35,-414.3"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="143.05,-412.03 136.55,-414.3 143.05,-416.58 143.05,-412.03"/>
+</g>
+<!-- atribuicao_papel -->
+<g id="node7" class="node">
+<title>atribuicao_papel</title>
+<path fill="#e5f2fc" stroke="#005ca9" stroke-width="1.4" d="M122.29,-365.28C122.29,-365.28 27.29,-365.28 27.29,-365.28 23.29,-365.28 19.29,-361.28 19.29,-357.28 19.29,-357.28 19.29,-349.28 19.29,-349.28 19.29,-345.28 23.29,-341.28 27.29,-341.28 27.29,-341.28 122.29,-341.28 122.29,-341.28 126.29,-341.28 130.29,-345.28 130.29,-349.28 130.29,-349.28 130.29,-357.28 130.29,-357.28 130.29,-361.28 126.29,-365.28 122.29,-365.28"/>
+<text text-anchor="middle" x="74.79" y="-350.48" font-family="Segoe UI" font-size="11.00">atribuicao_papel</text>
+</g>
+<!-- atribuicao_papel&#45;&gt;organizacao -->
+<g id="edge1" class="edge">
+<title>atribuicao_papel&#45;&gt;organizacao</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M102.56,-341.24C114.89,-335.89 129.51,-329.55 142.48,-323.92"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="143.64,-325.9 148.7,-321.23 141.83,-321.73 143.64,-325.9"/>
+</g>
+<!-- atribuicao_papel&#45;&gt;usuario_github -->
+<g id="edge3" class="edge">
+<title>atribuicao_papel&#45;&gt;usuario_github</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M71.6,-365.35C68.12,-381.25 64.48,-409.54 76.23,-429.5 77.09,-430.96 78.09,-432.33 79.2,-433.6"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="77.69,-435.31 83.99,-438.11 80.81,-431.99 77.69,-435.31"/>
+</g>
+<!-- repositorio -->
+<g id="node8" class="node">
+<title>repositorio</title>
+<path fill="#12695c" stroke="#21caaf" stroke-width="2.6" d="M573.76,-349.43C573.76,-349.43 509.76,-349.43 509.76,-349.43 505.76,-349.43 501.76,-345.43 501.76,-341.43 501.76,-341.43 501.76,-333.43 501.76,-333.43 501.76,-329.43 505.76,-325.43 509.76,-325.43 509.76,-325.43 573.76,-325.43 573.76,-325.43 577.76,-325.43 581.76,-329.43 581.76,-333.43 581.76,-333.43 581.76,-341.43 581.76,-341.43 581.76,-345.43 577.76,-349.43 573.76,-349.43"/>
+<text text-anchor="middle" x="541.76" y="-334.63" font-family="Segoe UI" font-size="11.00" fill="#ffffff">repositorio</text>
+</g>
+<!-- atribuicao_papel&#45;&gt;repositorio -->
+<g id="edge2" class="edge">
+<title>atribuicao_papel&#45;&gt;repositorio</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M130.34,-347.29C150.26,-345.38 172.92,-343.48 193.61,-342.38 301.28,-336.69 427.93,-336.53 494.84,-336.95"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="495.01,-339.23 501.52,-336.99 495.04,-334.68 495.01,-339.23"/>
+</g>
+<!-- repositorio&#45;&gt;organizacao -->
+<g id="edge43" class="edge">
+<title>repositorio&#45;&gt;organizacao</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M501.62,-334.33C434.65,-329.15 300.24,-318.76 226.94,-313.1"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="226.7,-310.8 220.04,-312.56 226.35,-315.33 226.7,-310.8"/>
+</g>
+<!-- branch -->
+<g id="node9" class="node">
+<title>branch</title>
+<path fill="#d7f5f0" stroke="#21caaf" stroke-width="1.4" d="M639.76,-347.14C639.76,-347.14 597.76,-347.14 597.76,-347.14 593.76,-347.14 589.76,-343.14 589.76,-339.14 589.76,-339.14 589.76,-331.14 589.76,-331.14 589.76,-327.14 593.76,-323.14 597.76,-323.14 597.76,-323.14 639.76,-323.14 639.76,-323.14 643.76,-323.14 647.76,-327.14 647.76,-331.14 647.76,-331.14 647.76,-339.14 647.76,-339.14 647.76,-343.14 643.76,-347.14 639.76,-347.14"/>
+<text text-anchor="middle" x="618.76" y="-332.34" font-family="Segoe UI" font-size="11.00">branch</text>
+</g>
+<!-- branch&#45;&gt;repositorio -->
+<g id="edge4" class="edge">
+<title>branch&#45;&gt;repositorio</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M589.65,-336.01C589.33,-336.02 589.01,-336.03 588.69,-336.04"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="588.29,-333.77 581.86,-336.24 588.42,-338.32 588.29,-333.77"/>
+</g>
+<!-- coleta -->
+<g id="node10" class="node">
+<title>coleta</title>
+<path fill="#8a5200" stroke="#f39200" stroke-width="2.6" d="M574.77,-83.24C574.77,-83.24 536.77,-83.24 536.77,-83.24 532.77,-83.24 528.77,-79.24 528.77,-75.24 528.77,-75.24 528.77,-67.24 528.77,-67.24 528.77,-63.24 532.77,-59.24 536.77,-59.24 536.77,-59.24 574.77,-59.24 574.77,-59.24 578.77,-59.24 582.77,-63.24 582.77,-67.24 582.77,-67.24 582.77,-75.24 582.77,-75.24 582.77,-79.24 578.77,-83.24 574.77,-83.24"/>
+<text text-anchor="middle" x="555.77" y="-68.44" font-family="Segoe UI" font-size="11.00" fill="#ffffff">coleta</text>
+</g>
+<!-- coleta&#45;&gt;organizacao -->
+<g id="edge5" class="edge">
+<title>coleta&#45;&gt;organizacao</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M528.74,-78.62C520.84,-81.18 512.29,-84.35 504.76,-88.04 379.11,-149.59 245.67,-253.11 196.29,-292.92"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="194.86,-291.15 191.24,-297.01 197.72,-294.69 194.86,-291.15"/>
+</g>
+<!-- coleta_erro -->
+<g id="node11" class="node">
+<title>coleta_erro</title>
+<path fill="#fff0d6" stroke="#f39200" stroke-width="1.4" d="M581.96,-115.24C581.96,-115.24 515.96,-115.24 515.96,-115.24 511.96,-115.24 507.96,-111.24 507.96,-107.24 507.96,-107.24 507.96,-99.24 507.96,-99.24 507.96,-95.24 511.96,-91.24 515.96,-91.24 515.96,-91.24 581.96,-91.24 581.96,-91.24 585.96,-91.24 589.96,-95.24 589.96,-99.24 589.96,-99.24 589.96,-107.24 589.96,-107.24 589.96,-111.24 585.96,-115.24 581.96,-115.24"/>
+<text text-anchor="middle" x="548.96" y="-100.44" font-family="Segoe UI" font-size="11.00">coleta_erro</text>
+</g>
+<!-- coleta_erro&#45;&gt;repositorio -->
+<g id="edge7" class="edge">
+<title>coleta_erro&#45;&gt;repositorio</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M548.58,-115.5C547.4,-154 543.76,-272.61 542.34,-318.77"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="540.06,-318.72 542.14,-325.29 544.61,-318.86 540.06,-318.72"/>
+</g>
+<!-- coleta_erro&#45;&gt;coleta -->
+<g id="edge6" class="edge">
+<title>coleta_erro&#45;&gt;coleta</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M551.57,-90.96C551.64,-90.66 551.7,-90.36 551.76,-90.06"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="554,-90.48 553.13,-83.65 549.55,-89.53 554,-90.48"/>
+</g>
+<!-- commit -->
+<g id="node12" class="node">
+<title>commit</title>
+<path fill="#00437a" stroke="#8fcbff" stroke-width="2.6" d="M160.4,-765.97C160.4,-765.97 114.4,-765.97 114.4,-765.97 110.4,-765.97 106.4,-761.97 106.4,-757.97 106.4,-757.97 106.4,-749.97 106.4,-749.97 106.4,-745.97 110.4,-741.97 114.4,-741.97 114.4,-741.97 160.4,-741.97 160.4,-741.97 164.4,-741.97 168.4,-745.97 168.4,-749.97 168.4,-749.97 168.4,-757.97 168.4,-757.97 168.4,-761.97 164.4,-765.97 160.4,-765.97"/>
+<text text-anchor="middle" x="137.4" y="-751.17" font-family="Segoe UI" font-size="11.00" fill="#ffffff">commit</text>
+</g>
+<!-- commit&#45;&gt;pessoa -->
+<g id="edge10" class="edge">
+<title>commit&#45;&gt;pessoa</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M126.93,-741.78C115.22,-727.26 96.95,-701.74 89.73,-676.11 86.06,-663.1 86.66,-658.87 89.73,-645.71 104.88,-580.7 156.65,-518.08 183.69,-488.83"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="185.65,-490.06 188.43,-483.77 182.33,-486.95 185.65,-490.06"/>
+</g>
+<!-- commit&#45;&gt;usuario_github -->
+<g id="edge12" class="edge">
+<title>commit&#45;&gt;usuario_github</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M126.93,-741.78C115.22,-727.26 96.95,-701.74 89.73,-676.11 68.61,-601.17 93.3,-507.36 105.68,-468.44"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="107.84,-469.13 107.69,-462.25 103.51,-467.72 107.84,-469.13"/>
+</g>
+<!-- commit&#45;&gt;identidade_git -->
+<g id="edge9" class="edge">
+<title>commit&#45;&gt;identidade_git</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M147.21,-741.93C158.45,-727.35 176.32,-701.58 184.13,-676.11 186.08,-669.72 182.2,-651.75 185.77,-646.1 201.63,-620.97 216.7,-624.67 244.48,-614.1 248.92,-612.41 251.67,-615.17 254.89,-611.67 319.27,-541.55 313.99,-488.44 281.13,-399.1 277.8,-390.04 271.51,-381.61 265.16,-374.75"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="266.5,-372.87 260.33,-369.82 263.25,-376.05 266.5,-372.87"/>
+</g>
+<!-- commit&#45;&gt;repositorio -->
+<g id="edge11" class="edge">
+<title>commit&#45;&gt;repositorio</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M147.21,-741.93C158.45,-727.35 176.32,-701.58 184.13,-676.11 186.08,-669.72 182.2,-651.75 185.77,-646.1 201.63,-620.97 216.7,-624.67 244.48,-614.1 248.92,-612.41 250.71,-613.93 254.89,-611.67 381.53,-543.2 492.55,-403.81 529.09,-354.88"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="530.93,-356.21 532.98,-349.63 527.28,-353.5 530.93,-356.21"/>
+</g>
+<!-- commit&#45;&gt;coleta -->
+<g id="edge8" class="edge">
+<title>commit&#45;&gt;coleta</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M147.21,-741.93C158.45,-727.35 176.32,-701.58 184.13,-676.11 186.08,-669.72 182.2,-651.75 185.77,-646.1 201.63,-620.97 216.7,-624.67 244.48,-614.1 248.92,-612.41 251.18,-614.65 254.89,-611.67 455.88,-450.13 311.22,-258.44 504.76,-88.04 509.75,-83.65 515.91,-80.4 522.2,-78"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="523.08,-80.11 528.51,-75.87 521.62,-75.8 523.08,-80.11"/>
+</g>
+<!-- commit_pai -->
+<g id="node13" class="node">
+<title>commit_pai</title>
+<path fill="#ffffff" stroke="#8fcbff" stroke-width="1.4" d="M265.63,-752.3C265.63,-752.3 197.63,-752.3 197.63,-752.3 193.63,-752.3 189.63,-748.3 189.63,-744.3 189.63,-744.3 189.63,-736.3 189.63,-736.3 189.63,-732.3 193.63,-728.3 197.63,-728.3 197.63,-728.3 265.63,-728.3 265.63,-728.3 269.63,-728.3 273.63,-732.3 273.63,-736.3 273.63,-736.3 273.63,-744.3 273.63,-744.3 273.63,-748.3 269.63,-752.3 265.63,-752.3"/>
+<text text-anchor="middle" x="231.63" y="-737.5" font-family="Segoe UI" font-size="11.00">commit_pai</text>
+</g>
+<!-- commit_pai&#45;&gt;commit -->
+<g id="edge17" class="edge">
+<title>commit_pai&#45;&gt;commit</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M189.48,-746.42C184.74,-747.1 179.93,-747.8 175.25,-748.48"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="174.61,-746.27 168.5,-749.46 175.26,-750.78 174.61,-746.27"/>
+</g>
+<!-- commit_arquivo -->
+<g id="node14" class="node">
+<title>commit_arquivo</title>
+<path fill="#ffffff" stroke="#8fcbff" stroke-width="1.4" d="M481.63,-608.3C481.63,-608.3 389.63,-608.3 389.63,-608.3 385.63,-608.3 381.63,-604.3 381.63,-600.3 381.63,-600.3 381.63,-592.3 381.63,-592.3 381.63,-588.3 385.63,-584.3 389.63,-584.3 389.63,-584.3 481.63,-584.3 481.63,-584.3 485.63,-584.3 489.63,-588.3 489.63,-592.3 489.63,-592.3 489.63,-600.3 489.63,-600.3 489.63,-604.3 485.63,-608.3 481.63,-608.3"/>
+<text text-anchor="middle" x="435.63" y="-593.5" font-family="Segoe UI" font-size="11.00">commit_arquivo</text>
+</g>
+<!-- commit_arquivo&#45;&gt;commit -->
+<g id="edge13" class="edge">
+<title>commit_arquivo&#45;&gt;commit</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M418.61,-608.4C402.93,-619.1 378.7,-634.51 355.88,-644.5 331.53,-655.15 322.03,-648.88 298.43,-661.1 288.7,-666.14 288.34,-670.51 279.17,-676.5 240.21,-701.94 227.1,-702.49 186.43,-725.1 178.88,-729.3 170.76,-734 163.34,-738.37"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="161.74,-736.68 157.31,-741.95 164.06,-740.59 161.74,-736.68"/>
+</g>
+<!-- commit_branch -->
+<g id="node15" class="node">
+<title>commit_branch</title>
+<path fill="#ffffff" stroke="#8fcbff" stroke-width="1.4" d="M344.68,-641.3C344.68,-641.3 255.68,-641.3 255.68,-641.3 251.68,-641.3 247.68,-637.3 247.68,-633.3 247.68,-633.3 247.68,-625.3 247.68,-625.3 247.68,-621.3 251.68,-617.3 255.68,-617.3 255.68,-617.3 344.68,-617.3 344.68,-617.3 348.68,-617.3 352.68,-621.3 352.68,-625.3 352.68,-625.3 352.68,-633.3 352.68,-633.3 352.68,-637.3 348.68,-641.3 344.68,-641.3"/>
+<text text-anchor="middle" x="300.18" y="-626.5" font-family="Segoe UI" font-size="11.00">commit_branch</text>
+</g>
+<!-- commit_branch&#45;&gt;branch -->
+<g id="edge14" class="edge">
+<title>commit_branch&#45;&gt;branch</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M313.46,-617.03C363.76,-570.59 542.6,-405.47 600.52,-351.99"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="602.19,-353.54 605.42,-347.46 599.1,-350.2 602.19,-353.54"/>
+</g>
+<!-- commit_branch&#45;&gt;coleta -->
+<g id="edge15" class="edge">
+<title>commit_branch&#45;&gt;coleta</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M301.05,-616.97C306.3,-552.03 339.35,-246.47 504.76,-88.04 509.66,-83.35 515.89,-79.97 522.31,-77.53"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="523.29,-79.6 528.74,-75.39 521.85,-75.28 523.29,-79.6"/>
+</g>
+<!-- commit_branch&#45;&gt;commit -->
+<g id="edge16" class="edge">
+<title>commit_branch&#45;&gt;commit</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M297.21,-641.41C294.15,-651.78 288.49,-666.55 279.17,-676.5 247.33,-710.44 227.1,-702.49 186.43,-725.1 178.88,-729.3 170.76,-734 163.34,-738.37"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="161.74,-736.68 157.31,-741.95 164.06,-740.59 161.74,-736.68"/>
+</g>
+<!-- pull_request -->
+<g id="node16" class="node">
+<title>pull_request</title>
+<path fill="#ffffff" stroke="#8fcbff" stroke-width="1.4" d="M267.97,-673.3C267.97,-673.3 196.97,-673.3 196.97,-673.3 192.97,-673.3 188.97,-669.3 188.97,-665.3 188.97,-665.3 188.97,-657.3 188.97,-657.3 188.97,-653.3 192.97,-649.3 196.97,-649.3 196.97,-649.3 267.97,-649.3 267.97,-649.3 271.97,-649.3 275.97,-653.3 275.97,-657.3 275.97,-657.3 275.97,-665.3 275.97,-665.3 275.97,-669.3 271.97,-673.3 267.97,-673.3"/>
+<text text-anchor="middle" x="232.47" y="-658.5" font-family="Segoe UI" font-size="11.00">pull_request</text>
+</g>
+<!-- pull_request&#45;&gt;usuario_github -->
+<g id="edge39" class="edge">
+<title>pull_request&#45;&gt;usuario_github</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M194.91,-649.22C166.31,-639.2 130.4,-624.57 121.49,-611.67 91.5,-568.29 100.36,-501.67 107.21,-469.25"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="109.52,-469.35 108.71,-462.51 105.08,-468.36 109.52,-469.35"/>
+</g>
+<!-- pull_request&#45;&gt;repositorio -->
+<g id="edge38" class="edge">
+<title>pull_request&#45;&gt;repositorio</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M232.24,-649.13C232.72,-638.44 235.17,-623.21 244.48,-614.1 247.87,-610.77 250.71,-613.93 254.89,-611.67 381.53,-543.2 492.55,-403.81 529.09,-354.88"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="530.93,-356.21 532.98,-349.63 527.28,-353.5 530.93,-356.21"/>
+</g>
+<!-- pull_request&#45;&gt;coleta -->
+<g id="edge37" class="edge">
+<title>pull_request&#45;&gt;coleta</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M232.24,-649.13C232.72,-638.44 235.17,-623.21 244.48,-614.1 247.87,-610.77 251.18,-614.65 254.89,-611.67 455.88,-450.13 311.22,-258.44 504.76,-88.04 509.75,-83.65 515.91,-80.4 522.2,-78"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="523.08,-80.11 528.51,-75.87 521.62,-75.8 523.08,-80.11"/>
+</g>
+<!-- pull_request_commit -->
+<g id="node17" class="node">
+<title>pull_request_commit</title>
+<path fill="#ffffff" stroke="#8fcbff" stroke-width="1.4" d="M427.63,-688.3C427.63,-688.3 309.63,-688.3 309.63,-688.3 305.63,-688.3 301.63,-684.3 301.63,-680.3 301.63,-680.3 301.63,-672.3 301.63,-672.3 301.63,-668.3 305.63,-664.3 309.63,-664.3 309.63,-664.3 427.63,-664.3 427.63,-664.3 431.63,-664.3 435.63,-668.3 435.63,-672.3 435.63,-672.3 435.63,-680.3 435.63,-680.3 435.63,-684.3 431.63,-688.3 427.63,-688.3"/>
+<text text-anchor="middle" x="368.63" y="-673.5" font-family="Segoe UI" font-size="11.00">pull_request_commit</text>
+</g>
+<!-- pull_request_commit&#45;&gt;pull_request -->
+<g id="edge40" class="edge">
+<title>pull_request_commit&#45;&gt;pull_request</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M301.35,-668.89C295.05,-668.19 288.74,-667.5 282.64,-666.83"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="282.82,-664.56 276.11,-666.11 282.32,-669.08 282.82,-664.56"/>
+</g>
+<!-- pull_request_revisao -->
+<g id="node18" class="node">
+<title>pull_request_revisao</title>
+<path fill="#ffffff" stroke="#8fcbff" stroke-width="1.4" d="M414.49,-746.92C414.49,-746.92 297.49,-746.92 297.49,-746.92 293.49,-746.92 289.49,-742.92 289.49,-738.92 289.49,-738.92 289.49,-730.92 289.49,-730.92 289.49,-726.92 293.49,-722.92 297.49,-722.92 297.49,-722.92 414.49,-722.92 414.49,-722.92 418.49,-722.92 422.49,-726.92 422.49,-730.92 422.49,-730.92 422.49,-738.92 422.49,-738.92 422.49,-742.92 418.49,-746.92 414.49,-746.92"/>
+<text text-anchor="middle" x="355.99" y="-732.12" font-family="Segoe UI" font-size="11.00">pull_request_revisao</text>
+</g>
+<!-- pull_request_revisao&#45;&gt;usuario_github -->
+<g id="edge42" class="edge">
+<title>pull_request_revisao&#45;&gt;usuario_github</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M334.89,-722.86C322.91,-715.15 308.37,-704.23 298.43,-691.5 284.94,-674.22 297.16,-658.62 279.17,-646.1 276,-643.89 247.14,-647.29 244.48,-644.5 235.15,-634.72 236.07,-624.68 244.48,-614.1 247.43,-610.38 251.93,-615.39 254.89,-611.67 263.29,-601.09 260.33,-593.64 254.89,-581.27 242.08,-552.16 170.33,-494.66 133.6,-466.51"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="134.57,-464.39 128.02,-462.25 131.81,-468 134.57,-464.39"/>
+</g>
+<!-- pull_request_revisao&#45;&gt;pull_request -->
+<g id="edge41" class="edge">
+<title>pull_request_revisao&#45;&gt;pull_request</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M335.59,-722.76C314.5,-710.19 281.48,-690.51 258.51,-676.82"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="259.64,-674.85 252.9,-673.47 257.31,-678.76 259.64,-674.85"/>
+</g>
+<!-- verificacao_commit -->
+<g id="node19" class="node">
+<title>verificacao_commit</title>
+<path fill="#ffffff" stroke="#8fcbff" stroke-width="1.4" d="M243.69,-608.47C243.69,-608.47 132.69,-608.47 132.69,-608.47 128.69,-608.47 124.69,-604.47 124.69,-600.47 124.69,-600.47 124.69,-592.47 124.69,-592.47 124.69,-588.47 128.69,-584.47 132.69,-584.47 132.69,-584.47 243.69,-584.47 243.69,-584.47 247.69,-584.47 251.69,-588.47 251.69,-592.47 251.69,-592.47 251.69,-600.47 251.69,-600.47 251.69,-604.47 247.69,-608.47 243.69,-608.47"/>
+<text text-anchor="middle" x="188.19" y="-593.67" font-family="Segoe UI" font-size="11.00">verificacao_commit</text>
+</g>
+<!-- verificacao_commit&#45;&gt;coleta -->
+<g id="edge57" class="edge">
+<title>verificacao_commit&#45;&gt;coleta</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M195.03,-584.42C236.82,-510.93 457.44,-125.23 504.76,-88.04 509.93,-83.98 516.12,-80.88 522.37,-78.52"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="523.19,-80.65 528.62,-76.4 521.73,-76.34 523.19,-80.65"/>
+</g>
+<!-- verificacao_commit&#45;&gt;commit -->
+<g id="edge58" class="edge">
+<title>verificacao_commit&#45;&gt;commit</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M187.59,-608.5C186.49,-630.65 184.25,-675.71 184.13,-676.11 177.27,-698.61 162.54,-721.33 151.43,-736.37"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="149.33,-735.38 147.23,-741.94 152.96,-738.12 149.33,-735.38"/>
+</g>
+<!-- tag -->
+<g id="node20" class="node">
+<title>tag</title>
+<path fill="#ffffff" stroke="#8fcbff" stroke-width="1.4" d="M216.93,-816.24C216.93,-816.24 178.93,-816.24 178.93,-816.24 174.93,-816.24 170.93,-812.24 170.93,-808.24 170.93,-808.24 170.93,-800.24 170.93,-800.24 170.93,-796.24 174.93,-792.24 178.93,-792.24 178.93,-792.24 216.93,-792.24 216.93,-792.24 220.93,-792.24 224.93,-796.24 224.93,-800.24 224.93,-800.24 224.93,-808.24 224.93,-808.24 224.93,-812.24 220.93,-816.24 216.93,-816.24"/>
+<text text-anchor="middle" x="197.93" y="-801.44" font-family="Segoe UI" font-size="11.00">tag</text>
+</g>
+<!-- tag&#45;&gt;identidade_git -->
+<g id="edge54" class="edge">
+<title>tag&#45;&gt;identidade_git</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M194.23,-791.96C191.48,-782.18 187.95,-768.1 186.43,-755.5 182.23,-720.64 185.91,-711.61 185.77,-676.5 185.74,-669.74 182.32,-651.91 185.77,-646.1 200.94,-620.55 216.7,-624.67 244.48,-614.1 248.92,-612.41 251.67,-615.17 254.89,-611.67 319.27,-541.55 313.99,-488.44 281.13,-399.1 277.8,-390.04 271.51,-381.61 265.16,-374.75"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="266.5,-372.87 260.33,-369.82 263.25,-376.05 266.5,-372.87"/>
+</g>
+<!-- tag&#45;&gt;repositorio -->
+<g id="edge55" class="edge">
+<title>tag&#45;&gt;repositorio</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M225.28,-793.89C242.61,-785.95 264.09,-773.31 276.83,-755.5 289.36,-738 283.65,-676.74 298.43,-661.1 316.69,-641.79 336.52,-662.71 355.88,-644.5 377.65,-624 364.99,-607.82 378.43,-581.1 424.03,-490.48 497.56,-393.35 527.95,-354.71"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="529.86,-355.95 532.11,-349.44 526.29,-353.13 529.86,-355.95"/>
+</g>
+<!-- tag&#45;&gt;coleta -->
+<g id="edge53" class="edge">
+<title>tag&#45;&gt;coleta</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M194.23,-791.96C191.48,-782.18 187.95,-768.1 186.43,-755.5 185.7,-749.47 182.66,-651.32 185.77,-646.1 200.94,-620.55 216.7,-624.67 244.48,-614.1 248.92,-612.41 251.18,-614.65 254.89,-611.67 455.88,-450.13 311.22,-258.44 504.76,-88.04 509.75,-83.65 515.91,-80.4 522.2,-78"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="523.08,-80.11 528.51,-75.87 521.62,-75.8 523.08,-80.11"/>
+</g>
+<!-- nota_versao -->
+<g id="node21" class="node">
+<title>nota_versao</title>
+<path fill="#ffffff" stroke="#8fcbff" stroke-width="1.4" d="M172.93,-672.91C172.93,-672.91 100.93,-672.91 100.93,-672.91 96.93,-672.91 92.93,-668.91 92.93,-664.91 92.93,-664.91 92.93,-656.91 92.93,-656.91 92.93,-652.91 96.93,-648.91 100.93,-648.91 100.93,-648.91 172.93,-648.91 172.93,-648.91 176.93,-648.91 180.93,-652.91 180.93,-656.91 180.93,-656.91 180.93,-664.91 180.93,-664.91 180.93,-668.91 176.93,-672.91 172.93,-672.91"/>
+<text text-anchor="middle" x="136.93" y="-658.11" font-family="Segoe UI" font-size="11.00">nota_versao</text>
+</g>
+<!-- nota_versao&#45;&gt;usuario_github -->
+<g id="edge32" class="edge">
+<title>nota_versao&#45;&gt;usuario_github</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M132.13,-648.58C128.54,-638.74 123.85,-624.54 121.49,-611.67 112.15,-560.79 111.29,-499.53 111.55,-469.17"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="113.83,-469.02 111.63,-462.49 109.28,-468.96 113.83,-469.02"/>
+</g>
+<!-- nota_versao&#45;&gt;repositorio -->
+<g id="edge31" class="edge">
+<title>nota_versao&#45;&gt;repositorio</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M161.2,-648.82C182.68,-638.5 215.09,-623.82 244.48,-614.1 248.99,-612.6 250.71,-613.93 254.89,-611.67 381.53,-543.2 492.55,-403.81 529.09,-354.88"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="530.93,-356.21 532.98,-349.63 527.28,-353.5 530.93,-356.21"/>
+</g>
+<!-- evento_push -->
+<g id="node22" class="node">
+<title>evento_push</title>
+<path fill="#ffffff" stroke="#8fcbff" stroke-width="1.4" d="M365.37,-796.24C365.37,-796.24 291.37,-796.24 291.37,-796.24 287.37,-796.24 283.37,-792.24 283.37,-788.24 283.37,-788.24 283.37,-780.24 283.37,-780.24 283.37,-776.24 287.37,-772.24 291.37,-772.24 291.37,-772.24 365.37,-772.24 365.37,-772.24 369.37,-772.24 373.37,-776.24 373.37,-780.24 373.37,-780.24 373.37,-788.24 373.37,-788.24 373.37,-792.24 369.37,-796.24 365.37,-796.24"/>
+<text text-anchor="middle" x="328.37" y="-781.44" font-family="Segoe UI" font-size="11.00">evento_push</text>
+</g>
+<!-- evento_push&#45;&gt;usuario_github -->
+<g id="edge22" class="edge">
+<title>evento_push&#45;&gt;usuario_github</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M309.26,-772.1C301.29,-766.26 292.46,-758.66 286.29,-750.12 279.33,-740.48 284.68,-734.03 276.83,-725.1 246.55,-690.64 210.4,-715.2 185.77,-676.5 182.09,-670.72 187.78,-651.5 184.13,-645.71 167.21,-618.92 138.48,-638.42 121.49,-611.67 93.2,-567.17 101.26,-501.07 107.57,-469.01"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="109.86,-469.17 108.95,-462.35 105.4,-468.25 109.86,-469.17"/>
+</g>
+<!-- evento_push&#45;&gt;repositorio -->
+<g id="edge21" class="edge">
+<title>evento_push&#45;&gt;repositorio</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M373.38,-776.26C391.33,-771.23 411.13,-763.11 425.69,-750.12 545.99,-642.79 545.81,-421.64 542.91,-356.11"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="545.18,-355.96 542.59,-349.58 540.64,-356.19 545.18,-355.96"/>
+</g>
+<!-- snapshot_repositorio -->
+<g id="node23" class="node">
+<title>snapshot_repositorio</title>
+<path fill="#eef4f9" stroke="#6d8ba5" stroke-width="1.4" d="M1002.85,-44.21C1002.85,-44.21 883.85,-44.21 883.85,-44.21 879.85,-44.21 875.85,-40.21 875.85,-36.21 875.85,-36.21 875.85,-28.21 875.85,-28.21 875.85,-24.21 879.85,-20.21 883.85,-20.21 883.85,-20.21 1002.85,-20.21 1002.85,-20.21 1006.85,-20.21 1010.85,-24.21 1010.85,-28.21 1010.85,-28.21 1010.85,-36.21 1010.85,-36.21 1010.85,-40.21 1006.85,-44.21 1002.85,-44.21"/>
+<text text-anchor="middle" x="943.35" y="-29.41" font-family="Segoe UI" font-size="11.00">snapshot_repositorio</text>
+</g>
+<!-- snapshot_repositorio&#45;&gt;repositorio -->
+<g id="edge52" class="edge">
+<title>snapshot_repositorio&#45;&gt;repositorio</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M937.87,-44.38C930.24,-60.39 915.16,-88.76 896.12,-108.14 830.99,-174.43 798.56,-171.19 720.53,-221.67 665.22,-257.46 600.29,-299.51 565.94,-321.77"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="564.51,-319.98 560.29,-325.43 566.98,-323.8 564.51,-319.98"/>
+</g>
+<!-- snapshot_repositorio&#45;&gt;coleta -->
+<g id="edge51" class="edge">
+<title>snapshot_repositorio&#45;&gt;coleta</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M875.83,-39.01C792.34,-47.41 653.45,-61.4 589.68,-67.82"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="589.25,-65.58 583.01,-68.49 589.71,-70.11 589.25,-65.58"/>
+</g>
+<!-- snapshot_branch -->
+<g id="node24" class="node">
+<title>snapshot_branch</title>
+<path fill="#eef4f9" stroke="#6d8ba5" stroke-width="1.4" d="M884.92,-104.94C884.92,-104.94 786.92,-104.94 786.92,-104.94 782.92,-104.94 778.92,-100.94 778.92,-96.94 778.92,-96.94 778.92,-88.94 778.92,-88.94 778.92,-84.94 782.92,-80.94 786.92,-80.94 786.92,-80.94 884.92,-80.94 884.92,-80.94 888.92,-80.94 892.92,-84.94 892.92,-88.94 892.92,-88.94 892.92,-96.94 892.92,-96.94 892.92,-100.94 888.92,-104.94 884.92,-104.94"/>
+<text text-anchor="middle" x="835.92" y="-90.14" font-family="Segoe UI" font-size="11.00">snapshot_branch</text>
+</g>
+<!-- snapshot_branch&#45;&gt;branch -->
+<g id="edge46" class="edge">
+<title>snapshot_branch&#45;&gt;branch</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M825.15,-104.95C789.55,-144.66 675.57,-271.79 634.06,-318.08"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="632.24,-316.7 629.6,-323.06 635.63,-319.74 632.24,-316.7"/>
+</g>
+<!-- snapshot_branch&#45;&gt;coleta -->
+<g id="edge47" class="edge">
+<title>snapshot_branch&#45;&gt;coleta</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M778.89,-88.52C722.01,-84.12 636.55,-77.5 589.61,-73.86"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="589.63,-71.58 582.98,-73.35 589.28,-76.12 589.63,-71.58"/>
+</g>
+<!-- snapshot_protecao_branch -->
+<g id="node25" class="node">
+<title>snapshot_protecao_branch</title>
+<path fill="#eef4f9" stroke="#6d8ba5" stroke-width="1.4" d="M883.73,-248.87C883.73,-248.87 731.73,-248.87 731.73,-248.87 727.73,-248.87 723.73,-244.87 723.73,-240.87 723.73,-240.87 723.73,-232.87 723.73,-232.87 723.73,-228.87 727.73,-224.87 731.73,-224.87 731.73,-224.87 883.73,-224.87 883.73,-224.87 887.73,-224.87 891.73,-228.87 891.73,-232.87 891.73,-232.87 891.73,-240.87 891.73,-240.87 891.73,-244.87 887.73,-248.87 883.73,-248.87"/>
+<text text-anchor="middle" x="807.73" y="-234.07" font-family="Segoe UI" font-size="11.00">snapshot_protecao_branch</text>
+</g>
+<!-- snapshot_protecao_branch&#45;&gt;branch -->
+<g id="edge48" class="edge">
+<title>snapshot_protecao_branch&#45;&gt;branch</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M784.56,-248.92C750.14,-266.82 685.51,-300.43 647.92,-319.98"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="646.84,-317.98 642.12,-323 648.94,-322.02 646.84,-317.98"/>
+</g>
+<!-- snapshot_protecao_branch&#45;&gt;coleta -->
+<g id="edge49" class="edge">
+<title>snapshot_protecao_branch&#45;&gt;coleta</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M792.5,-224.82C758.23,-198.07 671.9,-132.54 593.16,-88.04 591.85,-87.3 590.5,-86.57 589.13,-85.85"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="589.85,-83.66 583.02,-82.77 587.8,-87.73 589.85,-83.66"/>
+</g>
+<!-- snapshot_protecao_check -->
+<g id="node26" class="node">
+<title>snapshot_protecao_check</title>
+<path fill="#eef4f9" stroke="#6d8ba5" stroke-width="1.4" d="M1038.78,-181.62C1038.78,-181.62 892.78,-181.62 892.78,-181.62 888.78,-181.62 884.78,-177.62 884.78,-173.62 884.78,-173.62 884.78,-165.62 884.78,-165.62 884.78,-161.62 888.78,-157.62 892.78,-157.62 892.78,-157.62 1038.78,-157.62 1038.78,-157.62 1042.78,-157.62 1046.78,-161.62 1046.78,-165.62 1046.78,-165.62 1046.78,-173.62 1046.78,-173.62 1046.78,-177.62 1042.78,-181.62 1038.78,-181.62"/>
+<text text-anchor="middle" x="965.78" y="-166.82" font-family="Segoe UI" font-size="11.00">snapshot_protecao_check</text>
+</g>
+<!-- snapshot_protecao_check&#45;&gt;snapshot_protecao_branch -->
+<g id="edge50" class="edge">
+<title>snapshot_protecao_check&#45;&gt;snapshot_protecao_branch</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M937.52,-181.65C910.86,-192.99 870.83,-210.02 842.28,-222.17"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="841.1,-220.2 836.01,-224.84 842.88,-224.39 841.1,-220.2"/>
+</g>
+<!-- snapshot_blob_irregular -->
+<g id="node27" class="node">
+<title>snapshot_blob_irregular</title>
+<path fill="#eef4f9" stroke="#6d8ba5" stroke-width="1.4" d="M1042.75,-270.79C1042.75,-270.79 907.75,-270.79 907.75,-270.79 903.75,-270.79 899.75,-266.79 899.75,-262.79 899.75,-262.79 899.75,-254.79 899.75,-254.79 899.75,-250.79 903.75,-246.79 907.75,-246.79 907.75,-246.79 1042.75,-246.79 1042.75,-246.79 1046.75,-246.79 1050.75,-250.79 1050.75,-254.79 1050.75,-254.79 1050.75,-262.79 1050.75,-262.79 1050.75,-266.79 1046.75,-270.79 1042.75,-270.79"/>
+<text text-anchor="middle" x="975.25" y="-255.99" font-family="Segoe UI" font-size="11.00">snapshot_blob_irregular</text>
+</g>
+<!-- snapshot_blob_irregular&#45;&gt;repositorio -->
+<g id="edge45" class="edge">
+<title>snapshot_blob_irregular&#45;&gt;repositorio</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M899.73,-265.79C820.66,-274.24 693.39,-291.06 586.56,-319.94 583.14,-320.87 579.62,-321.97 576.12,-323.16"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="575.25,-321.06 569.89,-325.39 576.78,-325.34 575.25,-321.06"/>
+</g>
+<!-- snapshot_blob_irregular&#45;&gt;coleta -->
+<g id="edge44" class="edge">
+<title>snapshot_blob_irregular&#45;&gt;coleta</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M949.25,-246.65C933.55,-239.35 913.13,-229.91 894.93,-221.67 783.17,-171.06 649.98,-112.49 589.1,-85.82"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="589.95,-83.71 583.09,-83.18 588.13,-87.88 589.95,-83.71"/>
+</g>
+<!-- diretriz -->
+<g id="node28" class="node">
+<title>diretriz</title>
+<path fill="#dbe7f3" stroke="#00437a" stroke-width="1.4" d="M637.67,-723.28C637.67,-723.28 593.67,-723.28 593.67,-723.28 589.67,-723.28 585.67,-719.28 585.67,-715.28 585.67,-715.28 585.67,-707.28 585.67,-707.28 585.67,-703.28 589.67,-699.28 593.67,-699.28 593.67,-699.28 637.67,-699.28 637.67,-699.28 641.67,-699.28 645.67,-703.28 645.67,-707.28 645.67,-707.28 645.67,-715.28 645.67,-715.28 645.67,-719.28 641.67,-723.28 637.67,-723.28"/>
+<text text-anchor="middle" x="615.67" y="-708.48" font-family="Segoe UI" font-size="11.00">diretriz</text>
+</g>
+<!-- indicador -->
+<g id="node29" class="node">
+<title>indicador</title>
+<path fill="#dbe7f3" stroke="#00437a" stroke-width="1.4" d="M600.24,-651.64C600.24,-651.64 545.24,-651.64 545.24,-651.64 541.24,-651.64 537.24,-647.64 537.24,-643.64 537.24,-643.64 537.24,-635.64 537.24,-635.64 537.24,-631.64 541.24,-627.64 545.24,-627.64 545.24,-627.64 600.24,-627.64 600.24,-627.64 604.24,-627.64 608.24,-631.64 608.24,-635.64 608.24,-635.64 608.24,-643.64 608.24,-643.64 608.24,-647.64 604.24,-651.64 600.24,-651.64"/>
+<text text-anchor="middle" x="572.74" y="-636.84" font-family="Segoe UI" font-size="11.00">indicador</text>
+</g>
+<!-- indicador&#45;&gt;diretriz -->
+<g id="edge26" class="edge">
+<title>indicador&#45;&gt;diretriz</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M574.22,-651.71C575.9,-661.77 579.39,-676.13 586.38,-686.84 588.14,-689.54 590.3,-692.1 592.62,-694.47"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="591.27,-696.32 597.59,-699.06 594.36,-692.98 591.27,-696.32"/>
+</g>
+<!-- faixa_maturidade -->
+<g id="node30" class="node">
+<title>faixa_maturidade</title>
+<path fill="#dbe7f3" stroke="#00437a" stroke-width="1.4" d="M733.67,-603.28C733.67,-603.28 633.67,-603.28 633.67,-603.28 629.67,-603.28 625.67,-599.28 625.67,-595.28 625.67,-595.28 625.67,-587.28 625.67,-587.28 625.67,-583.28 629.67,-579.28 633.67,-579.28 633.67,-579.28 733.67,-579.28 733.67,-579.28 737.67,-579.28 741.67,-583.28 741.67,-587.28 741.67,-587.28 741.67,-595.28 741.67,-595.28 741.67,-599.28 737.67,-603.28 733.67,-603.28"/>
+<text text-anchor="middle" x="683.67" y="-588.48" font-family="Segoe UI" font-size="11.00">faixa_maturidade</text>
+</g>
+<!-- faixa_maturidade&#45;&gt;indicador -->
+<g id="edge23" class="edge">
+<title>faixa_maturidade&#45;&gt;indicador</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M652.43,-603.38C642.63,-607.3 631.8,-611.76 621.97,-616.08 615.85,-618.77 609.37,-621.76 603.19,-624.69"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="602.02,-622.73 597.14,-627.58 603.98,-626.84 602.02,-622.73"/>
+</g>
+<!-- politica_indicador -->
+<g id="node31" class="node">
+<title>politica_indicador</title>
+<path fill="#dbe7f3" stroke="#00437a" stroke-width="1.4" d="M697.58,-683.64C697.58,-683.64 597.58,-683.64 597.58,-683.64 593.58,-683.64 589.58,-679.64 589.58,-675.64 589.58,-675.64 589.58,-667.64 589.58,-667.64 589.58,-663.64 593.58,-659.64 597.58,-659.64 597.58,-659.64 697.58,-659.64 697.58,-659.64 701.58,-659.64 705.58,-663.64 705.58,-667.64 705.58,-667.64 705.58,-675.64 705.58,-675.64 705.58,-679.64 701.58,-683.64 697.58,-683.64"/>
+<text text-anchor="middle" x="647.58" y="-668.84" font-family="Segoe UI" font-size="11.00">politica_indicador</text>
+</g>
+<!-- politica_indicador&#45;&gt;organizacao -->
+<g id="edge35" class="edge">
+<title>politica_indicador&#45;&gt;organizacao</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M633.62,-659.64C629.55,-655.71 625.3,-651.15 621.97,-646.48 615.66,-637.64 617.94,-633.14 611.44,-624.44 499.24,-474.34 462.5,-432.17 298.01,-342.38 276.07,-330.41 249.51,-322.52 226.81,-317.44"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="227.05,-315.17 220.21,-316.02 226.09,-319.61 227.05,-315.17"/>
+</g>
+<!-- politica_indicador&#45;&gt;repositorio -->
+<g id="edge36" class="edge">
+<title>politica_indicador&#45;&gt;repositorio</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M632.51,-659.49C628.6,-655.69 624.71,-651.23 621.97,-646.48 592.38,-595.29 556.41,-414.81 545.24,-356.06"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="547.45,-355.48 544,-349.52 542.97,-356.33 547.45,-355.48"/>
+</g>
+<!-- politica_indicador&#45;&gt;indicador -->
+<g id="edge34" class="edge">
+<title>politica_indicador&#45;&gt;indicador</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M619.29,-659.55C615.37,-657.87 611.32,-656.14 607.31,-654.42"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="607.94,-652.22 601.07,-651.76 606.16,-656.4 607.94,-652.22"/>
+</g>
+<!-- extensao_proibida -->
+<g id="node32" class="node">
+<title>extensao_proibida</title>
+<path fill="#dbe7f3" stroke="#00437a" stroke-width="1.4" d="M738.17,-643.28C738.17,-643.28 633.17,-643.28 633.17,-643.28 629.17,-643.28 625.17,-639.28 625.17,-635.28 625.17,-635.28 625.17,-627.28 625.17,-627.28 625.17,-623.28 629.17,-619.28 633.17,-619.28 633.17,-619.28 738.17,-619.28 738.17,-619.28 742.17,-619.28 746.17,-623.28 746.17,-627.28 746.17,-627.28 746.17,-635.28 746.17,-635.28 746.17,-639.28 742.17,-643.28 738.17,-643.28"/>
+<text text-anchor="middle" x="685.67" y="-628.48" font-family="Segoe UI" font-size="11.00">extensao_proibida</text>
+</g>
+<!-- parametro_politica -->
+<g id="node33" class="node">
+<title>parametro_politica</title>
+<path fill="#dbe7f3" stroke="#00437a" stroke-width="1.4" d="M780.17,-723.28C780.17,-723.28 673.17,-723.28 673.17,-723.28 669.17,-723.28 665.17,-719.28 665.17,-715.28 665.17,-715.28 665.17,-707.28 665.17,-707.28 665.17,-703.28 669.17,-699.28 673.17,-699.28 673.17,-699.28 780.17,-699.28 780.17,-699.28 784.17,-699.28 788.17,-703.28 788.17,-707.28 788.17,-707.28 788.17,-715.28 788.17,-715.28 788.17,-719.28 784.17,-723.28 780.17,-723.28"/>
+<text text-anchor="middle" x="726.67" y="-708.48" font-family="Segoe UI" font-size="11.00">parametro_politica</text>
+</g>
+<!-- medicao_indicador -->
+<g id="node34" class="node">
+<title>medicao_indicador</title>
+<path fill="#e7f4ea" stroke="#127527" stroke-width="1.4" d="M317.19,-149.06C317.19,-149.06 210.19,-149.06 210.19,-149.06 206.19,-149.06 202.19,-145.06 202.19,-141.06 202.19,-141.06 202.19,-133.06 202.19,-133.06 202.19,-129.06 206.19,-125.06 210.19,-125.06 210.19,-125.06 317.19,-125.06 317.19,-125.06 321.19,-125.06 325.19,-129.06 325.19,-133.06 325.19,-133.06 325.19,-141.06 325.19,-141.06 325.19,-145.06 321.19,-149.06 317.19,-149.06"/>
+<text text-anchor="middle" x="263.69" y="-134.26" font-family="Segoe UI" font-size="11.00">medicao_indicador</text>
+</g>
+<!-- medicao_indicador&#45;&gt;organizacao -->
+<g id="edge29" class="edge">
+<title>medicao_indicador&#45;&gt;organizacao</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M257.55,-149.16C242.51,-178.84 203.71,-255.39 185.78,-290.77"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="183.59,-290.05 182.68,-296.87 187.65,-292.1 183.59,-290.05"/>
+</g>
+<!-- medicao_indicador&#45;&gt;repositorio -->
+<g id="edge30" class="edge">
+<title>medicao_indicador&#45;&gt;repositorio</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M280.67,-149.29C328.68,-183.88 465.45,-282.44 519.44,-321.35"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="518.41,-323.4 525.01,-325.36 521.07,-319.71 518.41,-323.4"/>
+</g>
+<!-- medicao_indicador&#45;&gt;coleta -->
+<g id="edge27" class="edge">
+<title>medicao_indicador&#45;&gt;coleta</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M317.26,-124.98C377,-111.52 471.79,-90.16 522,-78.85"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="522.64,-81.04 528.48,-77.39 521.64,-76.6 522.64,-81.04"/>
+</g>
+<!-- medicao_indicador&#45;&gt;indicador -->
+<g id="edge28" class="edge">
+<title>medicao_indicador&#45;&gt;indicador</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M271.33,-149.48C312.91,-217.1 511.92,-540.74 561.52,-621.4"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="559.75,-622.86 565.09,-627.2 563.62,-620.47 559.75,-622.86"/>
+</g>
+<!-- ocorrencia_nao_conformidade -->
+<g id="node35" class="node">
+<title>ocorrencia_nao_conformidade</title>
+<path fill="#e7f4ea" stroke="#127527" stroke-width="1.4" d="M258.29,-109.16C258.29,-109.16 90.29,-109.16 90.29,-109.16 86.29,-109.16 82.29,-105.16 82.29,-101.16 82.29,-101.16 82.29,-93.16 82.29,-93.16 82.29,-89.16 86.29,-85.16 90.29,-85.16 90.29,-85.16 258.29,-85.16 258.29,-85.16 262.29,-85.16 266.29,-89.16 266.29,-93.16 266.29,-93.16 266.29,-101.16 266.29,-101.16 266.29,-105.16 262.29,-109.16 258.29,-109.16"/>
+<text text-anchor="middle" x="174.29" y="-94.36" font-family="Segoe UI" font-size="11.00">ocorrencia_nao_conformidade</text>
+</g>
+<!-- ocorrencia_nao_conformidade&#45;&gt;medicao_indicador -->
+<g id="edge33" class="edge">
+<title>ocorrencia_nao_conformidade&#45;&gt;medicao_indicador</title>
+<path fill="none" stroke="#9eb2b8" stroke-width="1.1" d="M201.6,-109.34C210.7,-113.4 220.93,-117.97 230.43,-122.21"/>
+<polygon fill="#9eb2b8" stroke="#9eb2b8" stroke-width="1.1" points="229.69,-124.37 236.55,-124.94 231.54,-120.22 229.69,-124.37"/>
+</g>
+</g>
+  </g>
+
+  <g>
+    <rect x="52" y="1076" width="15" height="15" rx="4" fill="#00437a"/>
+    <text class="lg" x="77" y="1088">Tabela âncora — referenciada por 4 ou mais tabelas</text>
+    <path d="M462 1083 H508" fill="none" stroke="#9eb2b8" stroke-width="1.6"/>
+    <path d="M508 1079 L516 1083 L508 1087 z" fill="#9eb2b8"/>
+    <text class="lg" x="526" y="1088">Chave estrangeira — a seta aponta para a tabela referenciada</text>
+  </g>
+</svg>

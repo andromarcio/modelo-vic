@@ -177,6 +177,20 @@ na gravação, pelo banco:
 
 ## 2. Diagramas
 
+### 2.0 Visão geral do esquema
+
+![Modelo de dados dos indicadores: 35 tabelas e 58 relacionamentos, agrupadas em identidade e organização, estrutura do repositório, execução da coleta, fatos imutáveis, snapshots datados, carga normativa e resultado apurado](../assets/img/modelo-dados-er.svg)
+
+O diagrama é gerado a partir do catálogo do próprio PostgreSQL depois de aplicar
+o `modelo-dados.sql`, e não transcrito à mão — as 35 tabelas e as 58 chaves
+estrangeiras são as que existem de fato no DDL.
+
+A cor identifica a **natureza do dado**, que é a decisão central do modelo:
+fato imutável, foto datada, carga normativa ou resultado apurado. As caixas
+escuras são as tabelas âncora, referenciadas por quatro ou mais tabelas —
+`repositorio`, `coleta`, `usuario_github`, `organizacao` e `commit`. Os
+diagramas das seções seguintes detalham cada domínio.
+
 ### 2.1 Identidade e catálogo
 
 ```mermaid
