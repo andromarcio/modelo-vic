@@ -82,9 +82,16 @@ que é a fonte padrão do SharePoint.
 
    | Pasta | O que é | Onde entra |
    |---|---|---|
-   | `sharepoint/ilustracoes-png/` | diagramas das diretrizes (1200 px) | web part **Imagem** |
+   | `sharepoint/ilustracoes-quadriculado/` | **recomendada** — diagramas das diretrizes em 3× (2892 px de largura), com o canvas quadriculado e a borda do protótipo | web part **Imagem** |
+   | `sharepoint/ilustracoes-png/` | mesmos diagramas em 1200 px, sem canvas | web part **Imagem** |
    | `sharepoint/capas-diretrizes/` | as 13 capas azuis (1600 × 232) | web part **Imagem**, topo da página |
    | `assets/icons/` | ícones de tópico (240 × 240) | **Links Rápidos**, imagem por item |
+
+   > A pasta `ilustracoes-quadriculado/` reproduz o enquadramento que o protótipo dá
+   > às figuras — fundo `#f6f9fc` com malha de pontos, borda de 1 px e cantos
+   > arredondados. Use-a quando a página tiver fundo branco: sem o canvas, a
+   > ilustração fica solta. Cobre as diretrizes 1 a 10; as diretrizes 11, 12 e 13
+   > não têm ilustração. Regerar: `node sharepoint/gerar-ilustracoes-quadriculado.js`.
 
 3. ⚠️ Alguns tenants **bloqueiam SVG** na web part Imagem — por isso os PNG já vêm
    prontos. Se preferir SVG (nitidez infinita), use `assets/img/` e peça a liberação ao admin.
