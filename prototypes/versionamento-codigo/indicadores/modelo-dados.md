@@ -177,7 +177,20 @@ na gravação, pelo banco:
 
 ## 2. Diagramas
 
-### 2.0 Visão geral do esquema
+### 2.0 MER completo
+
+![MER da proposta de banco de dados: 35 entidades com seus atributos, 374 atributos e 63 relacionamentos com cardinalidade em pé-de-galinha](../assets/img/modelo-dados-mer.svg)
+
+Modelo entidade-relacionamento com **todos os atributos**. Notação: chave primária
+sublinhada, chave estrangeira em itálico, atributo obrigatório em negrito. A
+cardinalidade usa pé-de-galinha — muitos do lado do filho, um do lado do pai — e o
+relacionamento **opcional** (chave estrangeira anulável) aparece tracejado com o
+círculo de zero. São 27 relacionamentos opcionais em 63, quase todos ligações de
+resolução de identidade, que por natureza podem não ter correspondência.
+
+Para uma leitura de conjunto, sem os atributos, use o mapa da seção seguinte.
+
+### 2.0.1 Visão geral do esquema
 
 ![Modelo de dados dos indicadores: 35 tabelas e 58 relacionamentos, agrupadas em identidade e organização, estrutura do repositório, execução da coleta, fatos imutáveis, snapshots datados, carga normativa e resultado apurado](../assets/img/modelo-dados-er.svg)
 
