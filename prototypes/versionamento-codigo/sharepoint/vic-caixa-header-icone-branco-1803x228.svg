@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1803 228" width="1803" height="228" role="img" aria-label="Faixa de cabeçalho VIC — ícone monocromático branco sobre fundo transparente, para aplicação sobre header azul">
+  <!-- Fundo transparente de propósito: a página de destino já tem header azul,
+       então a faixa apenas sobrepõe o ícone, sem repetir o azul. -->
+  <defs>
+    <mask id="vic-mono">
+      <rect x="0" y="0" width="120" height="120" fill="#000"/>
+      <g fill="none" stroke="#fff" stroke-width="6.5" stroke-linecap="round">
+        <path d="M39 36 C39 56, 60 52, 60 66"/>
+        <path d="M81 36 C81 56, 60 52, 60 66"/>
+        <path d="M60 66 V76"/>
+      </g>
+      <circle cx="39" cy="36" r="8.5" fill="#fff"/>
+      <circle cx="81" cy="36" r="8.5" fill="#fff"/>
+      <circle cx="60" cy="66" r="9" fill="#fff"/>
+      <circle cx="60" cy="66" r="5.5" fill="#000"/>
+      <path d="M60 76 L45 84 V100 a5 5 0 0 0 5 5 H70 a5 5 0 0 0 5 -5 V84 Z" fill="#fff"/>
+      <circle cx="60" cy="91" r="3.6" fill="#000"/>
+    </mask>
+  </defs>
+  <svg x="1609" y="52" width="124" height="124" viewBox="0 0 120 120">
+    <rect x="6" y="6" width="108" height="108" rx="27" fill="#ffffff" fill-opacity=".10"
+          stroke="#ffffff" stroke-opacity=".40" stroke-width="2.5"/>
+    <rect x="0" y="0" width="120" height="120" fill="#ffffff" mask="url(#vic-mono)"/>
+  </svg>
+</svg>
