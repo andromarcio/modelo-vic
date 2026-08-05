@@ -85,7 +85,8 @@ que é a fonte padrão do SharePoint.
    | `sharepoint/ilustracoes-quadriculado/` | **recomendada** — diagramas das diretrizes em 3× (2892 px de largura), com o canvas quadriculado e a borda do protótipo | web part **Imagem** |
    | `sharepoint/ilustracoes-png/` | mesmos diagramas em 1200 px, sem canvas | web part **Imagem** |
    | `sharepoint/capas-diretrizes/` | as 13 capas azuis (1600 × 232) | web part **Imagem**, topo da página |
-   | `assets/icons/` | ícones de tópico (240 × 240) | **Links Rápidos**, imagem por item |
+   | `assets/icons/topico-*` | 7 ícones de tópico (240 × 240) | **Links Rápidos**, imagem por item |
+   | `assets/icons/tec-*` | 4 ícones de *Tecnologias de referência* (240 × 240) | **Links Rápidos** da Visão Geral |
 
    > A pasta `ilustracoes-quadriculado/` reproduz o enquadramento que o protótipo dá
    > às figuras — fundo `#f6f9fc` com malha de pontos, borda de 1 px e cantos
