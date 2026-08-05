@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="Governança e Padronização">
+  <defs>
+    <linearGradient id="fundo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00437a"/><stop offset=".55" stop-color="#005ca9"/><stop offset="1" stop-color="#0070cc"/>
+    </linearGradient>
+    <pattern id="malha" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0 H0 V48" fill="none" stroke="#ffffff" stroke-opacity=".08" stroke-width="1.5"/>
+    </pattern>
+    <radialGradient id="brilho" gradientUnits="userSpaceOnUse" cx="1056" cy="0" r="1012.5">
+      <stop offset="0" stop-color="#f39200" stop-opacity=".30"/>
+      <stop offset="1" stop-color="#f39200" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="0" y="0" width="1200" height="675" fill="url(#fundo)"/>
+  <rect x="0" y="0" width="1200" height="675" fill="url(#malha)"/>
+  <rect x="0" y="0" width="1200" height="675" fill="url(#brilho)"/>
+  <g transform="translate(475,212.5) scale(10.42)"
+     fill="none" stroke="#ffffff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    <polyline points="8.8 11.8 11 14 15.2 9.8"/>
+  </g>
+</svg>
