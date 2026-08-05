@@ -2,6 +2,6 @@
   <rect x="0" y="0" width="120" height="120" rx="31.43" fill="#e5f2fc"/>
   <g transform="translate(28.57,28.57) scale(2.62)"
      fill="none" stroke="#00437a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><polyline points="10 3 8 21"/><polyline points="16 3 14 21"/>
+    <polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/>
   </g>
 </svg>

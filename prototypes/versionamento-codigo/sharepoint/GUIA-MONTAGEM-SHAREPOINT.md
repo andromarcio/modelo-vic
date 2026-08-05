@@ -103,9 +103,7 @@ que é a fonte padrão do SharePoint.
 
    > As três pastas de diretriz saem do mesmo cartão de `diretrizes.html`, então
    > servem à página **Diretrizes** em vez de `links-rapidos/`, que é fundo azul.
-   > Regerar: `node sharepoint/gerar-cartoes-diretrizes.js`. Atenção: as diretrizes
-   > **9 e 11 usam o mesmo ícone** no protótipo (`#`), e portanto geram ícones
-   > idênticos — os cartões se distinguem pelo texto, mas os ícones soltos não.
+   > Regerar: `node sharepoint/gerar-cartoes-diretrizes.js`.
 
    > A pasta `ilustracoes-quadriculado/` reproduz o enquadramento que o protótipo dá
    > às figuras — fundo `#f6f9fc` com malha de pontos, borda de 1 px e cantos
