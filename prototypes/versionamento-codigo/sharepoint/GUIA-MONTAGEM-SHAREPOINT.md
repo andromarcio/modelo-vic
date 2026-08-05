@@ -86,6 +86,7 @@ que é a fonte padrão do SharePoint.
    | `sharepoint/ilustracoes-png/` | mesmos diagramas em 1200 px, sem canvas | web part **Imagem** |
    | `sharepoint/capas-diretrizes/` | as 13 capas azuis (1600 × 232) | web part **Imagem**, topo da página |
    | `sharepoint/links-rapidos/` | **recomendada** — 11 miniaturas 16:9 (800 × 450), 4 de tecnologias e 7 de tópico | **Links Rápidos** no layout **Bloco** |
+   | `sharepoint/links-rapidos-titulo/` | as mesmas 11 com o **título desenhado** (800 × 450) | quando o layout não exibe o título por fora |
    | `assets/icons/` | os mesmos 11 como ícone quadrado (240 × 240) | **Links Rápidos** nos layouts **Compacto** e **Lista** |
 
    > ⚠️ O layout do web part **Links Rápidos** decide o formato da imagem. No
@@ -93,7 +94,9 @@ que é a fonte padrão do SharePoint.
    > título por fora — um ícone quadrado é esticado ou cortado ali. Use
    > `links-rapidos/` nesse caso e `assets/icons/` nos layouts que exibem um
    > ícone pequeno ao lado do texto. As miniaturas **não** trazem o título
-   > desenhado: quem o exibe é o próprio web part.
+   > desenhado: quem o exibe é o próprio web part. Se o layout escolhido **não**
+   > mostrar o título, use `links-rapidos-titulo/`, que o traz na arte — mas não
+   > combine as duas coisas, ou o título aparece duplicado.
 
    > A pasta `ilustracoes-quadriculado/` reproduz o enquadramento que o protótipo dá
    > às figuras — fundo `#f6f9fc` com malha de pontos, borda de 1 px e cantos
