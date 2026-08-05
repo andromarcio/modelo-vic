@@ -23,17 +23,18 @@ function glifoDe(arquivo) {
   const m = svg.match(/<g transform="translate\([^)]*\) scale\([^)]*\)"[\s\S]*?>([\s\S]*?)<\/g>\s*<\/svg>/);
   if (!m) throw new Error(`${arquivo}: não encontrei o glifo`);
   const rot = (svg.match(/aria-label="([^"]+)"/) || [, arquivo])[1];
-  // "Versionamento — Git" tem antetítulo; os tópicos não têm
-  const [ante, titulo] = rot.includes(' — ') ? rot.split(' — ') : [null, rot];
-  return { glifo: m[1].trim(), ante, titulo, rotulo: rot };
+  // Em "Versionamento — Git", o cartão leva só o rótulo da seção: é ele que
+  // nomeia o item na Visão Geral. O nome da tecnologia fica para o texto da página.
+  const titulo = rot.includes(' — ') ? rot.split(' — ')[0] : rot;
+  return { glifo: m[1].trim(), titulo, rotulo: rot };
 }
 
-const pagina = ({ glifo, ante, titulo }) => `<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+const pagina = ({ glifo, titulo }) => `<!DOCTYPE html><html><head><meta charset="utf-8"><style>
   html,body{margin:0;padding:0}
   .tile{
     width:${W}px; height:${H}px; box-sizing:border-box; position:relative; overflow:hidden;
-    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:26px;
-    padding:60px 80px;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:22px;
+    padding:44px 56px;
     background:
       radial-gradient(120% 190% at 88% 0%, rgba(243,146,0,.30), transparent 62%),
       linear-gradient(125deg,#00437a 0%,#005ca9 55%,#0070cc 100%);
@@ -46,19 +47,17 @@ const pagina = ({ glifo, ante, titulo }) => `<!DOCTYPE html><html><head><meta ch
       linear-gradient(90deg, rgba(255,255,255,.08) 1.5px, transparent 1.5px);
     background-size:48px 48px;
   }
-  .conteudo{position:relative; display:flex; flex-direction:column; align-items:center; gap:24px}
-  .ante{
-    font-size:26px; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
-    color:#ffd7a3; margin-bottom:-8px;
-  }
-  h1{margin:0; font-size:62px; font-weight:700; line-height:1.14; color:#fff; letter-spacing:-.4px}
-  svg{width:132px; height:132px; display:block}
+  .conteudo{position:relative; display:flex; flex-direction:column; align-items:center; gap:20px}
+  /* sem limite de largura o título não quebra linha e vaza a arte; a folga extra
+     mantém a medida abaixo do limite verificado adiante */
+  h1{margin:0; max-width:${W - 160}px; font-size:96px; font-weight:700; line-height:1.12;
+     color:#fff; letter-spacing:-.4px; text-wrap:balance}
+  svg{width:112px; height:112px; display:block}
 </style></head><body>
   <div class="tile"><div class="malha"></div>
     <div class="conteudo">
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7"
            stroke-linecap="round" stroke-linejoin="round">${glifo}</svg>
-      ${ante ? `<div class="ante">${ante}</div>` : ''}
       <h1>${titulo}</h1>
     </div>
   </div>
@@ -80,13 +79,20 @@ const pagina = ({ glifo, ante, titulo }) => `<!DOCTYPE html><html><head><meta ch
   for (const f of arquivos) {
     const dados = glifoDe(f);
     await page.setContent(pagina(dados));
-    // título que estoura a arte seria cortado em silêncio
+    // título que estoura a arte seria cortado em silêncio; compara com a caixa
+    // de conteúdo real do tile, descontando o padding, e não com folga arbitrária
     const vaza = await page.evaluate(() => {
-      const t = document.querySelector('.tile').getBoundingClientRect();
+      const tile = document.querySelector('.tile');
+      const cs = getComputedStyle(tile);
+      const dispW = tile.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      const dispH = tile.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
       const c = document.querySelector('.conteudo').getBoundingClientRect();
-      return { alto: c.height > t.height - 80, largo: c.width > t.width - 120 };
+      return { largo: c.width > dispW + 0.5, alto: c.height > dispH + 0.5,
+               c: [Math.round(c.width), Math.round(c.height)], d: [Math.round(dispW), Math.round(dispH)] };
     });
-    if (vaza.alto || vaza.largo) throw new Error(`"${dados.titulo}" não cabe na arte`);
+    if (vaza.largo || vaza.alto) {
+      throw new Error(`"${dados.titulo}" não cabe: conteúdo ${vaza.c.join('x')} em ${vaza.d.join('x')} disponíveis`);
+    }
 
     const alvo = path.join(SAIDA, f.replace(/\.svg$/, '.png'));
     await page.locator('.tile').screenshot({ path: alvo });
