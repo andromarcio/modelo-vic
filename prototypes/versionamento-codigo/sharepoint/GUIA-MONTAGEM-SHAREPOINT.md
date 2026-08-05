@@ -88,6 +88,9 @@ que é a fonte padrão do SharePoint.
    | `sharepoint/links-rapidos/` | **recomendada** — 15 miniaturas 16:9 (800 × 450): 4 das seções, 4 de tecnologias e 7 de tópico | **Links Rápidos** no layout **Bloco** |
    | `sharepoint/links-rapidos-titulo/` | as mesmas 15 com o **título desenhado** (800 × 450) | quando o layout não exibe o título por fora |
    | `assets/icons/` | os mesmos 15 como ícone quadrado (240 × 240) | **Links Rápidos** nos layouts **Compacto** e **Lista** |
+   | `sharepoint/cartoes-diretrizes-titulo/` | os 13 cartões brancos de `diretrizes.html` (800 × 450), com ícone, `DIRETRIZ N` e o título, sem o link “Abrir” | **Links Rápidos** no layout **Bloco**, na página Diretrizes |
+   | `sharepoint/cartoes-diretrizes-numero/` | os mesmos 13 só com ícone e `DIRETRIZ N` (800 × 450) | quando o título vem do próprio web part |
+   | `sharepoint/icones-diretrizes/` | os 13 ícones das diretrizes soltos (240 × 240) | **Links Rápidos** nos layouts **Compacto** e **Lista** |
 
    > ⚠️ O layout do web part **Links Rápidos** decide o formato da imagem. No
    > layout **Bloco**, o item é um cartão com miniatura **em paisagem** e o
@@ -97,6 +100,12 @@ que é a fonte padrão do SharePoint.
    > desenhado: quem o exibe é o próprio web part. Se o layout escolhido **não**
    > mostrar o título, use `links-rapidos-titulo/`, que o traz na arte — mas não
    > combine as duas coisas, ou o título aparece duplicado.
+
+   > As três pastas de diretriz saem do mesmo cartão de `diretrizes.html`, então
+   > servem à página **Diretrizes** em vez de `links-rapidos/`, que é fundo azul.
+   > Regerar: `node sharepoint/gerar-cartoes-diretrizes.js`. Atenção: as diretrizes
+   > **9 e 11 usam o mesmo ícone** no protótipo (`#`), e portanto geram ícones
+   > idênticos — os cartões se distinguem pelo texto, mas os ícones soltos não.
 
    > A pasta `ilustracoes-quadriculado/` reproduz o enquadramento que o protótipo dá
    > às figuras — fundo `#f6f9fc` com malha de pontos, borda de 1 px e cantos

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Diretriz 11 — Padrões de nomenclatura">
+  <rect x="0" y="0" width="120" height="120" rx="31.43" fill="#e5f2fc"/>
+  <g transform="translate(28.57,28.57) scale(2.62)"
+     fill="none" stroke="#00437a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><polyline points="10 3 8 21"/><polyline points="16 3 14 21"/>
+  </g>
+</svg>

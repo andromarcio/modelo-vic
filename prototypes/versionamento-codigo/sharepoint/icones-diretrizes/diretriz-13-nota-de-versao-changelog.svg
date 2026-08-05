@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Diretriz 13 — Nota de versão (changelog)">
+  <rect x="0" y="0" width="120" height="120" rx="31.43" fill="#e5f2fc"/>
+  <g transform="translate(28.57,28.57) scale(2.62)"
+     fill="none" stroke="#00437a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+  </g>
+</svg>
