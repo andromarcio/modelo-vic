@@ -23,11 +23,22 @@ const SAIDA = {
   titulo: path.join(__dirname, 'cartoes-diretrizes-titulo'),
 };
 
-// O cartão é medido no tamanho em que aparece no protótipo (~330px de largura),
-// para que os 16px do h3 tenham o mesmo peso do print. 336x189 é 16:9, a
-// proporção que o web part Links Rápidos recorta no layout Bloco.
+// 336x189 é 16:9, a proporção que o web part Links Rápidos recorta no layout
+// Bloco. O cartão do protótipo tem essa largura, mas é mais alto do que largo:
+// aqui sobra altura, então ícone e tipografia crescem sobre a medida do print
+// (42/12/16) para ocupar o cartão. 20px no h3 é o maior corpo em que os treze
+// títulos ainda cabem em três linhas — com 21px o mais longo encosta na borda.
 const CARD = [336, 189];
 const EXPORT = [800, 450];
+const PAD = 22;
+const GAP = 15;
+const CX_ICONE = 50;
+const CORPO_NUM = 14;
+const CORPO_TITULO = 20;
+// sem título para dividir o espaço, ícone e rótulo crescem até quase encostar
+// nas laterais: "DIRETRIZ 13" a 20px já é a linha mais larga que cabe
+const CX_ICONE_SO = 78;
+const CORPO_NUM_SO = 20;
 
 // mesma spec de .ql-icon: caixa 42px raio 11px, glifo 22px
 const TILE = 120;
@@ -96,18 +107,24 @@ const iconeSvg = (glifo, rotulo) => `<svg xmlns="http://www.w3.org/2000/svg" vie
     colorScheme: 'light',
   });
   await pCard.goto(`file://${path.join(RAIZ, 'diretrizes.html')}`);
-  await pCard.evaluate(([w, h]) => {
+  await pCard.evaluate((v) => {
     document.documentElement.classList.remove('app-dark');
     const s = document.createElement('style');
-    // sem "Abrir" o conteúdo fica centrado: encostá-lo no topo deixaria um
-    // vazio embaixo que o cartão original não tem, porque lá o link ocupa a base
     s.textContent = `html,body{margin:0;padding:0;background:transparent;overflow:hidden}
-      #alvo{width:${w}px;height:${h}px;box-sizing:border-box;justify-content:center}
-      /* só o ícone e o número, encostados à esquerda, deixariam metade do 16:9
-         vazia; com o título embaixo o alinhamento à esquerda do print se mantém */
-      #alvo.so-numero{align-items:center}`;
+      #alvo{width:${v.w}px;height:${v.h}px;box-sizing:border-box;padding:${v.PAD}px;gap:${v.GAP}px}
+      #alvo .ql-icon{width:${v.CX_ICONE}px;height:${v.CX_ICONE}px;border-radius:${Math.round(v.CX_ICONE * 11 / 42)}px}
+      #alvo .ql-icon svg{width:${Math.round(v.CX_ICONE * 22 / 42)}px;height:${Math.round(v.CX_ICONE * 22 / 42)}px}
+      #alvo .ql-num{font-size:${v.CORPO_NUM}px}
+      #alvo h3{font-size:${v.CORPO_TITULO}px;line-height:1.24}
+      /* só o ícone e o número, encostados no canto, deixariam o 16:9 vazio;
+         com o título embaixo vale o topo à esquerda do print */
+      #alvo.so-numero{justify-content:center;align-items:center}
+      #alvo.so-numero .ql-top{gap:18px}
+      #alvo.so-numero .ql-icon{width:${v.CX_ICONE_SO}px;height:${v.CX_ICONE_SO}px;border-radius:${Math.round(v.CX_ICONE_SO * 11 / 42)}px}
+      #alvo.so-numero .ql-icon svg{width:${Math.round(v.CX_ICONE_SO * 22 / 42)}px;height:${Math.round(v.CX_ICONE_SO * 22 / 42)}px}
+      #alvo.so-numero .ql-num{font-size:${v.CORPO_NUM_SO}px}`;
     document.head.appendChild(s);
-  }, CARD);
+  }, { w: CARD[0], h: CARD[1], PAD, GAP, CX_ICONE, CORPO_NUM, CORPO_TITULO, CX_ICONE_SO, CORPO_NUM_SO });
 
   for (const conjunto of ['numero', 'titulo']) {
     for (const { svg, n, titulo } of lista) {
@@ -120,16 +137,25 @@ const iconeSvg = (glifo, rotulo) => `<svg xmlns="http://www.w3.org/2000/svg" vie
           `<span class="ql-num">Diretriz ${n}</span></div>${corpo}</div>`;
       }, { svg, n, corpo, classe });
 
-      // texto que estoura o cartão sairia cortado em silêncio
+      // texto que estoura o cartão sairia cortado em silêncio. A altura aperta
+      // nos títulos longos; a largura, na linha "DIRETRIZ N" ampliada — por isso
+      // as duas são medidas.
       const vaza = await pCard.evaluate(() => {
         const c = document.getElementById('alvo');
         const cs = getComputedStyle(c);
-        const util = c.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
-        const alto = [...c.children].reduce((a, e) => a + e.getBoundingClientRect().height, 0) +
-          parseFloat(cs.rowGap || 0) * (c.children.length - 1);
-        return { estoura: alto > util + 0.5, alto: Math.round(alto), util: Math.round(util) };
+        const filhos = [...c.children];
+        const utilY = c.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+        const utilX = c.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+        const alto = filhos.reduce((a, e) => a + e.getBoundingClientRect().height, 0) +
+          parseFloat(cs.rowGap || 0) * (filhos.length - 1);
+        const largo = Math.max(...filhos.map((e) => e.getBoundingClientRect().width));
+        return {
+          estoura: alto > utilY + 0.5 || largo > utilX + 0.5,
+          medida: `${Math.round(largo)}x${Math.round(alto)}`,
+          util: `${Math.round(utilX)}x${Math.round(utilY)}`,
+        };
       });
-      if (vaza.estoura) throw new Error(`"${titulo}" não cabe: ${vaza.alto}px em ${vaza.util}px`);
+      if (vaza.estoura) throw new Error(`"${titulo}" não cabe: ${vaza.medida} em ${vaza.util}`);
 
       const nome = `diretriz-${String(n).padStart(2, '0')}-${slug(titulo)}.png`;
       await pCard.locator('#alvo').screenshot({
