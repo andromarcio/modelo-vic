@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Tríade Técnica">
+  <rect x="0" y="0" width="120" height="120" rx="31.43" fill="#e5f2fc"/>
+  <g transform="translate(28.57,28.57) scale(2.62)"
+     fill="none" stroke="#00437a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="4.6" r="2.6"/><circle cx="4.6" cy="18.4" r="2.6"/>
+    <circle cx="19.4" cy="18.4" r="2.6"/>
+    <path d="M10.8 6.9 6.2 15.6"/><path d="M13.2 6.9l4.6 8.7"/><path d="M7.2 18.4h9.6"/>
+  </g>
+</svg>
