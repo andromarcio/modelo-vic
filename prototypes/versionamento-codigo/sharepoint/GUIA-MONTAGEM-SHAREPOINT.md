@@ -103,6 +103,9 @@ que é a fonte padrão do SharePoint.
 
    > As três pastas de diretriz saem do mesmo cartão de `diretrizes.html`, então
    > servem à página **Diretrizes** em vez de `links-rapidos/`, que é fundo azul.
+   > Os cartões vêm em **fundo branco chapado, sem borda e sem cantos
+   > arredondados**: quem desenha a moldura do item é o web part, e a borda do
+   > `.ql-card` viraria um segundo quadro por dentro do primeiro.
    > Regerar: `node sharepoint/gerar-cartoes-diretrizes.js`.
 
    > A pasta `ilustracoes-quadriculado/` reproduz o enquadramento que o protótipo dá

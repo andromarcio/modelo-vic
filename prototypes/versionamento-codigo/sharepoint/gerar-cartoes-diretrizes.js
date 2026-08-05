@@ -110,8 +110,11 @@ const iconeSvg = (glifo, rotulo) => `<svg xmlns="http://www.w3.org/2000/svg" vie
   await pCard.evaluate((v) => {
     document.documentElement.classList.remove('app-dark');
     const s = document.createElement('style');
-    s.textContent = `html,body{margin:0;padding:0;background:transparent;overflow:hidden}
-      #alvo{width:${v.w}px;height:${v.h}px;box-sizing:border-box;padding:${v.PAD}px;gap:${v.GAP}px}
+    s.textContent = `html,body{margin:0;padding:0;background:#fff;overflow:hidden}
+      /* fundo branco chapado: no SharePoint o próprio web part desenha a moldura
+         do item, e a borda do .ql-card viraria um segundo quadro por dentro */
+      #alvo{width:${v.w}px;height:${v.h}px;box-sizing:border-box;padding:${v.PAD}px;gap:${v.GAP}px;
+            background:#fff;border:0;border-radius:0;box-shadow:none}
       #alvo .ql-icon{width:${v.CX_ICONE}px;height:${v.CX_ICONE}px;border-radius:${Math.round(v.CX_ICONE * 11 / 42)}px}
       #alvo .ql-icon svg{width:${Math.round(v.CX_ICONE * 22 / 42)}px;height:${Math.round(v.CX_ICONE * 22 / 42)}px}
       #alvo .ql-num{font-size:${v.CORPO_NUM}px}
@@ -158,9 +161,7 @@ const iconeSvg = (glifo, rotulo) => `<svg xmlns="http://www.w3.org/2000/svg" vie
       if (vaza.estoura) throw new Error(`"${titulo}" não cabe: ${vaza.medida} em ${vaza.util}`);
 
       const nome = `diretriz-${String(n).padStart(2, '0')}-${slug(titulo)}.png`;
-      await pCard.locator('#alvo').screenshot({
-        path: path.join(SAIDA[conjunto], nome), omitBackground: true,
-      });
+      await pCard.locator('#alvo').screenshot({ path: path.join(SAIDA[conjunto], nome) });
     }
     console.log(`cartoes-diretrizes-${conjunto.padEnd(7)}   ${lista.length} cartões ${EXPORT.join('x')}`);
   }
