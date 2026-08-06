@@ -21,7 +21,25 @@ const SAIDA = path.join(__dirname, 'capas-secoes');
 const COLUNA = [1000, 145];
 const K = 1.6;
 
-const PAGINAS = ['triade-tecnica', 'diretrizes', 'analise-acompanhamento'];
+// O badge do .page-hero traz um caractere de texto nas duas páginas sem número
+// (△ e ⌁), que ao lado dos numerais das capas de diretriz sai fino e miúdo. Na
+// capa ele é substituído pelo ícone da seção, que já existe em assets/icons.
+// "Diretrizes" fica com o 13, que é informação e não decoração.
+const PAGINAS = [
+  { pagina: 'triade-tecnica', icone: 'nav-3-triade-tecnica.svg' },
+  { pagina: 'diretrizes' },
+  { pagina: 'analise-acompanhamento', icone: 'nav-4-analise-acompanhamento.svg' },
+];
+
+// 38px num badge de 72px repete a proporção glifo/caixa de .ql-icon (22/42)
+const CX_GLIFO = 38;
+
+function glifoDe(arquivo) {
+  const svg = fs.readFileSync(path.join(RAIZ, 'assets/icons', arquivo), 'utf8');
+  const m = svg.match(/<g transform="translate\([^)]*\) scale\([^)]*\)"[\s\S]*?>([\s\S]*?)<\/g>\s*<\/svg>/);
+  if (!m) throw new Error(`${arquivo}: não encontrei o glifo`);
+  return m[1].trim();
+}
 
 (async () => {
   fs.mkdirSync(SAIDA, { recursive: true });
@@ -32,9 +50,9 @@ const PAGINAS = ['triade-tecnica', 'diretrizes', 'analise-acompanhamento'];
     colorScheme: 'light',
   });
 
-  for (const nome of PAGINAS) {
-    await p.goto(`file://${path.join(RAIZ, `${nome}.html`)}`);
-    const titulo = await p.evaluate(([w, h]) => {
+  for (const { pagina, icone } of PAGINAS) {
+    await p.goto(`file://${path.join(RAIZ, `${pagina}.html`)}`);
+    const titulo = await p.evaluate(({ w, h, glifo, cx }) => {
       document.documentElement.classList.remove('app-dark');
       // o chip do "Mapa SharePoint" só aparece com body.show-sp, mas a capa não
       // pode depender disso: o estado fica guardado no navegador de quem gerou
@@ -52,8 +70,13 @@ const PAGINAS = ['triade-tecnica', 'diretrizes', 'analise-acompanhamento'];
         position: 'fixed', top: '0', left: '0', zIndex: '9999',
         width: `${w}px`, height: `${h}px`, boxSizing: 'border-box',
       });
+      if (glifo) {
+        hero.querySelector('.ph-num').innerHTML =
+          `<svg viewBox="0 0 24 24" width="${cx}" height="${cx}" fill="none" stroke="#fff"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${glifo}</svg>`;
+      }
       return hero.querySelector('h1').textContent;
-    }, COLUNA);
+    }, { w: COLUNA[0], h: COLUNA[1], glifo: icone ? glifoDe(icone) : null, cx: CX_GLIFO });
 
     // h1 sem quebra prevista: se a linha crescer, o hero estica e a altura fixa
     // corta o texto em silêncio
@@ -65,7 +88,7 @@ const PAGINAS = ['triade-tecnica', 'diretrizes', 'analise-acompanhamento'];
     });
     if (vaza) throw new Error(`"${titulo}" não cabe na capa`);
 
-    const arquivo = path.join(SAIDA, `${nome}.png`);
+    const arquivo = path.join(SAIDA, `${pagina}.png`);
     await p.locator('.page-hero').screenshot({ path: arquivo, omitBackground: true });
     console.log(`  ${path.basename(arquivo).padEnd(28)} ${titulo}`);
   }
