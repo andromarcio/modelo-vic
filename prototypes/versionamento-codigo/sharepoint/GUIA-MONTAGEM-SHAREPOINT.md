@@ -85,6 +85,7 @@ que é a fonte padrão do SharePoint.
    | `sharepoint/ilustracoes-quadriculado/` | **recomendada** — diagramas das diretrizes em 3× (2892 px de largura), com o canvas quadriculado e a borda do protótipo | web part **Imagem** |
    | `sharepoint/ilustracoes-png/` | mesmos diagramas em 1200 px, sem canvas | web part **Imagem** |
    | `sharepoint/capas-diretrizes/` | as 13 capas azuis (1600 × 232) | web part **Imagem**, topo da página |
+   | `sharepoint/capas-secoes/` | as capas das páginas Diretrizes, Tríade Técnica e Análise e Acompanhamento, na mesma medida (1600 × 232) | web part **Imagem**, topo da página |
    | `sharepoint/links-rapidos/` | **recomendada** — 15 miniaturas 16:9 (800 × 450): 4 das seções, 4 de tecnologias e 7 de tópico | **Links Rápidos** no layout **Bloco** |
    | `sharepoint/links-rapidos-titulo/` | as mesmas 15 com o **título desenhado** (800 × 450) | quando o layout não exibe o título por fora |
    | `assets/icons/` | os mesmos 15 como ícone quadrado (240 × 240) | **Links Rápidos** nos layouts **Compacto** e **Lista** |
