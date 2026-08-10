@@ -92,6 +92,8 @@ que é a fonte padrão do SharePoint.
    | `sharepoint/cartoes-diretrizes-titulo/` | os 13 cartões brancos de `diretrizes.html` (800 × 450), com ícone, `DIRETRIZ N` e o título, sem o link “Abrir” | **Links Rápidos** no layout **Bloco**, na página Diretrizes |
    | `sharepoint/cartoes-diretrizes-numero/` | os mesmos 13 só com ícone e `DIRETRIZ N` (800 × 450) | quando o título vem do próprio web part |
    | `sharepoint/icones-diretrizes/` | os 13 ícones das diretrizes soltos (240 × 240) | **Links Rápidos** nos layouts **Compacto** e **Lista** |
+   | `sharepoint/regra-fundo-1600x360.png` | a moldura do bloco `.regra` vazia — gradiente, borda e filete azul | **fundo de seção**, com o texto da regra digitado por cima |
+   | `sharepoint/regra-fundo-icone-1600x360.png` | a mesma moldura com o selo azul à esquerda | idem; o texto precisa recuar para não cobrir o selo |
 
    > ⚠️ O layout do web part **Links Rápidos** decide o formato da imagem. No
    > layout **Bloco**, o item é um cartão com miniatura **em paisagem** e o
