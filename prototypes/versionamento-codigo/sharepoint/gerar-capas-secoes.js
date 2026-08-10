@@ -63,12 +63,20 @@ function glifoDe(arquivo) {
       document.documentElement.style.background = 'transparent';
       document.body.style.background = 'transparent';
       const hero = document.querySelector('.page-hero');
+      // O resto da página sai de cena. Sobrepor com z-index não basta: o
+      // cabeçalho e o menu são chapas brancas opacas, e o canto arredondado
+      // revelaria esse branco em vez de transparência — o que só aparece quando
+      // a capa é usada sobre fundo colorido. Os estilos de .page-hero não
+      // dependem de nenhum ancestral.
+      document.body.replaceChildren(hero);
       // fixo em 0,0: numa posição fracionária o recorte arredonda para fora e a
-      // capa sai com um ou dois pixels a mais que as 1600x232 já existentes.
-      // O z-index tira da frente o cabeçalho e o menu, que também são fixos.
+      // capa sai com um ou dois pixels a mais que as 1600x232 já existentes
       Object.assign(hero.style, {
-        position: 'fixed', top: '0', left: '0', zIndex: '9999',
+        position: 'fixed', top: '0', left: '0',
         width: `${w}px`, height: `${h}px`, boxSizing: 'border-box',
+        // a sombra do .page-hero deixaria um halo escuro nos cantos, que as 13
+        // capas de diretriz não têm — quem projeta a sombra é a página, não a arte
+        boxShadow: 'none',
       });
       if (glifo) {
         hero.querySelector('.ph-num').innerHTML =

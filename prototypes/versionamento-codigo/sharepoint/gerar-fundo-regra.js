@@ -17,11 +17,11 @@ const RAIZ = path.resolve(__dirname, '..');
 const SAIDA = __dirname;
 const ORIGEM = 'diretriz-4.html';
 
-// O bloco é composto em 800x180 e sai a 2x, sem fator fracionário: assim a borda
-// de 1px e o filete de 5px caem em pixel inteiro. 180px de altura cabem cinco
-// linhas do corpo de 16.5px — o bloco do protótipo usa duas ou três, e a folga
-// é o espaço que o texto digitado no SharePoint vai ocupar.
-const CSS = [800, 180];
+// O bloco é composto em 800x116 e sai a 2x, sem fator fracionário: assim a borda
+// de 1px e o filete de 5px caem em pixel inteiro. 232px de altura é a mesma das
+// capas de diretriz e de seção, para que os blocos da página fiquem na mesma
+// medida — e cabem as duas ou três linhas que a regra do protótipo ocupa.
+const CSS = [800, 116];
 const K = 2;
 
 const VERSOES = [
@@ -49,10 +49,14 @@ const VERSOES = [
       document.body.style.background = 'transparent';
 
       const regra = document.querySelector('.regra');
-      // fixo em 0,0 e acima do cabeçalho: numa posição fracionária o recorte
-      // arredonda para fora, e o header do site é fixo e entraria no quadro
+      // O resto da página sai de cena. Sobrepor não basta: o cabeçalho e o menu
+      // são chapas brancas opacas, e o canto arredondado revelaria esse branco
+      // em vez de transparência — o que só aparece quando a imagem é usada sobre
+      // fundo colorido. Os estilos de .regra não dependem de nenhum ancestral.
+      document.body.replaceChildren(regra);
+      // fixo em 0,0: numa posição fracionária o recorte arredonda para fora
       Object.assign(regra.style, {
-        position: 'fixed', top: '0', left: '0', zIndex: '9999',
+        position: 'fixed', top: '0', left: '0',
         width: `${w}px`, height: `${h}px`, boxSizing: 'border-box', margin: '0',
       });
       // o texto da regra é o que será digitado no SharePoint; aqui sobra a moldura
