@@ -29,6 +29,13 @@ const VERSOES = [
   { arquivo: 'regra-fundo-icone', selo: true },
 ];
 
+// O selo do protótipo tem 46px com glifo de 24px. Aqui ele sai 20% menor e
+// recuado para o canto, por margem negativa: mexer no padding do bloco moveria
+// junto a linha onde o texto digitado no SharePoint vai começar.
+const CX_SELO = 46 * 0.8;
+const CX_GLIFO = 24 * 0.8;
+const RECUO = 8;
+
 (async () => {
   const browser = await chromium.launch();
   const p = await browser.newPage({
@@ -40,7 +47,7 @@ const VERSOES = [
     // recarrega a cada versão: a montagem remove nós do DOM e a seguinte não
     // pode herdar o bloco já desmontado
     await p.goto(`file://${path.join(RAIZ, ORIGEM)}`);
-    await p.evaluate(({ w, h, selo }) => {
+    await p.evaluate(({ w, h, selo, sel, gli, rec }) => {
       document.documentElement.classList.remove('app-dark');
       document.body.classList.remove('show-sp');
       // omitBackground só apaga o branco padrão do navegador, não o background
@@ -61,8 +68,19 @@ const VERSOES = [
       });
       // o texto da regra é o que será digitado no SharePoint; aqui sobra a moldura
       regra.querySelector('.r-body').remove();
-      regra.querySelector('.r-badge').style.display = selo ? '' : 'none';
-    }, { w: CSS[0], h: CSS[1], selo });
+      const badge = regra.querySelector('.r-badge');
+      if (!selo) {
+        badge.style.display = 'none';
+        return;
+      }
+      Object.assign(badge.style, {
+        width: `${sel}px`, height: `${sel}px`,
+        marginTop: `-${rec}px`, marginLeft: `-${rec}px`,
+      });
+      const g = badge.querySelector('svg').style;
+      g.width = `${gli}px`;
+      g.height = `${gli}px`;
+    }, { w: CSS[0], h: CSS[1], selo, sel: CX_SELO, gli: CX_GLIFO, rec: RECUO });
 
     const alvo = path.join(SAIDA, `${arquivo}-${CSS[0] * K}x${CSS[1] * K}.png`);
     await p.locator('.regra').screenshot({ path: alvo, omitBackground: true });
