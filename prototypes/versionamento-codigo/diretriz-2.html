@@ -14,7 +14,7 @@
     <div class="ph-num">2</div>
     <div class="ph-text">
       <div class="ph-eyebrow">Diretriz</div>
-      <h1>O modelo de flow adotado deve ser aderente ao GitFlow ou GitHub Flow</h1>
+      <h1>O modelo de flow adotado deve ser aderente ao GitFlow</h1>
     </div>
   </header>
 
@@ -24,8 +24,8 @@
     <div class="r-body">
       <div class="r-kicker">Regra</div>
       <p>O modelo de fluxo de trabalho adotado pela equipe de desenvolvimento <strong>deve</strong>
-         ser aderente aos modelos de mercado <strong>GitFlow</strong> ou <strong>GitHub Flow</strong>.
-         Os repositórios <strong>devem</strong> manter as branches <code>develop</code> e/ou
+         ser aderente ao modelo de mercado <strong>GitFlow</strong>.
+         Os repositórios <strong>devem</strong> manter as branches <code>develop</code> e
          <code>main</code> presentes, protegidas e atualizadas.</p>
     </div>
   </div>
@@ -36,8 +36,8 @@
     <p>O fluxo de trabalho deve estar alinhado a um padrão consolidado de mercado. Independentemente
        de adaptações, os requisitos a seguir são de cumprimento obrigatório:</p>
     <ul>
-      <li>O repositório <strong>deve</strong> adotar GitFlow <strong>ou</strong> GitHub Flow como modelo de fluxo.</li>
-      <li>As branches <code>develop</code> e/ou <code>main</code> <strong>devem</strong> estar presentes e <strong>protegidas</strong>.</li>
+      <li>O repositório <strong>deve</strong> adotar GitFlow como modelo de fluxo.</li>
+      <li>As branches <code>develop</code> e <code>main</code> <strong>devem</strong> estar presentes e <strong>protegidas</strong>.</li>
       <li>As branches principais <strong>devem</strong> ser mantidas atualizadas, com integração contínua de código.</li>
       <li>O modelo adotado <strong>deve</strong> estar em conformidade com a governança técnica institucional.</li>
     </ul>
@@ -45,31 +45,31 @@
 
   <section class="section" data-sp="Imagem">
     <span class="sp-chip"></span>
-    <h2>GitFlow × GitHub Flow</h2>
-    <p>Os dois modelos são aderentes ao padrão de mercado. A diferença central está no número de
-       branches permanentes e na forma de versionar entregas.</p>
+    <h2>O modelo GitFlow</h2>
+    <p>O GitFlow organiza o repositório em duas branches permanentes e três famílias de branches
+       temporárias. Cada família tem origem, destino e tempo de vida definidos.</p>
 
     <figure class="figure">
       <div class="fig-head">
         <span class="sp-chip"></span>
         <span class="fig-tag">Figura</span>
-        <span class="fig-title">Comparativo entre os modelos</span>
+        <span class="fig-title">Estrutura de branches do GitFlow</span>
       </div>
-      <div class="fig-canvas"><img src="assets/img/gitflow-vs-githubflow.svg" alt="Comparativo: GitFlow com main e develop e branches de suporte; GitHub Flow com apenas main e feature branches curtas"></div>
-      <figcaption><strong>GitFlow:</strong> duas branches permanentes (<code>main</code> + <code>develop</code>)
-        e branches de suporte. <strong>GitHub Flow:</strong> apenas <code>main</code> permanente, com
-        feature branches curtas e deploy contínuo.</figcaption>
+      <div class="fig-canvas"><img src="assets/img/gitflow.svg" alt="GitFlow: main e develop permanentes; feature parte de develop e retorna a develop; release e hotfix são integradas a main e a develop, com tag de versão na main"></div>
+      <figcaption>As entregas são versionadas na <code>main</code> por tag SemVer, e toda integração
+        em <code>main</code> retorna a <code>develop</code> por merge back.</figcaption>
     </figure>
 
     <div class="tbl-wrap" data-sp="Tabela">
       <span class="sp-chip"></span>
       <table class="tbl">
-        <thead><tr><th>Aspecto</th><th>GitFlow</th><th>GitHub Flow</th></tr></thead>
+        <thead><tr><th>Branch</th><th>Permanência</th><th>Origem</th><th>Destino</th></tr></thead>
         <tbody>
-          <tr><td>Branches permanentes</td><td><code>main</code> e <code>develop</code></td><td>apenas <code>main</code></td></tr>
-          <tr><td>Branches de suporte</td><td><code>feature/*</code>, <code>release/*</code>, <code>hotfix/*</code></td><td><code>feature/*</code> (curtas)</td></tr>
-          <tr><td>Versionamento</td><td>release versionada (tag SemVer) + merge back</td><td>deploy contínuo a partir da <code>main</code></td></tr>
-          <tr><td>Indicado para</td><td>ciclos com release planejada</td><td>entrega contínua</td></tr>
+          <tr><td><code>main</code></td><td>permanente</td><td>—</td><td>—</td></tr>
+          <tr><td><code>develop</code></td><td>permanente</td><td><code>main</code></td><td>—</td></tr>
+          <tr><td><code>feature/*</code></td><td>temporária</td><td><code>develop</code></td><td><code>develop</code></td></tr>
+          <tr><td><code>release/*</code></td><td>temporária</td><td><code>develop</code></td><td><code>main</code> e <code>develop</code></td></tr>
+          <tr><td><code>hotfix/*</code></td><td>temporária</td><td><code>main</code></td><td><code>main</code> e <code>develop</code></td></tr>
         </tbody>
       </table>
     </div>
@@ -82,8 +82,8 @@
       <div class="ct">
         <strong>Modelo de referência do capítulo</strong>
         <p>As diretrizes 3, 4 e 5 detalham mecânicas do <strong>GitFlow</strong> (branches de
-           <code>release</code>/<code>hotfix</code> e merge back). Em repositórios que adotam
-           GitHub Flow, aplica-se a equivalência sobre a única branch permanente (<code>main</code>).</p>
+           <code>release</code>/<code>hotfix</code> e merge back), e a
+           <a href="diretriz-11.html">Diretriz 11</a> fixa a nomenclatura de cada família.</p>
       </div>
     </div>
   </section>

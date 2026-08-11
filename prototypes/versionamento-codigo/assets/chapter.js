@@ -22,7 +22,7 @@
     ],
     diretrizes: [
       { num: "1",  id: "diretriz-1",  href: "diretriz-1.html",  nav: "Versões testadas e validadas para produção" },
-      { num: "2",  id: "diretriz-2",  href: "diretriz-2.html",  nav: "Modelo de flow (GitFlow / GitHub Flow)" },
+      { num: "2",  id: "diretriz-2",  href: "diretriz-2.html",  nav: "Modelo de flow (GitFlow)" },
       { num: "3",  id: "diretriz-3",  href: "diretriz-3.html",  nav: "Integração contínua e sanitização" },
       { num: "4",  id: "diretriz-4",  href: "diretriz-4.html",  nav: "Baixa divergência entre branches" },
       { num: "5",  id: "diretriz-5",  href: "diretriz-5.html",  nav: "Sincronização ao final do ciclo" },
