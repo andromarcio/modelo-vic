@@ -24,9 +24,12 @@ const ORIGEM = 'diretriz-4.html';
 const CSS = [800, 116];
 const K = 2;
 
+// a versão estreita mantém a altura das demais e fica com 30% da largura, para
+// ocupar uma coluna lateral sem mudar de família
 const VERSOES = [
   { arquivo: 'regra-fundo', selo: false },
   { arquivo: 'regra-fundo-icone', selo: true },
+  { arquivo: 'regra-fundo-estreito', selo: false, largura: 0.3 },
 ];
 
 // O selo do protótipo tem 46px com glifo de 24px. Aqui ele sai 20% menor e
@@ -43,7 +46,9 @@ const RECUO = 8;
     deviceScaleFactor: K,
     colorScheme: 'light',
   });
-  for (const { arquivo, selo } of VERSOES) {
+  for (const { arquivo, selo, largura } of VERSOES) {
+    const larg = Math.round(CSS[0] * (largura || 1));
+    await p.setViewportSize({ width: larg, height: CSS[1] });
     // recarrega a cada versão: a montagem remove nós do DOM e a seguinte não
     // pode herdar o bloco já desmontado
     await p.goto(`file://${path.join(RAIZ, ORIGEM)}`);
@@ -80,9 +85,9 @@ const RECUO = 8;
       const g = badge.querySelector('svg').style;
       g.width = `${gli}px`;
       g.height = `${gli}px`;
-    }, { w: CSS[0], h: CSS[1], selo, sel: CX_SELO, gli: CX_GLIFO, rec: RECUO });
+    }, { w: larg, h: CSS[1], selo, sel: CX_SELO, gli: CX_GLIFO, rec: RECUO });
 
-    const alvo = path.join(SAIDA, `${arquivo}-${CSS[0] * K}x${CSS[1] * K}.png`);
+    const alvo = path.join(SAIDA, `${arquivo}-${larg * K}x${CSS[1] * K}.png`);
     await p.locator('.regra').screenshot({ path: alvo, omitBackground: true });
     console.log(`  ${path.basename(alvo).padEnd(34)} ${(fs.statSync(alvo).size / 1024).toFixed(0)} KB`);
   }

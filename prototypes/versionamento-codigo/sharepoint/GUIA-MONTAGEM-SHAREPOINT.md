@@ -94,6 +94,7 @@ que é a fonte padrão do SharePoint.
    | `sharepoint/icones-diretrizes/` | os 13 ícones das diretrizes soltos (240 × 240) | **Links Rápidos** nos layouts **Compacto** e **Lista** |
    | `sharepoint/regra-fundo-1600x232.png` | a moldura do bloco `.regra` vazia — gradiente, borda e filete azul, na altura das capas | **fundo de seção**, com o texto da regra digitado por cima |
    | `sharepoint/regra-fundo-icone-1600x232.png` | a mesma moldura com o selo azul à esquerda | idem; o texto precisa recuar para não cobrir o selo |
+   | `sharepoint/regra-fundo-estreito-480x232.png` | a moldura sem selo com 30% da largura, mesma altura | seções de coluna estreita |
    | `sharepoint/selo-figura-420x144.png` | a pílula azul **FIGURA** que abre o cabeçalho de cada figura | web part **Imagem**, acima da ilustração |
    | `sharepoint/em-construcao-1600x600.png` | aviso de página ainda não publicada | web part **Imagem**, no corpo da página que falta montar |
 
