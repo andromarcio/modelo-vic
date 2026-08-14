@@ -39,7 +39,9 @@
 
   <!-- blocked bypass attempt -->
   <path d="M78 124 C78 175,300 175,560 175 C660 175,720 175,760 132" fill="none" stroke="#d93636" stroke-width="2" stroke-dasharray="6 4"/>
-  <g transform="translate(614,175)">
+  <!-- sobre a curva, à direita do rótulo (que termina em x=638): em 614 o
+       símbolo caía em cima da palavra "bloqueada" -->
+  <g transform="translate(690,168)">
     <circle r="12" fill="#fbebeb" stroke="#d93636" stroke-width="2"/>
     <path d="M-5 -5 l10 10 M5 -5 l-10 10" stroke="#d93636" stroke-width="2.2" stroke-linecap="round"/>
   </g>
