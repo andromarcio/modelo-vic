@@ -1,0 +1,75 @@
+name: Juiz de requisitos
+
+on:
+  pull_request:
+    paths:
+      - "modules/**/*.md"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  julgar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar SDK
+        run: npm install --no-save @anthropic-ai/sdk
+
+      - name: Artefatos alterados
+        id: delta
+        run: |
+          git fetch origin "${{ github.base_ref }}" --depth=1
+          ARQS=$(git diff --name-only "origin/${{ github.base_ref }}"...HEAD -- 'modules/**/f-*.md' | tr '\n' ' ')
+          echo "arquivos=$ARQS" >> "$GITHUB_OUTPUT"
+          echo "Artefatos N3 no delta: $ARQS"
+
+      - name: Julgar
+        if: steps.delta.outputs.arquivos != ''
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "Sem ANTHROPIC_API_KEY — rodando só as heurísticas (custo zero)."
+            node scripts/juiz/juiz-requisitos.mjs --sem-ia --saida relatorio-juiz.md ${{ steps.delta.outputs.arquivos }}
+            echo "" >> relatorio-juiz.md
+            echo "> ℹ️ Configure o secret \`ANTHROPIC_API_KEY\` para habilitar o julgamento semântico completo." >> relatorio-juiz.md
+          else
+            node scripts/juiz/juiz-requisitos.mjs --saida relatorio-juiz.md ${{ steps.delta.outputs.arquivos }} || echo "JUIZ_BLOQUEIA=1" >> "$GITHUB_ENV"
+          fi
+
+      - name: Comentar no PR
+        if: steps.delta.outputs.arquivos != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require("fs");
+            const corpo = fs.readFileSync("relatorio-juiz.md", "utf8");
+            const marca = "## ⚖️ Juiz de requisitos";
+            const { data: comentarios } = await github.rest.issues.listComments({
+              owner: context.repo.owner, repo: context.repo.repo,
+              issue_number: context.issue.number, per_page: 100 });
+            const anterior = comentarios.find(c => c.body && c.body.startsWith(marca));
+            if (anterior) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                comment_id: anterior.id, body: corpo });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: context.issue.number, body: corpo });
+            }
+
+      - name: Gate
+        if: env.JUIZ_BLOQUEIA == '1'
+        run: |
+          echo "Achados com severidade 'bloqueia' — ver comentário do juiz no PR."
+          exit 1
