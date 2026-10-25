@@ -1,0 +1,22 @@
+{
+  "name": "oficina-nos-trilhos",
+  "private": true,
+  "description": "Gera os materiais da oficina Nos trilhos do GitFlow (Modelo VIC)",
+  "scripts": {
+    "figuras": "node gera-figuras.mjs",
+    "slides": "node gera-slides.js ../1-slides-nos-trilhos.pptx",
+    "roteiro": "node gera-roteiro.js ../2-roteiro-do-facilitador.docx",
+    "pdfs": "python3 gera-pdfs.py saida && node render-pdf.mjs saida/material-das-dinamicas.html ../3-material-das-dinamicas.pdf && node render-pdf.mjs saida/cartilha-de-bolso.html ../4-cartilha-de-bolso.pdf",
+    "gera": "npm run figuras && npm run slides && npm run roteiro && npm run pdfs"
+  },
+  "dependencies": {
+    "docx": "9.5.1",
+    "jszip": "3.10.1",
+    "playwright": "1.56.1",
+    "pptxgenjs": "3.12.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-icons": "5.3.0",
+    "sharp": "0.33.5"
+  }
+}
