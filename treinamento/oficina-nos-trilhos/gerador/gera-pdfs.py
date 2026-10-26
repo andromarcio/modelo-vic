@@ -104,7 +104,7 @@ td { border-bottom: 1px solid var(--linha); padding: 1.6mm 2.5mm; vertical-align
 .levar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5mm; }
 .levar div { background: #fff; border: 1px solid var(--linha); border-radius: 2.5mm; padding: 2mm 3mm; font-size: 8.8pt; }
 .levar span { font-weight: 900; color: var(--laranja); font-size: 15pt; line-height: 1; display: block; margin-bottom: .8mm; }
-.compacta .malha { width: 118mm; margin: 0 auto 1mm; }
+.compacta .malha { width: 108mm; margin: 0 auto 1mm; }
 .duas { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
 """
 
@@ -313,7 +313,7 @@ merges = ''.join(f'<div class="merge"><b>{n}</b>{d}{fig(f, "fig")}</div>' for n,
 cartilha = pagina(f"""
 <div class="compacta">
   <h1>Nos trilhos do GitFlow, numa página</h1>
-  <p style="margin-bottom:0">A <b>ferrovia</b> mostra o como; o <b>contrato</b> explica o porquê. Cada <b>commit</b> é uma estação (uma versão rubricada); cada <b>branch</b>, um trilho (uma cópia de trabalho); cada <b>merge</b>, um entroncamento.</p>
+  <p style="margin-bottom:0">A <b>ferrovia</b> mostra o como; o <b>contrato</b> explica o porquê. Cada <b>commit</b> é uma estação (uma versão rubricada); cada <b>branch</b>, um trilho (uma cópia de trabalho); cada <b>merge</b>, um entroncamento. O <b>trem</b>, a composição, é a versão do produto: no contrato, o texto.</p>
   <h2>Os cinco trilhos</h2>
   {fig('malha', 'fig malha')}
   <table>

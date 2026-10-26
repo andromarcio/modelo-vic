@@ -350,7 +350,8 @@ function tabela(s, linhas, o) {
     const s = slide('CONTEUDO');
     s.addText('Trilho, estação, desvio e entroncamento', { placeholder: 'title' });
     cartao(s, 0.6, 1.4, 12.1, 3.75, K.branco, 'fundo figura');
-    await figura(s, 'desvio', 1.6, 1.45, 10.1, 'Um trilho com estações, um desvio que sai e volta por um entroncamento');
+    await figura(s, 'desvio', 1.85, 1.45, 9.6, 'Um trilho com estações, um desvio que sai e volta por um entroncamento');
+    texto(s, [{ text: 'E o trem? ', options: { bold: true, color: K.azul } }, { text: 'A composição é a versão do produto; no contrato, o texto. Os trilhos e as estações são o caminho e o registro dela.' }], { x: 0.9, y: 4.5, w: 11.5, h: 0.6, fontSize: 14, align: 'center', valign: 'middle' });
     const g = [
       ['Trilho', 'branch', 'uma linha de trabalho', 'uma cópia de trabalho'],
       ['Estação', 'commit', 'uma parada registrada', 'uma versão rubricada'],
@@ -363,7 +364,7 @@ function tabela(s, linhas, o) {
       texto(s, [{ text: 'ferrovia: ', options: { color: K.muted } }, { text: f }], { x, y: 5.8, w: 2.9, h: 0.5, fontSize: 13 });
       texto(s, [{ text: 'contrato: ', options: { color: K.muted } }, { text: c }], { x, y: 6.3, w: 2.9, h: 0.5, fontSize: 13 });
     });
-    s.addNotes('Leia o desenho da esquerda para a direita. A linha azul é um trilho; cada bolinha é uma estação, um commit. Em B, sai um desvio: alguém foi trabalhar separado. F1 e F2 são as paradas desse trabalho. Em M, o desvio volta: isso é o merge. O tempo corre para a direita; C veio depois de tudo.');
+    s.addNotes('Leia o desenho da esquerda para a direita. A linha azul é um trilho; cada bolinha é uma estação, um commit. Em B, sai um desvio: alguém foi trabalhar separado. F1 e F2 são as paradas desse trabalho. Em M, o desvio volta: isso é o merge. O tempo corre para a direita; C veio depois de tudo. Feche com a frase de baixo: o trem, a composição, é a versão do produto, o que no contrato é o texto. É ele que se monta na develop, para na vistoria e entra em operação na main.');
   }
   {
     const s = slide('CONTEUDO');
