@@ -1,13 +1,13 @@
 # Oficina "Nos trilhos do GitFlow"
 
-Oficina de 3 horas, remota (Teams), para quem nunca escreveu uma linha de código: a pessoa de negócio que acompanha entregas e ouve falar de branch, merge e release. Explica o GitFlow, os quatro tipos de merge (fast-forward, merge commit, squash e rebase), o conflito e as regras do Modelo VIC que tocam o fluxo, com duas analogias do dia a dia: a **ferrovia**, para ver o fluxo, e o **contrato com suas minutas**, para entender por que ele existe.
+Oficina de 3 horas, remota (Teams), para quem nunca escreveu uma linha de código: a pessoa de negócio que acompanha entregas e ouve falar de branch, merge e release. Ensina em duas partes, cada uma com a sua analogia do dia a dia. Na primeira, o **trem**: o software é um trem, cada vagão é uma funcionalidade, e as branches são os trilhos onde o trabalho é feito sem parar a linha. Na segunda, o **contrato com suas minutas**: o que fica registrado em cada trilho (commit), os quatro tipos de merge (fast-forward, merge commit, squash e rebase), o conflito, o número da versão e as regras do Modelo VIC que tocam o fluxo.
 
 ## As peças
 
 | Arquivo | O que é |
 |---|---|
-| `1-slides-nos-trilhos.pptx` | 39 slides, com notas do apresentador |
-| `2-roteiro-do-facilitador.docx` | as duas analogias lado a lado, preparação no Teams, cronograma, o que dizer em cada slide, condução das dinâmicas, perguntas frequentes e glossário |
+| `1-slides-nos-trilhos.pptx` | 41 slides, com notas do apresentador |
+| `2-roteiro-do-facilitador.docx` | as duas partes e as suas analogias, preparação no Teams, cronograma, o que dizer em cada slide, condução das dinâmicas, perguntas frequentes e glossário |
 | `3-material-das-dinamicas.pdf` | como montar o quadro colaborativo, as cartas, as rodadas e os gabaritos das três dinâmicas |
 | `4-cartilha-de-bolso.pdf` | uma página para os participantes levarem |
 
@@ -15,7 +15,7 @@ As peças seguem a identidade do Modelo VIC ([`marca-vic.html`](../../prototypes
 
 ## Regenerar
 
-O conteúdo vive nos geradores, em `gerador/`: `figuras.js` (os desenhos da ferrovia), `gera-slides.js` (slides), `gera-roteiro.js` (roteiro) e `gera-pdfs.py` (material das dinâmicas e cartilha). Para mudar um texto ou um desenho, edite o gerador e gere de novo; editar o arquivo de saída à mão se perde na geração seguinte.
+O conteúdo vive nos geradores, em `gerador/`: `figuras.js` (os trens e trilhos da parte 1 e as linhas do tempo da parte 2), `gera-slides.js` (slides), `gera-roteiro.js` (roteiro) e `gera-pdfs.py` (material das dinâmicas e cartilha). Para mudar um texto ou um desenho, edite o gerador e gere de novo; editar o arquivo de saída à mão se perde na geração seguinte.
 
 Precisa de Node 20 ou mais novo, Python 3, o Chromium do Playwright (`npx playwright install chromium`) e acesso ao Google Fonts, de onde as figuras e os PDFs carregam as fontes.
 
@@ -29,4 +29,4 @@ O `npm run gera` desenha as figuras em `gerador/saida/figuras/` e grava as quatr
 
 ## Quando o modelo mudar
 
-As peças ensinam o GitFlow como as diretrizes do Modelo VIC o descrevem. Revise-as quando mudar algum destes pontos: as branches e a tabela de origem e destino (Diretriz 2), o merge back (Diretriz 5), o pull request e o papel do Integrador (Diretrizes 6 a 8), o SemVer e o Padrão VEC (Diretrizes 9 e 10), a nomenclatura (Diretriz 11), a nota de versão (Diretriz 13) e os limites da faixa 3 de divergência (Diretriz 4), que o slide 33 cita. O slide 25 cita os nomes dos botões de merge do GitHub e do Azure DevOps; confira-os se as plataformas mudarem. O sistema Contratos Online e as versões das dinâmicas são didáticos.
+As peças ensinam o GitFlow como as diretrizes do Modelo VIC o descrevem. Revise-as quando mudar algum destes pontos: as branches e a tabela de origem e destino (Diretriz 2), o merge back (Diretriz 5), o pull request e o papel do Integrador (Diretrizes 6 a 8), o SemVer e o Padrão VEC (Diretrizes 9 e 10), a nomenclatura (Diretriz 11), a nota de versão (Diretriz 13) e os limites da faixa 3 de divergência (Diretriz 4), que o slide 35 cita. O slide 27 cita os nomes dos botões de merge do GitHub e do Azure DevOps; confira-os se as plataformas mudarem. O sistema Contratos Online e as versões das dinâmicas são didáticos.

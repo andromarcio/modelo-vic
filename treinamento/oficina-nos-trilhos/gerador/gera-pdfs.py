@@ -84,9 +84,9 @@ td { border-bottom: 1px solid var(--linha); padding: 1.6mm 2.5mm; vertical-align
 .eventos li { display: flex; gap: 3mm; align-items: flex-start; margin-bottom: 1.8mm; }
 .eventos li .num { background: var(--azul); color: #fff; width: 6mm; height: 6mm; font-size: 9pt; }
 .pecas { display: flex; gap: 4mm; align-items: center; flex-wrap: wrap; background: #fff; border: 1px solid var(--linha); border-radius: 3mm; padding: 3mm 4mm; }
-.peca-trilho { width: 22mm; height: 2.2mm; border-radius: 1mm; }
-.peca-estacao { width: 6mm; height: 6mm; border-radius: 50%; background: #fff; border: 1.6mm solid var(--azul); box-sizing: border-box; }
-.peca-placa { background: var(--laranja); font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 8pt; padding: .8mm 2mm; border-radius: 1mm; }
+.peca-linha { width: 22mm; height: 2.2mm; border-radius: 1mm; }
+.peca-versao { width: 6mm; height: 6mm; border-radius: 50%; background: #fff; border: 1.6mm solid var(--azul); box-sizing: border-box; }
+.peca-etiqueta { background: var(--laranja); font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 8pt; padding: .8mm 2mm; border-radius: 1mm; }
 /* cartilha */
 .compacta { font-size: 9.2pt; line-height: 1.38; }
 .compacta h1 { font-size: 17pt; margin-bottom: 1mm; }
@@ -104,7 +104,7 @@ td { border-bottom: 1px solid var(--linha); padding: 1.6mm 2.5mm; vertical-align
 .levar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5mm; }
 .levar div { background: #fff; border: 1px solid var(--linha); border-radius: 2.5mm; padding: 2mm 3mm; font-size: 8.8pt; }
 .levar span { font-weight: 900; color: var(--laranja); font-size: 15pt; line-height: 1; display: block; margin-bottom: .8mm; }
-.compacta .malha { width: 108mm; margin: 0 auto 1mm; }
+.compacta .malha { width: 94mm; margin: 0 auto 1mm; }
 .duas { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
 """
 
@@ -129,28 +129,28 @@ def t(nome):
 
 # ── dados (os mesmos dos slides e do roteiro) ──────────────────────────────
 CARTAS_D1 = [
-    ('Os clientes vão poder simular um empréstimo no app', 'feature/*', 'develop → develop', 'é novidade: uma obra'),
-    ('Desde ontem, o app em produção cobra a tarifa em dobro', 'hotfix/*', 'main → main e develop', 'emergência no que o cliente já usa'),
-    ('A versão 2.4 vai para a homologação; daqui em diante, só correção', 'release/*', 'develop → main e develop', 'a vistoria começou'),
-    ('A versão que os clientes usam hoje', 'main', 'permanente', 'a linha em operação'),
-    ('Onde se juntam as novidades prontas para a próxima versão', 'develop', 'permanente', 'a próxima composição'),
-    ('Na homologação da 2.4, um texto da tela está errado', 'release/*', 'corrige na própria release', 'a vistoria só recebe correção'),
-    ('Relatório novo que a diretoria pediu para o próximo trimestre', 'feature/*', 'develop → develop', 'é novidade, sem pressa de emergência'),
-    ('Erro no cálculo de juros em produção: precisa sair hoje', 'hotfix/*', 'main → main e develop', 'não dá para esperar a próxima versão'),
-    ('A 2.4 foi aprovada na homologação', 'release/*', 'vai para a main, com a placa, e volta para a develop', 'fim da vistoria, com merge back'),
-    ('Duas equipes, duas novidades diferentes, ao mesmo tempo', 'feature/*', 'uma para cada equipe', 'cada obra no seu desvio'),
-    ('A correção urgente de ontem também precisa estar na próxima versão', 'develop', 'merge back do hotfix', 'não é trilho novo: é a volta'),
-    ('Alterar direto a versão em produção, sem revisão, porque é rapidinho', 'Não pode!', '—', 'a main é protegida: tudo passa pelo PR'),
+    ('Os clientes vão poder simular um empréstimo no app', 'feature/*', 'develop → develop', 'vagão novo: vai para a oficina'),
+    ('Desde ontem, o app em produção cobra a tarifa em dobro', 'hotfix/*', 'main → main e develop', 'vagão com defeito no trem comercial'),
+    ('A versão 2.4 vai para a homologação; daqui em diante, só correção', 'release/*', 'develop → main e develop', 'a composição entrou na vistoria'),
+    ('A versão que os clientes usam hoje', 'main', 'permanente', 'o trem comercial, com passageiros'),
+    ('Onde se juntam as novidades prontas para a próxima versão', 'develop', 'permanente', 'o pátio: a próxima composição'),
+    ('Na homologação da 2.4, um texto da tela está errado', 'release/*', 'corrige na própria release', 'na vistoria, só se conserta'),
+    ('Relatório novo que a diretoria pediu para o próximo trimestre', 'feature/*', 'develop → develop', 'vagão novo, sem pressa de emergência'),
+    ('Erro no cálculo de juros em produção: precisa sair hoje', 'hotfix/*', 'main → main e develop', 'não dá para esperar a próxima composição'),
+    ('A 2.4 foi aprovada na homologação', 'release/*', 'vai para a main e volta para a develop', 'fim da vistoria: linha comercial e pátio'),
+    ('Duas equipes, duas novidades diferentes, ao mesmo tempo', 'feature/*', 'uma para cada equipe', 'cada vagão na sua oficina'),
+    ('A correção urgente de ontem também precisa estar na próxima versão', 'develop', 'a volta do hotfix', 'não é trilho novo: o conserto volta para o pátio'),
+    ('Alterar direto a versão em produção, sem revisão, porque é rapidinho', 'Não pode!', '—', 'ninguém mexe no trem comercial sem autorização'),
 ]
 assert len(CARTAS_D1) == 12
 
-RODADAS_D2 = [('merge-squash', 'Squash', 'F1 e F2 viraram uma estação só'), ('merge-ff', 'Fast-forward', 'linha reta e sem C: a linha não tinha andado'),
-              ('merge-rebase', 'Rebase', 'F1′ e F2′, estações novas saindo de C'), ('merge-commit', 'Merge commit', 'a estação de junção M')]
+RODADAS_D2 = [('merge-squash', 'Squash', 'F1 e F2 viraram uma versão só'), ('merge-ff', 'Fast-forward', 'linha reta e sem C: a minuta não tinha andado'),
+              ('merge-rebase', 'Rebase', 'F1′ e F2′, versões novas saindo de C'), ('merge-commit', 'Merge commit', 'a versão de junção M')]
 SITUACOES_D2 = [
-    ('Quero que o histórico mostre quando a cláusula de multa entrou e todas as versões dela até ficar pronta.', 'Merge commit', 'guarda o desvio e a junção'),
-    ('Meu desvio tem 14 estações chamadas "ajuste", "ajuste 2" e "agora vai". Quero que entre só o resultado.', 'Squash', 'passa a limpo'),
-    ('A develop andou muito desde que comecei. Antes de pedir a aprovação, quero refazer o meu trabalho em cima da versão mais recente.', 'Rebase', 'reassenta o próprio desvio; merge commit da develop para o desvio também resolve, e é o certo se o desvio é compartilhado'),
-    ('Ninguém mexeu na develop desde que comecei. Quero juntar sem criar estação nova.', 'Fast-forward', 'a linha não andou'),
+    ('Quero que o histórico mostre quando a cláusula de multa entrou e todas as versões dela até ficar pronta.', 'Merge commit', 'guarda a cópia e a junção'),
+    ('A minha cópia tem 14 versões chamadas "ajuste", "ajuste 2" e "agora vai". Quero que entre só o resultado.', 'Squash', 'passa a limpo'),
+    ('A develop andou muito desde que comecei. Antes de pedir a aprovação, quero refazer o meu trabalho em cima da versão mais recente.', 'Rebase', 'refaz a própria cópia; merge commit da develop para a cópia também resolve, e é o certo se a cópia é compartilhada'),
+    ('Ninguém mexeu na develop desde que comecei. Quero juntar sem criar versão nova.', 'Fast-forward', 'a minuta não andou'),
 ]
 EVENTOS_D3 = [
     'A equipe A começa a assinatura digital.',
@@ -163,11 +163,11 @@ EVENTOS_D3 = [
     'O alerta de vencimento fica pronto e entra para a próxima versão.',
 ]
 PERGUNTAS_D3 = [
-    ('Que trilhos temporários existiram, e com que nome?', f'{t("feature/assinatura")} {t("feature/alerta")} {t("release/2.4.0")} {t("hotfix/2.4.1")}'),
-    ('Que placas a main recebeu?', '<span class="mono">v2.4.0.118</span> (evento 6) e <span class="mono">v2.4.1.121</span> (evento 7)'),
+    ('Que branches temporárias existiram, e com que nome?', f'{t("feature/assinatura")} {t("feature/alerta")} {t("release/2.4.0")} {t("hotfix/2.4.1")}'),
+    ('Que números de versão a main recebeu?', '<span class="mono">v2.4.0.118</span> (evento 6) e <span class="mono">v2.4.1.121</span> (evento 7)'),
     ('Em que versão o alerta de vencimento chega aos clientes?', 'Na 2.5.0, a próxima release: MINOR, porque é novidade que não muda o que já existia'),
     ('O que aconteceria sem o merge back do evento 7?', 'A 2.5.0 sairia da develop sem a correção e voltaria a calcular a multa errada'),
-    ('Que tipo de merge você usaria no evento 3?', 'Aberta. No GitFlow original, merge commit; squash, se o desvio tiver muitas paradas pequenas. A política do repositório decide'),
+    ('Que tipo de merge você usaria no evento 3?', 'Aberta. No GitFlow original, merge commit; squash, se a cópia tiver muitas versões pequenas. A política do repositório decide'),
 ]
 
 # ── material das dinâmicas ─────────────────────────────────────────────────
@@ -175,8 +175,8 @@ M = 'Material das dinâmicas'
 RM = 'Nos trilhos do GitFlow · material das dinâmicas'
 mat = []
 raias = ''.join(f'<div class="raia">{t(n)}<br>{e(d)}</div>' for n, d in [
-    ('main', 'a linha em operação'), ('develop', 'a próxima composição'), ('feature/*', 'o desvio de obra'),
-    ('release/*', 'o pátio de vistoria'), ('hotfix/*', 'o desvio de emergência')])
+    ('main', 'a linha comercial'), ('develop', 'o pátio de montagem'), ('feature/*', 'a oficina: um vagão'),
+    ('release/*', 'a vistoria: a composição inteira'), ('hotfix/*', 'a emergência: um vagão')])
 mat.append(pagina(f"""
   <h1>Material das dinâmicas</h1>
   <p class="lead">Oficina <b>Nos trilhos do GitFlow</b> — branches, merges e o Modelo VIC. Tudo o que o facilitador precisa para montar o quadro colaborativo e conduzir as três dinâmicas.</p>
@@ -185,7 +185,7 @@ mat.append(pagina(f"""
     <li><b>Como montar o quadro</b> — os frames de cada grupo.</li>
     <li><b>Dinâmica 1 — Qual trilho?</b>: as 12 cartas, as etiquetas e o gabarito.</li>
     <li><b>Dinâmica 2 — Qual foi o merge?</b>: as oito rodadas e o gabarito.</li>
-    <li><b>Dinâmica 3 — A viagem do Contratos Online</b>: os eventos, as peças e o gabarito.</li>
+    <li><b>Dinâmica 3 — A vida de uma versão</b>: os eventos, as peças e o gabarito.</li>
   </ol>
   <h2>Como montar o quadro</h2>
   <p>Use o Whiteboard do Teams, o Miro ou o Mural. Crie <b>um frame por grupo</b> para a Dinâmica 1 e outro para a Dinâmica 3, com o mesmo nome das salas simultâneas (Grupo 1, Grupo 2…).</p>
@@ -194,9 +194,9 @@ mat.append(pagina(f"""
   <p>Embaixo das raias, espalhe as 12 cartas misturadas, na ordem da página 2, e uma pilha de etiquetas "sai de / vai para" em branco.</p>
   <div class="caixa"><b>Importante:</b> faça todas as cartas na <b>mesma cor</b>, branca. Se a carta tiver a cor do trilho, o quadro entrega a resposta.</div>
   <h3>Frame da Dinâmica 3</h3>
-  <p>À esquerda, os oito eventos da página 6. À direita, uma área livre com duas linhas já desenhadas, a {t('main')} em cima e a {t('develop')} embaixo, e um estoque de peças para copiar: trilhos das cinco cores, estações e placas.</p>
+  <p>À esquerda, os oito eventos da página 6. À direita, uma área livre com duas linhas já desenhadas, a {t('main')} em cima e a {t('develop')} embaixo, e um estoque de peças para copiar: linhas das cinco cores, bolinhas para as versões e etiquetas para os números.</p>
   <h3>Dinâmica 2</h3>
-  <p>Não precisa de frame: as rodadas estão nos slides 27 e 28. Uma enquete com as quatro opções (Fast-forward, Merge commit, Squash e Rebase) serve para as oito rodadas.</p>
+  <p>Não precisa de frame: as rodadas estão nos slides 29 e 30. Uma enquete com as quatro opções (Fast-forward, Merge commit, Squash e Rebase) serve para as oito rodadas.</p>
 """, M, RM))
 
 cartas = ''.join(f'<div class="carta"><span>{e(c)}</span><span class="n">{i:02d}</span></div>' for i, (c, *_) in enumerate(CARTAS_D1, 1))
@@ -224,9 +224,9 @@ mat.append(pagina(f"""
   </table>
   <h3>Para a conversa na volta</h3>
   <ul>
-    <li><b>Carta 06:</b> por que não abre uma feature? A vistoria já começou: correção entra na própria release.</li>
-    <li><b>Carta 11:</b> que trilho é esse? Nenhum novo: é o merge back do hotfix para a develop (Diretriz 5).</li>
-    <li><b>Carta 12:</b> por que não pode? A main é protegida: push direto é bloqueado e tudo passa pelo pull request (Diretrizes 7 e 8).</li>
+    <li><b>Carta 06:</b> por que não abre uma feature? A vistoria já começou: o conserto é feito na própria release.</li>
+    <li><b>Carta 11:</b> que trilho é esse? Nenhum novo: é a volta do hotfix para o pátio, a develop. Na parte 2, ela ganha o nome de merge back (Diretriz 5).</li>
+    <li><b>Carta 12:</b> por que não pode? A main é protegida: ninguém mexe no trem comercial sem autorização (Diretriz 7).</li>
   </ul>
 """, 'Dinâmica 1 · gabarito', RM))
 
@@ -254,39 +254,39 @@ mat.append(pagina(f"""
     <tr><th style="width:5%">#</th><th style="width:44%">Rodada</th><th style="width:16%">Resposta</th><th>Por quê</th></tr>
     {linhas_d2}
   </table>
-  <div class="caixa"><b>O que observar:</b> a rodada 2 é a pegadinha. O desenho não tem C porque partiu do "antes" em que a linha não andou; se alguém notar, elogie. Na rodada 7, reforce: rebase só no próprio desvio, nunca num trilho que outras pessoas usam.</div>
+  <div class="caixa"><b>O que observar:</b> a rodada 2 é a pegadinha. O desenho não tem C porque partiu do "antes" em que a minuta não andou; se alguém notar, elogie. Na rodada 7, reforce: rebase só na própria cópia, nunca numa linha que outras pessoas usam.</div>
   <h2>Os quatro merges, lado a lado</h2>
   <table>
     <tr><th style="width:17%">Tipo</th><th style="width:27%">O histórico mostra</th><th style="width:27%">No contrato</th><th>Cuidado</th></tr>
-    <tr><td><b>Fast-forward</b></td><td>linha reta, sem desvio</td><td>a cópia vira a minuta</td><td>só quando a linha não andou</td></tr>
-    <tr><td><b>Merge commit</b></td><td>tudo, com a estação de junção</td><td>a cláusula com todas as versões</td><td>mapa trançado</td></tr>
-    <tr><td><b>Squash</b></td><td>uma estação por entrega</td><td>passar a limpo</td><td>perde o passo a passo</td></tr>
-    <tr><td><b>Rebase</b></td><td>linha reta, com estações novas</td><td>refazer sobre a minuta atual</td><td>reescreve a história</td></tr>
+    <tr><td><b>Fast-forward</b></td><td>linha reta, sem a cópia</td><td>a cópia vira a minuta</td><td>só quando a minuta não andou</td></tr>
+    <tr><td><b>Merge commit</b></td><td>tudo, com a versão de junção</td><td>a cláusula com todas as versões</td><td>histórico trançado</td></tr>
+    <tr><td><b>Squash</b></td><td>uma versão por entrega</td><td>passar a limpo</td><td>perde o passo a passo</td></tr>
+    <tr><td><b>Rebase</b></td><td>linha reta, com versões novas</td><td>refazer sobre a minuta atual</td><td>reescreve a história</td></tr>
   </table>
 """, 'Dinâmica 2 · gabarito', RM))
 
 eventos = ''.join(f'<li><span class="num">{i}</span><span>{e(ev)}</span></li>' for i, ev in enumerate(EVENTOS_D3, 1))
 perguntas = ''.join(f'<li>{e(p)}</li>' for p, _ in PERGUNTAS_D3)
-pecas = ''.join(f'<span class="peca-trilho" style="background:var(--{c})"></span>' for c in ['escuro', 'azul', 'teal', 'laranja', 'vermelho'])
+pecas = ''.join(f'<span class="peca-linha" style="background:var(--{c})"></span>' for c in ['escuro', 'azul', 'teal', 'laranja', 'vermelho'])
 mat.append(pagina(f"""
   <span class="carimbo">DINÂMICA 3 · 25 MIN</span>
-  <h1>A viagem do Contratos Online</h1>
-  <p class="lead">O <b>Contratos Online</b> é um sistema fictício. Em produção está a versão <span class="mono">v2.3.0.97</span>. Desenhem a malha no quadro, na ordem dos eventos, e numerem cada estação com o número do evento.</p>
+  <h1>A vida de uma versão</h1>
+  <p class="lead">O <b>Contratos Online</b> é um sistema fictício. Em produção está a versão <span class="mono">v2.3.0.97</span>. Desenhem as linhas do tempo no quadro, na ordem dos eventos, e numerem cada versão com o número do evento.</p>
   <p class="muted">15 minutos nas salas · 10 minutos de conversa na volta</p>
   <h2>Os eventos</h2>
   <ul class="eventos">{eventos}</ul>
   <h2>Respondam também</h2>
   <ol>{perguntas}</ol>
   <h2>As peças</h2>
-  <div class="pecas">{pecas}<span class="peca-estacao"></span><span class="peca-placa">v_._._._</span>
-    <span class="muted" style="font-size:8.5pt">trilhos: main · develop · feature · release · hotfix — estação — placa (só na main)</span></div>
-  <div class="caixa"><b>Antes de apresentar, confiram:</b> cada trilho temporário saiu do lugar certo? A release e o hotfix voltaram para os dois destinos? As placas estão só na main?</div>
+  <div class="pecas">{pecas}<span class="peca-versao"></span><span class="peca-etiqueta">v_._._._</span>
+    <span class="muted" style="font-size:8.5pt">linhas: main · develop · feature · release · hotfix — versão — número da versão (só na main)</span></div>
+  <div class="caixa"><b>Antes de apresentar, confiram:</b> cada branch temporária saiu do lugar certo? A release e o hotfix voltaram para os dois destinos? Os números de versão estão só na main?</div>
 """, 'Dinâmica 3 · eventos', RM))
 
 respostas = ''.join(f'<tr><td>{e(p)}</td><td>{r}</td></tr>' for p, r in PERGUNTAS_D3)
 mat.append(pagina(f"""
   <span class="carimbo">DINÂMICA 3 · GABARITO</span>
-  <h1>A malha do Contratos Online</h1>
+  <h1>A vida de uma versão</h1>
   {fig('gabarito-d3')}
   <table>
     <tr><th style="width:42%">Pergunta</th><th>Resposta</th></tr>
@@ -295,9 +295,9 @@ mat.append(pagina(f"""
   <h2>Erros mais comuns</h2>
   <ul>
     <li><b>O hotfix saindo da develop:</b> emergência sai da main, que é onde está o que o cliente usa.</li>
-    <li><b>O alerta entrando na release/2.4.0:</b> a vistoria já tinha começado; o alerta espera a próxima.</li>
+    <li><b>O alerta entrando na release/2.4.0:</b> a versão já estava em homologação; o alerta espera a próxima.</li>
     <li><b>Um destino esquecido:</b> a release e o hotfix voltam para a main e para a develop.</li>
-    <li><b>Placa na develop:</b> placa de versão só na main.</li>
+    <li><b>Número de versão na develop:</b> o número só vai na main.</li>
   </ul>
 """, 'Dinâmica 3 · gabarito', RM))
 
@@ -305,28 +305,29 @@ mat.append(pagina(f"""
 
 # ── cartilha de bolso (1 página) ───────────────────────────────────────────
 merges = ''.join(f'<div class="merge"><b>{n}</b>{d}{fig(f, "fig")}</div>' for n, d, f in [
-    ('Fast-forward', 'a linha não andou: só seguir em frente', 'merge-ff'),
-    ('Merge commit', 'o entroncamento com placa: guarda o desvio', 'merge-commit'),
-    ('Squash', 'junta os vagões: uma estação por entrega', 'merge-squash'),
-    ('Rebase', 'reassenta o desvio: estações novas', 'merge-rebase'),
+    ('Fast-forward', 'a minuta não andou: a cópia vira a minuta', 'merge-ff'),
+    ('Merge commit', 'a junção registrada: guarda a cópia', 'merge-commit'),
+    ('Squash', 'passar a limpo: uma versão por entrega', 'merge-squash'),
+    ('Rebase', 'refazer sobre a minuta atual: versões novas', 'merge-rebase'),
 ])
 cartilha = pagina(f"""
 <div class="compacta">
   <h1>Nos trilhos do GitFlow, numa página</h1>
-  <p style="margin-bottom:0">A <b>ferrovia</b> mostra o como; o <b>contrato</b> explica o porquê. Cada <b>commit</b> é uma estação (uma versão rubricada); cada <b>branch</b>, um trilho (uma cópia de trabalho); cada <b>merge</b>, um entroncamento. O <b>trem</b>, a composição, é a versão do produto: no contrato, o texto.</p>
-  <h2>Os cinco trilhos</h2>
-  {fig('malha', 'fig malha')}
+  <h2 style="margin-top:1mm">Parte 1 · O trem: para que servem as branches</h2>
+  <p style="margin-bottom:1mm">O <b>trem</b> é o software, e cada <b>vagão</b>, uma funcionalidade. O trem não pode parar: o trabalho é feito em outros <b>trilhos</b> (as branches), e o que fica pronto é engatado de volta.</p>
+  {fig('malha-trens', 'fig malha')}
   <table>
-    <tr><th style="width:15%">Trilho</th><th style="width:25%">Na ferrovia</th><th style="width:31%">No contrato</th><th>Sai de → vai para</th></tr>
-    <tr><td>{t('main')}</td><td>a linha em operação</td><td>o contrato assinado, em vigor</td><td>permanente e protegida</td></tr>
-    <tr><td>{t('develop')}</td><td>a próxima composição</td><td>a minuta consolidada</td><td>permanente e protegida</td></tr>
-    <tr><td>{t('feature/*')}</td><td>o desvio de obra</td><td>a cláusula em redação</td><td>develop → develop</td></tr>
-    <tr><td>{t('release/*')}</td><td>o pátio de vistoria</td><td>a versão para assinatura</td><td>develop → main e develop</td></tr>
-    <tr><td>{t('hotfix/*')}</td><td>o desvio de emergência</td><td>o aditivo urgente</td><td>main → main e develop</td></tr>
+    <tr><th style="width:15%">Trilho</th><th style="width:22%">Na ferrovia</th><th style="width:34%">O que roda</th><th>Sai de → vai para</th></tr>
+    <tr><td>{t('main')}</td><td>a linha comercial</td><td>o trem completo, com passageiros</td><td>permanente e protegida</td></tr>
+    <tr><td>{t('develop')}</td><td>o pátio de montagem</td><td>a próxima composição</td><td>permanente e protegida</td></tr>
+    <tr><td>{t('feature/*')}</td><td>a oficina</td><td>um vagão, novo ou em melhoria</td><td>develop → develop</td></tr>
+    <tr><td>{t('release/*')}</td><td>a vistoria</td><td>a composição inteira; só conserto</td><td>develop → main e develop</td></tr>
+    <tr><td>{t('hotfix/*')}</td><td>a emergência</td><td>um vagão: o que deu defeito</td><td>main → main e develop</td></tr>
   </table>
-  <h2>Os quatro merges: o conteúdo é o mesmo, muda a história que fica</h2>
+  <h2>Parte 2 · O contrato: o que fica registrado e como se junta</h2>
+  <p style="margin-bottom:1mm">Cada <b>commit</b> é uma versão rubricada; cada <b>branch</b>, uma cópia de trabalho; cada <b>merge</b>, a cópia incorporada. Os quatro merges levam o mesmo conteúdo; muda a história que fica.</p>
   <div class="merges">{merges}</div>
-  <p style="margin:1.4mm 0 0"><b>Conflito</b> são dois trens no mesmo trecho: os dois lados mudaram o mesmo ponto, e uma pessoa decide. Muitas vezes, a decisão é de negócio.</p>
+  <p style="margin:1.4mm 0 0"><b>Conflito</b> é quando duas áreas mudaram a mesma cláusula: uma pessoa decide, e muitas vezes a decisão é de negócio. <b>Merge back</b>: tudo o que entra na main volta para a develop.</p>
   <h2>O número da versão · v2.4.1.121</h2>
   <div class="versao">
     <div style="background:var(--escuro);color:#fff"><span class="n">2 · MAJOR</span>muda o que já valia</div>
@@ -335,10 +336,10 @@ cartilha = pagina(f"""
     <div style="background:var(--laranja)"><span class="n">121 · BUILD</span>a montagem que foi para produção</div>
   </div>
   <h2>Perguntas para fazer ao time</h2>
-  <p style="margin:0">Já está na main ou só na develop? · Entra nesta release ou na próxima? · É hotfix ou pode esperar? · Qual é a placa da versão em produção? · Fizeram o merge back? · Há quanto tempo esse desvio está aberto?</p>
+  <p style="margin:0">Já está na main ou só na develop? · Entra nesta release ou na próxima? · É hotfix ou pode esperar? · Qual é a versão em produção? · Fizeram o merge back? · Há quanto tempo essa branch está aberta?</p>
   <h2>Para levar</h2>
   <div class="levar">
-    <div><span>1</span>Cada trem no seu trilho: a main é o que vale, a develop é o que vem, os desvios são temporários.</div>
+    <div><span>1</span>Cada trabalho no seu trilho: a main é o trem com passageiros, a develop é a próxima composição, os desvios são temporários.</div>
     <div><span>2</span>Juntar é escolher a história: fast-forward, merge commit, squash ou rebase.</div>
     <div><span>3</span>Tudo o que chega à main volta para a develop: sem merge back, a correção se perde.</div>
   </div>
