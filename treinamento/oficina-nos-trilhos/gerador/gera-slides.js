@@ -361,7 +361,7 @@ function tabela(s, linhas, o) {
     const s = slide('CONTEUDO');
     s.addText('A malha completa', { placeholder: 'title' });
     await figura(s, 'malha-trens', 0.95, 1.3, 11.4, 'A malha do GitFlow com o que roda em cada trilho');
-    s.addNotes('Percorra a malha devagar. Em cima, a main: o trem comercial, com passageiros. Embaixo, a develop: o pátio, montando a próxima composição; o vagão tracejado é o lugar do que ainda está na oficina. Na feature, o vagão Cartões é construído e volta para o pátio. Quando a composição do pátio fica pronta, vai inteira para a vistoria, a release; aprovada, entra na linha comercial e também volta para o pátio. Quando um vagão do trem comercial dá defeito, ele vai para o desvio de emergência, o hotfix, e o conserto volta para o trem comercial e para o pátio.');
+    s.addNotes('Percorra a malha devagar. Em cima, a main: o trem comercial, com passageiros. Embaixo, a develop: o pátio, montando a próxima composição; o vagão tracejado é o lugar do que ainda está na oficina. Na feature, o vagão Cartões é construído e volta para o pátio, onde ocupa o lugar tracejado. Quando a composição do pátio fica pronta, vai inteira para a vistoria, a release, já com o Cartões; aprovada, entra na linha comercial e também volta para o pátio. Repare que o trem comercial ainda não tem o Cartões: ele só chega aos passageiros pela vistoria. Quando um vagão do trem comercial dá defeito, ele vai para o desvio de emergência, o hotfix, e o conserto volta para o trem comercial e para o pátio.');
   }
   {
     const s = slide('CONTEUDO');

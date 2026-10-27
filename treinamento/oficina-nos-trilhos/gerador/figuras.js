@@ -118,32 +118,32 @@ function oficina() {
 // a malha do GitFlow com o que roda em cada trilho
 function malhaTrens() {
   const Y = { main: 90, hotfix: 180, release: 270, develop: 365, feature: 455 };
-  const v = { w: 52 };
+  const v = { w: 46 };
   let c = '';
-  c += trilho(`M150 ${Y.main} H1085`, COR.main) + trilho(`M150 ${Y.develop} H1085`, COR.develop);
+  c += trilho(`M150 ${Y.main} H1145`, COR.main) + trilho(`M150 ${Y.develop} H1145`, COR.develop);
   // hotfix: sai da main, volta para a main e para a develop
   c += trilho(`${curva(240, Y.main, 290, Y.hotfix)} H410`, COR.hotfix);
   c += trilho(curva(410, Y.hotfix, 460, Y.main), COR.hotfix) + trilho(curva(410, Y.hotfix, 540, Y.develop), COR.hotfix);
   // feature: sai da develop e volta para a develop
-  c += trilho(`${curva(360, Y.develop, 410, Y.feature)} H600`, COR.feature) + trilho(curva(600, Y.feature, 650, Y.develop), COR.feature);
-  // release: sai da develop, vai para a main e volta para a develop
-  c += trilho(`${curva(690, Y.develop, 740, Y.release)} H950`, COR.release);
-  c += trilho(curva(950, Y.release, 1000, Y.main), COR.release) + trilho(curva(950, Y.release, 1050, Y.develop), COR.release);
-  // o que roda em cada trilho
-  c += composicao(560, Y.main, COR.main, ['Cartões', 'Extrato', 'Pix'], v);
-  c += composicao(160, Y.develop, COR.develop, ['+', 'Pix'], v);
-  c += composicao(762, Y.release, COR.release, ['Extrato', 'Pix'], v);
-  c += vagao(479, Y.feature, COR.feature, 'Cartões', v);
-  c += vagao(322, Y.hotfix, COR.hotfix, 'Pix', Object.assign({ defeito: true }, v));
+  c += trilho(`${curva(390, Y.develop, 440, Y.feature)} H640`, COR.feature) + trilho(curva(640, Y.feature, 690, Y.develop), COR.feature);
+  // release: sai da develop depois que o Cartões voltou, vai para a main e volta para a develop
+  c += trilho(`${curva(720, Y.develop, 770, Y.release)} H1000`, COR.release);
+  c += trilho(curva(1000, Y.release, 1050, Y.main), COR.release) + trilho(curva(1000, Y.release, 1110, Y.develop), COR.release);
+  // o que roda em cada trilho: o Cartões sai da oficina para o pátio e só chega à main pela vistoria
+  c += composicao(620, Y.main, COR.main, ['Pix', 'Login'], v);
+  c += composicao(160, Y.develop, COR.develop, ['+', 'Pix', 'Login'], v);
+  c += composicao(782, Y.release, COR.release, ['Cartões', 'Pix', 'Login'], v);
+  c += vagao(517, Y.feature, COR.feature, 'Cartões', v);
+  c += vagao(327, Y.hotfix, COR.hotfix, 'Pix', Object.assign({ defeito: true }, v));
   // rótulos
   c += pilula(14, Y.main, 'main', COR.main) + pilula(14, Y.hotfix, 'hotfix/*', COR.hotfix) + pilula(14, Y.release, 'release/*', COR.release);
   c += pilula(14, Y.develop, 'develop', COR.develop) + pilula(14, Y.feature, 'feature/*', COR.feature);
-  c += nota(690, Y.main + 30, 'linha comercial: o trem com passageiros');
-  c += nota(240, Y.develop + 30, 'pátio: a próxima composição');
-  c += nota(505, Y.feature + 30, 'oficina: um vagão');
-  c += nota(848, Y.release + 30, 'vistoria: a composição inteira');
-  c += nota(348, Y.hotfix + 30, 'emergência: o vagão com defeito');
-  return svg(1100, 500, c, 'A malha do GitFlow com o que roda em cada trilho: o trem comercial na main, a próxima composição na develop, um vagão na oficina, a composição em vistoria e o vagão com defeito');
+  c += nota(698, Y.main + 30, 'linha comercial: o trem com passageiros');
+  c += nota(264, Y.develop + 30, 'pátio: a próxima composição');
+  c += nota(540, Y.feature + 30, 'oficina: um vagão');
+  c += nota(886, Y.release + 30, 'vistoria: a composição inteira');
+  c += nota(350, Y.hotfix + 30, 'emergência: o vagão com defeito');
+  return svg(1160, 500, c, 'A malha do GitFlow com o que roda em cada trilho: o trem comercial na main, a próxima composição na develop, o vagão Cartões na oficina, a composição já com o Cartões em vistoria e o vagão com defeito');
 }
 
 // ── parte 2: a linha do tempo do contrato ───────────────────────────────────
